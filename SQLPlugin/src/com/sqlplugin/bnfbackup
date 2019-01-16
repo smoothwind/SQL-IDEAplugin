@@ -1,0 +1,1651 @@
+{
+  parserClass="com.sqlplugin.SqlParser"
+  parserUtilClass="com.sqlplugin.SqlParserUtil"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Sql"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.sqlplugin.psi"
+  psiImplPackage="com.sqlplugin.psi.impl"
+
+  elementTypeHolderClass="com.sqlplugin.psi.SqlTypes"
+  elementTypeClass="com.sqlplugin.psi.SqlElementType"
+  tokenTypeClass="com.sqlplugin.psi.SqlTokenType"
+
+
+}
+<add_definition>::=
+  ADD <column_definition>,...
+| ADD (<column_definition>,...)
+| ADD <constraint_definition>
+| ADD <key_definition>
+| ADD <referential_constraint_definition>
+
+<alias_name>::=
+  <identifier>
+
+<all_function>::=
+  <set_function_name> ([ALL] <expression>)
+
+<alter_definition>::=
+  ALTER CONSTRAINT <constraint_name> CHECK <search_condition>
+| ALTER <key_definition>
+
+<alter_index_statement>::=
+  ALTER INDEX <index_name> [ON <table_name>] ENABLE
+| ALTER INDEX <index_name> [ON <table_name>] DISABLE
+| ALTER INDEX <index_name> [ON <table_name>] INIT USAGE
+
+<alter_password_statement>::=
+  ALTER PASSWORD <old_password> TO <new_password>
+| ALTER PASSWORD <user_name> <new_password>
+
+<alter_table_statement>::=
+  ALTER TABLE <table_name> <add_definition>
+| ALTER TABLE <table_name> <alter_definition>
+| ALTER TABLE <table_name> <column_change_definition>
+| ALTER TABLE <table_name> <drop_definition>
+| ALTER TABLE <table_name> <modify_definition>
+| ALTER TABLE <table_name> <referential_constraint_definition>
+| ALTER TABLE <table_name> <sample_definition>
+| ALTER TABLE [NOT] CACHE
+| ALTER TABLE [NOT] NOCACHE
+
+<alter_user_statement>::=
+  ALTER USER <user_name> [<user_mode>]
+    [TIMEOUT <unsigned_integer> | TIMEOUT NULL]
+    [COSTLIMIT <unsigned_integer> | COSTLIMIT NULL]
+    [DEFAULT ROLE ALL [EXCEPT <role_name>] | DEFAULT ROLE NONE | DEFAULT ROLE <role_name>]
+    [[NOT] EXCLUSIVE]
+    [DEFAULTCODE <ascii_or_unicode>]
+    [<connect_mode>]
+
+<alter_usergroup_statement>::=
+  ALTER USERGROUP <usergroup_name> [<usergroup_mode>]
+    [TIMEOUT <unsigned_integer> | TIMEOUT NULL]
+    [COSTLIMIT <unsigned_integer> | COSTLIMIT NULL]
+    [DEFAULT ROLE ALL [EXCEPT <role_name>]
+| DEFAULT ROLE NONE
+| DEFAULT ROLE <role_name>]
+    [[NOT] EXCLUSIVE]
+    [DEFAULTCODE <ascii_or_unicode>]
+    [<connect_mode>]
+
+<argument>::=
+  <identifier>
+
+<argument1>::=
+  <identifier>
+
+<arithmetic_function>::=
+  ABS     (<expression>)
+| CEIL    (<expression>)
+| EXP     (<expression>)
+| FIXED   (<expression>[<unsigned_integer>[,<unsigned_integer]])
+| FLOAT   (<expression>,<unsigned_integer>)
+| FLOOR   (<expression>)
+| INDEX   (<string_spec>,<string_spec>[,<expression>[,<expression>]])
+| LENGTH  (<expression>)
+| LN      (<expression>)
+| LOG     (<expression>)
+| NOROUND (<expression>)
+| PI
+| POWER   (<expression>,<expression>)
+| ROUND   (<expression>[,<expression>])
+| SIGN    (<expression>)
+| SQRT    (<expression>)
+| TRUNC   (<expression>[,<expression>])
+
+<ascii_or_unicode>::=
+  ASCII
+| UNICODE
+
+<assignment_statement>::=
+  SET <variable_name> = <expression>
+
+<between_predicate>::=
+  <expression> [NOT] BETWEEN <expression> AND <expression>
+
+<bool_predicate>::=
+  <column_spec> [IS [NOT] TRUE | IS [NOT] FALSE]
+
+<boolean_factor>::=
+  [NOT] <predicate>
+| [NOT] (<search_condition>)
+
+<boolean_term>::=
+  <boolean_factor>
+| <boolean_term> AND <boolean_factor>
+
+<call_statement>::=
+  CALL <dbproc_name> [(<expression>,...)] [WITH COMMIT]
+
+<cascade_option>::=
+  CASCADE
+| RESTRICT
+
+<case_else_clause>::=
+  ELSE statement;
+
+<case_function>::=
+  <simple_case_function>
+| <searched_case_function>
+
+<case_statement>::=
+  <simple_case_statement>
+| <searched_case_statement>
+
+<character>::=
+  <digit>
+| <letter>
+| <extended_letter>
+| <hex_digit>
+| <language_specific_character>
+| <special_character>
+
+<check_expression>::=
+  <expression>
+
+<close_statement>::=
+  CLOSE [<result_table_name>]
+
+<column_attributes>::=
+  [<key_or_not_null_spec>]
+    [<default_spec>]
+    [UNIQUE]
+    [<constraint_definition>]
+    [REFERENCES <referenced_table>
+    [(<referenced_column>)]
+    [<delete_rule>]]
+
+<column_change_definition>::=
+  COLUMN <column_name> ADD <default_spec>
+| COLUMN <column_name> ALTER <default_spec>
+| COLUMN <column_name> DEFAULT NULL
+| COLUMN <column_name> DROP DEFAULT
+| COLUMN <column_name> NOT NULL
+
+<column_definition>::=
+  <column_name> <data_type> [<column_attributes>]
+| <column_name> <domain_name> [<column_attributes>]
+
+<column_list>::=
+  <column_name>
+| <column_list>, <column_name>
+
+<column_name>::=
+  <identifier>
+
+<column_spec>::=
+  <column_name>
+| <table_name>.<column_name>
+| <reference_name>.<column_name>
+| <result_table_name>.<column_name>
+
+<comment>::=
+  <string_literal>
+| <parameter_name>
+
+<comment_on_statement>::=
+  COMMENT ON <object_spec> IS <comment>
+
+<commit_statement>::=
+  COMMIT [WORK]
+
+<comp_op>::=
+  <
+| >
+| !=
+| =
+| <=
+| >=
+| ~= <! for computers with ASCII code !>
+| ~< <! for computers with ASCII code !>
+| ~> <! for computers with ASCII code !>
+
+<comparison_predicate>::=
+  <expression> <comp_op> <expression>
+| <expression> <comp_op> <subquery>
+| <expression_list> <equal_or_not> (<expression_list>)
+| <expression_list> <equal_or_not> <subquery>
+
+<connect_mode>::=
+  ENABLE CONNECT
+| DISABLE CONNECT
+
+<connect_option>::=
+  SQLMODE <internal_oracle>
+| ISOLATION LEVEL <unsigned_integer>
+| TIMEOUT <unsigned_integer>
+
+<connect_statement>::=
+  CONNECT <parameter_name> IDENTIFIED BY <parameter_name> [<connect_option>...]
+| CONNECT <parameter_name> IDENTIFIED BY <password> [<connect_option>...]
+| CONNECT <user_name> IDENTIFIED BY <parameter_name> [<connect_option>...]
+| CONNECT <user_name> IDENTIFIED BY <password> [<connect_option>...]
+
+<constraint_definition>::=
+  CHECK <search_condition>
+| CONSTRAINT <search_condition>
+| CONSTRAINT <constraint_name> CHECK <search_condition>
+
+<constraint_name>::=
+  <indentifier>
+
+<conversion_function>::=
+  CHAR(<expression>[,<datetimeformat>])
+| CHR(<expression>[,<unsigned_integer>])
+| HEX(<expression>)
+| HEXTORAW(<expression>)
+| INTTORAW(<expression>)
+| NUM(<expression>)
+
+<create_dbproc_statement>::=
+  CREATE DBPROC[EDURE] <dbproc_name> [(<formal_parameter>,...)]
+    [RETURNS CURSOR] AS <routine>
+
+<create_domain_statement>::=
+  CREATE DOMAIN <domain_name> <data_type>
+    [<default_spec>] [<constraint_definition>]
+
+<create_function_statement>::=
+  CREATE [PUBLIC] FUNCTION <dbfunction_name> [(<formal_parameter1>,...)]
+    RETURNS <data_type> [DETERMINISTIC] AS <routine>
+
+<create_index_statement>::=
+  CREATE [UNIQUE] INDEX <index_name> ON <table_name> (<index_spec>)
+
+<create_role_statement>::=
+  CREATE ROLE <role_name> [IDENTIFIED BY <password>]
+
+<create_schema_statement>::=
+  CREATE SCHEMA <schema_name_clause> [<schema_element>...]
+
+<create_sequence_statement>::=
+  CREATE SEQUENCE [<schema_name>.]<sequence_name>
+    [INCREMENT BY <integer>]
+    [START WITH <integer>]
+    [MAXVALUE <integer> | NOMAXVALUE]
+    [MINVALUE <integer> | NOMINVALUE]
+    [CYCLE | NOCYCLE]
+    [CACHE <unsigned_integer> | NOCACHE]
+    [ORDER | NOORDER]
+
+<create_synonym_statement>::=
+  CREATE [PUBLIC] SYNONYM [<schema_name>.]<synonym_name> FOR <table_name>
+| CREATE [PUBLIC] SYNONYM [<schema_name>.]<synonym_name> FOR <sequence_name>
+
+<create_system_trigger_statement>::=
+  CREATE SYSTEM TRIGGER [<schema_name>.]<trigger_name>
+    AFTER RESTART EXECUTE (<routine>)
+
+<create_table_statement>::=
+  CREATE TABLE <table_name>
+    (<table_description_element>[,<table_description_element>,...])
+    [IGNORE ROLLBACK]
+    [<sample_definition>]
+    [CACHE] [NOCACHE]
+    [IN DATASOURCE <data_source_name>]
+| CREATE TABLE <table_name>
+    [(<table_description_element>,...)]
+    [IGNORE ROLLBACK]
+    [<sample_definition>] AS <query_expression>
+    [<duplicates_clause>]
+    [IN DATASOURCE <data_source_name>]
+| CREATE TABLE <table_name> LIKE <table_name>
+    [IGNORE ROLLBACK]
+    [IN DATASOURCE <data_source_name>]
+
+<create_table_temp>::=
+<!  <create_table_statement> for creating temporary tables,
+    that is, the table name in the CREATE TABLE statement
+    must have the form TEMP.<identifier>.
+!>
+
+<create_trigger_statement>::=
+  CREATE TRIGGER <trigger_name> FOR <table_name>
+    AFTER <trigger_event>,... EXECUTE (<routine>) [WHENEVER <search_condition>]
+
+<create_user_statement>::=
+  CREATE USER <user_name> PASSWORD <password>
+    [<user_mode>]
+    [TIMEOUT <unsigned_integer>]
+    [COSTLIMIT <unsigned_integer>]
+    [[NOT] EXCLUSIVE]
+    [DEFAULTCODE <ascii_or_unicode>]
+    [<connect_mode>]
+| CREATE USER <user_name> PASSWORD <password> LIKE <source_user>
+| CREATE USER <user_name> PASSWORD <password> USERGROUP <usergroup_name>
+
+<create_usergroup_statement>::=
+  CREATE USERGROUP <usergroup_name>
+    [<usergroup_mode>]
+    [TIMEOUT <unsigned_integer>]
+    [COSTLIMIT <unsigned_integer>]
+    [[NOT] EXCLUSIVE]
+    [DEFAULTCODE <ascii_or_unicode>]
+    [<connect_mode>]
+
+<create_view_statement>::=
+  CREATE [OR REPLACE] VIEW <table_name> [(<alias_name>,...)]
+    AS <query_expression> [WITH CHECK OPTION]
+
+<data_source_name>::=
+  <identifier>
+
+<data_type>::=
+  CHAR[ACTER] [(<unsigned_integer>)] [ASCII | BYTE | UNICODE]
+| VARCHAR [(<unsigned_integer>)] [ASCII | BYTE | UNICODE]
+| CLOB [ASCII | UNICODE]
+| BLOB
+| BOOLEAN
+| FIXED (<unsigned_integer>[,<unsigned_integer>])
+| FLOAT (<unsigned_integer>)
+| INT[EGER]
+| SMALLINT
+| DATE
+| TIME
+| TIMESTAMP
+
+<date_function>::=
+  ADDDATE (<date_or_timestamp_expression>,<expression>)
+| ADD_MONTHS (<date_or_timestamp_expression>,<expression>)
+| DATEDIFF (<date_or_timestamp_expression>, <date_or_timestamp_expression>)
+| DAYNAME (<date_or_timestamp_expression>)
+| DAYOFMONTH (<date_or_timestamp_expression>)
+| DAYOFWEEK (<date_or_timestamp_expression>)
+| DAYOFYEAR (<date_or_timestamp_expression>)
+| MAKEDATE (<expression>,<expression>)
+| MONTHNAME (<date_or_timestamp_expression>)
+| SUBDATE (<date_or_timestamp_expression>,<expression>)
+| WEEKOFYEAR (<date_or_timestamp_expression>)
+
+<date_or_timestamp_expression>::=
+  <expression>
+
+<datetimeformat>::=
+  EUR
+| INTERNAL
+| ISO
+| JIS
+| USA
+
+<dbfunction_call>::=
+  <dbfunction_name> ([<expression>,...])
+
+<dbfunction_name>::=
+  [<schema_name>.]<identifier>
+
+<dbproc_name>::=
+  [<schema_name>.]<identifier>
+
+<declare_cursor_statement>::=
+  DECLARE <result_table_name> CURSOR FOR <select_statement>
+
+<default_expression>::=
+  <expression>
+
+<default_predicate>::=
+  <column_spec> <comp_op> DEFAULT
+
+<default_spec>::=
+  DEFAULT <literal>
+| DEFAULT NULL
+| DEFAULT USER
+| DEFAULT USERGROUP
+| DEFAULT SYSDBA
+| DEFAULT DATE
+| DEFAULT TIME
+| DEFAULT TIMESTAMP
+| DEFAULT UTCDATE
+| DEFAULT UTCDIFF
+| DEFAULT TIMEZONE
+| DEFAULT TRUE
+| DEFAULT FALSE
+| DEFAULT TRANSACTION
+| DEFAULT STAMP
+| DEFAULT SERIAL[(<unsigned_integer>)]
+
+<delete_rule>::=
+  ON DELETE CASCADE
+| ON DELETE RESTRICT
+| ON DELETE SET DEFAULT
+| ON DELETE SET NULL
+
+<delete_statement>::=
+  DELETE [FROM] <table_name>
+    [<reference_name>]
+    [KEY <key_spec>,...] <! This SQL clause is
+          no longer recommended to be used
+          and might be removed from future versions. !>
+    [WHERE <search_condition>]
+    [IGNORE TRIGGER]
+    [NOWAIT]
+| DELETE [FROM] <table_name>
+    [<reference_name>]
+    WHERE CURRENT OF <result_table_name>
+    [NOWAIT]
+
+<delimiter_token>::=
+  <vertical_slash>
+| , | . | + | - | * | / | < | > | <> | != | = | <= | >=
+| ~= <! for computers with ASCII code !>
+| ~< <! for computers with ASCII code !>
+| ~> <! for computers with ASCII code !>
+
+<derived_column>::=
+  <expression>[ [AS] <result_column_name>]
+
+<digit>::=
+  0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+<digit_sequence>::=
+  <digit>...
+
+<distinct_function>::=
+  <set_function_name> (DISTINCT <expression>)
+
+<distinct_spec>::=
+  DISTINCT
+| ALL
+
+<domain_name>::=
+  [<schema_name>.]<identifier>
+
+<double_quotes>::=
+  "
+
+<drop_dbproc_statement>::=
+  DROP DBPROC[EDURE] <dbproc_name>
+
+<drop_definition>::=
+  DROP <column_name>,... [<cascade_option>] [RELEASE SPACE]
+| DROP (<column_name>,...) [<cascade_option>] [RELEASE SPACE]
+| DROP CONSTRAINT <constraint_name>
+| DROP FOREIGN KEY <referential_constraint_name>
+| DROP PRIMARY KEY
+
+<drop_domain_statement>::=
+  DROP DOMAIN <domain_name>
+
+<drop_function_statement>::=
+  DROP [PUBLIC] FUNCTION <dbfunction_name>
+
+<drop_index_statement>::=
+  DROP INDEX <index_name> [ON <table_name>]
+
+<drop_role_statement>::=
+  DROP ROLE <role_name>
+
+<drop_schema_statement>::=
+  DROP SCHEMA <schema_name> [<cascade_option>]
+
+<drop_sequence_statement>::=
+  DROP SEQUENCE [<schema_name>.]<sequence_name>
+
+<drop_synonym_statement>::=
+  DROP [PUBLIC] SYNONYM [<schema_name>.]<synonym_name>
+
+<drop_system_trigger_statement>::=
+  DROP SYSTEM TRIGGER [<schema_name>.] <trigger_name>
+
+<drop_table_statement>::=
+  DROP TABLE <table_name> [<cascade_option>]
+
+<drop_table_temp>::=
+  DROP TABLE TEMP.<identifier>
+
+<drop_trigger_statement>::=
+  DROP TRIGGER <trigger_name> OF <table_name>
+
+<drop_user_statement>::=
+  DROP USER <user_name> [<cascade_option>]
+
+<drop_usergroup_statement>::=
+  DROP USERGROUP <usergroup_name> [<cascade_option>]
+
+<drop_view_statement>::=
+  DROP VIEW <table_name> [<cascade_option>]
+
+<duplicates_clause>::=
+  REJECT DUPLICATES
+| IGNORE DUPLICATES
+| UPDATE DUPLICATES
+
+<equal_or_not>::=
+  <>
+| =
+| ~= <! for computers with ASCII code !>
+
+<exists_predicate>::=
+  EXISTS <subquery>
+
+<exists_table_statement>::=
+  EXISTS TABLE <table_name>
+
+<explain_statement>::=
+  EXPLAIN [EXTERNAL] [(<result_table_name>)] <query_statement>
+| EXPLAIN [EXTERNAL] [(<result_table_name>)] <single_select_statement>
+
+<exponent>::=
+  [<sign>][[<digit>]<digit>]<digit>
+
+<expression>::=
+  <term>
+| <expression> + <term>
+| <expression> - <term>
+| (<expression>)
+| -(<expression>)
+
+<expression_list>::=
+  (<expression>,...)
+
+<extended_expression>::=
+  <expression>
+| DEFAULT
+| STAMP
+
+<extended_letter>::=
+  #
+| @
+| $
+
+<extended_value_spec>::=
+  DEFAULT
+| STAMP
+| <value_spec>
+
+<extraction_function>::=
+  DATE (<expression>)
+| DAY (<date_or_timestamp_expression>)
+| HOUR (<time_or_timestamp_expression>)
+| MICROSECOND (<expression>)
+| MINUTE (<time_or_timestamp_expression>)
+| MONTH (<date_or_timestamp_expression>)
+| SECOND (<time_or_timestamp_expression>)
+| TIME (<expression>)
+| TIMESTAMP (<expression>[,<expression>])
+| YEAR (<date_or_timestamp_expression>)
+
+<factor>::=
+  [<sign>] <value_spec>
+| [<sign>] <column_spec>
+| [<sign>] <function_spec>
+| [<sign>] <set_function_spec>
+| <scalar_subquery>
+| <expression>
+
+<fetch_statement>::=
+  FETCH [FIRST | LAST | NEXT | PREV | position | SAME] [<result_table_name>] INTO <parameter_spec>,...
+
+<final_select>::=
+  <select_statement>
+
+<first_character>::=
+  <letter>
+| <extended_letter>
+| <language_specific_character>
+
+<first_password_character>::=
+  <letter>
+| <extended_letter>
+| <language_specific_character>
+| <digit>
+
+<fixed_point_literal>::=
+  [<sign>]<digit_sequence>[.<digit_sequence>]
+| [<sign>]<digit_sequence>
+| [<sign>].<digit_sequence>
+
+<floating_point_literal>::=
+  <mantissa>E<exponent>
+| <mantissa>e<exponent>
+
+<formal_parameter>::=
+  IN <argument> <data_type>
+| OUT <argument> <data_type>
+| INOUT <argument> <data_type>
+
+<formal_parameter1>::=
+  <argument1> <data_type>
+
+<from_clause>::=
+  FROM <from_table_spec>,...
+
+<from_table_spec>::=
+  <table_name> [AS] [<reference_name>]
+| <result_table_name> [AS] [<reference_name>]
+| (<query_expression>) [AS] [<reference_name>]
+| <joined_table>
+| (<from_table_spec>,...)
+
+<function_spec>::=
+  <arithmetic_function>
+| <conversion_function>
+| <date_function>
+| <dbfunction_call>
+| <extraction_function>
+| <special_function>
+| <string_function>
+| <time_function>
+| <trigonometric_function>
+
+<grant_statement>::=
+  GRANT <priv_spec>,... TO <grantee>,... [WITH GRANT OPTION]
+| GRANT <schema_priv_spec> TO <grantee>,...
+| GRANT EXECUTE ON <dbproc_name> TO <grantee>,...
+| GRANT EXECUTE ON <dbfunction_name> TO <grantee>,...
+| GRANT SELECT ON <sequence_name> TO <grantee>,... [WITH GRANT OPTION]
+
+<grant_user_statement>::=
+  GRANT USER <granted_users> [FROM <user_name>] TO <user_name>
+
+<grant_usergroup_statement>::=
+  GRANT USERGROUP <granted_usergroups> [FROM <user_name>] TO <user_name>
+
+<granted_usergroups>::=
+  <usergroup_name>,...
+| *
+
+<granted_users>::=
+  <user_name>,...
+| *
+
+<grantee>::=
+  <user_name>
+| <usergroup_name>
+| <role_name>
+| PUBLIC
+
+<group_clause>::=
+  GROUP BY <expression>,...
+
+<having_clause>::=
+  HAVING <search_condition>
+
+<hex_digit>::=
+  0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+| A | B | C | D | E | F
+| a | b | c | d | e | f
+
+<hex_digit_seq>::=
+  <hex_digit><hex_digit>
+| <hex_digit_seq><hex_digit><hex_digit>
+
+<hex_literal>::=
+  x''
+| X''
+| x'<hex_digit_seq>'
+| X'<hex_digit_seq>'
+
+<hours>::=
+  <expression>
+
+<identifier>::=
+  <simple_identifier>
+| <double_quotes><special_identifier><double_quotes>
+
+<identifier_tail_character>::=
+  <digit>
+| <letter>
+| <extended_letter>
+| <language_specific_character>
+| <underscore>
+
+<if_statement>::=
+  IF <search_condition> THEN <statement> [ELSE <statement>]
+
+<in_predicate>::=
+  <expression> [NOT] IN <subquery>
+| <expression> [NOT] IN <expression_list>
+| <expression_list> [NOT] IN <subquery>
+| <expression_list> [NOT] IN (<expression_list>,...)
+
+<index_column_name>::=
+  <column_name> [ASC|DESC]
+
+<index_name>::=
+  <identifier>
+
+<index_spec>::=
+  <index_column_name>,...
+| <dbfunction_name> (<column_name>,...) [ASC|DESC]
+
+<indicator_name>::=
+  <parameter_name>
+
+<initial_select>::=
+  <query_spec>
+
+<inner_transaction_statement>::=
+  INNER TRANSACTION BEGIN
+| INNER TRANSACTION COMMIT
+| INNER TRANSACTION ROLLBACK
+
+<insert_expression>::=
+  <extended_expression>
+| <subquery>
+
+<insert_statement>::=
+  INSERT [INTO] <table_name>
+    [(<column_name>,...)]
+    VALUES (<insert_expression>,...)
+    [<duplicates_clause>]
+    [IGNORE TRIGGER]
+    [NOWAIT]
+| INSERT [INTO] <table_name>
+    [(<column_name>,...)]
+    <query_expression>
+    [<duplicates_clause>]
+    [IGNORE TRIGGER]
+    [NOWAIT]
+| INSERT [INTO] <table_name> SET <set_insert_clause>,...
+    [<duplicates_clause>]
+    [IGNORE TRIGGER]
+    [NOWAIT]
+<!  This SQL clause is no longer recommended to be used
+    and might be removed from future versions.  !>
+
+< integer>::=
+  [<sign>] <unsigned_integer>
+
+<internal_oracle>::=
+  INTERNAL
+| ORACLE
+
+<join_predicate>::=
+  <expression> [<outer_join_indicator>] <comp_op> <expression> [<outer_join_indicator>]
+
+<join_spec>::=
+  ON <search_condition>
+
+<joined_table>::=
+  <from_table_spec> CROSS JOIN <from_table_spec>
+| <from_table_spec> [INNER] JOIN <from_table_spec> <join_spec>
+| <from_table_spec> [LEFT [OUTER] | RIGHT [OUTER] | FULL [OUTER]] JOIN <from_table_spec> <join_spec>
+
+<key_definition>::=
+  PRIMARY KEY (<column_name>,...)
+
+<key_or_not_null_spec>::=
+  [PRIMARY] KEY
+| NOT NULL [WITH DEFAULT]
+
+<key_spec>::=
+  <column_name> = <value_spec>
+
+<keyword>::=
+  <not_reserved_keyword>
+| <reserved_keyword>
+
+<language_specific_character>::=
+<!  <every letter that occurs in a Northern, Central,
+    or Southern European language and is not included in the <letter> list>
+  | <for UNICODE-enabled databases: every character that is not included
+    in the ASCII code list from 0 to 127!>
+!>
+
+<letter>::=
+  A | B | C | D | E | F | G | H | I | J | K | L | M
+| N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+| a | b | c | d | e | f | g | h | i | j | k | l | m
+| n | o | p | q | r | s | t | u | v | w | x | y | z
+
+<like_expression>::=
+  <expression>
+| '<pattern_element>...'
+
+<like_predicate>::=
+  <expression> [NOT] LIKE <like_expression> [ESCAPE <expression>]
+
+<limit_clause>::=
+  LIMIT <row_count>
+| LIMIT <offset>,<row_count>
+
+<literal>::=
+  <string_literal>
+| <numeric_literal>
+
+<local_variable>::=
+  <variable_name> <routine_data_type>
+
+<local_variable_list>::=
+  <local_variable>
+| <local_variable_list>;<local_variable>
+
+<local_variables>::=
+  VAR <local_variable_list>;
+
+<lock_option>::=
+  WITH LOCK [(IGNORE)|(NOWAIT)] [EXCLUSIVE | OPTIMISTIC] [ISOLATION LEVEL <unsigned_integer>]
+
+<lock_spec>::=
+  TABLE <table_name>,...
+| <row_spec>...
+| TABLE <table_name>,... <row_spec>...
+
+<lock_statement>::=
+  LOCK [(WAIT)|(NOWAIT)] <lock_spec> IN SHARE MODE
+| LOCK [(WAIT)|(NOWAIT)] <lock_spec> IN EXCLUSIVE MODE
+| LOCK [(WAIT)|(NOWAIT)] <lock_spec> IN SHARE MODE <lock_spec> IN EXCLUSIVE MODE
+| LOCK [(WAIT)|(NOWAIT)] <row_spec>... OPTIMISTIC
+
+<mantissa>::=
+  <fixed_point_literal>
+
+<mapchar_set_name>::=
+  <identifier>
+
+<match_char>::=
+<! every character except
+    %
+  | X'1F'
+  | <underscore>
+  | X'1E'
+!>
+
+<match_set>::=
+  <underscore>
+| X'1E'
+| <match_char>
+
+<match_string>::=
+  %
+| X'1F'
+
+<minutes>::=
+  <expression>
+
+<modify_column_definition>::=
+  <column_name> <data_type> <column_attributes>
+| <column_name> <data_type>
+| <column_name> <column_attributes>
+
+<modify_definition>::=
+  MODIFY (<modify_column_definition>,...)
+
+<monitor_statement>::=
+  MONITOR INIT
+
+<new_index_name>::=
+  <index_name>
+
+<new_password>::=
+  <password>
+
+<new_schema_name>::=
+  <schema_name>
+
+<new_synonym_name>::=
+  <synonym_name>
+
+<new_table_name>::=
+  <table_name>
+
+<new_user_name>::=
+  <user_name>
+
+<new_usergroup_name>::=
+  <usergroup_name>
+
+<next_stamp_statement>::=
+  NEXT STAMP [INTO] <parameter_name>
+
+<not_reserved_keyword>::=
+<! <table_with_not_reserved_keywords> !>
+
+<null_predicate>::=
+  <expression> IS [NOT] NULL
+
+<numeric_literal>::=
+  <fixed_point_literal>
+| <floating_point_literal>
+
+<object_spec>::=
+  COLUMN <table_name>.<column_name>
+| DBPROC[EDURE] <dbproc_name>
+| DOMAIN <domain_name>
+| FOREIGN KEY <table_name>.<referential_constraint_name>
+| INDEX <index_name> ON <table_name>
+| SEQUENCE <sequence_name>
+| [PUBLIC] SYNONYM <synonym_name>
+| TABLE <table_name>
+| TRIGGER <trigger_name>.<table_name>
+| USER <user_name>
+| USERGROUP <usergroup_name>
+| <parameter_name>
+
+<offset>::=
+  <unsigend_integer>
+| <parameter_name>
+
+<old_index_name>::=
+  <index_name>
+
+<old_password>::=
+  <password>
+
+<old_synonym_name>::=
+  <synonym_name>
+
+<old_table_name>::=
+  <table_name>
+
+<order_clause>::=
+  ORDER BY <sort_spec>,...
+
+<outer_join_indicator>::=
+  (+) <! This SQL clause is no longer recommended to be used and might be removed from future versions. !>
+
+<parameter_name>::=
+  :<identifier>
+| ?
+
+<parameter_spec>::=
+  <parameter_name> [<indicator_name>]
+
+<password>::=
+  <identifier>
+| <first_password_character>[<identifier_tail_character>...]
+
+<pattern_element>::=
+  <match_string>
+| <match_set>
+
+<position>::=
+  POS (<unsigned_integer>)
+| POS (<parameter_spec>)
+| ABSOLUTE <integer>
+| ABSOLUTE <parameter_spec>
+| RELATIVE <integer>
+| RELATIVE <parameter_spec>
+
+<predicate>::=
+  <between_predicate>
+| <bool_predicate>
+| <comparison_predicate>
+| <default_predicate>
+| <exists_predicate>
+| <in_predicate>
+| <join_predicate>
+| <like_predicate>
+| <null_predicate>
+| <quantified_predicate>
+| <rowno_predicate>
+| <sound_predicate>
+
+<priv_spec>::=
+  ALL [PRIV[ILEGES]] ON [TABLE] <table_name>,...
+| <privilege>,... ON [TABLE] <table_name>,...
+| <role_name>
+
+<privilege>::=
+  ALTER
+| DELETE
+| INDEX
+| INSERT
+| REFERENCES [(<column_name>,...)]
+| SELECT [(<column_name>,...)]
+| SELUPD [(<column_name>,...)]
+| UPDATE [(<column_name>,...)]
+
+<quantified_predicate>::=
+  <expression> <comp_op> <quantifier> <expression_list>
+| <expression> <comp_op> <quantifier> <subquery>
+| <expression_list> <equal_or_not> <quantifier> (<expression_list>,...)
+| <expression_list> <equal_or_not> <quantifier> <subquery>
+
+<quantifier>::=
+  ALL
+| SOME
+| ANY
+
+<query_expression>::=
+  <query_term>
+| <query_expression> UNION [ALL] <query_term>
+| <query_expression> EXCEPT [ALL] <query_term>
+
+<query_primary>::=
+  <query_spec>
+| (<query_expression>)
+
+<query_spec>::=
+  SELECT [ hint ] [ { DISTINCT | ALL ]{ * | { [schema.] { table | view } .*      | expr [[AS] c_alias]  }   [, {
+       | [schema .] { table | view  } .*      | expr [[AS] c_alias]     }  ]...}FROM  [schema .] { "("subquery [order_by_clause] ")" | table | view  }[ t_alias ] [ WHERE condition][ { [ START WITH condition ] CONNECT BY condition | GROUP BY expr [, expr]... | [HAVING condition]  } ]
+
+<query_statement>::=
+  <declare_cursor_statement>
+| <recursive_declare_cursor_statement>
+| <select_statement>
+
+<query_term>::=
+  <query_primary>
+| <query_term> INTERSECT [ALL] <query_primary>
+
+<recursive_declare_cursor_statement>::=
+  DECLARE <result_table_name> CURSOR FOR WITH RECURSIVE <reference_name> (<alias_name>,...)
+    AS (<initial_select> UNION ALL <recursive_select>) <final_select>
+
+<recursive_select>::=
+  <query_spec>
+
+<reference_name>::=
+  <identifier>
+
+<referenced_column>::=
+  <column_name>
+
+<referenced_table>::=
+  <table_name>
+
+<referencing_column>::=
+  <column_name>
+
+<referential_constraint_definition>::=
+  FOREIGN KEY [<referential_constraint_name>] (<referencing_column>,...)
+    REFERENCES <referenced_table> [(<referenced_column>,...)] [<delete_rule>]
+
+<referential_constraint_name>::=
+  <identifier>
+
+<regular_token>::=
+  <literal>
+| <keyword>
+| <identifier>
+| <parameter_name>
+
+<release_savepoint_statement>::=
+  RELEASE SAVEPOINT <sql_savepoint_name>
+
+<release_statement>::=
+  COMMIT [WORK] RELEASE
+| ROLLBACK [WORK] RELEASE
+
+<rename_column_statement>::=
+  RENAME COLUMN <table_name>.<column_name> TO <column_name>
+
+<rename_index_statement>::=
+  RENAME INDEX <old_index_name> [ON <table_name>] TO <new_index_name>
+
+<rename_schema_statement>::=
+  RENAME SCHEMA <schema_name> TO <new_schema_name>
+
+<rename_synonym_statement>::=
+  RENAME [PUBLIC] SYNONYM <old_synonym_name> TO <new_synonym_name>
+
+<rename_table_statement>::=
+  RENAME TABLE <old_table_name> TO <new_table_name>
+
+<rename_user_statement>::=
+  RENAME USER <user_name> TO <new_user_name>
+
+<rename_usergroup_statement>::=
+  RENAME USERGROUP <usergroup_name> TO <new_usergroup_name>
+
+<rename_view_statement>::=
+  RENAME VIEW <old_table_name> TO <new_table_name>
+
+<reserved_keyword>::=
+<!   <table_with_reserved_keywords>    !>
+
+<result_column_name>::=
+  <identifier>
+
+<result_expression>::=
+  <expression>
+
+<result_table_name>::=
+  <identifier>
+
+<revoke_statement>::=
+  REVOKE <priv_spec>,... FROM <grantee>,... [<cascade_option>]
+| REVOKE <schema_priv_spec> FROM <grantee>,...
+| REVOKE EXECUTE ON <dbproc_name> FROM <grantee>,...
+| REVOKE EXECUTE ON <dbfunction_name> FROM <grantee>,...
+| REVOKE SELECT ON <sequence_name> FROM <grantee>,... [<cascade_option>]
+
+<role_name>::=
+  <identifier>
+
+<rollback_statement>::=
+  ROLLBACK [WORK]
+
+<rollback_to_statement>::=
+  ROLLBACK TO [SAVEPOINT] <sql_savepoint_name>
+
+<routine>::=
+  [<local_variables>] <statement_list>;
+
+<routine_data_type>::=
+  <data_type>
+| CURSOR
+| PREPAREDSTATEMENT
+
+<routine_sql_statement>::=
+  <call_statement>
+| <close_statement>
+| <create_table_temp>
+| <declare_cursor_statement>
+| <delete_statement>
+| <drop_table_temp>
+| <fetch_statement>
+| <insert_statement>
+| <lock_statement>
+| <recursive_declare_cursor_statement>
+| <select_statement>
+| <single_select_statement>
+| <subtrans_statement>
+| <unlock_statement>
+| <update_statement>
+
+<row_count>::=
+  <unsigned_integer>
+| <parameter_name>
+
+<row_spec>::=
+  ROW <table_name> KEY <key_spec>,...
+| ROW <table_name> CURRENT OF <result_table_name>
+
+<rowno_column>::=
+  ROWNO [[AS] <result_column_name>]
+
+<rowno_predicate>::=
+  ROWNO <unsigned_integer>
+| ROWNO <parameter_spec>
+| ROWNO = <unsigned_integer>
+| ROWNO = <parameter_spec>
+
+<sample_definition>::=
+  SAMPLE <unsigned_integer> ROWS
+| SAMPLE <unsigned_integer> PERCENT
+
+<savepoint_statement>::=
+  SAVEPOINT <sql_savepoint_name>
+
+<scalar_subquery>::=
+  <subquery>
+
+<schema_authorization_identifier>::=
+  <identifier>
+
+<schema_element>::=
+  <create_table_statement>
+| <create_view_statement>
+| <create_dbproc_statement>
+| <create_function_statement>
+| <create_sequence_statement>
+
+<schema_name>::=
+  <identifier>
+
+<schema_name_clause>::=
+  <schema_name>
+| <schema_name> AUTHORIZATION <schema_authorization_identifier>
+
+<schema_priv_spec>::=
+  <schema_privilege> ON <schema_name>,...
+
+<schema_privilege>::=
+  CREATEIN
+| DROPIN
+
+<search_and_result_spec>::=
+  <search_expression>,<result_expression>
+
+<search_condition>::=
+  <boolean_term>
+| <search_condition> OR <boolean_term>
+
+<search_expression>::=
+  <expression>
+
+<searched_case_function>::=
+  CASE
+    WHEN <search_condition> THEN <result_expression>
+      [...]
+    [ELSE <default_expression>]
+  END
+
+<searched_case_statement>::=
+  CASE
+    <searched_case_when_clause>...
+    [<case_else_clause>]
+  END [CASE]
+
+<searched_case_when_clause>::=
+  WHEN <search_condition> THEN <statement>;
+
+<seconds>::=
+  <expression>
+
+<select_column>::=
+  <table_columns>
+| <derived_column>
+| <rowno_column>
+| <stamp_column>
+
+<select_statement>::=
+  <query_expression> [<order_clause>] [<limit_clause>] [<update_clause>] [<lock_option>] [FOR REUSE]
+
+<sequence_name>::=
+  <identifier>
+
+<set_function_name>::=
+  AVG
+| COUNT
+| MAX
+| MIN
+| STDDEV
+| SUM
+| VARIANCE
+
+<set_function_spec>::=
+  COUNT (*)
+| <all_function>
+| <distinct_function>
+
+<set_insert_clause>::=
+  <column_name> = <extended_value_spec>
+
+<set_statement>::=
+  SET ROLE ALL [EXCEPT <role_name>,...]
+| SET ROLE NONE
+| SET ROLE <role_name>,... [IDENTIFIED BY <password>]
+| SET ISOLATION LEVEL <unsigned_integer>
+| SET CURRENT_SCHEMA = <schema_name>
+
+<set_update_clause>::=
+  <column_name> = <extended_expression>
+| <column_name>,... = (<extended_expression>,...)
+| (<column_name>,...) = (<extended_expression>,...)
+| <column_name> = <subquery>
+| (<column_name>,...) = <subquery>
+
+<sign>::=
+  +
+| -
+
+<simple_case_function>::=
+  CASE <check_expression>
+    WHEN <search_expression> THEN <result_expression>
+      [...]
+    [ELSE <default_expression>]
+  END
+
+<simple_case_statement>::=
+  CASE <expression>
+    <simple_case_when_clause> ...
+    [<case_else_clause>]
+  END [CASE]
+
+<simple_case_when_clause>::=
+  WHEN <literal>[, ...] THEN <statement>;
+
+<simple_identifier>::=
+  <first_character>[<identifier_tail_character>...]
+
+<single_select_statement>::=
+  SELECT [<distinct_spec>] <select_column>,... INTO <parameter_spec>,...
+    FROM <from_table_spec>,... [<where_clause>] [<group_clause>] [<having_clause>] [<lock_option>]
+
+<sort_spec>::=
+  <unsigned_integer> [ASC | DESC]
+| <expression> [ASC | DESC]
+
+<sound_predicate>::=
+  expression[NOT] SOUNDS [LIKE] <expression>
+
+<source_user>::=
+  <user_name>
+
+<special_character>::=
+<!  every character except
+    <digit>
+  | <letter>
+  | <extended_letter>
+  | <hex_digit>
+  | <language_specific_character>
+  | <!   character for the end of a line in a file   !>
+!>
+
+<special_function>::=
+  <case_function>
+| DECODE (<check_expression>,<search_and_result_spec>,...[,<default_expression>])
+| GREATEST (<expression>,<expression>,...)
+| LEAST (<expression>,<expression>,...)
+| VALUE (<expression>,<expression>,...)
+
+<special_identifier>::=
+  <special_identifier_character>...
+
+<special_identifier_character>::=
+<!   any character    !>
+
+<sql_comment>::=
+  /*<sql_comment_text*/
+| --<sql_comment_text>
+
+<sql_comment_text>::=
+<!    comment text    !>
+
+<sql_savepoint_name>::=
+  <identifier>
+
+<sql_statement>::=
+  <alter_index_statement>
+| <alter_password_statement>
+| <alter_table_statement>
+| <alter_user_statement>
+| <alter_usergroup_statement>
+| <call_statement>
+| <close_statement>
+| <comment_on_statement>
+| <commit_statement>
+| <connect_statement>
+| <create_dbproc_statement>
+| <create_domain_statement>
+| <create_function_statement>
+| <create_index_statement>
+| <create_role_statement>
+| <create_schema_statement>
+| <create_sequence_statement>
+| <create_synonym_statement>
+| <create_system_trigger_statement>
+| <create_table_statement>
+| <create_trigger_statement>
+| <create_user_statement>
+| <create_usergroup_statement>
+| <create_view_statement>
+| <delete_statement>
+| <drop_dbproc_statement>
+| <drop_domain_statement>
+| <drop_function_statement>
+| <drop_index_statement>
+| <drop_role_statement>
+| <drop_schema_statement>
+| <drop_sequence_statement>
+| <drop_synonym_statement>
+| <drop_system_trigger_statement>
+| <drop_table_statement>
+| <drop_trigger_statement>
+| <drop_user_statement>
+| <drop_usergroup_statement>
+| <drop_view_statement>
+| <exists_table_statement>
+| <explain_statement>
+| <fetch_statement>
+| <grant_statement>
+| <grant_user_statement>
+| <grant_usergroup_statement>
+| <inner_transaction_statement>
+| <insert_statement>
+| <lock_statement>
+| <monitor_statement>
+| <next_stamp_statement>
+| <query_statement>
+| <release_statement>
+| <rename_column_statement>
+| <rename_index_statement>
+| <rename_schema_statement>
+| <rename_synonym_statement>
+| <rename_table_statement>
+| <rename_user_statement>
+| <rename_usergroup_statement>
+| <rename_view_statement>
+| <revoke_statement>
+| <rollback_statement>
+| <rollback_to_statement>
+| <savepoint_statement>
+| <set_statement>
+| <single_select_statement>
+| <subtrans_statement>
+| <unlock_statement>
+| <update_statement>
+| <update_statistics_statement>
+
+<stamp_column>::=
+  STAMP [ [AS] <result_column_name>]
+
+<statement>::=
+  BEGIN <statement_list> END
+| BREAK
+| CONTINUE
+| CONTINUE EXECUTE
+| EXECUTE <expression>
+| <if_statement>
+| <while_statement>
+| <assignment_statement>
+| <case_statement>
+| OPEN :<local_variable> FOR <select_statement>
+| PREPARE <local_variable> FOR <expression>
+| RETURN [<expression>]
+| STOP (<expression>[,<expression>])
+| TRY <statement_list>; CATCH <statement>
+| <routine_sql_statement>
+
+<statement_list>::=
+  <statement>
+| <statement_list> ; <statement>
+
+<string_function>::=
+  ALPHA(<string_spec>[,<unsigned_integer>])
+| ASCII(<string_spec>)
+| CONCAT(<string_spec>,<string_spec>)
+| EXPAND(<string_spec>,<unsigned_integer>)
+| GET_OBJECTNAME (<string_literal>)
+| GET_SCHEMA(<string_literal>)
+| INITCAP(<string_spec>)
+| LFILL(<string_spec>,<string_literal>[,<unsigned_integer>])
+| LOWER(<string_spec>)
+| LPAD(<string_spec>,<expression>,<string_literal>[,<unsigned_integer>])
+| LTRIM(<string_spec>[,<string_spec>])
+| MAPCHAR(<string_spec>[,<unsigned_integer>][,<mapchar_set_name>])
+| REPLACE(<string_spec>,<string_spec>[,<string_spec>])
+| RFILL(<string_spec>,<string_literal>[,<unsigned_integer>])
+| RPAD(<string_spec>,<expression>,<string_literal>[,<unsigned_integer>])
+| RTRIM(<string_spec>[,<string_spec>])
+| SOUNDEX(<string_spec>)
+| SQLMODE()
+| SUBSTR(<string_spec>,<expression>[,<expression>])
+| TRANSLATE(<string_spec>,<string_spec>,<string_spec>)
+| TRIM(<string_spec>[,<string_spec>])
+| UPPER(<string_spec>)
+| <string_spec> || <string_spec>
+| <string_spec> & <string_spec>
+
+<string_literal>::=
+  ''
+| '<character>...'
+| <hex_literal>
+
+<string_spec>::=
+  <expression>
+
+<subquery>::=
+  (<query_expression>)
+
+<subtrans_statement>::=
+  SUBTRANS BEGIN
+| SUBTRANS END
+| SUBTRANS ROLLBACK
+
+<synonym_name>::=
+  <identifier>
+
+<table_columns>::=
+  *
+| <table_name>.*
+| <reference_name>.*
+
+<table_description_element>::=
+  <column_definition>
+| <constraint_definition>
+| <referential_constraint_definition>
+| <key_definition>
+| <unique_definition>
+
+<table_expression>::=
+  <from_clause>[<where_clause>] [<group_clause>] [<having_clause>]
+
+<table_name>::=
+  [<schema_name>.]<identifier>
+
+<term>::=
+  <factor>
+| <term> * <factor>
+| <term> / <factor>
+| <term> DIV <factor>
+| <term> MOD <factor>
+
+<time_expression>::=
+  <expression>
+
+<time_function>::=
+  ADDTIME (<time_or_timestamp_expression>,<time_expression>)
+| MAKETIME (<hours>,<minutes>,<seconds>)
+| SUBTIME (<time_or_timestamp_expression>,<time_expression>)
+| TIMEDIFF (<time_or_timestamp_expression>,<time_or_timestamp_expression>)
+
+<time_or_timestamp_expression>::=
+  <expression>
+
+<token>::=
+  <regular_token>
+| <delimiter_token>
+
+<top_spec>::=
+  TOP <unsigned_integer>
+| TOP <parameter_name>
+
+<trigger_event>::=
+  INSERT
+| UPDATE [(<column_list>)]
+| DELETE
+
+<trigger_name>::=
+ <identifier>
+
+<trigonometric_function>::=
+  COS (<expression>)
+| SIN (<expression>)
+| TAN (<expression>)
+| COT (<expression>)
+| COSH (<expression>)
+| SINH (<expression>)
+| TANH (<expression>)
+| ACOS (<expression>)
+| ASIN (<expression>)
+| ATAN (<expression>)
+| ATAN2 (<expression>,<expression>)
+| RADIANS (<expression>)
+| DEGREES (<expression>)
+
+<underscore>::=
+  _
+
+<unique_definition>::=
+  [CONSTRAINT <index_name>] UNIQUE (<column_name>,...)
+
+<unlock_statement>::=
+  UNLOCK <row_spec>... IN SHARE MODE
+| UNLOCK <row_spec>... IN EXCLUSIVE MODE
+| UNLOCK <row_spec>... IN SHARE MODE <row_spec>... IN EXCLUSIVE MODE
+| UNLOCK <row_spec>... OPTIMISTIC
+
+<unsigned_integer>::=
+  <numeric_literal>
+
+<update_clause>::=
+  FOR UPDATE [OF <column_name>,...] [NOWAIT]
+
+<update_statement>::=
+  UPDATE [OF] <table_name>
+    [<reference_name>]
+    SET <set_update_clause>,...
+    [KEY <key_spec>,...] <!   This SQL clause is
+          no longer recommended to be used
+          and might be removed from future versions.   !>
+    [WHERE <search_condition>]
+    [NOWAIT]
+    [IGNORE TRIGGER]
+| UPDATE [OF] <table_name>
+    [<reference_name>]
+    SET <set_update_clause>,...
+    WHERE CURRENT OF <result_table_name>
+    [NOWAIT]
+| UPDATE [OF] <table_name>
+    [<reference_name>]
+    (<column_name>,...)
+    VALUES (<extended_value_spec>,...)
+    [KEY <key_spec>,...]
+    [WHERE <search_condition>]
+    [NOWAIT]
+    [IGNORE TRIGGER]
+<!  This SQL clause is no longer recommended to be used
+    and might be removed from future versions.  !>
+| UPDATE [OF] <table_name>
+    [<reference_name>]
+    (<column_name>,...)
+    VALUES (<extended_value_spec>,...)
+    WHERE CURRENT OF <result_table_name>
+    [NOWAIT]
+<!  This SQL clause is no longer recommended to be used
+    and might be removed from future versions.  !>
+
+<update_statistics_statement>::=
+  UPDATE STAT[ISTICS] COLUMN <table_name>.<column_name> [ESTIMATE [<sample_definition>]]
+| UPDATE STAT[ISTICS] COLUMN (<column_name>,...) FOR <table_name> [ESTIMATE [<sample_definition>]]
+| UPDATE STAT[ISTICS] COLUMN (*) FOR <table_name> [ESTIMATE [<sample_definition>]]
+| UPDATE STAT[ISTICS] <table_name> [ESTIMATE [<sample_definition>]]
+| UPDATE STAT[ISTICS] [<schema_name>.][<identifier>]* [ESTIMATE [<sample_definition>]]
+| UPDATE STAT[ISTICS] AS PER SYSTEM TABLE [ESTIMATE [<sample_definition>]
+
+<user_mode>::=
+  DBA
+| RESOURCE
+| STANDARD
+
+<user_name>::=
+  <identifier>
+
+<usergroup_mode>::=
+  RESOURCE
+| STANDARD
+
+<usergroup_name>::=
+  <identifier>
+
+<value_spec>::=
+  <literal>
+| <parameter_spec>
+| NULL
+| USER
+| USERGROUP
+| SYSDBA
+| CURRENT_SCHEMA
+| UID
+| [<schema_name>.]<sequence_name>.NEXTVAL
+| [<schema_name>.]<sequence_name>.CURRVAL
+| <table_name>.CURRVAL
+| DATE
+| TIME
+| TIMESTAMP
+| UTCDATE
+| TIMEZONE
+| UTCDIFF
+| TRUE
+| FALSE
+| TRANSACTION
+
+<variable_name>::=
+  <identifier>
+
+<vertical_slash>::=
+  |
+
+<where_clause>::=
+  WHERE <search_condition>
+
+<while_statement>::=
+  WHILE <search_condition> DO <statement>
