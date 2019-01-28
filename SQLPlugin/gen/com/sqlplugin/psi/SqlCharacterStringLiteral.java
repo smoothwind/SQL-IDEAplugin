@@ -1,0 +1,25 @@
+// This is a generated file. Not intended for manual editing.
+package com.sqlplugin.psi;
+
+import java.util.List;
+import org.jetbrains.annotations.*;
+import com.intellij.psi.PsiElement;
+
+public interface SqlCharacterStringLiteral extends PsiElement {
+
+  @NotNull
+  List<SqlCharacterRepresentation> getCharacterRepresentationList();
+
+  @Nullable
+  SqlCharacterSetSpecification getCharacterSetSpecification();
+
+  @Nullable
+  SqlIntroducer getIntroducer();
+
+  @NotNull
+  List<SqlQuote> getQuoteList();
+
+  @Nullable
+  SqlSeparator getSeparator();
+
+}

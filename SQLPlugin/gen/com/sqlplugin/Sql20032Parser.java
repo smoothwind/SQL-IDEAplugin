@@ -4,7 +4,7 @@ package com.sqlplugin;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
 import static com.sqlplugin.psi.SqlTypes.*;
-import static com.sqlplugin.SqlParserUtil.*;
+import static com.sqlplugin.Sql20032ParserUtil.*;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.tree.TokenSet;
@@ -23,58 +23,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     b = adapt_builder_(t, b, this, null);
     Marker m = enter_section_(b, 0, _COLLAPSE_, null);
-    if (t == ADA_BLOB_LOCATOR_VARIABLE) {
-      r = Ada_BLOB_locator_variable(b, 0);
-    }
-    else if (t == ADA_BLOB_VARIABLE) {
-      r = Ada_BLOB_variable(b, 0);
-    }
-    else if (t == ADA_CLOB_LOCATOR_VARIABLE) {
-      r = Ada_CLOB_locator_variable(b, 0);
-    }
-    else if (t == ADA_CLOB_VARIABLE) {
-      r = Ada_CLOB_variable(b, 0);
-    }
-    else if (t == ADA_REF_VARIABLE) {
-      r = Ada_REF_variable(b, 0);
-    }
-    else if (t == ADA_ARRAY_LOCATOR_VARIABLE) {
-      r = Ada_array_locator_variable(b, 0);
-    }
-    else if (t == ADA_ASSIGNMENT_OPERATOR) {
-      r = Ada_assignment_operator(b, 0);
-    }
-    else if (t == ADA_DERIVED_TYPE_SPECIFICATION) {
-      r = Ada_derived_type_specification(b, 0);
-    }
-    else if (t == ADA_HOST_IDENTIFIER) {
-      r = Ada_host_identifier(b, 0);
-    }
-    else if (t == ADA_INITIAL_VALUE) {
-      r = Ada_initial_value(b, 0);
-    }
-    else if (t == ADA_MULTISET_LOCATOR_VARIABLE) {
-      r = Ada_multiset_locator_variable(b, 0);
-    }
-    else if (t == ADA_QUALIFIED_TYPE_SPECIFICATION) {
-      r = Ada_qualified_type_specification(b, 0);
-    }
-    else if (t == ADA_TYPE_SPECIFICATION) {
-      r = Ada_type_specification(b, 0);
-    }
-    else if (t == ADA_UNQUALIFIED_TYPE_SPECIFICATION) {
-      r = Ada_unqualified_type_specification(b, 0);
-    }
-    else if (t == ADA_USER_DEFINED_TYPE_LOCATOR_VARIABLE) {
-      r = Ada_user_defined_type_locator_variable(b, 0);
-    }
-    else if (t == ADA_USER_DEFINED_TYPE_VARIABLE) {
-      r = Ada_user_defined_type_variable(b, 0);
-    }
-    else if (t == ADA_VARIABLE_DEFINITION) {
-      r = Ada_variable_definition(b, 0);
-    }
-    else if (t == C_BLOB_LOCATOR_VARIABLE) {
+    if (t == C_BLOB_LOCATOR_VARIABLE) {
       r = C_BLOB_locator_variable(b, 0);
     }
     else if (t == C_BLOB_VARIABLE) {
@@ -146,243 +95,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     else if (t == C_VARIABLE_SPECIFICATION) {
       r = C_variable_specification(b, 0);
     }
-    else if (t == COBOL_BLOB_LOCATOR_VARIABLE) {
-      r = COBOL_BLOB_locator_variable(b, 0);
-    }
-    else if (t == COBOL_BLOB_VARIABLE) {
-      r = COBOL_BLOB_variable(b, 0);
-    }
-    else if (t == COBOL_CLOB_LOCATOR_VARIABLE) {
-      r = COBOL_CLOB_locator_variable(b, 0);
-    }
-    else if (t == COBOL_CLOB_VARIABLE) {
-      r = COBOL_CLOB_variable(b, 0);
-    }
-    else if (t == COBOL_NCLOB_VARIABLE) {
-      r = COBOL_NCLOB_variable(b, 0);
-    }
-    else if (t == COBOL_REF_VARIABLE) {
-      r = COBOL_REF_variable(b, 0);
-    }
-    else if (t == COBOL_ARRAY_LOCATOR_VARIABLE) {
-      r = COBOL_array_locator_variable(b, 0);
-    }
-    else if (t == COBOL_BINARY_INTEGER) {
-      r = COBOL_binary_integer(b, 0);
-    }
-    else if (t == COBOL_CHARACTER_TYPE) {
-      r = COBOL_character_type(b, 0);
-    }
-    else if (t == COBOL_DERIVED_TYPE_SPECIFICATION) {
-      r = COBOL_derived_type_specification(b, 0);
-    }
-    else if (t == COBOL_HOST_IDENTIFIER) {
-      r = COBOL_host_identifier(b, 0);
-    }
-    else if (t == COBOL_INTEGER_TYPE) {
-      r = COBOL_integer_type(b, 0);
-    }
-    else if (t == COBOL_MULTISET_LOCATOR_VARIABLE) {
-      r = COBOL_multiset_locator_variable(b, 0);
-    }
-    else if (t == COBOL_NATIONAL_CHARACTER_TYPE) {
-      r = COBOL_national_character_type(b, 0);
-    }
-    else if (t == COBOL_NINES) {
-      r = COBOL_nines(b, 0);
-    }
-    else if (t == COBOL_NINES_SPECIFICATION) {
-      r = COBOL_nines_specification(b, 0);
-    }
-    else if (t == COBOL_NUMERIC_TYPE) {
-      r = COBOL_numeric_type(b, 0);
-    }
-    else if (t == COBOL_TYPE_SPECIFICATION) {
-      r = COBOL_type_specification(b, 0);
-    }
-    else if (t == COBOL_USER_DEFINED_TYPE_LOCATOR_VARIABLE) {
-      r = COBOL_user_defined_type_locator_variable(b, 0);
-    }
-    else if (t == COBOL_USER_DEFINED_TYPE_VARIABLE) {
-      r = COBOL_user_defined_type_variable(b, 0);
-    }
-    else if (t == COBOL_VARIABLE_DEFINITION) {
-      r = COBOL_variable_definition(b, 0);
-    }
-    else if (t == FORTRAN_BLOB_LOCATOR_VARIABLE) {
-      r = Fortran_BLOB_locator_variable(b, 0);
-    }
-    else if (t == FORTRAN_BLOB_VARIABLE) {
-      r = Fortran_BLOB_variable(b, 0);
-    }
-    else if (t == FORTRAN_CLOB_LOCATOR_VARIABLE) {
-      r = Fortran_CLOB_locator_variable(b, 0);
-    }
-    else if (t == FORTRAN_CLOB_VARIABLE) {
-      r = Fortran_CLOB_variable(b, 0);
-    }
-    else if (t == FORTRAN_REF_VARIABLE) {
-      r = Fortran_REF_variable(b, 0);
-    }
-    else if (t == FORTRAN_ARRAY_LOCATOR_VARIABLE) {
-      r = Fortran_array_locator_variable(b, 0);
-    }
-    else if (t == FORTRAN_DERIVED_TYPE_SPECIFICATION) {
-      r = Fortran_derived_type_specification(b, 0);
-    }
-    else if (t == FORTRAN_HOST_IDENTIFIER) {
-      r = Fortran_host_identifier(b, 0);
-    }
-    else if (t == FORTRAN_MULTISET_LOCATOR_VARIABLE) {
-      r = Fortran_multiset_locator_variable(b, 0);
-    }
-    else if (t == FORTRAN_TYPE_SPECIFICATION) {
-      r = Fortran_type_specification(b, 0);
-    }
-    else if (t == FORTRAN_USER_DEFINED_TYPE_LOCATOR_VARIABLE) {
-      r = Fortran_user_defined_type_locator_variable(b, 0);
-    }
-    else if (t == FORTRAN_USER_DEFINED_TYPE_VARIABLE) {
-      r = Fortran_user_defined_type_variable(b, 0);
-    }
-    else if (t == FORTRAN_VARIABLE_DEFINITION) {
-      r = Fortran_variable_definition(b, 0);
-    }
-    else if (t == MUMPS_BLOB_LOCATOR_VARIABLE) {
-      r = MUMPS_BLOB_locator_variable(b, 0);
-    }
-    else if (t == MUMPS_BLOB_VARIABLE) {
-      r = MUMPS_BLOB_variable(b, 0);
-    }
-    else if (t == MUMPS_CLOB_LOCATOR_VARIABLE) {
-      r = MUMPS_CLOB_locator_variable(b, 0);
-    }
-    else if (t == MUMPS_CLOB_VARIABLE) {
-      r = MUMPS_CLOB_variable(b, 0);
-    }
-    else if (t == MUMPS_REF_VARIABLE) {
-      r = MUMPS_REF_variable(b, 0);
-    }
-    else if (t == MUMPS_ARRAY_LOCATOR_VARIABLE) {
-      r = MUMPS_array_locator_variable(b, 0);
-    }
-    else if (t == MUMPS_CHARACTER_VARIABLE) {
-      r = MUMPS_character_variable(b, 0);
-    }
-    else if (t == MUMPS_DERIVED_TYPE_SPECIFICATION) {
-      r = MUMPS_derived_type_specification(b, 0);
-    }
-    else if (t == MUMPS_HOST_IDENTIFIER) {
-      r = MUMPS_host_identifier(b, 0);
-    }
-    else if (t == MUMPS_LENGTH_SPECIFICATION) {
-      r = MUMPS_length_specification(b, 0);
-    }
-    else if (t == MUMPS_MULTISET_LOCATOR_VARIABLE) {
-      r = MUMPS_multiset_locator_variable(b, 0);
-    }
-    else if (t == MUMPS_NUMERIC_VARIABLE) {
-      r = MUMPS_numeric_variable(b, 0);
-    }
-    else if (t == MUMPS_TYPE_SPECIFICATION) {
-      r = MUMPS_type_specification(b, 0);
-    }
-    else if (t == MUMPS_USER_DEFINED_TYPE_LOCATOR_VARIABLE) {
-      r = MUMPS_user_defined_type_locator_variable(b, 0);
-    }
-    else if (t == MUMPS_USER_DEFINED_TYPE_VARIABLE) {
-      r = MUMPS_user_defined_type_variable(b, 0);
-    }
-    else if (t == MUMPS_VARIABLE_DEFINITION) {
-      r = MUMPS_variable_definition(b, 0);
-    }
-    else if (t == PL_I_BLOB_LOCATOR_VARIABLE) {
-      r = PL_I_BLOB_locator_variable(b, 0);
-    }
-    else if (t == PL_I_BLOB_VARIABLE) {
-      r = PL_I_BLOB_variable(b, 0);
-    }
-    else if (t == PL_I_CLOB_LOCATOR_VARIABLE) {
-      r = PL_I_CLOB_locator_variable(b, 0);
-    }
-    else if (t == PL_I_CLOB_VARIABLE) {
-      r = PL_I_CLOB_variable(b, 0);
-    }
-    else if (t == PL_I_REF_VARIABLE) {
-      r = PL_I_REF_variable(b, 0);
-    }
-    else if (t == PL_I_ARRAY_LOCATOR_VARIABLE) {
-      r = PL_I_array_locator_variable(b, 0);
-    }
-    else if (t == PL_I_DERIVED_TYPE_SPECIFICATION) {
-      r = PL_I_derived_type_specification(b, 0);
-    }
-    else if (t == PL_I_HOST_IDENTIFIER) {
-      r = PL_I_host_identifier(b, 0);
-    }
-    else if (t == PL_I_MULTISET_LOCATOR_VARIABLE) {
-      r = PL_I_multiset_locator_variable(b, 0);
-    }
-    else if (t == PL_I_TYPE_FIXED_BINARY) {
-      r = PL_I_type_fixed_binary(b, 0);
-    }
-    else if (t == PL_I_TYPE_FIXED_DECIMAL) {
-      r = PL_I_type_fixed_decimal(b, 0);
-    }
-    else if (t == PL_I_TYPE_FLOAT_BINARY) {
-      r = PL_I_type_float_binary(b, 0);
-    }
-    else if (t == PL_I_TYPE_SPECIFICATION) {
-      r = PL_I_type_specification(b, 0);
-    }
-    else if (t == PL_I_USER_DEFINED_TYPE_LOCATOR_VARIABLE) {
-      r = PL_I_user_defined_type_locator_variable(b, 0);
-    }
-    else if (t == PL_I_USER_DEFINED_TYPE_VARIABLE) {
-      r = PL_I_user_defined_type_variable(b, 0);
-    }
-    else if (t == PL_I_VARIABLE_DEFINITION) {
-      r = PL_I_variable_definition(b, 0);
-    }
-    else if (t == PASCAL_BLOB_LOCATOR_VARIABLE) {
-      r = Pascal_BLOB_locator_variable(b, 0);
-    }
-    else if (t == PASCAL_BLOB_VARIABLE) {
-      r = Pascal_BLOB_variable(b, 0);
-    }
-    else if (t == PASCAL_CLOB_LOCATOR_VARIABLE) {
-      r = Pascal_CLOB_locator_variable(b, 0);
-    }
-    else if (t == PASCAL_CLOB_VARIABLE) {
-      r = Pascal_CLOB_variable(b, 0);
-    }
-    else if (t == PASCAL_REF_VARIABLE) {
-      r = Pascal_REF_variable(b, 0);
-    }
-    else if (t == PASCAL_ARRAY_LOCATOR_VARIABLE) {
-      r = Pascal_array_locator_variable(b, 0);
-    }
-    else if (t == PASCAL_DERIVED_TYPE_SPECIFICATION) {
-      r = Pascal_derived_type_specification(b, 0);
-    }
-    else if (t == PASCAL_HOST_IDENTIFIER) {
-      r = Pascal_host_identifier(b, 0);
-    }
-    else if (t == PASCAL_MULTISET_LOCATOR_VARIABLE) {
-      r = Pascal_multiset_locator_variable(b, 0);
-    }
-    else if (t == PASCAL_TYPE_SPECIFICATION) {
-      r = Pascal_type_specification(b, 0);
-    }
-    else if (t == PASCAL_USER_DEFINED_TYPE_LOCATOR_VARIABLE) {
-      r = Pascal_user_defined_type_locator_variable(b, 0);
-    }
-    else if (t == PASCAL_USER_DEFINED_TYPE_VARIABLE) {
-      r = Pascal_user_defined_type_variable(b, 0);
-    }
-    else if (t == PASCAL_VARIABLE_DEFINITION) {
-      r = Pascal_variable_definition(b, 0);
-    }
     else if (t == SQL_ARGUMENT) {
       r = SQL_argument(b, 0);
     }
@@ -426,10 +138,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
       r = SQL_language_identifier(b, 0);
     }
     else if (t == SQL_LANGUAGE_IDENTIFIER_PART) {
-      r = SQL_language_identifier_part(b, 0);
+      r = SQL_languageIDENTIFIERpart(b, 0);
     }
     else if (t == SQL_LANGUAGE_IDENTIFIER_START) {
-      r = SQL_language_identifier_start(b, 0);
+      r = SQL_languageIDENTIFIERstart(b, 0);
     }
     else if (t == SQL_PARAMETER_DECLARATION) {
       r = SQL_parameter_declaration(b, 0);
@@ -534,7 +246,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
       r = Unicode_escape_value(b, 0);
     }
     else if (t == UNICODE_IDENTIFIER_PART) {
-      r = Unicode_identifier_part(b, 0);
+      r = UnicodeIDENTIFIERpart(b, 0);
     }
     else if (t == UNICODE_REPRESENTATION) {
       r = Unicode_representation(b, 0);
@@ -644,8 +356,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     else if (t == ALTER_TRANSFORM_ACTION) {
       r = alter_transform_action(b, 0);
     }
-    else if (t == ALTER_TRANSFORM_ACTION_LIST) {
-      r = alter_transform_action_list(b, 0);
+    else if (t == ALTER_TRANSFORMACTIONLIST) {
+      r = alter_transformACTIONlist(b, 0);
     }
     else if (t == ALTER_TRANSFORM_STATEMENT) {
       r = alter_transform_statement(b, 0);
@@ -717,7 +429,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
       r = asterisked_identifier(b, 0);
     }
     else if (t == ASTERISKED_IDENTIFIER_CHAIN) {
-      r = asterisked_identifier_chain(b, 0);
+      r = asteriskedIDENTIFIERchain(b, 0);
     }
     else if (t == ATTRIBUTE_DEFAULT) {
       r = attribute_default(b, 0);
@@ -741,7 +453,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
       r = authorization_identifier(b, 0);
     }
     else if (t == BASIC_IDENTIFIER_CHAIN) {
-      r = basic_identifier_chain(b, 0);
+      r = basicIDENTIFIERchain(b, 0);
     }
     else if (t == BASIC_SEQUENCE_GENERATOR_OPTION) {
       r = basic_sequence_generator_option(b, 0);
@@ -1302,10 +1014,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
       r = delimited_identifier(b, 0);
     }
     else if (t == DELIMITED_IDENTIFIER_BODY) {
-      r = delimited_identifier_body(b, 0);
+      r = delimitedIDENTIFIERbody(b, 0);
     }
     else if (t == DELIMITED_IDENTIFIER_PART) {
-      r = delimited_identifier_part(b, 0);
+      r = delimitedIDENTIFIERpart(b, 0);
     }
     else if (t == DEPENDENT_VARIABLE_EXPRESSION) {
       r = dependent_variable_expression(b, 0);
@@ -1523,29 +1235,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     else if (t == ELSE_CLAUSE) {
       r = else_clause(b, 0);
     }
-    else if (t == EMBEDDED_SQL_ADA_PROGRAM) {
-      r = embedded_SQL_Ada_program(b, 0);
-    }
     else if (t == EMBEDDED_SQL_C_PROGRAM) {
       r = embedded_SQL_C_program(b, 0);
-    }
-    else if (t == EMBEDDED_SQL_COBOL_PROGRAM) {
-      r = embedded_SQL_COBOL_program(b, 0);
-    }
-    else if (t == EMBEDDED_SQL_FORTRAN_PROGRAM) {
-      r = embedded_SQL_Fortran_program(b, 0);
-    }
-    else if (t == EMBEDDED_SQL_MUMPS_DECLARE) {
-      r = embedded_SQL_MUMPS_declare(b, 0);
-    }
-    else if (t == EMBEDDED_SQL_MUMPS_PROGRAM) {
-      r = embedded_SQL_MUMPS_program(b, 0);
-    }
-    else if (t == EMBEDDED_SQL_PL_I_PROGRAM) {
-      r = embedded_SQL_PL_I_program(b, 0);
-    }
-    else if (t == EMBEDDED_SQL_PASCAL_PROGRAM) {
-      r = embedded_SQL_Pascal_program(b, 0);
     }
     else if (t == EMBEDDED_SQL_BEGIN_DECLARE) {
       r = embedded_SQL_begin_declare(b, 0);
@@ -1856,14 +1547,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     else if (t == HOLD_LOCATOR_STATEMENT) {
       r = hold_locator_statement(b, 0);
     }
-    else if (t == HOST_PL_I_LABEL_VARIABLE) {
-      r = host_PL_I_label_variable(b, 0);
-    }
     else if (t == HOST_IDENTIFIER) {
       r = host_identifier(b, 0);
-    }
-    else if (t == HOST_LABEL_IDENTIFIER) {
-      r = host_label_identifier(b, 0);
     }
     else if (t == HOST_PARAMETER_DATA_TYPE) {
       r = host_parameter_data_type(b, 0);
@@ -3189,7 +2874,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
       r = set_session_collation_statement(b, 0);
     }
     else if (t == SET_SESSION_USER_IDENTIFIER_STATEMENT) {
-      r = set_session_user_identifier_statement(b, 0);
+      r = set_session_userIDENTIFIERstatement(b, 0);
     }
     else if (t == SET_TARGET) {
       r = set_target(b, 0);
@@ -3271,6 +2956,9 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     }
     else if (t == SINGLE_GROUP_SPECIFICATION) {
       r = single_group_specification(b, 0);
+    }
+    else if (t == SLASH) {
+      r = slash(b, 0);
     }
     else if (t == SOLIDUS) {
       r = solidus(b, 0);
@@ -3602,8 +3290,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     else if (t == TRANSLITERATION_SOURCE) {
       r = transliteration_source(b, 0);
     }
-    else if (t == TRIGGER_ACTION_TIME) {
-      r = trigger_action_time(b, 0);
+    else if (t == TRIGGERACTIONTIME) {
+      r = triggerACTIONtime(b, 0);
     }
     else if (t == TRIGGER_COLUMN_LIST) {
       r = trigger_column_list(b, 0);
@@ -3926,319 +3614,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // SQL TYPE IS BLOB AS LOCATOR
-  public static boolean Ada_BLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_BLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, AS, LOCATOR);
-    exit_section_(b, m, ADA_BLOB_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS BLOB <left paren> <large object length> <right paren>
-  public static boolean Ada_BLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_BLOB_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    exit_section_(b, m, ADA_BLOB_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS CLOB AS LOCATOR
-  public static boolean Ada_CLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_CLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, AS, LOCATOR);
-    exit_section_(b, m, ADA_CLOB_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS CLOB <left paren> <large object length> <right paren> [ CHARACTER SET [ IS ] <character set specification> ]
-  public static boolean Ada_CLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_CLOB_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    r = r && Ada_CLOB_variable_7(b, l + 1);
-    exit_section_(b, m, ADA_CLOB_VARIABLE, r);
-    return r;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean Ada_CLOB_variable_7(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_CLOB_variable_7")) return false;
-    Ada_CLOB_variable_7_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean Ada_CLOB_variable_7_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_CLOB_variable_7_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && Ada_CLOB_variable_7_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean Ada_CLOB_variable_7_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_CLOB_variable_7_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <reference type>
-  public static boolean Ada_REF_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_REF_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _REFERENCE_TYPE_);
-    exit_section_(b, m, ADA_REF_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <array type> AS LOCATOR
-  public static boolean Ada_array_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_array_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _ARRAY_TYPE_, AS, LOCATOR);
-    exit_section_(b, m, ADA_ARRAY_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <colon><equals operator>
-  public static boolean Ada_assignment_operator(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_assignment_operator")) return false;
-    if (!nextTokenIs(b, _COLON_)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = colon(b, l + 1);
-    r = r && equals_operator(b, l + 1);
-    exit_section_(b, m, ADA_ASSIGNMENT_OPERATOR, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <Ada CLOB variable>
-  // 	|	<Ada CLOB locator variable>
-  // 	|	<Ada BLOB variable>
-  // 	|	<Ada BLOB locator variable>
-  // 	|	<Ada user-defined type variable>
-  // 	|	<Ada user-defined type locator variable>
-  // 	|	<Ada REF variable>
-  // 	|	<Ada array locator variable>
-  // 	|	<Ada multiset locator variable>
-  public static boolean Ada_derived_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_derived_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, ADA_DERIVED_TYPE_SPECIFICATION, "<ada derived type specification>");
-    r = Ada_CLOB_variable(b, l + 1);
-    if (!r) r = Ada_CLOB_locator_variable(b, l + 1);
-    if (!r) r = Ada_BLOB_variable(b, l + 1);
-    if (!r) r = Ada_BLOB_locator_variable(b, l + 1);
-    if (!r) r = Ada_user_defined_type_variable(b, l + 1);
-    if (!r) r = Ada_user_defined_type_locator_variable(b, l + 1);
-    if (!r) r = Ada_REF_variable(b, l + 1);
-    if (!r) r = Ada_array_locator_variable(b, l + 1);
-    if (!r) r = Ada_multiset_locator_variable(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean Ada_host_identifier(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, ADA_HOST_IDENTIFIER, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // <Ada assignment operator> <character representation>...
-  public static boolean Ada_initial_value(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_initial_value")) return false;
-    if (!nextTokenIs(b, _ADA_ASSIGNMENT_OPERATOR_)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = Ada_assignment_operator(b, l + 1);
-    r = r && character_representation(b, l + 1);
-    exit_section_(b, m, ADA_INITIAL_VALUE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <multiset type> AS LOCATOR
-  public static boolean Ada_multiset_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_multiset_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _MULTISET_TYPE_, AS, LOCATOR);
-    exit_section_(b, m, ADA_MULTISET_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // Interfaces.SQL <period> CHAR
-  public static boolean Ada_qualified_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_qualified_type_specification")) return false;
-    if (!nextTokenIs(b, INTERFACES_SQL__PERIOD__CHAR)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, INTERFACES_SQL__PERIOD__CHAR);
-    exit_section_(b, m, ADA_QUALIFIED_TYPE_SPECIFICATION, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <Ada qualified type specification>
-  // 	|	<Ada unqualified type specification>
-  // 	|	<Ada derived type specification>
-  public static boolean Ada_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, ADA_TYPE_SPECIFICATION, "<ada type specification>");
-    r = Ada_qualified_type_specification(b, l + 1);
-    if (!r) r = Ada_unqualified_type_specification(b, l + 1);
-    if (!r) r = Ada_derived_type_specification(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // CHAR <left paren> 1 <double period> <length> <right paren>
-  // 	|	SMALLINT
-  // 	|	INT
-  // 	|	BIGINT
-  // 	|	REAL
-  // 	|	DOUBLE_PRECISION
-  // 	|	BOOLEAN
-  // 	|	SQLSTATE_TYPE
-  // 	|	INDICATOR_TYPE
-  public static boolean Ada_unqualified_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_unqualified_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, ADA_UNQUALIFIED_TYPE_SPECIFICATION, "<ada unqualified type specification>");
-    r = Ada_unqualified_type_specification_0(b, l + 1);
-    if (!r) r = consumeToken(b, SMALLINT);
-    if (!r) r = consumeToken(b, INT);
-    if (!r) r = consumeToken(b, BIGINT);
-    if (!r) r = consumeToken(b, REAL);
-    if (!r) r = consumeToken(b, DOUBLE_PRECISION);
-    if (!r) r = consumeToken(b, BOOLEAN);
-    if (!r) r = consumeToken(b, SQLSTATE_TYPE);
-    if (!r) r = consumeToken(b, INDICATOR_TYPE);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // CHAR <left paren> 1 <double period> <length> <right paren>
-  private static boolean Ada_unqualified_type_specification_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_unqualified_type_specification_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHAR, _LEFT_PAREN_);
-    r = r && consumeToken(b, "1");
-    r = r && double_period(b, l + 1);
-    r = r && length(b, l + 1);
-    r = r && right_paren(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <path-resolved user-defined type name> AS LOCATOR
-  public static boolean Ada_user_defined_type_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_user_defined_type_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, LOCATOR);
-    exit_section_(b, m, ADA_USER_DEFINED_TYPE_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <path-resolved user-defined type name> AS <predefined type>
-  public static boolean Ada_user_defined_type_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_user_defined_type_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, _PREDEFINED_TYPE_);
-    exit_section_(b, m, ADA_USER_DEFINED_TYPE_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <Ada host identifier> [ { <comma> <Ada host identifier> }... ] <colon> <Ada type specification> [ <Ada initial value> ]
-  public static boolean Ada_variable_definition(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_variable_definition")) return false;
-    if (!nextTokenIs(b, _ADA_HOST_IDENTIFIER_)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = Ada_host_identifier(b, l + 1);
-    r = r && Ada_variable_definition_1(b, l + 1);
-    r = r && colon(b, l + 1);
-    r = r && Ada_type_specification(b, l + 1);
-    r = r && Ada_variable_definition_4(b, l + 1);
-    exit_section_(b, m, ADA_VARIABLE_DEFINITION, r);
-    return r;
-  }
-
-  // [ { <comma> <Ada host identifier> }... ]
-  private static boolean Ada_variable_definition_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_variable_definition_1")) return false;
-    Ada_variable_definition_1_0(b, l + 1);
-    return true;
-  }
-
-  // <comma> <Ada host identifier>
-  private static boolean Ada_variable_definition_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_variable_definition_1_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = comma(b, l + 1);
-    r = r && Ada_host_identifier(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ <Ada initial value> ]
-  private static boolean Ada_variable_definition_4(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Ada_variable_definition_4")) return false;
-    Ada_initial_value(b, l + 1);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS BLOB AS LOCATOR
   // 		<C host identifier> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // 		[ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   public static boolean C_BLOB_locator_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_BLOB_locator_variable")) return false;
     if (!nextTokenIs(b, SQL)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, AS, LOCATOR, _C_HOST_IDENTIFIER_);
+    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, AS, LOCATOR, C_HOST_IDENTIFIER);
     r = r && C_BLOB_locator_variable_7(b, l + 1);
     r = r && C_BLOB_locator_variable_8(b, l + 1);
     exit_section_(b, m, C_BLOB_LOCATOR_VARIABLE, r);
@@ -4252,28 +3635,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // [ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   private static boolean C_BLOB_locator_variable_8(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_BLOB_locator_variable_8")) return false;
     C_BLOB_locator_variable_8_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> [ <C initial value> ]
+  // { <comma> <C host identifier> [ <C initial value> ] } "..."
   private static boolean C_BLOB_locator_variable_8_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_BLOB_locator_variable_8_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = C_BLOB_locator_variable_8_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> [ <C initial value> ]
+  private static boolean C_BLOB_locator_variable_8_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_BLOB_locator_variable_8_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
-    r = r && C_BLOB_locator_variable_8_0_2(b, l + 1);
+    r = r && C_BLOB_locator_variable_8_0_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_BLOB_locator_variable_8_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_BLOB_locator_variable_8_0_2")) return false;
+  private static boolean C_BLOB_locator_variable_8_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_BLOB_locator_variable_8_0_0_2")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -4281,13 +3675,13 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // SQL TYPE IS BLOB <left paren> <large object length> <right paren>
   // 		<C host identifier> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // 		[ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   public static boolean C_BLOB_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_BLOB_variable")) return false;
     if (!nextTokenIs(b, SQL)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_, _C_HOST_IDENTIFIER_);
+    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_, C_HOST_IDENTIFIER);
     r = r && C_BLOB_variable_8(b, l + 1);
     r = r && C_BLOB_variable_9(b, l + 1);
     exit_section_(b, m, C_BLOB_VARIABLE, r);
@@ -4301,28 +3695,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // [ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   private static boolean C_BLOB_variable_9(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_BLOB_variable_9")) return false;
     C_BLOB_variable_9_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> [ <C initial value> ]
+  // { <comma> <C host identifier> [ <C initial value> ] } "..."
   private static boolean C_BLOB_variable_9_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_BLOB_variable_9_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = C_BLOB_variable_9_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> [ <C initial value> ]
+  private static boolean C_BLOB_variable_9_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_BLOB_variable_9_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
-    r = r && C_BLOB_variable_9_0_2(b, l + 1);
+    r = r && C_BLOB_variable_9_0_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_BLOB_variable_9_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_BLOB_variable_9_0_2")) return false;
+  private static boolean C_BLOB_variable_9_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_BLOB_variable_9_0_0_2")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -4330,13 +3735,13 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // SQL TYPE IS CLOB AS LOCATOR
   // 		<C host identifier> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // 		[ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   public static boolean C_CLOB_locator_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_CLOB_locator_variable")) return false;
     if (!nextTokenIs(b, SQL)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, AS, LOCATOR, _C_HOST_IDENTIFIER_);
+    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, AS, LOCATOR, C_HOST_IDENTIFIER);
     r = r && C_CLOB_locator_variable_7(b, l + 1);
     r = r && C_CLOB_locator_variable_8(b, l + 1);
     exit_section_(b, m, C_CLOB_LOCATOR_VARIABLE, r);
@@ -4350,28 +3755,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // [ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   private static boolean C_CLOB_locator_variable_8(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_CLOB_locator_variable_8")) return false;
     C_CLOB_locator_variable_8_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> [ <C initial value> ]
+  // { <comma> <C host identifier> [ <C initial value> ] } "..."
   private static boolean C_CLOB_locator_variable_8_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_CLOB_locator_variable_8_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = C_CLOB_locator_variable_8_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> [ <C initial value> ]
+  private static boolean C_CLOB_locator_variable_8_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_CLOB_locator_variable_8_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
-    r = r && C_CLOB_locator_variable_8_0_2(b, l + 1);
+    r = r && C_CLOB_locator_variable_8_0_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_CLOB_locator_variable_8_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_CLOB_locator_variable_8_0_2")) return false;
+  private static boolean C_CLOB_locator_variable_8_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_CLOB_locator_variable_8_0_0_2")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -4380,7 +3796,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // SQL TYPE IS CLOB <left paren> <large object length> <right paren>
   // 		[ CHARACTER SET [ IS ] <character set specification> ]
   // 		<C host identifier> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> [ <C initial value> ] }... ]
+  // 		[ { <comma> <C host identifier> [ <C initial value> ] }"..." ]
   public static boolean C_CLOB_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_CLOB_variable")) return false;
     if (!nextTokenIs(b, SQL)) return false;
@@ -4428,28 +3844,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> [ <C initial value> ] }... ]
+  // [ { <comma> <C host identifier> [ <C initial value> ] }"..." ]
   private static boolean C_CLOB_variable_10(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_CLOB_variable_10")) return false;
     C_CLOB_variable_10_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> [ <C initial value> ]
+  // { <comma> <C host identifier> [ <C initial value> ] }"..."
   private static boolean C_CLOB_variable_10_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_CLOB_variable_10_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = C_CLOB_variable_10_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> [ <C initial value> ]
+  private static boolean C_CLOB_variable_10_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_CLOB_variable_10_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
-    r = r && C_CLOB_variable_10_0_2(b, l + 1);
+    r = r && C_CLOB_variable_10_0_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_CLOB_variable_10_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_CLOB_variable_10_0_2")) return false;
+  private static boolean C_CLOB_variable_10_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_CLOB_variable_10_0_0_2")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -4457,7 +3884,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // NCHAR VARYING [ CHARACTER SET [ IS ] <character set specification> ]
   // 		<C host identifier> <C array specification> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> <C array specification> [ <C initial value> ] } ... ]
+  // 		[ { <comma> <C host identifier> <C array specification> [ <C initial value> ] } "..." ]
   public static boolean C_NCHAR_VARYING_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_NCHAR_VARYING_variable")) return false;
     if (!nextTokenIs(b, NCHAR)) return false;
@@ -4506,29 +3933,40 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> <C array specification> [ <C initial value> ] } ... ]
+  // [ { <comma> <C host identifier> <C array specification> [ <C initial value> ] } "..." ]
   private static boolean C_NCHAR_VARYING_variable_6(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_NCHAR_VARYING_variable_6")) return false;
     C_NCHAR_VARYING_variable_6_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> <C array specification> [ <C initial value> ]
+  // { <comma> <C host identifier> <C array specification> [ <C initial value> ] } "..."
   private static boolean C_NCHAR_VARYING_variable_6_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_NCHAR_VARYING_variable_6_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = C_NCHAR_VARYING_variable_6_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> <C array specification> [ <C initial value> ]
+  private static boolean C_NCHAR_VARYING_variable_6_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_NCHAR_VARYING_variable_6_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
     r = r && C_array_specification(b, l + 1);
-    r = r && C_NCHAR_VARYING_variable_6_0_3(b, l + 1);
+    r = r && C_NCHAR_VARYING_variable_6_0_0_3(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_NCHAR_VARYING_variable_6_0_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_NCHAR_VARYING_variable_6_0_3")) return false;
+  private static boolean C_NCHAR_VARYING_variable_6_0_0_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_NCHAR_VARYING_variable_6_0_0_3")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -4536,7 +3974,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // NCHAR [ CHARACTER SET [ IS ] <character set specification> ]
   // 		<C host identifier> <C array specification> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> <C array specification> [ <C initial value> ] } ... ]
+  // 		[ { <comma> <C host identifier> <C array specification> [ <C initial value> ] } "..." ]
   public static boolean C_NCHAR_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_NCHAR_variable")) return false;
     if (!nextTokenIs(b, NCHAR)) return false;
@@ -4585,29 +4023,40 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> <C array specification> [ <C initial value> ] } ... ]
+  // [ { <comma> <C host identifier> <C array specification> [ <C initial value> ] } "..." ]
   private static boolean C_NCHAR_variable_5(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_NCHAR_variable_5")) return false;
     C_NCHAR_variable_5_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> <C array specification> [ <C initial value> ]
+  // { <comma> <C host identifier> <C array specification> [ <C initial value> ] } "..."
   private static boolean C_NCHAR_variable_5_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_NCHAR_variable_5_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = C_NCHAR_variable_5_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> <C array specification> [ <C initial value> ]
+  private static boolean C_NCHAR_variable_5_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_NCHAR_variable_5_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
     r = r && C_array_specification(b, l + 1);
-    r = r && C_NCHAR_variable_5_0_3(b, l + 1);
+    r = r && C_NCHAR_variable_5_0_0_3(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_NCHAR_variable_5_0_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_NCHAR_variable_5_0_3")) return false;
+  private static boolean C_NCHAR_variable_5_0_0_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_NCHAR_variable_5_0_0_3")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -4616,7 +4065,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // SQL TYPE IS NCLOB <left paren> <large object length> <right paren>
   // 		[ CHARACTER SET [ IS ] <character set specification> ]
   // 		<C host identifier> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> [ <C initial value> ] }... ]
+  // 		[ { <comma> <C host identifier> [ <C initial value> ] }"..." ]
   public static boolean C_NCLOB_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_NCLOB_variable")) return false;
     if (!nextTokenIs(b, SQL)) return false;
@@ -4664,28 +4113,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> [ <C initial value> ] }... ]
+  // [ { <comma> <C host identifier> [ <C initial value> ] }"..." ]
   private static boolean C_NCLOB_variable_10(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_NCLOB_variable_10")) return false;
     C_NCLOB_variable_10_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> [ <C initial value> ]
+  // { <comma> <C host identifier> [ <C initial value> ] }"..."
   private static boolean C_NCLOB_variable_10_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_NCLOB_variable_10_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = C_NCLOB_variable_10_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> [ <C initial value> ]
+  private static boolean C_NCLOB_variable_10_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_NCLOB_variable_10_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
-    r = r && C_NCLOB_variable_10_0_2(b, l + 1);
+    r = r && C_NCLOB_variable_10_0_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_NCLOB_variable_10_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_NCLOB_variable_10_0_2")) return false;
+  private static boolean C_NCLOB_variable_10_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_NCLOB_variable_10_0_0_2")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -4697,7 +4157,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SQL)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _REFERENCE_TYPE_);
+    r = consumeTokens(b, 0, SQL, TYPE, IS, REFERENCE_TYPE);
     exit_section_(b, m, C_REF_VARIABLE, r);
     return r;
   }
@@ -4705,7 +4165,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // VARCHAR [ CHARACTER SET [ IS ] <character set specification> ]
   // 		<C host identifier> <C array specification> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> <C array specification> [ <C initial value> ] }... ]
+  // 		[ { <comma> <C host identifier> <C array specification> [ <C initial value> ] }"..." ]
   public static boolean C_VARCHAR_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_VARCHAR_variable")) return false;
     if (!nextTokenIs(b, VARCHAR)) return false;
@@ -4754,29 +4214,40 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> <C array specification> [ <C initial value> ] }... ]
+  // [ { <comma> <C host identifier> <C array specification> [ <C initial value> ] }"..." ]
   private static boolean C_VARCHAR_variable_5(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_VARCHAR_variable_5")) return false;
     C_VARCHAR_variable_5_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> <C array specification> [ <C initial value> ]
+  // { <comma> <C host identifier> <C array specification> [ <C initial value> ] }"..."
   private static boolean C_VARCHAR_variable_5_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_VARCHAR_variable_5_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = C_VARCHAR_variable_5_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> <C array specification> [ <C initial value> ]
+  private static boolean C_VARCHAR_variable_5_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_VARCHAR_variable_5_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
     r = r && C_array_specification(b, l + 1);
-    r = r && C_VARCHAR_variable_5_0_3(b, l + 1);
+    r = r && C_VARCHAR_variable_5_0_0_3(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_VARCHAR_variable_5_0_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_VARCHAR_variable_5_0_3")) return false;
+  private static boolean C_VARCHAR_variable_5_0_0_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_VARCHAR_variable_5_0_0_3")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -4784,13 +4255,13 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // SQL TYPE IS <array type> AS LOCATOR
   // 		<C host identifier> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // 		[ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   public static boolean C_array_locator_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_array_locator_variable")) return false;
     if (!nextTokenIs(b, SQL)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _ARRAY_TYPE_, AS, LOCATOR, _C_HOST_IDENTIFIER_);
+    r = consumeTokens(b, 0, SQL, TYPE, IS, ARRAY_TYPE, AS, LOCATOR, C_HOST_IDENTIFIER);
     r = r && C_array_locator_variable_7(b, l + 1);
     r = r && C_array_locator_variable_8(b, l + 1);
     exit_section_(b, m, C_ARRAY_LOCATOR_VARIABLE, r);
@@ -4804,28 +4275,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // [ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   private static boolean C_array_locator_variable_8(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_array_locator_variable_8")) return false;
     C_array_locator_variable_8_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> [ <C initial value> ]
+  // { <comma> <C host identifier> [ <C initial value> ] } "..."
   private static boolean C_array_locator_variable_8_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_array_locator_variable_8_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = C_array_locator_variable_8_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> [ <C initial value> ]
+  private static boolean C_array_locator_variable_8_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_array_locator_variable_8_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
-    r = r && C_array_locator_variable_8_0_2(b, l + 1);
+    r = r && C_array_locator_variable_8_0_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_array_locator_variable_8_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_array_locator_variable_8_0_2")) return false;
+  private static boolean C_array_locator_variable_8_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_array_locator_variable_8_0_0_2")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -4861,10 +4343,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // <C character type> [ CHARACTER SET [ IS ] <character set specification> ]
   // 		<C host identifier> <C array specification> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> <C array specification> [ <C initial value> ] }... ]
+  // 		[ { <comma> <C host identifier> <C array specification> [ <C initial value> ] }"..." ]
   public static boolean C_character_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_character_variable")) return false;
-    if (!nextTokenIs(b, _C_CHARACTER_TYPE_)) return false;
+    if (!nextTokenIs(b, C_CHARACTER_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = C_character_type(b, l + 1);
@@ -4910,29 +4392,40 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> <C array specification> [ <C initial value> ] }... ]
+  // [ { <comma> <C host identifier> <C array specification> [ <C initial value> ] }"..." ]
   private static boolean C_character_variable_5(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_character_variable_5")) return false;
     C_character_variable_5_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> <C array specification> [ <C initial value> ]
+  // { <comma> <C host identifier> <C array specification> [ <C initial value> ] }"..."
   private static boolean C_character_variable_5_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_character_variable_5_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = C_character_variable_5_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> <C array specification> [ <C initial value> ]
+  private static boolean C_character_variable_5_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_character_variable_5_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
     r = r && C_array_specification(b, l + 1);
-    r = r && C_character_variable_5_0_3(b, l + 1);
+    r = r && C_character_variable_5_0_0_3(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_character_variable_5_0_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_character_variable_5_0_3")) return false;
+  private static boolean C_character_variable_5_0_0_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_character_variable_5_0_0_3")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -4986,7 +4479,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // !! See the Syntax Rules.
   public static boolean C_host_identifier(PsiBuilder b, int l) {
     Marker m = enter_section_(b);
     exit_section_(b, m, C_HOST_IDENTIFIER, true);
@@ -4994,7 +4486,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <equals operator> <character representation>...
+  // <equals operator> <character representation>"..."
   public static boolean C_initial_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_initial_value")) return false;
     if (!nextTokenIs(b, _EQUALS_OPERATOR_)) return false;
@@ -5002,6 +4494,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = equals_operator(b, l + 1);
     r = r && character_representation(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, C_INITIAL_VALUE, r);
     return r;
   }
@@ -5009,13 +4502,13 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // SQL TYPE IS <multiset type> AS LOCATOR
   // 		<C host identifier> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // 		[ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   public static boolean C_multiset_locator_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_multiset_locator_variable")) return false;
     if (!nextTokenIs(b, SQL)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _MULTISET_TYPE_, AS, LOCATOR, _C_HOST_IDENTIFIER_);
+    r = consumeTokens(b, 0, SQL, TYPE, IS, MULTISET_TYPE, AS, LOCATOR, C_HOST_IDENTIFIER);
     r = r && C_multiset_locator_variable_7(b, l + 1);
     r = r && C_multiset_locator_variable_8(b, l + 1);
     exit_section_(b, m, C_MULTISET_LOCATOR_VARIABLE, r);
@@ -5029,35 +4522,46 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // [ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   private static boolean C_multiset_locator_variable_8(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_multiset_locator_variable_8")) return false;
     C_multiset_locator_variable_8_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> [ <C initial value> ]
+  // { <comma> <C host identifier> [ <C initial value> ] } "..."
   private static boolean C_multiset_locator_variable_8_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_multiset_locator_variable_8_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = C_multiset_locator_variable_8_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> [ <C initial value> ]
+  private static boolean C_multiset_locator_variable_8_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_multiset_locator_variable_8_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
-    r = r && C_multiset_locator_variable_8_0_2(b, l + 1);
+    r = r && C_multiset_locator_variable_8_0_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_multiset_locator_variable_8_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_multiset_locator_variable_8_0_2")) return false;
+  private static boolean C_multiset_locator_variable_8_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_multiset_locator_variable_8_0_0_2")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
 
   /* ********************************************************** */
   // { long long | long | short | float | double } <C host identifier> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> [ <C initial value> ] }... ]
+  // 		[ { <comma> <C host identifier> [ <C initial value> ] }"..." ]
   public static boolean C_numeric_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_numeric_variable")) return false;
     boolean r;
@@ -5091,28 +4595,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> [ <C initial value> ] }... ]
+  // [ { <comma> <C host identifier> [ <C initial value> ] }"..." ]
   private static boolean C_numeric_variable_3(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_numeric_variable_3")) return false;
     C_numeric_variable_3_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> [ <C initial value> ]
+  // { <comma> <C host identifier> [ <C initial value> ] }"..."
   private static boolean C_numeric_variable_3_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_numeric_variable_3_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = C_numeric_variable_3_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> [ <C initial value> ]
+  private static boolean C_numeric_variable_3_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_numeric_variable_3_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
-    r = r && C_numeric_variable_3_0_2(b, l + 1);
+    r = r && C_numeric_variable_3_0_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_numeric_variable_3_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_numeric_variable_3_0_2")) return false;
+  private static boolean C_numeric_variable_3_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_numeric_variable_3_0_0_2")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -5134,13 +4649,13 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // SQL TYPE IS
   // 		<path-resolved user-defined type name> AS LOCATOR
   // 		<C host identifier> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> [ <C initial value> ] }... ]
+  // 		[ { <comma> <C host identifier> [ <C initial value> ] }"..." ]
   public static boolean C_user_defined_type_locator_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_user_defined_type_locator_variable")) return false;
     if (!nextTokenIs(b, SQL)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, LOCATOR, _C_HOST_IDENTIFIER_);
+    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, LOCATOR, C_HOST_IDENTIFIER);
     r = r && C_user_defined_type_locator_variable_7(b, l + 1);
     r = r && C_user_defined_type_locator_variable_8(b, l + 1);
     exit_section_(b, m, C_USER_DEFINED_TYPE_LOCATOR_VARIABLE, r);
@@ -5154,28 +4669,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> [ <C initial value> ] }... ]
+  // [ { <comma> <C host identifier> [ <C initial value> ] }"..." ]
   private static boolean C_user_defined_type_locator_variable_8(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_user_defined_type_locator_variable_8")) return false;
     C_user_defined_type_locator_variable_8_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> [ <C initial value> ]
+  // { <comma> <C host identifier> [ <C initial value> ] }"..."
   private static boolean C_user_defined_type_locator_variable_8_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_user_defined_type_locator_variable_8_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = C_user_defined_type_locator_variable_8_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> [ <C initial value> ]
+  private static boolean C_user_defined_type_locator_variable_8_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_user_defined_type_locator_variable_8_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
-    r = r && C_user_defined_type_locator_variable_8_0_2(b, l + 1);
+    r = r && C_user_defined_type_locator_variable_8_0_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_user_defined_type_locator_variable_8_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_user_defined_type_locator_variable_8_0_2")) return false;
+  private static boolean C_user_defined_type_locator_variable_8_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_user_defined_type_locator_variable_8_0_0_2")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -5183,13 +4709,13 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // SQL TYPE IS <path-resolved user-defined type name> AS <predefined type>
   // 		<C host identifier> [ <C initial value> ]
-  // 		[ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // 		[ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   public static boolean C_user_defined_type_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_user_defined_type_variable")) return false;
     if (!nextTokenIs(b, SQL)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, _PREDEFINED_TYPE_, _C_HOST_IDENTIFIER_);
+    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, PREDEFINED_TYPE, C_HOST_IDENTIFIER);
     r = r && C_user_defined_type_variable_7(b, l + 1);
     r = r && C_user_defined_type_variable_8(b, l + 1);
     exit_section_(b, m, C_USER_DEFINED_TYPE_VARIABLE, r);
@@ -5203,28 +4729,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <C host identifier> [ <C initial value> ] } ... ]
+  // [ { <comma> <C host identifier> [ <C initial value> ] } "..." ]
   private static boolean C_user_defined_type_variable_8(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_user_defined_type_variable_8")) return false;
     C_user_defined_type_variable_8_0(b, l + 1);
     return true;
   }
 
-  // <comma> <C host identifier> [ <C initial value> ]
+  // { <comma> <C host identifier> [ <C initial value> ] } "..."
   private static boolean C_user_defined_type_variable_8_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "C_user_defined_type_variable_8_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = C_user_defined_type_variable_8_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <C host identifier> [ <C initial value> ]
+  private static boolean C_user_defined_type_variable_8_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_user_defined_type_variable_8_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = comma(b, l + 1);
     r = r && C_host_identifier(b, l + 1);
-    r = r && C_user_defined_type_variable_8_0_2(b, l + 1);
+    r = r && C_user_defined_type_variable_8_0_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <C initial value> ]
-  private static boolean C_user_defined_type_variable_8_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "C_user_defined_type_variable_8_0_2")) return false;
+  private static boolean C_user_defined_type_variable_8_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "C_user_defined_type_variable_8_0_0_2")) return false;
     C_initial_value(b, l + 1);
     return true;
   }
@@ -5271,2290 +4808,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // [ USAGE [ IS ] ] SQL TYPE IS BLOB AS LOCATOR
-  public static boolean COBOL_BLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_BLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, "<cobol blob locator variable>", SQL, USAGE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_BLOB_LOCATOR_VARIABLE, "<cobol blob locator variable>");
-    r = COBOL_BLOB_locator_variable_0(b, l + 1);
-    r = r && consumeTokens(b, 0, SQL, TYPE, IS, BLOB, AS, LOCATOR);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_BLOB_locator_variable_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_BLOB_locator_variable_0")) return false;
-    COBOL_BLOB_locator_variable_0_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_BLOB_locator_variable_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_BLOB_locator_variable_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_BLOB_locator_variable_0_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_BLOB_locator_variable_0_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_BLOB_locator_variable_0_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // [ USAGE [ IS ] ]
-  // 		SQL TYPE IS BLOB <left paren> <large object length> <right paren>
-  public static boolean COBOL_BLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_BLOB_variable")) return false;
-    if (!nextTokenIs(b, "<cobol blob variable>", SQL, USAGE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_BLOB_VARIABLE, "<cobol blob variable>");
-    r = COBOL_BLOB_variable_0(b, l + 1);
-    r = r && consumeTokens(b, 0, SQL, TYPE, IS, BLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_BLOB_variable_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_BLOB_variable_0")) return false;
-    COBOL_BLOB_variable_0_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_BLOB_variable_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_BLOB_variable_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_BLOB_variable_0_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_BLOB_variable_0_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_BLOB_variable_0_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // [ USAGE [ IS ] ] SQL TYPE IS CLOB AS LOCATOR
-  public static boolean COBOL_CLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_CLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, "<cobol clob locator variable>", SQL, USAGE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_CLOB_LOCATOR_VARIABLE, "<cobol clob locator variable>");
-    r = COBOL_CLOB_locator_variable_0(b, l + 1);
-    r = r && consumeTokens(b, 0, SQL, TYPE, IS, CLOB, AS, LOCATOR);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_CLOB_locator_variable_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_CLOB_locator_variable_0")) return false;
-    COBOL_CLOB_locator_variable_0_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_CLOB_locator_variable_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_CLOB_locator_variable_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_CLOB_locator_variable_0_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_CLOB_locator_variable_0_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_CLOB_locator_variable_0_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // [ USAGE [ IS ] ]
-  // 		SQL TYPE IS CLOB <left paren> <large object length> <right paren>
-  // 		[ CHARACTER SET [ IS ] <character set specification> ]
-  public static boolean COBOL_CLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_CLOB_variable")) return false;
-    if (!nextTokenIs(b, "<cobol clob variable>", SQL, USAGE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_CLOB_VARIABLE, "<cobol clob variable>");
-    r = COBOL_CLOB_variable_0(b, l + 1);
-    r = r && consumeTokens(b, 0, SQL, TYPE, IS, CLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    r = r && COBOL_CLOB_variable_8(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_CLOB_variable_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_CLOB_variable_0")) return false;
-    COBOL_CLOB_variable_0_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_CLOB_variable_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_CLOB_variable_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_CLOB_variable_0_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_CLOB_variable_0_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_CLOB_variable_0_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean COBOL_CLOB_variable_8(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_CLOB_variable_8")) return false;
-    COBOL_CLOB_variable_8_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean COBOL_CLOB_variable_8_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_CLOB_variable_8_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && COBOL_CLOB_variable_8_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_CLOB_variable_8_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_CLOB_variable_8_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // [ USAGE [ IS ] ]
-  // 		SQL TYPE IS NCLOB <left paren> <large object length> <right paren>
-  // 		[ CHARACTER SET [ IS ] <character set specification> ]
-  public static boolean COBOL_NCLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_NCLOB_variable")) return false;
-    if (!nextTokenIs(b, "<cobol nclob variable>", SQL, USAGE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_NCLOB_VARIABLE, "<cobol nclob variable>");
-    r = COBOL_NCLOB_variable_0(b, l + 1);
-    r = r && consumeTokens(b, 0, SQL, TYPE, IS, NCLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    r = r && COBOL_NCLOB_variable_8(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_NCLOB_variable_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_NCLOB_variable_0")) return false;
-    COBOL_NCLOB_variable_0_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_NCLOB_variable_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_NCLOB_variable_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_NCLOB_variable_0_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_NCLOB_variable_0_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_NCLOB_variable_0_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean COBOL_NCLOB_variable_8(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_NCLOB_variable_8")) return false;
-    COBOL_NCLOB_variable_8_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean COBOL_NCLOB_variable_8_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_NCLOB_variable_8_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && COBOL_NCLOB_variable_8_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_NCLOB_variable_8_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_NCLOB_variable_8_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // [ USAGE [ IS ] ] SQL TYPE IS <reference type>
-  public static boolean COBOL_REF_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_REF_variable")) return false;
-    if (!nextTokenIs(b, "<cobol ref variable>", SQL, USAGE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_REF_VARIABLE, "<cobol ref variable>");
-    r = COBOL_REF_variable_0(b, l + 1);
-    r = r && consumeTokens(b, 0, SQL, TYPE, IS, _REFERENCE_TYPE_);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_REF_variable_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_REF_variable_0")) return false;
-    COBOL_REF_variable_0_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_REF_variable_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_REF_variable_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_REF_variable_0_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_REF_variable_0_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_REF_variable_0_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // [ USAGE [ IS ] ] SQL TYPE IS <array type> AS LOCATOR
-  public static boolean COBOL_array_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_array_locator_variable")) return false;
-    if (!nextTokenIs(b, "<cobol array locator variable>", SQL, USAGE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_ARRAY_LOCATOR_VARIABLE, "<cobol array locator variable>");
-    r = COBOL_array_locator_variable_0(b, l + 1);
-    r = r && consumeTokens(b, 0, SQL, TYPE, IS, _ARRAY_TYPE_, AS, LOCATOR);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_array_locator_variable_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_array_locator_variable_0")) return false;
-    COBOL_array_locator_variable_0_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_array_locator_variable_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_array_locator_variable_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_array_locator_variable_0_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_array_locator_variable_0_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_array_locator_variable_0_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // { PIC | PICTURE } [ IS ] S<COBOL nines> [ USAGE [ IS ] ] BINARY
-  public static boolean COBOL_binary_integer(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_binary_integer")) return false;
-    if (!nextTokenIs(b, "<cobol binary integer>", PIC, PICTURE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_BINARY_INTEGER, "<cobol binary integer>");
-    r = COBOL_binary_integer_0(b, l + 1);
-    r = r && COBOL_binary_integer_1(b, l + 1);
-    r = r && consumeTokens(b, 0, S, _COBOL_NINES_);
-    r = r && COBOL_binary_integer_4(b, l + 1);
-    r = r && consumeToken(b, BINARY);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // PIC | PICTURE
-  private static boolean COBOL_binary_integer_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_binary_integer_0")) return false;
-    boolean r;
-    r = consumeToken(b, PIC);
-    if (!r) r = consumeToken(b, PICTURE);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_binary_integer_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_binary_integer_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_binary_integer_4(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_binary_integer_4")) return false;
-    COBOL_binary_integer_4_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_binary_integer_4_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_binary_integer_4_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_binary_integer_4_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_binary_integer_4_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_binary_integer_4_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  // 		{ PIC | PICTURE } [ IS ] { X [ <left paren> <length> <right paren> ] }...
-  public static boolean COBOL_character_type(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_character_type")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_CHARACTER_TYPE, "<cobol character type>");
-    r = COBOL_character_type_0(b, l + 1);
-    r = r && COBOL_character_type_1(b, l + 1);
-    r = r && COBOL_character_type_2(b, l + 1);
-    r = r && COBOL_character_type_3(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean COBOL_character_type_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_character_type_0")) return false;
-    COBOL_character_type_0_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean COBOL_character_type_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_character_type_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && COBOL_character_type_0_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_character_type_0_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_character_type_0_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  // PIC | PICTURE
-  private static boolean COBOL_character_type_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_character_type_1")) return false;
-    boolean r;
-    r = consumeToken(b, PIC);
-    if (!r) r = consumeToken(b, PICTURE);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_character_type_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_character_type_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  // X [ <left paren> <length> <right paren> ]
-  private static boolean COBOL_character_type_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_character_type_3")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, X);
-    r = r && COBOL_character_type_3_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ <left paren> <length> <right paren> ]
-  private static boolean COBOL_character_type_3_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_character_type_3_1")) return false;
-    left_paren(b, l + 1);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // <COBOL CLOB variable>
-  // 	|	<COBOL NCLOB variable>
-  // 	|	<COBOL BLOB variable>
-  // 	|	<COBOL user-defined type variable>
-  // 	|	<COBOL CLOB locator variable>
-  // 	|	<COBOL BLOB locator variable>
-  // 	|	<COBOL array locator variable>
-  // 	|	<COBOL multiset locator variable>
-  // 	|	<COBOL user-defined type locator variable>
-  // 	|	<COBOL REF variable>
-  public static boolean COBOL_derived_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_derived_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_DERIVED_TYPE_SPECIFICATION, "<cobol derived type specification>");
-    r = COBOL_CLOB_variable(b, l + 1);
-    if (!r) r = COBOL_NCLOB_variable(b, l + 1);
-    if (!r) r = COBOL_BLOB_variable(b, l + 1);
-    if (!r) r = COBOL_user_defined_type_variable(b, l + 1);
-    if (!r) r = COBOL_CLOB_locator_variable(b, l + 1);
-    if (!r) r = COBOL_BLOB_locator_variable(b, l + 1);
-    if (!r) r = COBOL_array_locator_variable(b, l + 1);
-    if (!r) r = COBOL_multiset_locator_variable(b, l + 1);
-    if (!r) r = COBOL_user_defined_type_locator_variable(b, l + 1);
-    if (!r) r = COBOL_REF_variable(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean COBOL_host_identifier(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, COBOL_HOST_IDENTIFIER, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // <COBOL binary integer>
-  public static boolean COBOL_integer_type(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_integer_type")) return false;
-    if (!nextTokenIs(b, _COBOL_BINARY_INTEGER_)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = COBOL_binary_integer(b, l + 1);
-    exit_section_(b, m, COBOL_INTEGER_TYPE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // [ USAGE [ IS ] ] SQL TYPE IS <multiset type> AS LOCATOR
-  public static boolean COBOL_multiset_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_multiset_locator_variable")) return false;
-    if (!nextTokenIs(b, "<cobol multiset locator variable>", SQL, USAGE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_MULTISET_LOCATOR_VARIABLE, "<cobol multiset locator variable>");
-    r = COBOL_multiset_locator_variable_0(b, l + 1);
-    r = r && consumeTokens(b, 0, SQL, TYPE, IS, _MULTISET_TYPE_, AS, LOCATOR);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_multiset_locator_variable_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_multiset_locator_variable_0")) return false;
-    COBOL_multiset_locator_variable_0_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_multiset_locator_variable_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_multiset_locator_variable_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_multiset_locator_variable_0_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_multiset_locator_variable_0_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_multiset_locator_variable_0_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  // 		{ PIC | PICTURE } [ IS ] { N [ <left paren> <length> <right paren> ] }...
-  public static boolean COBOL_national_character_type(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_national_character_type")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_NATIONAL_CHARACTER_TYPE, "<cobol national character type>");
-    r = COBOL_national_character_type_0(b, l + 1);
-    r = r && COBOL_national_character_type_1(b, l + 1);
-    r = r && COBOL_national_character_type_2(b, l + 1);
-    r = r && COBOL_national_character_type_3(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean COBOL_national_character_type_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_national_character_type_0")) return false;
-    COBOL_national_character_type_0_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean COBOL_national_character_type_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_national_character_type_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && COBOL_national_character_type_0_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_national_character_type_0_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_national_character_type_0_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  // PIC | PICTURE
-  private static boolean COBOL_national_character_type_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_national_character_type_1")) return false;
-    boolean r;
-    r = consumeToken(b, PIC);
-    if (!r) r = consumeToken(b, PICTURE);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_national_character_type_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_national_character_type_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  // N [ <left paren> <length> <right paren> ]
-  private static boolean COBOL_national_character_type_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_national_character_type_3")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, N);
-    r = r && COBOL_national_character_type_3_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ <left paren> <length> <right paren> ]
-  private static boolean COBOL_national_character_type_3_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_national_character_type_3_1")) return false;
-    left_paren(b, l + 1);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // 9 [ <left paren> <length> <right paren> ]
-  public static boolean COBOL_nines(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_nines")) return false;
-    if (!nextTokenIs(b, 9)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, "9");
-    r = r && COBOL_nines_1(b, l + 1);
-    exit_section_(b, m, COBOL_NINES, r);
-    return r;
-  }
-
-  // [ <left paren> <length> <right paren> ]
-  private static boolean COBOL_nines_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_nines_1")) return false;
-    left_paren(b, l + 1);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // <COBOL nines> [ V [ <COBOL nines> ] ]
-  // 	|	V <COBOL nines>
-  public static boolean COBOL_nines_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_nines_specification")) return false;
-    if (!nextTokenIs(b, "<cobol nines specification>", V, _COBOL_NINES_)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_NINES_SPECIFICATION, "<cobol nines specification>");
-    r = COBOL_nines_specification_0(b, l + 1);
-    if (!r) r = parseTokens(b, 0, V, _COBOL_NINES_);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // <COBOL nines> [ V [ <COBOL nines> ] ]
-  private static boolean COBOL_nines_specification_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_nines_specification_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = COBOL_nines(b, l + 1);
-    r = r && COBOL_nines_specification_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ V [ <COBOL nines> ] ]
-  private static boolean COBOL_nines_specification_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_nines_specification_0_1")) return false;
-    COBOL_nines_specification_0_1_0(b, l + 1);
-    return true;
-  }
-
-  // V [ <COBOL nines> ]
-  private static boolean COBOL_nines_specification_0_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_nines_specification_0_1_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, V);
-    r = r && COBOL_nines_specification_0_1_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ <COBOL nines> ]
-  private static boolean COBOL_nines_specification_0_1_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_nines_specification_0_1_0_1")) return false;
-    COBOL_nines(b, l + 1);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // { PIC | PICTURE } [ IS ] S <COBOL nines specification> [ USAGE [ IS ] ] DISPLAY SIGN LEADING SEPARATE
-  public static boolean COBOL_numeric_type(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_numeric_type")) return false;
-    if (!nextTokenIs(b, "<cobol numeric type>", PIC, PICTURE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_NUMERIC_TYPE, "<cobol numeric type>");
-    r = COBOL_numeric_type_0(b, l + 1);
-    r = r && COBOL_numeric_type_1(b, l + 1);
-    r = r && consumeTokens(b, 0, S, _COBOL_NINES_SPECIFICATION_);
-    r = r && COBOL_numeric_type_4(b, l + 1);
-    r = r && consumeTokens(b, 0, DISPLAY, SIGN, LEADING, SEPARATE);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // PIC | PICTURE
-  private static boolean COBOL_numeric_type_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_numeric_type_0")) return false;
-    boolean r;
-    r = consumeToken(b, PIC);
-    if (!r) r = consumeToken(b, PICTURE);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_numeric_type_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_numeric_type_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_numeric_type_4(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_numeric_type_4")) return false;
-    COBOL_numeric_type_4_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_numeric_type_4_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_numeric_type_4_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_numeric_type_4_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_numeric_type_4_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_numeric_type_4_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // <COBOL character type>
-  // 	|	<COBOL national character type>
-  // 	|	<COBOL numeric type>
-  // 	|	<COBOL integer type>
-  // 	|	<COBOL derived type specification>
-  public static boolean COBOL_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_TYPE_SPECIFICATION, "<cobol type specification>");
-    r = COBOL_character_type(b, l + 1);
-    if (!r) r = COBOL_national_character_type(b, l + 1);
-    if (!r) r = COBOL_numeric_type(b, l + 1);
-    if (!r) r = COBOL_integer_type(b, l + 1);
-    if (!r) r = COBOL_derived_type_specification(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // [ USAGE [ IS ] ] SQL TYPE IS <path-resolved user-defined type name> AS LOCATOR
-  public static boolean COBOL_user_defined_type_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_user_defined_type_locator_variable")) return false;
-    if (!nextTokenIs(b, "<cobol user defined type locator variable>", SQL, USAGE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_USER_DEFINED_TYPE_LOCATOR_VARIABLE, "<cobol user defined type locator variable>");
-    r = COBOL_user_defined_type_locator_variable_0(b, l + 1);
-    r = r && consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, LOCATOR);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_user_defined_type_locator_variable_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_user_defined_type_locator_variable_0")) return false;
-    COBOL_user_defined_type_locator_variable_0_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_user_defined_type_locator_variable_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_user_defined_type_locator_variable_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_user_defined_type_locator_variable_0_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_user_defined_type_locator_variable_0_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_user_defined_type_locator_variable_0_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // [ USAGE [ IS ] ] SQL TYPE IS <path-resolved user-defined type name> AS <predefined type>
-  public static boolean COBOL_user_defined_type_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_user_defined_type_variable")) return false;
-    if (!nextTokenIs(b, "<cobol user defined type variable>", SQL, USAGE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_USER_DEFINED_TYPE_VARIABLE, "<cobol user defined type variable>");
-    r = COBOL_user_defined_type_variable_0(b, l + 1);
-    r = r && consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, _PREDEFINED_TYPE_);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // [ USAGE [ IS ] ]
-  private static boolean COBOL_user_defined_type_variable_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_user_defined_type_variable_0")) return false;
-    COBOL_user_defined_type_variable_0_0(b, l + 1);
-    return true;
-  }
-
-  // USAGE [ IS ]
-  private static boolean COBOL_user_defined_type_variable_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_user_defined_type_variable_0_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, USAGE);
-    r = r && COBOL_user_defined_type_variable_0_0_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean COBOL_user_defined_type_variable_0_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_user_defined_type_variable_0_0_1")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // { 01 | 77 } <COBOL host identifier> <COBOL type specification>
-  // 		[ <character representation>... ] <period>
-  public static boolean COBOL_variable_definition(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_variable_definition")) return false;
-    if (!nextTokenIs(b, "<cobol variable definition>", 01, 77)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, COBOL_VARIABLE_DEFINITION, "<cobol variable definition>");
-    r = COBOL_variable_definition_0(b, l + 1);
-    r = r && COBOL_host_identifier(b, l + 1);
-    r = r && COBOL_type_specification(b, l + 1);
-    r = r && COBOL_variable_definition_3(b, l + 1);
-    r = r && period(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // 01 | 77
-  private static boolean COBOL_variable_definition_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_variable_definition_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, "01");
-    if (!r) r = consumeToken(b, "77");
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ <character representation>... ]
-  private static boolean COBOL_variable_definition_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "COBOL_variable_definition_3")) return false;
-    consumeToken(b, _CHARACTER_REPRESENTATION____);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS BLOB AS LOCATOR
-  public static boolean Fortran_BLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_BLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, AS, LOCATOR);
-    exit_section_(b, m, FORTRAN_BLOB_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS BLOB <left paren> <large object length> <right paren>
-  public static boolean Fortran_BLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_BLOB_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    exit_section_(b, m, FORTRAN_BLOB_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS CLOB AS LOCATOR
-  public static boolean Fortran_CLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_CLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, AS, LOCATOR);
-    exit_section_(b, m, FORTRAN_CLOB_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS CLOB <left paren> <large object length> <right paren>
-  // 		[ CHARACTER SET [ IS ] <character set specification> ]
-  public static boolean Fortran_CLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_CLOB_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    r = r && Fortran_CLOB_variable_7(b, l + 1);
-    exit_section_(b, m, FORTRAN_CLOB_VARIABLE, r);
-    return r;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean Fortran_CLOB_variable_7(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_CLOB_variable_7")) return false;
-    Fortran_CLOB_variable_7_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean Fortran_CLOB_variable_7_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_CLOB_variable_7_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && Fortran_CLOB_variable_7_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean Fortran_CLOB_variable_7_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_CLOB_variable_7_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <reference type>
-  public static boolean Fortran_REF_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_REF_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _REFERENCE_TYPE_);
-    exit_section_(b, m, FORTRAN_REF_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <array type> AS LOCATOR
-  public static boolean Fortran_array_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_array_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _ARRAY_TYPE_, AS, LOCATOR);
-    exit_section_(b, m, FORTRAN_ARRAY_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <Fortran CLOB variable>
-  // 	|	<Fortran BLOB variable>
-  // 	|	<Fortran user-defined type variable>
-  // 	|	<Fortran CLOB locator variable>
-  // 	|	<Fortran BLOB locator variable>
-  // 	|	<Fortran user-defined type locator variable>
-  // 	|	<Fortran array locator variable>
-  // 	|	<Fortran multiset locator variable>
-  // 	|	<Fortran REF variable>
-  public static boolean Fortran_derived_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_derived_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, FORTRAN_DERIVED_TYPE_SPECIFICATION, "<fortran derived type specification>");
-    r = Fortran_CLOB_variable(b, l + 1);
-    if (!r) r = Fortran_BLOB_variable(b, l + 1);
-    if (!r) r = Fortran_user_defined_type_variable(b, l + 1);
-    if (!r) r = Fortran_CLOB_locator_variable(b, l + 1);
-    if (!r) r = Fortran_BLOB_locator_variable(b, l + 1);
-    if (!r) r = Fortran_user_defined_type_locator_variable(b, l + 1);
-    if (!r) r = Fortran_array_locator_variable(b, l + 1);
-    if (!r) r = Fortran_multiset_locator_variable(b, l + 1);
-    if (!r) r = Fortran_REF_variable(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean Fortran_host_identifier(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, FORTRAN_HOST_IDENTIFIER, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <multiset type> AS LOCATOR
-  public static boolean Fortran_multiset_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_multiset_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _MULTISET_TYPE_, AS, LOCATOR);
-    exit_section_(b, m, FORTRAN_MULTISET_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // CHARACTER [ <asterisk> <length> ] [ CHARACTER SET [ IS ] <character set specification> ]
-  // 	|	CHARACTER KIND = n
-  public static boolean Fortran_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_type_specification")) return false;
-    if (!nextTokenIs(b, CHARACTER)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = Fortran_type_specification_0(b, l + 1);
-    if (!r) r = parseTokens(b, 0, CHARACTER, KIND);
-    exit_section_(b, m, FORTRAN_TYPE_SPECIFICATION, r);
-    return r;
-  }
-
-  // CHARACTER [ <asterisk> <length> ] [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean Fortran_type_specification_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_type_specification_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, CHARACTER);
-    r = r && Fortran_type_specification_0_1(b, l + 1);
-    r = r && Fortran_type_specification_0_2(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ <asterisk> <length> ]
-  private static boolean Fortran_type_specification_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_type_specification_0_1")) return false;
-    asterisk(b, l + 1);
-    return true;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean Fortran_type_specification_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_type_specification_0_2")) return false;
-    Fortran_type_specification_0_2_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean Fortran_type_specification_0_2_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_type_specification_0_2_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && Fortran_type_specification_0_2_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean Fortran_type_specification_0_2_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_type_specification_0_2_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <path-resolved user-defined type name> AS LOCATOR
-  public static boolean Fortran_user_defined_type_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_user_defined_type_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, LOCATOR);
-    exit_section_(b, m, FORTRAN_USER_DEFINED_TYPE_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <path-resolved user-defined type name> AS <predefined type>
-  public static boolean Fortran_user_defined_type_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_user_defined_type_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, _PREDEFINED_TYPE_);
-    exit_section_(b, m, FORTRAN_USER_DEFINED_TYPE_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <Fortran type specification> <Fortran host identifier> [ { <comma> <Fortran host identifier> }... ]
-  public static boolean Fortran_variable_definition(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_variable_definition")) return false;
-    if (!nextTokenIs(b, _FORTRAN_TYPE_SPECIFICATION_)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = Fortran_type_specification(b, l + 1);
-    r = r && Fortran_host_identifier(b, l + 1);
-    r = r && Fortran_variable_definition_2(b, l + 1);
-    exit_section_(b, m, FORTRAN_VARIABLE_DEFINITION, r);
-    return r;
-  }
-
-  // [ { <comma> <Fortran host identifier> }... ]
-  private static boolean Fortran_variable_definition_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_variable_definition_2")) return false;
-    Fortran_variable_definition_2_0(b, l + 1);
-    return true;
-  }
-
-  // <comma> <Fortran host identifier>
-  private static boolean Fortran_variable_definition_2_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Fortran_variable_definition_2_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = comma(b, l + 1);
-    r = r && Fortran_host_identifier(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS BLOB AS LOCATOR
-  public static boolean MUMPS_BLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_BLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, AS, LOCATOR);
-    exit_section_(b, m, MUMPS_BLOB_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS BLOB <left paren> <large object length> <right paren>
-  public static boolean MUMPS_BLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_BLOB_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    exit_section_(b, m, MUMPS_BLOB_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS CLOB AS LOCATOR
-  public static boolean MUMPS_CLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_CLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, AS, LOCATOR);
-    exit_section_(b, m, MUMPS_CLOB_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS CLOB <left paren> <large object length> <right paren>
-  // 		[ CHARACTER SET [ IS ] <character set specification> ]
-  public static boolean MUMPS_CLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_CLOB_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    r = r && MUMPS_CLOB_variable_7(b, l + 1);
-    exit_section_(b, m, MUMPS_CLOB_VARIABLE, r);
-    return r;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean MUMPS_CLOB_variable_7(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_CLOB_variable_7")) return false;
-    MUMPS_CLOB_variable_7_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean MUMPS_CLOB_variable_7_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_CLOB_variable_7_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && MUMPS_CLOB_variable_7_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean MUMPS_CLOB_variable_7_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_CLOB_variable_7_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <reference type>
-  public static boolean MUMPS_REF_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_REF_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _REFERENCE_TYPE_);
-    exit_section_(b, m, MUMPS_REF_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <array type> AS LOCATOR
-  public static boolean MUMPS_array_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_array_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _ARRAY_TYPE_, AS, LOCATOR);
-    exit_section_(b, m, MUMPS_ARRAY_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // VARCHAR <MUMPS host identifier> <MUMPS length specification>
-  // 		[ { <comma> <MUMPS host identifier> <MUMPS length specification> }... ]
-  public static boolean MUMPS_character_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_character_variable")) return false;
-    if (!nextTokenIs(b, VARCHAR)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, VARCHAR, _MUMPS_HOST_IDENTIFIER_, _MUMPS_LENGTH_SPECIFICATION_);
-    r = r && MUMPS_character_variable_3(b, l + 1);
-    exit_section_(b, m, MUMPS_CHARACTER_VARIABLE, r);
-    return r;
-  }
-
-  // [ { <comma> <MUMPS host identifier> <MUMPS length specification> }... ]
-  private static boolean MUMPS_character_variable_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_character_variable_3")) return false;
-    MUMPS_character_variable_3_0(b, l + 1);
-    return true;
-  }
-
-  // <comma> <MUMPS host identifier> <MUMPS length specification>
-  private static boolean MUMPS_character_variable_3_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_character_variable_3_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = comma(b, l + 1);
-    r = r && MUMPS_host_identifier(b, l + 1);
-    r = r && MUMPS_length_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <MUMPS CLOB variable>
-  // 	|	<MUMPS BLOB variable>
-  // 	|	<MUMPS user-defined type variable>
-  // 	|	<MUMPS CLOB locator variable>
-  // 	|	<MUMPS BLOB locator variable>
-  // 	|	<MUMPS user-defined type locator variable>
-  // 	|	<MUMPS array locator variable>
-  // 	|	<MUMPS multiset locator variable>
-  // 	|	<MUMPS REF variable>
-  public static boolean MUMPS_derived_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_derived_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, MUMPS_DERIVED_TYPE_SPECIFICATION, "<mumps derived type specification>");
-    r = MUMPS_CLOB_variable(b, l + 1);
-    if (!r) r = MUMPS_BLOB_variable(b, l + 1);
-    if (!r) r = MUMPS_user_defined_type_variable(b, l + 1);
-    if (!r) r = MUMPS_CLOB_locator_variable(b, l + 1);
-    if (!r) r = MUMPS_BLOB_locator_variable(b, l + 1);
-    if (!r) r = MUMPS_user_defined_type_locator_variable(b, l + 1);
-    if (!r) r = MUMPS_array_locator_variable(b, l + 1);
-    if (!r) r = MUMPS_multiset_locator_variable(b, l + 1);
-    if (!r) r = MUMPS_REF_variable(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean MUMPS_host_identifier(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, MUMPS_HOST_IDENTIFIER, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // <left paren> <length> <right paren>
-  public static boolean MUMPS_length_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_length_specification")) return false;
-    if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = left_paren(b, l + 1);
-    r = r && length(b, l + 1);
-    r = r && right_paren(b, l + 1);
-    exit_section_(b, m, MUMPS_LENGTH_SPECIFICATION, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <multiset type> AS LOCATOR
-  public static boolean MUMPS_multiset_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_multiset_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _MULTISET_TYPE_, AS, LOCATOR);
-    exit_section_(b, m, MUMPS_MULTISET_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <MUMPS type specification> <MUMPS host identifier> [ { <comma> <MUMPS host identifier> }... ]
-  public static boolean MUMPS_numeric_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_numeric_variable")) return false;
-    if (!nextTokenIs(b, _MUMPS_TYPE_SPECIFICATION_)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = MUMPS_type_specification(b, l + 1);
-    r = r && MUMPS_host_identifier(b, l + 1);
-    r = r && MUMPS_numeric_variable_2(b, l + 1);
-    exit_section_(b, m, MUMPS_NUMERIC_VARIABLE, r);
-    return r;
-  }
-
-  // [ { <comma> <MUMPS host identifier> }... ]
-  private static boolean MUMPS_numeric_variable_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_numeric_variable_2")) return false;
-    MUMPS_numeric_variable_2_0(b, l + 1);
-    return true;
-  }
-
-  // <comma> <MUMPS host identifier>
-  private static boolean MUMPS_numeric_variable_2_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_numeric_variable_2_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = comma(b, l + 1);
-    r = r && MUMPS_host_identifier(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // INT
-  // 	|	DEC [ <left paren> <precision> [ <comma> <scale> ] <right paren> ]
-  // 	|	REAL
-  public static boolean MUMPS_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, MUMPS_TYPE_SPECIFICATION, "<mumps type specification>");
-    r = consumeToken(b, INT);
-    if (!r) r = MUMPS_type_specification_1(b, l + 1);
-    if (!r) r = consumeToken(b, REAL);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // DEC [ <left paren> <precision> [ <comma> <scale> ] <right paren> ]
-  private static boolean MUMPS_type_specification_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_type_specification_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, DEC);
-    r = r && MUMPS_type_specification_1_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ <left paren> <precision> [ <comma> <scale> ] <right paren> ]
-  private static boolean MUMPS_type_specification_1_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_type_specification_1_1")) return false;
-    MUMPS_type_specification_1_1_0(b, l + 1);
-    return true;
-  }
-
-  // <left paren> <precision> [ <comma> <scale> ] <right paren>
-  private static boolean MUMPS_type_specification_1_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_type_specification_1_1_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = left_paren(b, l + 1);
-    r = r && precision(b, l + 1);
-    r = r && MUMPS_type_specification_1_1_0_2(b, l + 1);
-    r = r && right_paren(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ <comma> <scale> ]
-  private static boolean MUMPS_type_specification_1_1_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_type_specification_1_1_0_2")) return false;
-    comma(b, l + 1);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <path-resolved user-defined type name> AS LOCATOR
-  public static boolean MUMPS_user_defined_type_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_user_defined_type_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, LOCATOR);
-    exit_section_(b, m, MUMPS_USER_DEFINED_TYPE_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <path-resolved user-defined type name> AS <predefined type>
-  public static boolean MUMPS_user_defined_type_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_user_defined_type_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, _PREDEFINED_TYPE_);
-    exit_section_(b, m, MUMPS_USER_DEFINED_TYPE_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <MUMPS numeric variable> <semicolon>
-  // 	|	<MUMPS character variable> <semicolon>
-  // 	|	<MUMPS derived type specification> <semicolon>
-  public static boolean MUMPS_variable_definition(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "MUMPS_variable_definition")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, MUMPS_VARIABLE_DEFINITION, "<mumps variable definition>");
-    r = MUMPS_numeric_variable(b, l + 1);
-    if (!r) r = MUMPS_character_variable(b, l + 1);
-    if (!r) r = MUMPS_derived_type_specification(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS BLOB AS LOCATOR
-  public static boolean PL_I_BLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_BLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, AS, LOCATOR);
-    exit_section_(b, m, PL_I_BLOB_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS BLOB <left paren> <large object length> <right paren>
-  public static boolean PL_I_BLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_BLOB_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    exit_section_(b, m, PL_I_BLOB_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS CLOB AS LOCATOR
-  public static boolean PL_I_CLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_CLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, AS, LOCATOR);
-    exit_section_(b, m, PL_I_CLOB_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS CLOB <left paren> <large object length> <right paren>
-  // 		[ CHARACTER SET [ IS ] <character set specification> ]
-  public static boolean PL_I_CLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_CLOB_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    r = r && PL_I_CLOB_variable_7(b, l + 1);
-    exit_section_(b, m, PL_I_CLOB_VARIABLE, r);
-    return r;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean PL_I_CLOB_variable_7(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_CLOB_variable_7")) return false;
-    PL_I_CLOB_variable_7_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean PL_I_CLOB_variable_7_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_CLOB_variable_7_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && PL_I_CLOB_variable_7_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean PL_I_CLOB_variable_7_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_CLOB_variable_7_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <reference type>
-  public static boolean PL_I_REF_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_REF_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _REFERENCE_TYPE_);
-    exit_section_(b, m, PL_I_REF_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <array type> AS LOCATOR
-  public static boolean PL_I_array_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_array_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _ARRAY_TYPE_, AS, LOCATOR);
-    exit_section_(b, m, PL_I_ARRAY_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <PL/I CLOB variable>
-  // 	|	<PL/I BLOB variable>
-  // 	|	<PL/I user-defined type variable>
-  // 	|	<PL/I CLOB locator variable>
-  // 	|	<PL/I BLOB locator variable>
-  // 	|	<PL/I user-defined type locator variable>
-  // 	|	<PL/I array locator variable>
-  // 	|	<PL/I multiset locator variable>
-  // 	|	<PL/I REF variable>
-  public static boolean PL_I_derived_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_derived_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, PL_I_DERIVED_TYPE_SPECIFICATION, "<pl i derived type specification>");
-    r = PL_I_CLOB_variable(b, l + 1);
-    if (!r) r = PL_I_BLOB_variable(b, l + 1);
-    if (!r) r = PL_I_user_defined_type_variable(b, l + 1);
-    if (!r) r = PL_I_CLOB_locator_variable(b, l + 1);
-    if (!r) r = PL_I_BLOB_locator_variable(b, l + 1);
-    if (!r) r = PL_I_user_defined_type_locator_variable(b, l + 1);
-    if (!r) r = PL_I_array_locator_variable(b, l + 1);
-    if (!r) r = PL_I_multiset_locator_variable(b, l + 1);
-    if (!r) r = PL_I_REF_variable(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean PL_I_host_identifier(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, PL_I_HOST_IDENTIFIER, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <multiset type> AS LOCATOR
-  public static boolean PL_I_multiset_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_multiset_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _MULTISET_TYPE_, AS, LOCATOR);
-    exit_section_(b, m, PL_I_MULTISET_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // { BIN | BINARY } FIXED
-  // 	|	FIXED { BIN | BINARY }
-  public static boolean PL_I_type_fixed_binary(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_fixed_binary")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, PL_I_TYPE_FIXED_BINARY, "<pl i type fixed binary>");
-    r = PL_I_type_fixed_binary_0(b, l + 1);
-    if (!r) r = PL_I_type_fixed_binary_1(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // { BIN | BINARY } FIXED
-  private static boolean PL_I_type_fixed_binary_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_fixed_binary_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = PL_I_type_fixed_binary_0_0(b, l + 1);
-    r = r && consumeToken(b, FIXED);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // BIN | BINARY
-  private static boolean PL_I_type_fixed_binary_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_fixed_binary_0_0")) return false;
-    boolean r;
-    r = consumeToken(b, BIN);
-    if (!r) r = consumeToken(b, BINARY);
-    return r;
-  }
-
-  // FIXED { BIN | BINARY }
-  private static boolean PL_I_type_fixed_binary_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_fixed_binary_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, FIXED);
-    r = r && PL_I_type_fixed_binary_1_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // BIN | BINARY
-  private static boolean PL_I_type_fixed_binary_1_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_fixed_binary_1_1")) return false;
-    boolean r;
-    r = consumeToken(b, BIN);
-    if (!r) r = consumeToken(b, BINARY);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // { DEC | DECIMAL } FIXED
-  // 	|	FIXED { DEC | DECIMAL }
-  public static boolean PL_I_type_fixed_decimal(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_fixed_decimal")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, PL_I_TYPE_FIXED_DECIMAL, "<pl i type fixed decimal>");
-    r = PL_I_type_fixed_decimal_0(b, l + 1);
-    if (!r) r = PL_I_type_fixed_decimal_1(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // { DEC | DECIMAL } FIXED
-  private static boolean PL_I_type_fixed_decimal_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_fixed_decimal_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = PL_I_type_fixed_decimal_0_0(b, l + 1);
-    r = r && consumeToken(b, FIXED);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // DEC | DECIMAL
-  private static boolean PL_I_type_fixed_decimal_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_fixed_decimal_0_0")) return false;
-    boolean r;
-    r = consumeToken(b, DEC);
-    if (!r) r = consumeToken(b, DECIMAL);
-    return r;
-  }
-
-  // FIXED { DEC | DECIMAL }
-  private static boolean PL_I_type_fixed_decimal_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_fixed_decimal_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, FIXED);
-    r = r && PL_I_type_fixed_decimal_1_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // DEC | DECIMAL
-  private static boolean PL_I_type_fixed_decimal_1_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_fixed_decimal_1_1")) return false;
-    boolean r;
-    r = consumeToken(b, DEC);
-    if (!r) r = consumeToken(b, DECIMAL);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // { BIN | BINARY } FLOAT
-  // 	|	FLOAT { BIN | BINARY }
-  public static boolean PL_I_type_float_binary(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_float_binary")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, PL_I_TYPE_FLOAT_BINARY, "<pl i type float binary>");
-    r = PL_I_type_float_binary_0(b, l + 1);
-    if (!r) r = PL_I_type_float_binary_1(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // { BIN | BINARY } FLOAT
-  private static boolean PL_I_type_float_binary_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_float_binary_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = PL_I_type_float_binary_0_0(b, l + 1);
-    r = r && consumeToken(b, FLOAT);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // BIN | BINARY
-  private static boolean PL_I_type_float_binary_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_float_binary_0_0")) return false;
-    boolean r;
-    r = consumeToken(b, BIN);
-    if (!r) r = consumeToken(b, BINARY);
-    return r;
-  }
-
-  // FLOAT { BIN | BINARY }
-  private static boolean PL_I_type_float_binary_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_float_binary_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, FLOAT);
-    r = r && PL_I_type_float_binary_1_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // BIN | BINARY
-  private static boolean PL_I_type_float_binary_1_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_float_binary_1_1")) return false;
-    boolean r;
-    r = consumeToken(b, BIN);
-    if (!r) r = consumeToken(b, BINARY);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // { CHAR | CHARACTER } [ VARYING ] <left paren><length><right paren> [ CHARACTER SET [ IS ] <character set specification> ]
-  // 	|	<PL/I type fixed decimal> <left paren> <precision> [ <comma> <scale> ] <right paren>
-  // 	|	<PL/I type fixed binary> [ <left paren> <precision> <right paren> ]
-  // 	|	<PL/I type float binary> <left paren> <precision> <right paren>
-  // 	|	<PL/I derived type specification>
-  public static boolean PL_I_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, PL_I_TYPE_SPECIFICATION, "<pl i type specification>");
-    r = PL_I_type_specification_0(b, l + 1);
-    if (!r) r = PL_I_type_specification_1(b, l + 1);
-    if (!r) r = PL_I_type_specification_2(b, l + 1);
-    if (!r) r = PL_I_type_float_binary(b, l + 1);
-    if (!r) r = PL_I_derived_type_specification(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // { CHAR | CHARACTER } [ VARYING ] <left paren><length><right paren> [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean PL_I_type_specification_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_specification_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = PL_I_type_specification_0_0(b, l + 1);
-    r = r && PL_I_type_specification_0_1(b, l + 1);
-    r = r && left_paren(b, l + 1);
-    r = r && length(b, l + 1);
-    r = r && right_paren(b, l + 1);
-    r = r && PL_I_type_specification_0_5(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // CHAR | CHARACTER
-  private static boolean PL_I_type_specification_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_specification_0_0")) return false;
-    boolean r;
-    r = consumeToken(b, CHAR);
-    if (!r) r = consumeToken(b, CHARACTER);
-    return r;
-  }
-
-  // [ VARYING ]
-  private static boolean PL_I_type_specification_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_specification_0_1")) return false;
-    consumeToken(b, VARYING);
-    return true;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean PL_I_type_specification_0_5(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_specification_0_5")) return false;
-    PL_I_type_specification_0_5_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean PL_I_type_specification_0_5_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_specification_0_5_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && PL_I_type_specification_0_5_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean PL_I_type_specification_0_5_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_specification_0_5_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  // <PL/I type fixed decimal> <left paren> <precision> [ <comma> <scale> ] <right paren>
-  private static boolean PL_I_type_specification_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_specification_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = PL_I_type_fixed_decimal(b, l + 1);
-    r = r && left_paren(b, l + 1);
-    r = r && precision(b, l + 1);
-    r = r && PL_I_type_specification_1_3(b, l + 1);
-    r = r && right_paren(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ <comma> <scale> ]
-  private static boolean PL_I_type_specification_1_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_specification_1_3")) return false;
-    comma(b, l + 1);
-    return true;
-  }
-
-  // <PL/I type fixed binary> [ <left paren> <precision> <right paren> ]
-  private static boolean PL_I_type_specification_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_specification_2")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = PL_I_type_fixed_binary(b, l + 1);
-    r = r && PL_I_type_specification_2_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ <left paren> <precision> <right paren> ]
-  private static boolean PL_I_type_specification_2_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_type_specification_2_1")) return false;
-    left_paren(b, l + 1);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <path-resolved user-defined type name> AS LOCATOR
-  public static boolean PL_I_user_defined_type_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_user_defined_type_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, LOCATOR);
-    exit_section_(b, m, PL_I_USER_DEFINED_TYPE_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <path-resolved user-defined type name> AS <predefined type>
-  public static boolean PL_I_user_defined_type_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_user_defined_type_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, _PREDEFINED_TYPE_);
-    exit_section_(b, m, PL_I_USER_DEFINED_TYPE_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // { DCL | DECLARE } { <PL/I host identifier>
-  // 	|	<left paren> <PL/I host identifier> [ { <comma> <PL/I host identifier> }... ] <right paren> }
-  // 		<PL/I type specification> [ <character representation>... ] <semicolon>
-  public static boolean PL_I_variable_definition(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_variable_definition")) return false;
-    if (!nextTokenIs(b, "<pl i variable definition>", DCL, DECLARE)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, PL_I_VARIABLE_DEFINITION, "<pl i variable definition>");
-    r = PL_I_variable_definition_0(b, l + 1);
-    r = r && PL_I_variable_definition_1(b, l + 1);
-    r = r && PL_I_type_specification(b, l + 1);
-    r = r && PL_I_variable_definition_3(b, l + 1);
-    r = r && semicolon(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // DCL | DECLARE
-  private static boolean PL_I_variable_definition_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_variable_definition_0")) return false;
-    boolean r;
-    r = consumeToken(b, DCL);
-    if (!r) r = consumeToken(b, DECLARE);
-    return r;
-  }
-
-  // <PL/I host identifier>
-  // 	|	<left paren> <PL/I host identifier> [ { <comma> <PL/I host identifier> }... ] <right paren>
-  private static boolean PL_I_variable_definition_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_variable_definition_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = PL_I_host_identifier(b, l + 1);
-    if (!r) r = PL_I_variable_definition_1_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // <left paren> <PL/I host identifier> [ { <comma> <PL/I host identifier> }... ] <right paren>
-  private static boolean PL_I_variable_definition_1_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_variable_definition_1_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = left_paren(b, l + 1);
-    r = r && PL_I_host_identifier(b, l + 1);
-    r = r && PL_I_variable_definition_1_1_2(b, l + 1);
-    r = r && right_paren(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ { <comma> <PL/I host identifier> }... ]
-  private static boolean PL_I_variable_definition_1_1_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_variable_definition_1_1_2")) return false;
-    PL_I_variable_definition_1_1_2_0(b, l + 1);
-    return true;
-  }
-
-  // <comma> <PL/I host identifier>
-  private static boolean PL_I_variable_definition_1_1_2_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_variable_definition_1_1_2_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = comma(b, l + 1);
-    r = r && PL_I_host_identifier(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ <character representation>... ]
-  private static boolean PL_I_variable_definition_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PL_I_variable_definition_3")) return false;
-    consumeToken(b, _CHARACTER_REPRESENTATION____);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS BLOB AS LOCATOR
-  public static boolean Pascal_BLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_BLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, AS, LOCATOR);
-    exit_section_(b, m, PASCAL_BLOB_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS BLOB <left paren> <large object length> <right paren>
-  public static boolean Pascal_BLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_BLOB_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, BLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    exit_section_(b, m, PASCAL_BLOB_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS CLOB AS LOCATOR
-  public static boolean Pascal_CLOB_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_CLOB_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, AS, LOCATOR);
-    exit_section_(b, m, PASCAL_CLOB_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS CLOB <left paren> <large object length> <right paren>
-  // 		[ CHARACTER SET [ IS ] <character set specification> ]
-  public static boolean Pascal_CLOB_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_CLOB_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, CLOB, _LEFT_PAREN_, _LARGE_OBJECT_LENGTH_, _RIGHT_PAREN_);
-    r = r && Pascal_CLOB_variable_7(b, l + 1);
-    exit_section_(b, m, PASCAL_CLOB_VARIABLE, r);
-    return r;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean Pascal_CLOB_variable_7(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_CLOB_variable_7")) return false;
-    Pascal_CLOB_variable_7_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean Pascal_CLOB_variable_7_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_CLOB_variable_7_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && Pascal_CLOB_variable_7_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean Pascal_CLOB_variable_7_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_CLOB_variable_7_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <reference type>
-  public static boolean Pascal_REF_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_REF_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _REFERENCE_TYPE_);
-    exit_section_(b, m, PASCAL_REF_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <array type> AS LOCATOR
-  public static boolean Pascal_array_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_array_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _ARRAY_TYPE_, AS, LOCATOR);
-    exit_section_(b, m, PASCAL_ARRAY_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <Pascal CLOB variable>
-  // 	|	<Pascal BLOB variable>
-  // 	|	<Pascal user-defined type variable>
-  // 	|	<Pascal CLOB locator variable>
-  // 	|	<Pascal BLOB locator variable>
-  // 	|	<Pascal user-defined type locator variable>
-  // 	|	<Pascal array locator variable>
-  // 	|	<Pascal multiset locator variable>
-  // 	|	<Pascal REF variable>
-  public static boolean Pascal_derived_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_derived_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, PASCAL_DERIVED_TYPE_SPECIFICATION, "<pascal derived type specification>");
-    r = Pascal_CLOB_variable(b, l + 1);
-    if (!r) r = Pascal_BLOB_variable(b, l + 1);
-    if (!r) r = Pascal_user_defined_type_variable(b, l + 1);
-    if (!r) r = Pascal_CLOB_locator_variable(b, l + 1);
-    if (!r) r = Pascal_BLOB_locator_variable(b, l + 1);
-    if (!r) r = Pascal_user_defined_type_locator_variable(b, l + 1);
-    if (!r) r = Pascal_array_locator_variable(b, l + 1);
-    if (!r) r = Pascal_multiset_locator_variable(b, l + 1);
-    if (!r) r = Pascal_REF_variable(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean Pascal_host_identifier(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, PASCAL_HOST_IDENTIFIER, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <multiset type> AS LOCATOR
-  public static boolean Pascal_multiset_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_multiset_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _MULTISET_TYPE_, AS, LOCATOR);
-    exit_section_(b, m, PASCAL_MULTISET_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // PACKED ARRAY <left bracket> 1 <double period> <length> <right bracket> OF CHAR
-  // 		[ CHARACTER SET [ IS ] <character set specification> ]
-  // 	|	INTEGER
-  // 	|	REAL
-  // 	|	CHAR [ CHARACTER SET [ IS ] <character set specification> ]
-  // 	|	BOOLEAN
-  // 	|	<Pascal derived type specification>
-  public static boolean Pascal_type_specification(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_type_specification")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, PASCAL_TYPE_SPECIFICATION, "<pascal type specification>");
-    r = Pascal_type_specification_0(b, l + 1);
-    if (!r) r = consumeToken(b, INTEGER);
-    if (!r) r = consumeToken(b, REAL);
-    if (!r) r = Pascal_type_specification_3(b, l + 1);
-    if (!r) r = consumeToken(b, BOOLEAN);
-    if (!r) r = Pascal_derived_type_specification(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // PACKED ARRAY <left bracket> 1 <double period> <length> <right bracket> OF CHAR
-  // 		[ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean Pascal_type_specification_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_type_specification_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, PACKED, ARRAY, _LEFT_BRACKET_);
-    r = r && consumeToken(b, "1");
-    r = r && double_period(b, l + 1);
-    r = r && length(b, l + 1);
-    r = r && consumeTokens(b, 0, _RIGHT_BRACKET_, OF, CHAR);
-    r = r && Pascal_type_specification_0_9(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean Pascal_type_specification_0_9(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_type_specification_0_9")) return false;
-    Pascal_type_specification_0_9_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean Pascal_type_specification_0_9_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_type_specification_0_9_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && Pascal_type_specification_0_9_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean Pascal_type_specification_0_9_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_type_specification_0_9_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  // CHAR [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean Pascal_type_specification_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_type_specification_3")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, CHAR);
-    r = r && Pascal_type_specification_3_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ CHARACTER SET [ IS ] <character set specification> ]
-  private static boolean Pascal_type_specification_3_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_type_specification_3_1")) return false;
-    Pascal_type_specification_3_1_0(b, l + 1);
-    return true;
-  }
-
-  // CHARACTER SET [ IS ] <character set specification>
-  private static boolean Pascal_type_specification_3_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_type_specification_3_1_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CHARACTER, SET);
-    r = r && Pascal_type_specification_3_1_0_2(b, l + 1);
-    r = r && character_set_specification(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // [ IS ]
-  private static boolean Pascal_type_specification_3_1_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_type_specification_3_1_0_2")) return false;
-    consumeToken(b, IS);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <path-resolved user-defined type name> AS LOCATOR
-  public static boolean Pascal_user_defined_type_locator_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_user_defined_type_locator_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, LOCATOR);
-    exit_section_(b, m, PASCAL_USER_DEFINED_TYPE_LOCATOR_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // SQL TYPE IS <path-resolved user-defined type name> AS <predefined type>
-  public static boolean Pascal_user_defined_type_variable(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_user_defined_type_variable")) return false;
-    if (!nextTokenIs(b, SQL)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SQL, TYPE, IS, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, AS, _PREDEFINED_TYPE_);
-    exit_section_(b, m, PASCAL_USER_DEFINED_TYPE_VARIABLE, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // <Pascal host identifier> [ { <comma> <Pascal host identifier> }... ] <colon> <Pascal type specification> <semicolon>
-  public static boolean Pascal_variable_definition(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_variable_definition")) return false;
-    if (!nextTokenIs(b, _PASCAL_HOST_IDENTIFIER_)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = Pascal_host_identifier(b, l + 1);
-    r = r && Pascal_variable_definition_1(b, l + 1);
-    r = r && colon(b, l + 1);
-    r = r && Pascal_type_specification(b, l + 1);
-    r = r && semicolon(b, l + 1);
-    exit_section_(b, m, PASCAL_VARIABLE_DEFINITION, r);
-    return r;
-  }
-
-  // [ { <comma> <Pascal host identifier> }... ]
-  private static boolean Pascal_variable_definition_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_variable_definition_1")) return false;
-    Pascal_variable_definition_1_0(b, l + 1);
-    return true;
-  }
-
-  // <comma> <Pascal host identifier>
-  private static boolean Pascal_variable_definition_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Pascal_variable_definition_1_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = comma(b, l + 1);
-    r = r && Pascal_host_identifier(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  /* ********************************************************** */
   // <value expression>
   // 	|	<generalized expression>
   // 	|	<target specification>
@@ -7570,7 +4823,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <left paren> [ <SQL argument> [ { <comma> <SQL argument> }... ] ] <right paren>
+  // <left paren> [ <SQL argument> [ { <comma> <SQL argument> }"..." ] ] <right paren>
   public static boolean SQL_argument_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_argument_list")) return false;
     if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
@@ -7583,14 +4836,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ <SQL argument> [ { <comma> <SQL argument> }... ] ]
+  // [ <SQL argument> [ { <comma> <SQL argument> }"..." ] ]
   private static boolean SQL_argument_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_argument_list_1")) return false;
     SQL_argument_list_1_0(b, l + 1);
     return true;
   }
 
-  // <SQL argument> [ { <comma> <SQL argument> }... ]
+  // <SQL argument> [ { <comma> <SQL argument> }"..." ]
   private static boolean SQL_argument_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_argument_list_1_0")) return false;
     boolean r;
@@ -7601,16 +4854,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <SQL argument> }... ]
+  // [ { <comma> <SQL argument> }"..." ]
   private static boolean SQL_argument_list_1_0_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_argument_list_1_0_1")) return false;
     SQL_argument_list_1_0_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <SQL argument>
+  // { <comma> <SQL argument> }"..."
   private static boolean SQL_argument_list_1_0_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_argument_list_1_0_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = SQL_argument_list_1_0_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <SQL argument>
+  private static boolean SQL_argument_list_1_0_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "SQL_argument_list_1_0_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -7621,7 +4885,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // <major category>
-  // 	|	SQLSTATE ( <SQLSTATE class value> [ , <SQLSTATE subclass value> ] )
+  // 	|	SQLSTATE ( <SQLSTATE class value> [ "," <SQLSTATE subclass value> ] )
   // 	|	CONSTRAINT <constraint name>
   public static boolean SQL_condition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_condition")) return false;
@@ -7634,7 +4898,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // SQLSTATE ( <SQLSTATE class value> [ , <SQLSTATE subclass value> ] )
+  // SQLSTATE ( <SQLSTATE class value> [ "," <SQLSTATE subclass value> ] )
   private static boolean SQL_condition_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_condition_1")) return false;
     boolean r;
@@ -7645,7 +4909,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // <SQLSTATE class value> [ , <SQLSTATE subclass value> ]
+  // <SQLSTATE class value> [ "," <SQLSTATE subclass value> ]
   private static boolean SQL_condition_1_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_condition_1_1")) return false;
     boolean r;
@@ -7656,11 +4920,22 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ , <SQLSTATE subclass value> ]
+  // [ "," <SQLSTATE subclass value> ]
   private static boolean SQL_condition_1_1_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_condition_1_1_1")) return false;
-    consumeToken(b, SQL_CONDITION_1_1_1_0_0);
+    SQL_condition_1_1_1_0(b, l + 1);
     return true;
+  }
+
+  // "," <SQLSTATE subclass value>
+  private static boolean SQL_condition_1_1_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "SQL_condition_1_1_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, ",");
+    r = r && SQLSTATE_subclass_value(b, l + 1);
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */
@@ -7683,7 +4958,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<return statement>
   public static boolean SQL_control_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_control_statement")) return false;
-    if (!nextTokenIs(b, "<sql control statement>", _CALL_STATEMENT_, _RETURN_STATEMENT_)) return false;
+    if (!nextTokenIs(b, "<sql control statement>", CALL_STATEMENT, RETURN_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SQL_CONTROL_STATEMENT, "<sql control statement>");
     r = call_statement(b, l + 1);
@@ -7740,7 +5015,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <statement information> | <condition information>
   public static boolean SQL_diagnostics_information(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_diagnostics_information")) return false;
-    if (!nextTokenIs(b, "<sql diagnostics information>", _CONDITION_INFORMATION_, _STATEMENT_INFORMATION_)) return false;
+    if (!nextTokenIs(b, "<sql diagnostics information>", CONDITION_INFORMATION, STATEMENT_INFORMATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SQL_DIAGNOSTICS_INFORMATION, "<sql diagnostics information>");
     r = statement_information(b, l + 1);
@@ -7753,7 +5028,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <get diagnostics statement>
   public static boolean SQL_diagnostics_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_diagnostics_statement")) return false;
-    if (!nextTokenIs(b, _GET_DIAGNOSTICS_STATEMENT_)) return false;
+    if (!nextTokenIs(b, GET_DIAGNOSTICS_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = get_diagnostics_statement(b, l + 1);
@@ -7844,39 +5119,50 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <SQL language identifier start> [ { <underscore> | <SQL language identifier part> }... ]
+  // <SQL language identifier start> [ { <underscore> | <SQL language identifier part> }"..." ]
   public static boolean SQL_language_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_language_identifier")) return false;
-    if (!nextTokenIs(b, _SQL_LANGUAGE_IDENTIFIER_START_)) return false;
+    if (!nextTokenIs(b, SQL_LANGUAGE_IDENTIFIER_START)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = SQL_language_identifier_start(b, l + 1);
-    r = r && SQL_language_identifier_1(b, l + 1);
+    r = SQL_languageIDENTIFIERstart(b, l + 1);
+    r = r && SQL_languageIDENTIFIER1(b, l + 1);
     exit_section_(b, m, SQL_LANGUAGE_IDENTIFIER, r);
     return r;
   }
 
-  // [ { <underscore> | <SQL language identifier part> }... ]
-  private static boolean SQL_language_identifier_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "SQL_language_identifier_1")) return false;
-    SQL_language_identifier_1_0(b, l + 1);
+  // [ { <underscore> | <SQL language identifier part> }"..." ]
+  private static boolean SQL_languageIDENTIFIER1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "SQL_languageIDENTIFIER1")) return false;
+    SQL_languageIDENTIFIER1_0(b, l + 1);
     return true;
   }
 
+  // { <underscore> | <SQL language identifier part> }"..."
+  private static boolean SQL_languageIDENTIFIER1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "SQL_languageIDENTIFIER1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = SQL_languageIDENTIFIER1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
   // <underscore> | <SQL language identifier part>
-  private static boolean SQL_language_identifier_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "SQL_language_identifier_1_0")) return false;
+  private static boolean SQL_languageIDENTIFIER1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "SQL_languageIDENTIFIER1_0_0")) return false;
     boolean r;
     r = underscore(b, l + 1);
-    if (!r) r = SQL_language_identifier_part(b, l + 1);
+    if (!r) r = SQL_languageIDENTIFIERpart(b, l + 1);
     return r;
   }
 
   /* ********************************************************** */
   // <simple Latin letter> | <digit>
-  public static boolean SQL_language_identifier_part(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "SQL_language_identifier_part")) return false;
-    if (!nextTokenIs(b, "<sql language identifier part>", _DIGIT_, _SIMPLE_LATIN_LETTER_)) return false;
+  public static boolean SQL_languageIDENTIFIERpart(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "SQL_languageIDENTIFIERpart")) return false;
+    if (!nextTokenIs(b, "<sql language identifier part>", DIGIT, SIMPLE_LATIN_LETTER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SQL_LANGUAGE_IDENTIFIER_PART, "<sql language identifier part>");
     r = simple_Latin_letter(b, l + 1);
@@ -7887,9 +5173,9 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // <simple Latin letter>
-  public static boolean SQL_language_identifier_start(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "SQL_language_identifier_start")) return false;
-    if (!nextTokenIs(b, _SIMPLE_LATIN_LETTER_)) return false;
+  public static boolean SQL_languageIDENTIFIERstart(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "SQL_languageIDENTIFIERstart")) return false;
+    if (!nextTokenIs(b, SIMPLE_LATIN_LETTER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = simple_Latin_letter(b, l + 1);
@@ -7933,7 +5219,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <left paren> [ <SQL parameter declaration> [ { <comma> <SQL parameter declaration> }... ] ] <right paren>
+  // <left paren> [ <SQL parameter declaration> [ { <comma> <SQL parameter declaration> }"..." ] ] <right paren>
   public static boolean SQL_parameter_declaration_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_parameter_declaration_list")) return false;
     if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
@@ -7946,14 +5232,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ <SQL parameter declaration> [ { <comma> <SQL parameter declaration> }... ] ]
+  // [ <SQL parameter declaration> [ { <comma> <SQL parameter declaration> }"..." ] ]
   private static boolean SQL_parameter_declaration_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_parameter_declaration_list_1")) return false;
     SQL_parameter_declaration_list_1_0(b, l + 1);
     return true;
   }
 
-  // <SQL parameter declaration> [ { <comma> <SQL parameter declaration> }... ]
+  // <SQL parameter declaration> [ { <comma> <SQL parameter declaration> }"..." ]
   private static boolean SQL_parameter_declaration_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_parameter_declaration_list_1_0")) return false;
     boolean r;
@@ -7964,16 +5250,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <SQL parameter declaration> }... ]
+  // [ { <comma> <SQL parameter declaration> }"..." ]
   private static boolean SQL_parameter_declaration_list_1_0_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_parameter_declaration_list_1_0_1")) return false;
     SQL_parameter_declaration_list_1_0_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <SQL parameter declaration>
+  // { <comma> <SQL parameter declaration> }"..."
   private static boolean SQL_parameter_declaration_list_1_0_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_parameter_declaration_list_1_0_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = SQL_parameter_declaration_list_1_0_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <SQL parameter declaration>
+  private static boolean SQL_parameter_declaration_list_1_0_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "SQL_parameter_declaration_list_1_0_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -7986,7 +5283,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean SQL_parameter_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_parameter_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -7998,10 +5295,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <basic identifier chain>
   public static boolean SQL_parameter_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_parameter_reference")) return false;
-    if (!nextTokenIs(b, _BASIC_IDENTIFIER_CHAIN_)) return false;
+    if (!nextTokenIs(b, BASIC_IDENTIFIER_CHAIN)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = basic_identifier_chain(b, l + 1);
+    r = basicIDENTIFIERchain(b, l + 1);
     exit_section_(b, m, SQL_PARAMETER_REFERENCE, r);
     return r;
   }
@@ -8023,7 +5320,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <SQL executable statement>
   public static boolean SQL_procedure_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_procedure_statement")) return false;
-    if (!nextTokenIs(b, _SQL_EXECUTABLE_STATEMENT_)) return false;
+    if (!nextTokenIs(b, SQL_EXECUTABLE_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQL_executable_statement(b, l + 1);
@@ -8035,7 +5332,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <SQL procedure statement>
   public static boolean SQL_routine_body(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_routine_body")) return false;
-    if (!nextTokenIs(b, _SQL_PROCEDURE_STATEMENT_)) return false;
+    if (!nextTokenIs(b, SQL_PROCEDURE_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQL_procedure_statement(b, l + 1);
@@ -8047,7 +5344,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <rights clause> ] <SQL routine body>
   public static boolean SQL_routine_spec(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_routine_spec")) return false;
-    if (!nextTokenIs(b, "<sql routine spec>", _RIGHTS_CLAUSE_, _SQL_ROUTINE_BODY_)) return false;
+    if (!nextTokenIs(b, "<sql routine spec>", RIGHTS_CLAUSE, SQL_ROUTINE_BODY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SQL_ROUTINE_SPEC, "<sql routine spec>");
     r = SQL_routine_spec_0(b, l + 1);
@@ -8165,7 +5462,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<SQL schema manipulation statement>
   public static boolean SQL_schema_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_schema_statement")) return false;
-    if (!nextTokenIs(b, "<sql schema statement>", _SQL_SCHEMA_DEFINITION_STATEMENT_, _SQL_SCHEMA_MANIPULATION_STATEMENT_)) return false;
+    if (!nextTokenIs(b, "<sql schema statement>", SQL_SCHEMA_DEFINITION_STATEMENT, SQL_SCHEMA_MANIPULATION_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SQL_SCHEMA_STATEMENT, "<sql schema statement>");
     r = SQL_schema_definition_statement(b, l + 1);
@@ -8189,7 +5486,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!recursion_guard_(b, l, "SQL_session_statement")) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SQL_SESSION_STATEMENT, "<sql session statement>");
-    r = set_session_user_identifier_statement(b, l + 1);
+    r = set_session_userIDENTIFIERstatement(b, l + 1);
     if (!r) r = set_role_statement(b, l + 1);
     if (!r) r = set_local_time_zone_statement(b, l + 1);
     if (!r) r = set_session_characteristics_statement(b, l + 1);
@@ -8268,7 +5565,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <statement name> | <extended statement name>
   public static boolean SQL_statement_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_statement_name")) return false;
-    if (!nextTokenIs(b, "<sql statement name>", _EXTENDED_STATEMENT_NAME_, _STATEMENT_NAME_)) return false;
+    if (!nextTokenIs(b, "<sql statement name>", EXTENDED_STATEMENT_NAME, STATEMENT_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SQL_STATEMENT_NAME, "<sql statement name>");
     r = statement_name(b, l + 1);
@@ -8336,11 +5633,11 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 		[ <module path specification> ]
   // 		[ <module transform group specification> ]
   // 		[ <module collation> ]
-  // 		[ <temporary table declaration>... ]
-  // 		<module contents>...
+  // 		[ <temporary table declaration>"..." ]
+  // 		<module contents>"..."
   public static boolean SQL_client_module_definition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_client_module_definition")) return false;
-    if (!nextTokenIs(b, _MODULE_NAME_CLAUSE_)) return false;
+    if (!nextTokenIs(b, MODULE_NAME_CLAUSE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = module_name_clause(b, l + 1);
@@ -8351,6 +5648,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     r = r && SQL_client_module_definition_5(b, l + 1);
     r = r && SQL_client_module_definition_6(b, l + 1);
     r = r && module_contents(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, SQL_CLIENT_MODULE_DEFINITION, r);
     return r;
   }
@@ -8376,18 +5674,29 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ <temporary table declaration>... ]
+  // [ <temporary table declaration>"..." ]
   private static boolean SQL_client_module_definition_6(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_client_module_definition_6")) return false;
-    consumeToken(b, _TEMPORARY_TABLE_DECLARATION____);
+    SQL_client_module_definition_6_0(b, l + 1);
     return true;
+  }
+
+  // <temporary table declaration>"..."
+  private static boolean SQL_client_module_definition_6_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "SQL_client_module_definition_6_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = temporary_table_declaration(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */
   // <identifier>
   public static boolean SQL_client_module_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_client_module_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -8416,7 +5725,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // { <function specification> | <method specification designator> } <routine body>
   public static boolean SQL_invoked_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_invoked_function")) return false;
-    if (!nextTokenIs(b, "<sql invoked function>", _FUNCTION_SPECIFICATION_, _METHOD_SPECIFICATION_DESIGNATOR_)) return false;
+    if (!nextTokenIs(b, "<sql invoked function>", FUNCTION_SPECIFICATION, METHOD_SPECIFICATION_DESIGNATOR)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SQL_INVOKED_FUNCTION, "<sql invoked function>");
     r = SQL_invoked_function_0(b, l + 1);
@@ -8441,7 +5750,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, PROCEDURE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, PROCEDURE, _SCHEMA_QUALIFIED_ROUTINE_NAME_, _SQL_PARAMETER_DECLARATION_LIST_, _ROUTINE_CHARACTERISTICS_, _ROUTINE_BODY_);
+    r = consumeTokens(b, 0, PROCEDURE, SCHEMA_QUALIFIED_ROUTINE_NAME, SQL_PARAMETER_DECLARATION_LIST, ROUTINE_CHARACTERISTICS, ROUTINE_BODY);
     exit_section_(b, m, SQL_INVOKED_PROCEDURE, r);
     return r;
   }
@@ -8450,7 +5759,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema routine>
   public static boolean SQL_invoked_routine(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQL_invoked_routine")) return false;
-    if (!nextTokenIs(b, _SCHEMA_ROUTINE_)) return false;
+    if (!nextTokenIs(b, SCHEMA_ROUTINE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = schema_routine(b, l + 1);
@@ -8486,7 +5795,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <simple Latin upper case letter> | <digit>
   public static boolean SQLSTATE_char(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQLSTATE_char")) return false;
-    if (!nextTokenIs(b, "<sqlstate char>", _DIGIT_, _SIMPLE_LATIN_UPPER_CASE_LETTER_)) return false;
+    if (!nextTokenIs(b, "<sqlstate char>", DIGIT, SIMPLE_LATIN_UPPER_CASE_LETTER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SQLSTATE_CHAR, "<sqlstate char>");
     r = simple_Latin_upper_case_letter(b, l + 1);
@@ -8496,10 +5805,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <SQLSTATE char><SQLSTATE char> !! See the Syntax Rules.
+  // <SQLSTATE char><SQLSTATE char>
   public static boolean SQLSTATE_class_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQLSTATE_class_value")) return false;
-    if (!nextTokenIs(b, _SQLSTATE_CHAR_)) return false;
+    if (!nextTokenIs(b, SQLSTATE_CHAR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQLSTATE_char(b, l + 1);
@@ -8509,10 +5818,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <SQLSTATE char><SQLSTATE char><SQLSTATE char> !! See the Syntax Rules.
+  // <SQLSTATE char><SQLSTATE char><SQLSTATE char>
   public static boolean SQLSTATE_subclass_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "SQLSTATE_subclass_value")) return false;
-    if (!nextTokenIs(b, _SQLSTATE_CHAR_)) return false;
+    if (!nextTokenIs(b, SQLSTATE_CHAR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQLSTATE_char(b, l + 1);
@@ -8530,7 +5839,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, _UNICODE_ESCAPE_CHARACTER_)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, _UNICODE_ESCAPE_CHARACTER_, _HEXIT_, _HEXIT_, _HEXIT_, _HEXIT_, _UNICODE_ESCAPE_CHARACTER_, _PLUS_SIGN_, _HEXIT_, _HEXIT_, _HEXIT_, _HEXIT_, _HEXIT_, _HEXIT_);
+    r = consumeTokens(b, 0, _UNICODE_ESCAPE_CHARACTER_, HEXIT, HEXIT, HEXIT, HEXIT, _UNICODE_ESCAPE_CHARACTER_, _PLUS_SIGN_, HEXIT, HEXIT, HEXIT, HEXIT, HEXIT, HEXIT);
     exit_section_(b, m, UNICODE_4_DIGIT_ESCAPE_VALUE, r);
     return r;
   }
@@ -8549,8 +5858,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // [ <introducer><character set specification> ]
-  // 		U<ampersand><quote> [ <Unicode representation>... ] <quote>
-  // 		[ { <separator> <quote> [ <Unicode representation>... ] <quote> }... ]
+  // 		U<ampersand><quote> [ <Unicode representation>"..." ] <quote>
+  // 		[ { <separator> <quote> [ <Unicode representation>"..." ] <quote> }"..." ]
   // 		[ ESCAPE <escape character> ]
   public static boolean Unicode_character_string_literal(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "Unicode_character_string_literal")) return false;
@@ -8574,38 +5883,71 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ <Unicode representation>... ]
+  // [ <Unicode representation>"..." ]
   private static boolean Unicode_character_string_literal_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "Unicode_character_string_literal_4")) return false;
-    consumeToken(b, _UNICODE_REPRESENTATION____);
+    Unicode_character_string_literal_4_0(b, l + 1);
     return true;
   }
 
-  // [ { <separator> <quote> [ <Unicode representation>... ] <quote> }... ]
+  // <Unicode representation>"..."
+  private static boolean Unicode_character_string_literal_4_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "Unicode_character_string_literal_4_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = Unicode_representation(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // [ { <separator> <quote> [ <Unicode representation>"..." ] <quote> }"..." ]
   private static boolean Unicode_character_string_literal_6(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "Unicode_character_string_literal_6")) return false;
     Unicode_character_string_literal_6_0(b, l + 1);
     return true;
   }
 
-  // <separator> <quote> [ <Unicode representation>... ] <quote>
+  // { <separator> <quote> [ <Unicode representation>"..." ] <quote> }"..."
   private static boolean Unicode_character_string_literal_6_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "Unicode_character_string_literal_6_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = Unicode_character_string_literal_6_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <separator> <quote> [ <Unicode representation>"..." ] <quote>
+  private static boolean Unicode_character_string_literal_6_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "Unicode_character_string_literal_6_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = separator(b, l + 1);
     r = r && quote(b, l + 1);
-    r = r && Unicode_character_string_literal_6_0_2(b, l + 1);
+    r = r && Unicode_character_string_literal_6_0_0_2(b, l + 1);
     r = r && quote(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // [ <Unicode representation>... ]
-  private static boolean Unicode_character_string_literal_6_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Unicode_character_string_literal_6_0_2")) return false;
-    consumeToken(b, _UNICODE_REPRESENTATION____);
+  // [ <Unicode representation>"..." ]
+  private static boolean Unicode_character_string_literal_6_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "Unicode_character_string_literal_6_0_0_2")) return false;
+    Unicode_character_string_literal_6_0_0_2_0(b, l + 1);
     return true;
+  }
+
+  // <Unicode representation>"..."
+  private static boolean Unicode_character_string_literal_6_0_0_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "Unicode_character_string_literal_6_0_0_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = Unicode_representation(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   // [ ESCAPE <escape character> ]
@@ -8616,13 +5958,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <Unicode identifier part>...
+  // <Unicode identifier part>"..."
   public static boolean Unicode_delimiter_body(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "Unicode_delimiter_body")) return false;
-    if (!nextTokenIs(b, _UNICODE_IDENTIFIER_PART____)) return false;
+    if (!nextTokenIs(b, UNICODE_IDENTIFIER_PART)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _UNICODE_IDENTIFIER_PART____);
+    r = UnicodeIDENTIFIERpart(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, UNICODE_DELIMITER_BODY, r);
     return r;
   }
@@ -8654,12 +5997,12 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // <delimited identifier part> | <Unicode escape value>
-  public static boolean Unicode_identifier_part(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "Unicode_identifier_part")) return false;
-    if (!nextTokenIs(b, "<unicode identifier part>", _DELIMITED_IDENTIFIER_PART_, _UNICODE_ESCAPE_VALUE_)) return false;
+  public static boolean UnicodeIDENTIFIERpart(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "UnicodeIDENTIFIERpart")) return false;
+    if (!nextTokenIs(b, "<unicode identifier part>", DELIMITED_IDENTIFIER_PART, UNICODE_ESCAPE_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, UNICODE_IDENTIFIER_PART, "<unicode identifier part>");
-    r = delimited_identifier_part(b, l + 1);
+    r = delimitedIDENTIFIERpart(b, l + 1);
     if (!r) r = Unicode_escape_value(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -8669,7 +6012,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character representation> | <Unicode escape value>
   public static boolean Unicode_representation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "Unicode_representation")) return false;
-    if (!nextTokenIs(b, "<unicode representation>", _CHARACTER_REPRESENTATION_, _UNICODE_ESCAPE_VALUE_)) return false;
+    if (!nextTokenIs(b, "<unicode representation>", CHARACTER_REPRESENTATION, UNICODE_ESCAPE_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, UNICODE_REPRESENTATION, "<unicode representation>");
     r = character_representation(b, l + 1);
@@ -8779,7 +6122,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <regular identifier> | <delimited identifier>
   public static boolean actual_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "actual_identifier")) return false;
-    if (!nextTokenIs(b, "<actual identifier>", _DELIMITED_IDENTIFIER_, _REGULAR_IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, "<actual identifier>", DELIMITED_IDENTIFIER, REGULAR_IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ACTUAL_IDENTIFIER, "<actual identifier>");
     r = regular_identifier(b, l + 1);
@@ -8795,7 +6138,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ADD)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ADD, ATTRIBUTE, _ATTRIBUTE_DEFINITION_);
+    r = consumeTokens(b, 0, ADD, ATTRIBUTE, ATTRIBUTE_DEFINITION);
     exit_section_(b, m, ADD_ATTRIBUTE_DEFINITION, r);
     return r;
   }
@@ -8828,7 +6171,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ADD)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ADD, _SCOPE_CLAUSE_);
+    r = consumeTokens(b, 0, ADD, SCOPE_CLAUSE);
     exit_section_(b, m, ADD_COLUMN_SCOPE_CLAUSE, r);
     return r;
   }
@@ -8840,7 +6183,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ADD)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ADD, _DOMAIN_CONSTRAINT_);
+    r = consumeTokens(b, 0, ADD, DOMAIN_CONSTRAINT);
     exit_section_(b, m, ADD_DOMAIN_CONSTRAINT_DEFINITION, r);
     return r;
   }
@@ -8852,7 +6195,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ADD)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ADD, _ORIGINAL_METHOD_SPECIFICATION_);
+    r = consumeTokens(b, 0, ADD, ORIGINAL_METHOD_SPECIFICATION);
     exit_section_(b, m, ADD_ORIGINAL_METHOD_SPECIFICATION, r);
     return r;
   }
@@ -8864,7 +6207,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ADD)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ADD, _OVERRIDING_METHOD_SPECIFICATION_);
+    r = consumeTokens(b, 0, ADD, OVERRIDING_METHOD_SPECIFICATION);
     exit_section_(b, m, ADD_OVERRIDING_METHOD_SPECIFICATION, r);
     return r;
   }
@@ -8876,7 +6219,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ADD)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ADD, _TABLE_CONSTRAINT_DEFINITION_);
+    r = consumeTokens(b, 0, ADD, TABLE_CONSTRAINT_DEFINITION);
     exit_section_(b, m, ADD_TABLE_CONSTRAINT_DEFINITION, r);
     return r;
   }
@@ -8888,7 +6231,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ADD)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ADD, _LEFT_PAREN_, _TRANSFORM_ELEMENT_LIST_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, ADD, _LEFT_PAREN_, TRANSFORM_ELEMENT_LIST, _RIGHT_PAREN_);
     exit_section_(b, m, ADD_TRANSFORM_ELEMENT_LIST, r);
     return r;
   }
@@ -9010,7 +6353,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression primary> <period> <asterisk> [ AS <left paren> <all fields column name list> <right paren> ]
   public static boolean all_fields_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "all_fields_reference")) return false;
-    if (!nextTokenIs(b, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = value_expression_primary(b, l + 1);
@@ -9035,7 +6378,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ALLOCATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ALLOCATE, _EXTENDED_CURSOR_NAME_, _CURSOR_INTENT_);
+    r = consumeTokens(b, 0, ALLOCATE, _EXTENDED_CURSOR_NAME_, CURSOR_INTENT);
     exit_section_(b, m, ALLOCATE_CURSOR_STATEMENT, r);
     return r;
   }
@@ -9049,7 +6392,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeToken(b, ALLOCATE);
     r = r && allocate_descriptor_statement_1(b, l + 1);
-    r = r && consumeTokens(b, 0, DESCRIPTOR, _DESCRIPTOR_NAME_);
+    r = r && consumeTokens(b, 0, DESCRIPTOR, DESCRIPTOR_NAME);
     r = r && allocate_descriptor_statement_4(b, l + 1);
     exit_section_(b, m, ALLOCATE_DESCRIPTOR_STATEMENT, r);
     return r;
@@ -9134,7 +6477,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ALTER)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ALTER, DOMAIN, _DOMAIN_NAME_, _ALTER_DOMAIN_ACTION_);
+    r = consumeTokens(b, 0, ALTER, DOMAIN, _DOMAIN_NAME_, ALTER_DOMAIN_ACTION);
     exit_section_(b, m, ALTER_DOMAIN_STATEMENT, r);
     return r;
   }
@@ -9143,12 +6486,12 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <group name> <left paren> <alter transform action list> <right paren>
   public static boolean alter_group(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "alter_group")) return false;
-    if (!nextTokenIs(b, _GROUP_NAME_)) return false;
+    if (!nextTokenIs(b, GROUP_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = group_name(b, l + 1);
     r = r && left_paren(b, l + 1);
-    r = r && alter_transform_action_list(b, l + 1);
+    r = r && alter_transformACTIONlist(b, l + 1);
     r = r && right_paren(b, l + 1);
     exit_section_(b, m, ALTER_GROUP, r);
     return r;
@@ -9159,7 +6502,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	SET <basic sequence generator option>
   public static boolean alter_identity_column_option(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "alter_identity_column_option")) return false;
-    if (!nextTokenIs(b, "<alter identity column option>", SET, _ALTER_SEQUENCE_GENERATOR_RESTART_OPTION_)) return false;
+    if (!nextTokenIs(b, "<alter identity column option>", SET, ALTER_SEQUENCE_GENERATOR_RESTART_OPTION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ALTER_IDENTITY_COLUMN_OPTION, "<alter identity column option>");
     r = alter_sequence_generator_restart_option(b, l + 1);
@@ -9169,13 +6512,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <alter identity column option>...
+  // <alter identity column option>"..."
   public static boolean alter_identity_column_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "alter_identity_column_specification")) return false;
-    if (!nextTokenIs(b, _ALTER_IDENTITY_COLUMN_OPTION____)) return false;
+    if (!nextTokenIs(b, ALTER_IDENTITY_COLUMN_OPTION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _ALTER_IDENTITY_COLUMN_OPTION____);
+    r = alter_identity_column_option(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, ALTER_IDENTITY_COLUMN_SPECIFICATION, r);
     return r;
   }
@@ -9214,13 +6558,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <alter routine characteristic>...
+  // <alter routine characteristic>"..."
   public static boolean alter_routine_characteristics(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "alter_routine_characteristics")) return false;
-    if (!nextTokenIs(b, _ALTER_ROUTINE_CHARACTERISTIC____)) return false;
+    if (!nextTokenIs(b, ALTER_ROUTINE_CHARACTERISTIC)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _ALTER_ROUTINE_CHARACTERISTIC____);
+    r = alter_routine_characteristic(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, ALTER_ROUTINE_CHARACTERISTICS, r);
     return r;
   }
@@ -9232,7 +6577,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ALTER)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ALTER, _SPECIFIC_ROUTINE_DESIGNATOR_, _ALTER_ROUTINE_CHARACTERISTICS_, _ALTER_ROUTINE_BEHAVIOR_);
+    r = consumeTokens(b, 0, ALTER, SPECIFIC_ROUTINE_DESIGNATOR, ALTER_ROUTINE_CHARACTERISTICS, ALTER_ROUTINE_BEHAVIOR);
     exit_section_(b, m, ALTER_ROUTINE_STATEMENT, r);
     return r;
   }
@@ -9242,7 +6587,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<basic sequence generator option>
   public static boolean alter_sequence_generator_option(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "alter_sequence_generator_option")) return false;
-    if (!nextTokenIs(b, "<alter sequence generator option>", _ALTER_SEQUENCE_GENERATOR_RESTART_OPTION_, _BASIC_SEQUENCE_GENERATOR_OPTION_)) return false;
+    if (!nextTokenIs(b, "<alter sequence generator option>", ALTER_SEQUENCE_GENERATOR_RESTART_OPTION, _BASIC_SEQUENCE_GENERATOR_OPTION_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ALTER_SEQUENCE_GENERATOR_OPTION, "<alter sequence generator option>");
     r = alter_sequence_generator_restart_option(b, l + 1);
@@ -9252,13 +6597,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <alter sequence generator option>...
+  // <alter sequence generator option>"..."
   public static boolean alter_sequence_generator_options(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "alter_sequence_generator_options")) return false;
-    if (!nextTokenIs(b, _ALTER_SEQUENCE_GENERATOR_OPTION____)) return false;
+    if (!nextTokenIs(b, ALTER_SEQUENCE_GENERATOR_OPTION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _ALTER_SEQUENCE_GENERATOR_OPTION____);
+    r = alter_sequence_generator_option(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, ALTER_SEQUENCE_GENERATOR_OPTIONS, r);
     return r;
   }
@@ -9270,7 +6616,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, RESTART)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, RESTART, WITH, _SEQUENCE_GENERATOR_RESTART_VALUE_);
+    r = consumeTokens(b, 0, RESTART, WITH, SEQUENCE_GENERATOR_RESTART_VALUE);
     exit_section_(b, m, ALTER_SEQUENCE_GENERATOR_RESTART_OPTION, r);
     return r;
   }
@@ -9282,7 +6628,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ALTER)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ALTER, SEQUENCE, _SEQUENCE_GENERATOR_NAME_, _ALTER_SEQUENCE_GENERATOR_OPTIONS_);
+    r = consumeTokens(b, 0, ALTER, SEQUENCE, _SEQUENCE_GENERATOR_NAME_, ALTER_SEQUENCE_GENERATOR_OPTIONS);
     exit_section_(b, m, ALTER_SEQUENCE_GENERATOR_STATEMENT, r);
     return r;
   }
@@ -9313,7 +6659,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ALTER)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ALTER, TABLE, _TABLE_NAME_, _ALTER_TABLE_ACTION_);
+    r = consumeTokens(b, 0, ALTER, TABLE, _TABLE_NAME_, ALTER_TABLE_ACTION);
     exit_section_(b, m, ALTER_TABLE_STATEMENT, r);
     return r;
   }
@@ -9322,7 +6668,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <add transform element list> | <drop transform element list>
   public static boolean alter_transform_action(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "alter_transform_action")) return false;
-    if (!nextTokenIs(b, "<alter transform action>", _ADD_TRANSFORM_ELEMENT_LIST_, _DROP_TRANSFORM_ELEMENT_LIST_)) return false;
+    if (!nextTokenIs(b, "<alter transform action>", ADD_TRANSFORM_ELEMENT_LIST, DROP_TRANSFORM_ELEMENT_LIST)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ALTER_TRANSFORM_ACTION, "<alter transform action>");
     r = add_transform_element_list(b, l + 1);
@@ -9332,28 +6678,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <alter transform action> [ { <comma> <alter transform action> }... ]
-  public static boolean alter_transform_action_list(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "alter_transform_action_list")) return false;
-    if (!nextTokenIs(b, _ALTER_TRANSFORM_ACTION_)) return false;
+  // <alter transform action> [ { <comma> <alter transform action> }"..." ]
+  public static boolean alter_transformACTIONlist(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "alter_transformACTIONlist")) return false;
+    if (!nextTokenIs(b, ALTER_TRANSFORM_ACTION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = alter_transform_action(b, l + 1);
-    r = r && alter_transform_action_list_1(b, l + 1);
-    exit_section_(b, m, ALTER_TRANSFORM_ACTION_LIST, r);
+    r = r && alter_transformACTIONlist_1(b, l + 1);
+    exit_section_(b, m, ALTER_TRANSFORMACTIONLIST, r);
     return r;
   }
 
-  // [ { <comma> <alter transform action> }... ]
-  private static boolean alter_transform_action_list_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "alter_transform_action_list_1")) return false;
-    alter_transform_action_list_1_0(b, l + 1);
+  // [ { <comma> <alter transform action> }"..." ]
+  private static boolean alter_transformACTIONlist_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "alter_transformACTIONlist_1")) return false;
+    alter_transformACTIONlist_1_0(b, l + 1);
     return true;
   }
 
+  // { <comma> <alter transform action> }"..."
+  private static boolean alter_transformACTIONlist_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "alter_transformACTIONlist_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = alter_transformACTIONlist_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
   // <comma> <alter transform action>
-  private static boolean alter_transform_action_list_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "alter_transform_action_list_1_0")) return false;
+  private static boolean alter_transformACTIONlist_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "alter_transformACTIONlist_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -9363,7 +6720,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // ALTER { TRANSFORM | TRANSFORMS } FOR <schema-resolved user-defined type name> <alter group>...
+  // ALTER { TRANSFORM | TRANSFORMS } FOR <schema-resolved user-defined type name> <alter group>"..."
   public static boolean alter_transform_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "alter_transform_statement")) return false;
     if (!nextTokenIs(b, ALTER)) return false;
@@ -9371,7 +6728,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeToken(b, ALTER);
     r = r && alter_transform_statement_1(b, l + 1);
-    r = r && consumeTokens(b, 0, FOR, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, _ALTER_GROUP_);
+    r = r && consumeTokens(b, 0, FOR, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, ALTER_GROUP);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, ALTER_TRANSFORM_STATEMENT, r);
     return r;
   }
@@ -9411,28 +6769,31 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ALTER)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ALTER, TYPE, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, _ALTER_TYPE_ACTION_);
+    r = consumeTokens(b, 0, ALTER, TYPE, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, ALTER_TYPE_ACTION);
     exit_section_(b, m, ALTER_TYPE_STATEMENT, r);
     return r;
   }
 
   /* ********************************************************** */
-  // &
+  // "&"
   public static boolean ampersand(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, AMPERSAND, true);
-    return true;
+    if (!recursion_guard_(b, l, "ampersand")) return false;
+    boolean r;
+    Marker m = enter_section_(b, l, _NONE_, AMPERSAND, "<ampersand>");
+    r = consumeToken(b, "&");
+    exit_section_(b, l, m, r, false, null);
+    return r;
   }
 
   /* ********************************************************** */
   // <mantissa> E <exponent>
   public static boolean approximate_numeric_literal(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "approximate_numeric_literal")) return false;
-    if (!nextTokenIs(b, _MANTISSA_)) return false;
+    if (!nextTokenIs(b, MANTISSA)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = mantissa(b, l + 1);
-    r = r && consumeTokens(b, 0, E, _EXPONENT_);
+    r = r && consumeTokens(b, 0, E, EXPONENT);
     exit_section_(b, m, APPROXIMATE_NUMERIC_LITERAL, r);
     return r;
   }
@@ -9474,7 +6835,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <array value expression 1> <concatenation operator> <array factor>
   public static boolean array_concatenation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "array_concatenation")) return false;
-    if (!nextTokenIs(b, _ARRAY_VALUE_EXPRESSION_1_)) return false;
+    if (!nextTokenIs(b, ARRAY_VALUE_EXPRESSION_1)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = array_value_expression_1(b, l + 1);
@@ -9497,10 +6858,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <array element> [ { <comma> <array element> }... ]
+  // <array element> [ { <comma> <array element> }"..." ]
   public static boolean array_element_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "array_element_list")) return false;
-    if (!nextTokenIs(b, _ARRAY_ELEMENT_)) return false;
+    if (!nextTokenIs(b, ARRAY_ELEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = array_element(b, l + 1);
@@ -9509,16 +6870,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <array element> }... ]
+  // [ { <comma> <array element> }"..." ]
   private static boolean array_element_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "array_element_list_1")) return false;
     array_element_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <array element>
+  // { <comma> <array element> }"..."
   private static boolean array_element_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "array_element_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = array_element_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <array element>
+  private static boolean array_element_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "array_element_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -9531,7 +6903,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <array value expression> <left bracket or trigraph> <numeric value expression> <right bracket or trigraph>
   public static boolean array_element_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "array_element_reference")) return false;
-    if (!nextTokenIs(b, _ARRAY_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, ARRAY_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = array_value_expression(b, l + 1);
@@ -9546,7 +6918,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression primary>
   public static boolean array_factor(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "array_factor")) return false;
-    if (!nextTokenIs(b, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = value_expression_primary(b, l + 1);
@@ -9558,7 +6930,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <data type> ARRAY [ <left bracket or trigraph> <unsigned integer> <right bracket or trigraph> ]
   public static boolean array_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "array_type")) return false;
-    if (!nextTokenIs(b, _DATA_TYPE_)) return false;
+    if (!nextTokenIs(b, DATA_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = data_type(b, l + 1);
@@ -9580,7 +6952,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<array value constructor by query>
   public static boolean array_value_constructor(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "array_value_constructor")) return false;
-    if (!nextTokenIs(b, "<array value constructor>", _ARRAY_VALUE_CONSTRUCTOR_BY_ENUMERATION_, _ARRAY_VALUE_CONSTRUCTOR_BY_QUERY_)) return false;
+    if (!nextTokenIs(b, "<array value constructor>", ARRAY_VALUE_CONSTRUCTOR_BY_ENUMERATION, ARRAY_VALUE_CONSTRUCTOR_BY_QUERY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ARRAY_VALUE_CONSTRUCTOR, "<array value constructor>");
     r = array_value_constructor_by_enumeration(b, l + 1);
@@ -9596,7 +6968,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ARRAY)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ARRAY, _LEFT_BRACKET_OR_TRIGRAPH_, _ARRAY_ELEMENT_LIST_, _RIGHT_BRACKET_OR_TRIGRAPH_);
+    r = consumeTokens(b, 0, ARRAY, _LEFT_BRACKET_OR_TRIGRAPH_, ARRAY_ELEMENT_LIST, _RIGHT_BRACKET_OR_TRIGRAPH_);
     exit_section_(b, m, ARRAY_VALUE_CONSTRUCTOR_BY_ENUMERATION, r);
     return r;
   }
@@ -9608,7 +6980,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ARRAY)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ARRAY, _LEFT_PAREN_, _QUERY_EXPRESSION_);
+    r = consumeTokens(b, 0, ARRAY, _LEFT_PAREN_, QUERY_EXPRESSION);
     r = r && array_value_constructor_by_query_3(b, l + 1);
     r = r && right_paren(b, l + 1);
     exit_section_(b, m, ARRAY_VALUE_CONSTRUCTOR_BY_QUERY, r);
@@ -9626,7 +6998,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <array concatenation> | <array factor>
   public static boolean array_value_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "array_value_expression")) return false;
-    if (!nextTokenIs(b, "<array value expression>", _ARRAY_CONCATENATION_, _ARRAY_FACTOR_)) return false;
+    if (!nextTokenIs(b, "<array value expression>", ARRAY_CONCATENATION, ARRAY_FACTOR)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ARRAY_VALUE_EXPRESSION, "<array value expression>");
     r = array_concatenation(b, l + 1);
@@ -9639,7 +7011,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <array value expression>
   public static boolean array_value_expression_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "array_value_expression_1")) return false;
-    if (!nextTokenIs(b, _ARRAY_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, ARRAY_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = array_value_expression(b, l + 1);
@@ -9675,7 +7047,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, AS_SUBQUERY_CLAUSE, "<as subquery clause>");
     r = as_subquery_clause_0(b, l + 1);
-    r = r && consumeTokens(b, 0, AS, _SUBQUERY_, _WITH_OR_WITHOUT_DATA_);
+    r = r && consumeTokens(b, 0, AS, SUBQUERY, WITH_OR_WITHOUT_DATA);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
@@ -9711,7 +7083,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <contextually typed row value expression>
   public static boolean assigned_row(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "assigned_row")) return false;
-    if (!nextTokenIs(b, _CONTEXTUALLY_TYPED_ROW_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, CONTEXTUALLY_TYPED_ROW_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = contextually_typed_row_value_expression(b, l + 1);
@@ -9731,7 +7103,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean asterisked_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "asterisked_identifier")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -9740,28 +7112,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <asterisked identifier> [ { <period> <asterisked identifier> }... ]
-  public static boolean asterisked_identifier_chain(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "asterisked_identifier_chain")) return false;
-    if (!nextTokenIs(b, _ASTERISKED_IDENTIFIER_)) return false;
+  // <asterisked identifier> [ { <period> <asterisked identifier> }"..." ]
+  public static boolean asteriskedIDENTIFIERchain(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "asteriskedIDENTIFIERchain")) return false;
+    if (!nextTokenIs(b, ASTERISKED_IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = asterisked_identifier(b, l + 1);
-    r = r && asterisked_identifier_chain_1(b, l + 1);
+    r = r && asteriskedIDENTIFIERchain_1(b, l + 1);
     exit_section_(b, m, ASTERISKED_IDENTIFIER_CHAIN, r);
     return r;
   }
 
-  // [ { <period> <asterisked identifier> }... ]
-  private static boolean asterisked_identifier_chain_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "asterisked_identifier_chain_1")) return false;
-    asterisked_identifier_chain_1_0(b, l + 1);
+  // [ { <period> <asterisked identifier> }"..." ]
+  private static boolean asteriskedIDENTIFIERchain_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "asteriskedIDENTIFIERchain_1")) return false;
+    asteriskedIDENTIFIERchain_1_0(b, l + 1);
     return true;
   }
 
+  // { <period> <asterisked identifier> }"..."
+  private static boolean asteriskedIDENTIFIERchain_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "asteriskedIDENTIFIERchain_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = asteriskedIDENTIFIERchain_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
   // <period> <asterisked identifier>
-  private static boolean asterisked_identifier_chain_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "asterisked_identifier_chain_1_0")) return false;
+  private static boolean asteriskedIDENTIFIERchain_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "asteriskedIDENTIFIERchain_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = period(b, l + 1);
@@ -9774,7 +7157,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <default clause>
   public static boolean attribute_default(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "attribute_default")) return false;
-    if (!nextTokenIs(b, _DEFAULT_CLAUSE_)) return false;
+    if (!nextTokenIs(b, DEFAULT_CLAUSE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = default_clause(b, l + 1);
@@ -9786,7 +7169,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <attribute name> <data type> [ <reference scope check> ] [ <attribute default> ] [ <collate clause> ]
   public static boolean attribute_definition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "attribute_definition")) return false;
-    if (!nextTokenIs(b, _ATTRIBUTE_NAME_)) return false;
+    if (!nextTokenIs(b, ATTRIBUTE_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = attribute_name(b, l + 1);
@@ -9823,7 +7206,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean attribute_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "attribute_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -9836,7 +7219,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 		[ <SQL argument list> ]
   public static boolean attribute_or_method_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "attribute_or_method_reference")) return false;
-    if (!nextTokenIs(b, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = value_expression_primary(b, l + 1);
@@ -9861,7 +7244,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ATTRIBUTES)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ATTRIBUTES, _ATTRIBUTES_VARIABLE_);
+    r = consumeTokens(b, 0, ATTRIBUTES, ATTRIBUTES_VARIABLE);
     exit_section_(b, m, ATTRIBUTES_SPECIFICATION, r);
     return r;
   }
@@ -9882,7 +7265,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <role name> | <user identifier>
   public static boolean authorization_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "authorization_identifier")) return false;
-    if (!nextTokenIs(b, "<authorization identifier>", _ROLE_NAME_, _USER_IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, "<authorization identifier>", ROLE_NAME, USER_IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, AUTHORIZATION_IDENTIFIER, "<authorization identifier>");
     r = role_name(b, l + 1);
@@ -9893,9 +7276,9 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // <identifier chain>
-  public static boolean basic_identifier_chain(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "basic_identifier_chain")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_CHAIN_)) return false;
+  public static boolean basicIDENTIFIERchain(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "basicIDENTIFIERchain")) return false;
+    if (!nextTokenIs(b, IDENTIFIER_CHAIN)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier_chain(b, l + 1);
@@ -9924,7 +7307,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <between predicate part 2>
   public static boolean between_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "between_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -9944,7 +7327,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     r = r && consumeToken(b, BETWEEN);
     r = r && between_predicate_part_2_2(b, l + 1);
     r = r && row_value_predicand(b, l + 1);
-    r = r && consumeTokens(b, 0, AND, _ROW_VALUE_PREDICAND_);
+    r = r && consumeTokens(b, 0, AND,ROW_VALUE_PREDICAND);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
@@ -10026,7 +7409,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <binary set function type> <left paren> <dependent variable expression> <comma> <independent variable expression> <right paren>
   public static boolean binary_set_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "binary_set_function")) return false;
-    if (!nextTokenIs(b, _BINARY_SET_FUNCTION_TYPE_)) return false;
+    if (!nextTokenIs(b, BINARY_SET_FUNCTION_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = binary_set_function_type(b, l + 1);
@@ -10064,8 +7447,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // X <quote> [ { <hexit><hexit> }... ] <quote>
-  // 		[ { <separator> <quote> [ { <hexit><hexit> }... ] <quote> }... ]
+  // X <quote> [ { <hexit><hexit> }"..." ] <quote>
+  // 		[ { <separator> <quote> [ { <hexit><hexit> }"..." ] <quote> }"..." ]
   // 		[ ESCAPE <escape character> ]
   public static boolean binary_string_literal(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "binary_string_literal")) return false;
@@ -10081,16 +7464,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <hexit><hexit> }... ]
+  // [ { <hexit><hexit> }"..." ]
   private static boolean binary_string_literal_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "binary_string_literal_2")) return false;
     binary_string_literal_2_0(b, l + 1);
     return true;
   }
 
-  // <hexit><hexit>
+  // { <hexit><hexit> }"..."
   private static boolean binary_string_literal_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "binary_string_literal_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = binary_string_literal_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <hexit><hexit>
+  private static boolean binary_string_literal_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "binary_string_literal_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = hexit(b, l + 1);
@@ -10099,36 +7493,58 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <separator> <quote> [ { <hexit><hexit> }... ] <quote> }... ]
+  // [ { <separator> <quote> [ { <hexit><hexit> }"..." ] <quote> }"..." ]
   private static boolean binary_string_literal_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "binary_string_literal_4")) return false;
     binary_string_literal_4_0(b, l + 1);
     return true;
   }
 
-  // <separator> <quote> [ { <hexit><hexit> }... ] <quote>
+  // { <separator> <quote> [ { <hexit><hexit> }"..." ] <quote> }"..."
   private static boolean binary_string_literal_4_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "binary_string_literal_4_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = binary_string_literal_4_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <separator> <quote> [ { <hexit><hexit> }"..." ] <quote>
+  private static boolean binary_string_literal_4_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "binary_string_literal_4_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = separator(b, l + 1);
     r = r && quote(b, l + 1);
-    r = r && binary_string_literal_4_0_2(b, l + 1);
+    r = r && binary_string_literal_4_0_0_2(b, l + 1);
     r = r && quote(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // [ { <hexit><hexit> }... ]
-  private static boolean binary_string_literal_4_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "binary_string_literal_4_0_2")) return false;
-    binary_string_literal_4_0_2_0(b, l + 1);
+  // [ { <hexit><hexit> }"..." ]
+  private static boolean binary_string_literal_4_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "binary_string_literal_4_0_0_2")) return false;
+    binary_string_literal_4_0_0_2_0(b, l + 1);
     return true;
   }
 
+  // { <hexit><hexit> }"..."
+  private static boolean binary_string_literal_4_0_0_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "binary_string_literal_4_0_0_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = binary_string_literal_4_0_0_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
   // <hexit><hexit>
-  private static boolean binary_string_literal_4_0_2_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "binary_string_literal_4_0_2_0")) return false;
+  private static boolean binary_string_literal_4_0_0_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "binary_string_literal_4_0_0_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = hexit(b, l + 1);
@@ -10148,7 +7564,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <blob value expression> <concatenation operator> <blob factor>
   public static boolean blob_concatenation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "blob_concatenation")) return false;
-    if (!nextTokenIs(b, _BLOB_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, BLOB_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = blob_value_expression(b, l + 1);
@@ -10162,7 +7578,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <blob primary>
   public static boolean blob_factor(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "blob_factor")) return false;
-    if (!nextTokenIs(b, _BLOB_PRIMARY_)) return false;
+    if (!nextTokenIs(b, BLOB_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = blob_primary(b, l + 1);
@@ -10178,7 +7594,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, OVERLAY)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, OVERLAY, _LEFT_PAREN_, _BLOB_VALUE_EXPRESSION_, PLACING, _BLOB_VALUE_EXPRESSION_, FROM, _START_POSITION_);
+    r = consumeTokens(b, 0, OVERLAY, _LEFT_PAREN_, BLOB_VALUE_EXPRESSION, PLACING, BLOB_VALUE_EXPRESSION, FROM, START_POSITION);
     r = r && blob_overlay_function_7(b, l + 1);
     r = r && right_paren(b, l + 1);
     exit_section_(b, m, BLOB_OVERLAY_FUNCTION, r);
@@ -10199,7 +7615,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, POSITION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, POSITION, _LEFT_PAREN_, _BLOB_VALUE_EXPRESSION_, IN, _BLOB_VALUE_EXPRESSION_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, POSITION, _LEFT_PAREN_, BLOB_VALUE_EXPRESSION, IN, BLOB_VALUE_EXPRESSION, _RIGHT_PAREN_);
     exit_section_(b, m, BLOB_POSITION_EXPRESSION, r);
     return r;
   }
@@ -10208,7 +7624,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression primary> | <string value function>
   public static boolean blob_primary(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "blob_primary")) return false;
-    if (!nextTokenIs(b, "<blob primary>", _STRING_VALUE_FUNCTION_, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, "<blob primary>", STRING_VALUE_FUNCTION, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, BLOB_PRIMARY, "<blob primary>");
     r = value_expression_primary(b, l + 1);
@@ -10224,7 +7640,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SUBSTRING)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SUBSTRING, _LEFT_PAREN_, _BLOB_VALUE_EXPRESSION_, FROM, _START_POSITION_);
+    r = consumeTokens(b, 0, SUBSTRING, _LEFT_PAREN_, BLOB_VALUE_EXPRESSION, FROM, START_POSITION);
     r = r && blob_substring_function_5(b, l + 1);
     r = r && right_paren(b, l + 1);
     exit_section_(b, m, BLOB_SUBSTRING_FUNCTION, r);
@@ -10245,7 +7661,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TRIM)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TRIM, _LEFT_PAREN_, _BLOB_TRIM_OPERANDS_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, TRIM, _LEFT_PAREN_, BLOB_TRIM_OPERANDS, _RIGHT_PAREN_);
     exit_section_(b, m, BLOB_TRIM_FUNCTION, r);
     return r;
   }
@@ -10299,7 +7715,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <blob value expression>
   public static boolean blob_trim_source(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "blob_trim_source")) return false;
-    if (!nextTokenIs(b, _BLOB_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, BLOB_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = blob_value_expression(b, l + 1);
@@ -10311,7 +7727,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <blob concatenation> | <blob factor>
   public static boolean blob_value_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "blob_value_expression")) return false;
-    if (!nextTokenIs(b, "<blob value expression>", _BLOB_CONCATENATION_, _BLOB_FACTOR_)) return false;
+    if (!nextTokenIs(b, "<blob value expression>", BLOB_CONCATENATION, BLOB_FACTOR)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, BLOB_VALUE_EXPRESSION, "<blob value expression>");
     r = blob_concatenation(b, l + 1);
@@ -10339,7 +7755,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ NOT ] <boolean test>
   public static boolean boolean_factor(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "boolean_factor")) return false;
-    if (!nextTokenIs(b, "<boolean factor>", NOT, _BOOLEAN_TEST_)) return false;
+    if (!nextTokenIs(b, "<boolean factor>", NOT, BOOLEAN_TEST)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, BOOLEAN_FACTOR, "<boolean factor>");
     r = boolean_factor_0(b, l + 1);
@@ -10373,7 +7789,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<nonparenthesized value expression primary>
   public static boolean boolean_predicand(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "boolean_predicand")) return false;
-    if (!nextTokenIs(b, "<boolean predicand>", _NONPARENTHESIZED_VALUE_EXPRESSION_PRIMARY_, _PARENTHESIZED_BOOLEAN_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<boolean predicand>", NONPARENTHESIZED_VALUE_EXPRESSION_PRIMARY, PARENTHESIZED_BOOLEAN_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, BOOLEAN_PREDICAND, "<boolean predicand>");
     r = parenthesized_boolean_value_expression(b, l + 1);
@@ -10386,7 +7802,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <predicate> | <boolean predicand>
   public static boolean boolean_primary(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "boolean_primary")) return false;
-    if (!nextTokenIs(b, "<boolean primary>", _BOOLEAN_PREDICAND_, _PREDICATE_)) return false;
+    if (!nextTokenIs(b, "<boolean primary>", BOOLEAN_PREDICAND, PREDICATE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, BOOLEAN_PRIMARY, "<boolean primary>");
     r = predicate(b, l + 1);
@@ -10413,7 +7829,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <boolean primary> [ IS [ NOT ] <truth value> ]
   public static boolean boolean_test(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "boolean_test")) return false;
-    if (!nextTokenIs(b, _BOOLEAN_PRIMARY_)) return false;
+    if (!nextTokenIs(b, BOOLEAN_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = boolean_primary(b, l + 1);
@@ -10478,7 +7894,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <bracketed comment introducer> <bracketed comment contents> <bracketed comment terminator>
   public static boolean bracketed_comment(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "bracketed_comment")) return false;
-    if (!nextTokenIs(b, _BRACKETED_COMMENT_INTRODUCER_)) return false;
+    if (!nextTokenIs(b, BRACKETED_COMMENT_INTRODUCER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = bracketed_comment_introducer(b, l + 1);
@@ -10489,7 +7905,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // [ { <comment character> | <separator> }... ]
+  // [ { <comment character> | <separator> }"..." ]
   public static boolean bracketed_comment_contents(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "bracketed_comment_contents")) return false;
     Marker m = enter_section_(b, l, _NONE_, BRACKETED_COMMENT_CONTENTS, "<bracketed comment contents>");
@@ -10498,9 +7914,20 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // <comment character> | <separator>
+  // { <comment character> | <separator> }"..."
   private static boolean bracketed_comment_contents_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "bracketed_comment_contents_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = bracketed_comment_contents_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comment character> | <separator>
+  private static boolean bracketed_comment_contents_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "bracketed_comment_contents_0_0")) return false;
     boolean r;
     r = comment_character(b, l + 1);
     if (!r) r = separator(b, l + 1);
@@ -10511,10 +7938,11 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <slash> <asterisk>
   public static boolean bracketed_comment_introducer(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "bracketed_comment_introducer")) return false;
-    if (!nextTokenIs(b, _SLASH_)) return false;
+    if (!nextTokenIs(b, SLASH)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, _SLASH_, _ASTERISK_);
+    r = slash(b, l + 1);
+    r = r && asterisk(b, l + 1);
     exit_section_(b, m, BRACKETED_COMMENT_INTRODUCER, r);
     return r;
   }
@@ -10527,7 +7955,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b);
     r = asterisk(b, l + 1);
-    r = r && consumeToken(b, _SLASH_);
+    r = r && slash(b, l + 1);
     exit_section_(b, m, BRACKETED_COMMENT_TERMINATOR, r);
     return r;
   }
@@ -10539,7 +7967,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CALL)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CALL, _ROUTINE_INVOCATION_);
+    r = consumeTokens(b, 0, CALL, ROUTINE_INVOCATION);
     exit_section_(b, m, CALL_STATEMENT, r);
     return r;
   }
@@ -10551,14 +7979,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CARDINALITY)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CARDINALITY, _LEFT_PAREN_, _COLLECTION_VALUE_EXPRESSION_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, CARDINALITY, _LEFT_PAREN_, COLLECTION_VALUE_EXPRESSION, _RIGHT_PAREN_);
     exit_section_(b, m, CARDINALITY_EXPRESSION, r);
     return r;
   }
 
   /* ********************************************************** */
   // NULLIF <left paren> <value expression> <comma> <value expression> <right paren>
-  // 	|	COALESCE <left paren> <value expression> { <comma> <value expression> }... <right paren>
+  // 	|	COALESCE <left paren> <value expression> { <comma> <value expression> }"..." <right paren>
   public static boolean case_abbreviation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "case_abbreviation")) return false;
     if (!nextTokenIs(b, "<case abbreviation>", COALESCE, NULLIF)) return false;
@@ -10570,13 +7998,15 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // COALESCE <left paren> <value expression> { <comma> <value expression> }... <right paren>
+  // COALESCE <left paren> <value expression> { <comma> <value expression> }"..." <right paren>
   private static boolean case_abbreviation_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "case_abbreviation_1")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, COALESCE, _LEFT_PAREN_, _VALUE_EXPRESSION_);
     r = r && case_abbreviation_1_3(b, l + 1);
+    r = r && consumeToken(b, "...");
+    r = r && right_paren(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
@@ -10596,7 +8026,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <case abbreviation> | <case specification>
   public static boolean case_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "case_expression")) return false;
-    if (!nextTokenIs(b, "<case expression>", _CASE_ABBREVIATION_, _CASE_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, "<case expression>", CASE_ABBREVIATION, CASE_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CASE_EXPRESSION, "<case expression>");
     r = case_abbreviation(b, l + 1);
@@ -10609,7 +8039,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> | <overlaps predicate part>
   public static boolean case_operand(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "case_operand")) return false;
-    if (!nextTokenIs(b, "<case operand>", _OVERLAPS_PREDICATE_PART_, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, "<case operand>", _OVERLAPS_PREDICATE_PART_, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CASE_OPERAND, "<case operand>");
     r = row_value_predicand(b, l + 1);
@@ -10622,7 +8052,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <simple case> | <searched case>
   public static boolean case_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "case_specification")) return false;
-    if (!nextTokenIs(b, "<case specification>", _SEARCHED_CASE_, _SIMPLE_CASE_)) return false;
+    if (!nextTokenIs(b, "<case specification>", SEARCHED_CASE, SIMPLE_CASE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CASE_SPECIFICATION, "<case specification>");
     r = simple_case(b, l + 1);
@@ -10635,7 +8065,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <specific routine designator>
   public static boolean cast_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cast_function")) return false;
-    if (!nextTokenIs(b, _SPECIFIC_ROUTINE_DESIGNATOR_)) return false;
+    if (!nextTokenIs(b, SPECIFIC_ROUTINE_DESIGNATOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = specific_routine_designator(b, l + 1);
@@ -10647,7 +8077,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression> | <implicitly typed value specification>
   public static boolean cast_operand(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cast_operand")) return false;
-    if (!nextTokenIs(b, "<cast operand>", _IMPLICITLY_TYPED_VALUE_SPECIFICATION_, _VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<cast operand>", IMPLICITLY_TYPED_VALUE_SPECIFICATION, _VALUE_EXPRESSION_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CAST_OPERAND, "<cast operand>");
     r = value_expression(b, l + 1);
@@ -10689,7 +8119,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CAST)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CAST, _LEFT_PAREN_, _CAST_OPERAND_, AS, _CAST_TARGET_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, CAST, _LEFT_PAREN_, CAST_OPERAND, AS, CAST_TARGET, _RIGHT_PAREN_);
     exit_section_(b, m, CAST_SPECIFICATION, r);
     return r;
   }
@@ -10698,7 +8128,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <domain name> | <data type>
   public static boolean cast_target(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cast_target")) return false;
-    if (!nextTokenIs(b, "<cast target>", _DATA_TYPE_, _DOMAIN_NAME_)) return false;
+    if (!nextTokenIs(b, "<cast target>", DATA_TYPE, _DOMAIN_NAME_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CAST_TARGET, "<cast target>");
     r = domain_name(b, l + 1);
@@ -10715,7 +8145,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CAST)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CAST, _LEFT_PAREN_, SOURCE, AS, DISTINCT, _RIGHT_PAREN_, WITH, _CAST_TO_DISTINCT_IDENTIFIER_);
+    r = consumeTokens(b, 0, CAST, _LEFT_PAREN_, SOURCE, AS, DISTINCT, _RIGHT_PAREN_, WITH, CAST_TO_DISTINCT_IDENTIFIER);
     exit_section_(b, m, CAST_TO_DISTINCT, r);
     return r;
   }
@@ -10724,7 +8154,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean cast_to_distinct_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cast_to_distinct_identifier")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -10739,7 +8169,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CAST)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CAST, _LEFT_PAREN_, SOURCE, AS, REF, _RIGHT_PAREN_, WITH, _CAST_TO_REF_IDENTIFIER_);
+    r = consumeTokens(b, 0, CAST, _LEFT_PAREN_, SOURCE, AS, REF, _RIGHT_PAREN_, WITH, CAST_TO_REF_IDENTIFIER);
     exit_section_(b, m, CAST_TO_REF, r);
     return r;
   }
@@ -10748,7 +8178,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean cast_to_ref_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cast_to_ref_identifier")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -10764,7 +8194,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CAST)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CAST, _LEFT_PAREN_, DISTINCT, AS, SOURCE, _RIGHT_PAREN_, WITH, _CAST_TO_SOURCE_IDENTIFIER_);
+    r = consumeTokens(b, 0, CAST, _LEFT_PAREN_, DISTINCT, AS, SOURCE, _RIGHT_PAREN_, WITH, CAST_TO_SOURCE_IDENTIFIER);
     exit_section_(b, m, CAST_TO_SOURCE, r);
     return r;
   }
@@ -10773,7 +8203,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean cast_to_source_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cast_to_source_identifier")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -10788,7 +8218,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CAST)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CAST, _LEFT_PAREN_, REF, AS, SOURCE, _RIGHT_PAREN_, WITH, _CAST_TO_TYPE_IDENTIFIER_);
+    r = consumeTokens(b, 0, CAST, _LEFT_PAREN_, REF, AS, SOURCE, _RIGHT_PAREN_, WITH, CAST_TO_TYPE_IDENTIFIER);
     exit_section_(b, m, CAST_TO_TYPE, r);
     return r;
   }
@@ -10797,7 +8227,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean cast_to_type_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cast_to_type_identifier")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -10809,7 +8239,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean catalog_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "catalog_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -10918,7 +8348,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character enumeration>
   public static boolean character_enumeration_exclude(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_enumeration_exclude")) return false;
-    if (!nextTokenIs(b, _CHARACTER_ENUMERATION_)) return false;
+    if (!nextTokenIs(b, CHARACTER_ENUMERATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = character_enumeration(b, l + 1);
@@ -10930,7 +8360,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character enumeration>
   public static boolean character_enumeration_include(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_enumeration_include")) return false;
-    if (!nextTokenIs(b, _CHARACTER_ENUMERATION_)) return false;
+    if (!nextTokenIs(b, CHARACTER_ENUMERATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = character_enumeration(b, l + 1);
@@ -10942,7 +8372,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character primary> [ <collate clause> ]
   public static boolean character_factor(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_factor")) return false;
-    if (!nextTokenIs(b, _CHARACTER_PRIMARY_)) return false;
+    if (!nextTokenIs(b, CHARACTER_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = character_primary(b, l + 1);
@@ -10962,7 +8392,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <character like predicate part 2>
   public static boolean character_like_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_like_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -10979,7 +8409,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CHARACTER_LIKE_PREDICATE_PART_2, "<character like predicate part 2>");
     r = character_like_predicate_part_2_0(b, l + 1);
-    r = r && consumeTokens(b, 0, LIKE, _CHARACTER_PATTERN_);
+    r = r && consumeTokens(b, 0, LIKE, CHARACTER_PATTERN);
     r = r && character_like_predicate_part_2_3(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -11007,7 +8437,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, OVERLAY)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, OVERLAY, _LEFT_PAREN_, _CHARACTER_VALUE_EXPRESSION_, PLACING, _CHARACTER_VALUE_EXPRESSION_, FROM, _START_POSITION_);
+    r = consumeTokens(b, 0, OVERLAY, _LEFT_PAREN_, CHARACTER_VALUE_EXPRESSION, PLACING, CHARACTER_VALUE_EXPRESSION, FROM, START_POSITION);
     r = r && character_overlay_function_7(b, l + 1);
     r = r && character_overlay_function_8(b, l + 1);
     r = r && right_paren(b, l + 1);
@@ -11033,7 +8463,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character value expression>
   public static boolean character_pattern(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_pattern")) return false;
-    if (!nextTokenIs(b, _CHARACTER_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, CHARACTER_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = character_value_expression(b, l + 1);
@@ -11045,7 +8475,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression primary> | <string value function>
   public static boolean character_primary(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_primary")) return false;
-    if (!nextTokenIs(b, "<character primary>", _STRING_VALUE_FUNCTION_, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, "<character primary>", STRING_VALUE_FUNCTION, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CHARACTER_PRIMARY, "<character primary>");
     r = value_expression_primary(b, l + 1);
@@ -11058,7 +8488,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <nonquote character> | <quote symbol>
   public static boolean character_representation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_representation")) return false;
-    if (!nextTokenIs(b, "<character representation>", _NONQUOTE_CHARACTER_, _QUOTE_SYMBOL_)) return false;
+    if (!nextTokenIs(b, "<character representation>", NONQUOTE_CHARACTER, QUOTE_SYMBOL)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CHARACTER_REPRESENTATION, "<character representation>");
     r = nonquote_character(b, l + 1);
@@ -11100,7 +8530,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <schema name> <period> ] <SQL language identifier>
   public static boolean character_set_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_set_name")) return false;
-    if (!nextTokenIs(b, "<character set name>", _SCHEMA_NAME_, _SQL_LANGUAGE_IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, "<character set name>", _SCHEMA_NAME_, SQL_LANGUAGE_IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CHARACTER_SET_NAME, "<character set name>");
     r = character_set_name_0(b, l + 1);
@@ -11156,7 +8586,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <character set specification> [ { <comma> <character set specification> }... ]
+  // <character set specification> [ { <comma> <character set specification> }"..." ]
   public static boolean character_set_specification_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_set_specification_list")) return false;
     if (!nextTokenIs(b, _CHARACTER_SET_SPECIFICATION_)) return false;
@@ -11168,16 +8598,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <character set specification> }... ]
+  // [ { <comma> <character set specification> }"..." ]
   private static boolean character_set_specification_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_set_specification_list_1")) return false;
     character_set_specification_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <character set specification>
+  // { <comma> <character set specification> }"..."
   private static boolean character_set_specification_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_set_specification_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = character_set_specification_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <character set specification>
+  private static boolean character_set_specification_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "character_set_specification_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -11190,7 +8631,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <non-escaped character> | <escaped character>
   public static boolean character_specifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_specifier")) return false;
-    if (!nextTokenIs(b, "<character specifier>", _ESCAPED_CHARACTER_, _NON_ESCAPED_CHARACTER_)) return false;
+    if (!nextTokenIs(b, "<character specifier>", ESCAPED_CHARACTER,NON_ESCAPED_CHARACTER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CHARACTER_SPECIFIER, "<character specifier>");
     r = non_escaped_character(b, l + 1);
@@ -11201,8 +8642,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // [ <introducer><character set specification> ]
-  // 		<quote> [ <character representation>... ] <quote>
-  // 		[ { <separator> <quote> [ <character representation>... ] <quote> }... ]
+  // 		<quote> [ <character representation>"..." ] <quote>
+  // 		[ { <separator> <quote> [ <character representation>"..." ] <quote> }"..." ]
   public static boolean character_string_literal(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_string_literal")) return false;
     if (!nextTokenIs(b, "<character string literal>", _INTRODUCER_, _QUOTE_)) return false;
@@ -11224,38 +8665,71 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ <character representation>... ]
+  // [ <character representation>"..." ]
   private static boolean character_string_literal_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_string_literal_2")) return false;
-    consumeToken(b, _CHARACTER_REPRESENTATION____);
+    character_string_literal_2_0(b, l + 1);
     return true;
   }
 
-  // [ { <separator> <quote> [ <character representation>... ] <quote> }... ]
+  // <character representation>"..."
+  private static boolean character_string_literal_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "character_string_literal_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = character_representation(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // [ { <separator> <quote> [ <character representation>"..." ] <quote> }"..." ]
   private static boolean character_string_literal_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_string_literal_4")) return false;
     character_string_literal_4_0(b, l + 1);
     return true;
   }
 
-  // <separator> <quote> [ <character representation>... ] <quote>
+  // { <separator> <quote> [ <character representation>"..." ] <quote> }"..."
   private static boolean character_string_literal_4_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_string_literal_4_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = character_string_literal_4_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <separator> <quote> [ <character representation>"..." ] <quote>
+  private static boolean character_string_literal_4_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "character_string_literal_4_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = separator(b, l + 1);
     r = r && quote(b, l + 1);
-    r = r && character_string_literal_4_0_2(b, l + 1);
+    r = r && character_string_literal_4_0_0_2(b, l + 1);
     r = r && quote(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // [ <character representation>... ]
-  private static boolean character_string_literal_4_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "character_string_literal_4_0_2")) return false;
-    consumeToken(b, _CHARACTER_REPRESENTATION____);
+  // [ <character representation>"..." ]
+  private static boolean character_string_literal_4_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "character_string_literal_4_0_0_2")) return false;
+    character_string_literal_4_0_0_2_0(b, l + 1);
     return true;
+  }
+
+  // <character representation>"..."
+  private static boolean character_string_literal_4_0_0_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "character_string_literal_4_0_0_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = character_representation(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */
@@ -11381,7 +8855,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SUBSTRING)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SUBSTRING, _LEFT_PAREN_, _CHARACTER_VALUE_EXPRESSION_, FROM, _START_POSITION_);
+    r = consumeTokens(b, 0, SUBSTRING, _LEFT_PAREN_, CHARACTER_VALUE_EXPRESSION, FROM, START_POSITION);
     r = r && character_substring_function_5(b, l + 1);
     r = r && character_substring_function_6(b, l + 1);
     r = r && right_paren(b, l + 1);
@@ -11410,7 +8884,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TRANSLATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TRANSLATE, _LEFT_PAREN_, _CHARACTER_VALUE_EXPRESSION_, USING, _TRANSLITERATION_NAME_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, TRANSLATE, _LEFT_PAREN_,CHARACTER_VALUE_EXPRESSION, USING, _TRANSLITERATION_NAME_, _RIGHT_PAREN_);
     exit_section_(b, m, CHARACTER_TRANSLITERATION, r);
     return r;
   }
@@ -11419,7 +8893,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <concatenation> | <character factor>
   public static boolean character_value_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "character_value_expression")) return false;
-    if (!nextTokenIs(b, "<character value expression>", _CHARACTER_FACTOR_, _CONCATENATION_)) return false;
+    if (!nextTokenIs(b, "<character value expression>", CHARACTER_FACTOR, CONCATENATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CHARACTER_VALUE_EXPRESSION, "<character value expression>");
     r = concatenation(b, l + 1);
@@ -11482,7 +8956,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CLOSE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CLOSE, _CURSOR_NAME_);
+    r = consumeTokens(b, 0, CLOSE, CURSOR_NAME);
     exit_section_(b, m, CLOSE_STATEMENT, r);
     return r;
   }
@@ -11507,7 +8981,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CREATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CREATE, COLLATION, _COLLATION_NAME_, FOR, _CHARACTER_SET_SPECIFICATION_, FROM, _EXISTING_COLLATION_NAME_);
+    r = consumeTokens(b, 0, CREATE, COLLATION, _COLLATION_NAME_, FOR, _CHARACTER_SET_SPECIFICATION_, FROM, EXISTING_COLLATION_NAME);
     r = r && collation_definition_7(b, l + 1);
     exit_section_(b, m, COLLATION_DEFINITION, r);
     return r;
@@ -11524,7 +8998,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema qualified name>
   public static boolean collation_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "collation_name")) return false;
-    if (!nextTokenIs(b, _SCHEMA_QUALIFIED_NAME_)) return false;
+    if (!nextTokenIs(b, SCHEMA_QUALIFIED_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = schema_qualified_name(b, l + 1);
@@ -11551,7 +9025,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, UNNEST)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, UNNEST, _LEFT_PAREN_, _COLLECTION_VALUE_EXPRESSION_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, UNNEST, _LEFT_PAREN_, COLLECTION_VALUE_EXPRESSION, _RIGHT_PAREN_);
     r = r && collection_derived_table_4(b, l + 1);
     exit_section_(b, m, COLLECTION_DERIVED_TABLE, r);
     return r;
@@ -11568,7 +9042,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <array type> | <multiset type>
   public static boolean collection_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "collection_type")) return false;
-    if (!nextTokenIs(b, "<collection type>", _ARRAY_TYPE_, _MULTISET_TYPE_)) return false;
+    if (!nextTokenIs(b, "<collection type>", ARRAY_TYPE, MULTISET_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, COLLECTION_TYPE, "<collection type>");
     r = array_type(b, l + 1);
@@ -11581,7 +9055,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <array value constructor> | <multiset value constructor>
   public static boolean collection_value_constructor(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "collection_value_constructor")) return false;
-    if (!nextTokenIs(b, "<collection value constructor>", _ARRAY_VALUE_CONSTRUCTOR_, _MULTISET_VALUE_CONSTRUCTOR_)) return false;
+    if (!nextTokenIs(b, "<collection value constructor>", ARRAY_VALUE_CONSTRUCTOR, MULTISET_VALUE_CONSTRUCTOR)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, COLLECTION_VALUE_CONSTRUCTOR, "<collection value constructor>");
     r = array_value_constructor(b, l + 1);
@@ -11594,7 +9068,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <array value expression> | <multiset value expression>
   public static boolean collection_value_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "collection_value_expression")) return false;
-    if (!nextTokenIs(b, "<collection value expression>", _ARRAY_VALUE_EXPRESSION_, _MULTISET_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<collection value expression>", ARRAY_VALUE_EXPRESSION, MULTISET_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, COLLECTION_VALUE_EXPRESSION, "<collection value expression>");
     r = array_value_expression(b, l + 1);
@@ -11632,7 +9106,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <constraint name definition> ] <column constraint> [ <constraint characteristics> ]
   public static boolean column_constraint_definition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "column_constraint_definition")) return false;
-    if (!nextTokenIs(b, "<column constraint definition>", _COLUMN_CONSTRAINT_, _CONSTRAINT_NAME_DEFINITION_)) return false;
+    if (!nextTokenIs(b, "<column constraint definition>", COLUMN_CONSTRAINT, CONSTRAINT_NAME_DEFINITION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, COLUMN_CONSTRAINT_DEFINITION, "<column constraint definition>");
     r = column_constraint_definition_0(b, l + 1);
@@ -11672,7 +9146,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // <column name> [ <data type> | <domain name> ] [ <reference scope check> ]
   // 		[ <default clause> | <identity column specification> | <generation clause> ]
-  // 		[ <column constraint definition>... ] [ <collate clause> ]
+  // 		[ <column constraint definition>"..." ] [ <collate clause> ]
   public static boolean column_definition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "column_definition")) return false;
     if (!nextTokenIs(b, _COLUMN_NAME_)) return false;
@@ -11728,11 +9202,22 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ <column constraint definition>... ]
+  // [ <column constraint definition>"..." ]
   private static boolean column_definition_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "column_definition_4")) return false;
-    consumeToken(b, _COLUMN_CONSTRAINT_DEFINITION____);
+    column_definition_4_0(b, l + 1);
     return true;
+  }
+
+  // <column constraint definition>"..."
+  private static boolean column_definition_4_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "column_definition_4_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = column_constraint_definition(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   // [ <collate clause> ]
@@ -11746,7 +9231,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean column_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "column_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -11755,7 +9240,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <column name> [ { <comma> <column name> }... ]
+  // <column name> [ { <comma> <column name> }"..." ]
   public static boolean column_name_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "column_name_list")) return false;
     if (!nextTokenIs(b, _COLUMN_NAME_)) return false;
@@ -11767,16 +9252,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <column name> }... ]
+  // [ { <comma> <column name> }"..." ]
   private static boolean column_name_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "column_name_list_1")) return false;
     column_name_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <column name>
+  // { <comma> <column name> }"..."
   private static boolean column_name_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "column_name_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = column_name_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <column name>
+  private static boolean column_name_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "column_name_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -11786,7 +9282,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // [ <scope clause> ] [ <default clause> ] [ <column constraint definition>... ]
+  // [ <scope clause> ] [ <default clause> ] [ <column constraint definition>"..." ]
   public static boolean column_option_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "column_option_list")) return false;
     boolean r;
@@ -11812,11 +9308,22 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ <column constraint definition>... ]
+  // [ <column constraint definition>"..." ]
   private static boolean column_option_list_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "column_option_list_2")) return false;
-    consumeToken(b, _COLUMN_CONSTRAINT_DEFINITION____);
+    column_option_list_2_0(b, l + 1);
     return true;
+  }
+
+  // <column constraint definition>"..."
+  private static boolean column_option_list_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "column_option_list_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = column_constraint_definition(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */
@@ -11827,7 +9334,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b);
     r = column_name(b, l + 1);
-    r = r && consumeTokens(b, 0, WITH, OPTIONS, _COLUMN_OPTION_LIST_);
+    r = r && consumeTokens(b, 0, WITH, OPTIONS, COLUMN_OPTION_LIST);
     exit_section_(b, m, COLUMN_OPTIONS, r);
     return r;
   }
@@ -11837,28 +9344,31 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	MODULE <period> <qualified identifier> <period> <column name>
   public static boolean column_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "column_reference")) return false;
-    if (!nextTokenIs(b, "<column reference>", MODULE, _BASIC_IDENTIFIER_CHAIN_)) return false;
+    if (!nextTokenIs(b, "<column reference>", MODULE, BASIC_IDENTIFIER_CHAIN)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, COLUMN_REFERENCE, "<column reference>");
-    r = basic_identifier_chain(b, l + 1);
-    if (!r) r = parseTokens(b, 0, MODULE, _PERIOD_, _QUALIFIED_IDENTIFIER_, _PERIOD_, _COLUMN_NAME_);
+    r = basicIDENTIFIERchain(b, l + 1);
+    if (!r) r = parseTokens(b, 0, MODULE, _PERIOD_, QUALIFIED_IDENTIFIER, _PERIOD_, _COLUMN_NAME_);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
   /* ********************************************************** */
-  // ,
+  // ","
   public static boolean comma(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, COMMA, true);
-    return true;
+    if (!recursion_guard_(b, l, "comma")) return false;
+    boolean r;
+    Marker m = enter_section_(b, l, _NONE_, COMMA, "<comma>");
+    r = consumeToken(b, ",");
+    exit_section_(b, l, m, r, false, null);
+    return r;
   }
 
   /* ********************************************************** */
   // <simple comment> | <bracketed comment>
   public static boolean comment(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "comment")) return false;
-    if (!nextTokenIs(b, "<comment>", _BRACKETED_COMMENT_, _SIMPLE_COMMENT_)) return false;
+    if (!nextTokenIs(b, "<comment>", BRACKETED_COMMENT, SIMPLE_COMMENT)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, COMMENT, "<comment>");
     r = simple_comment(b, l + 1);
@@ -11871,7 +9381,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <nonquote character> | <quote>
   public static boolean comment_character(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "comment_character")) return false;
-    if (!nextTokenIs(b, "<comment character>", _NONQUOTE_CHARACTER_, _QUOTE_)) return false;
+    if (!nextTokenIs(b, "<comment character>", NONQUOTE_CHARACTER, _QUOTE_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, COMMENT_CHARACTER, "<comment character>");
     r = nonquote_character(b, l + 1);
@@ -11931,7 +9441,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <sequence generator start with option> | <basic sequence generator option>
   public static boolean common_sequence_generator_option(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "common_sequence_generator_option")) return false;
-    if (!nextTokenIs(b, "<common sequence generator option>", _BASIC_SEQUENCE_GENERATOR_OPTION_, _SEQUENCE_GENERATOR_START_WITH_OPTION_)) return false;
+    if (!nextTokenIs(b, "<common sequence generator option>", _BASIC_SEQUENCE_GENERATOR_OPTION_, SEQUENCE_GENERATOR_START_WITH_OPTION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, COMMON_SEQUENCE_GENERATOR_OPTION, "<common sequence generator option>");
     r = sequence_generator_start_with_option(b, l + 1);
@@ -11941,13 +9451,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <common sequence generator option> ...
+  // <common sequence generator option> "..."
   public static boolean common_sequence_generator_options(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "common_sequence_generator_options")) return false;
-    if (!nextTokenIs(b, _COMMON_SEQUENCE_GENERATOR_OPTION_____)) return false;
+    if (!nextTokenIs(b, COMMON_SEQUENCE_GENERATOR_OPTION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _COMMON_SEQUENCE_GENERATOR_OPTION_____);
+    r = common_sequence_generator_option(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, COMMON_SEQUENCE_GENERATOR_OPTIONS, r);
     return r;
   }
@@ -12000,7 +9511,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <comparison predicate part 2>
   public static boolean comparison_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "comparison_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -12013,7 +9524,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <comp op> <row value predicand>
   public static boolean comparison_predicate_part_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "comparison_predicate_part_2")) return false;
-    if (!nextTokenIs(b, _COMP_OP_)) return false;
+    if (!nextTokenIs(b, COMP_OP)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comp_op(b, l + 1);
@@ -12055,7 +9566,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character value expression> <concatenation operator> <character factor>
   public static boolean concatenation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "concatenation")) return false;
-    if (!nextTokenIs(b, _CHARACTER_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, CHARACTER_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = character_value_expression(b, l + 1);
@@ -12082,7 +9593,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <SQL condition>
   public static boolean condition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "condition")) return false;
-    if (!nextTokenIs(b, _SQL_CONDITION_)) return false;
+    if (!nextTokenIs(b, SQL_CONDITION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQL_condition(b, l + 1);
@@ -12094,7 +9605,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // CONTINUE | <go to>
   public static boolean condition_action(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "condition_action")) return false;
-    if (!nextTokenIs(b, "<condition action>", CONTINUE, _GO_TO_)) return false;
+    if (!nextTokenIs(b, "<condition action>", CONTINUE, GO_TO)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CONDITION_ACTION, "<condition action>");
     r = consumeToken(b, CONTINUE);
@@ -12104,7 +9615,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // { EXCEPTION | CONDITION } <condition number> <condition information item> [ { <comma> <condition information item> }... ]
+  // { EXCEPTION | CONDITION } <condition number> <condition information item> [ { <comma> <condition information item> }"..." ]
   public static boolean condition_information(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "condition_information")) return false;
     if (!nextTokenIs(b, "<condition information>", CONDITION, EXCEPTION)) return false;
@@ -12127,16 +9638,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <condition information item> }... ]
+  // [ { <comma> <condition information item> }"..." ]
   private static boolean condition_information_3(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "condition_information_3")) return false;
     condition_information_3_0(b, l + 1);
     return true;
   }
 
-  // <comma> <condition information item>
+  // { <comma> <condition information item> }"..."
   private static boolean condition_information_3_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "condition_information_3_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = condition_information_3_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <condition information item>
+  private static boolean condition_information_3_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "condition_information_3_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -12149,7 +9671,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <simple target specification> <equals operator> <condition information item name>
   public static boolean condition_information_item(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "condition_information_item")) return false;
-    if (!nextTokenIs(b, _SIMPLE_TARGET_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, SIMPLE_TARGET_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = simple_target_specification(b, l + 1);
@@ -12241,7 +9763,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CONNECT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CONNECT, TO, _CONNECTION_TARGET_);
+    r = consumeTokens(b, 0, CONNECT, TO, CONNECTION_TARGET);
     exit_section_(b, m, CONNECT_STATEMENT, r);
     return r;
   }
@@ -12276,7 +9798,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	DEFAULT
   public static boolean connection_target(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "connection_target")) return false;
-    if (!nextTokenIs(b, "<connection target>", DEFAULT, _SQL_SERVER_NAME_)) return false;
+    if (!nextTokenIs(b, "<connection target>", DEFAULT, SQL_SERVER_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CONNECTION_TARGET, "<connection target>");
     r = connection_target_0(b, l + 1);
@@ -12415,7 +9937,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema qualified name>
   public static boolean constraint_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "constraint_name")) return false;
-    if (!nextTokenIs(b, _SCHEMA_QUALIFIED_NAME_)) return false;
+    if (!nextTokenIs(b, SCHEMA_QUALIFIED_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = schema_qualified_name(b, l + 1);
@@ -12436,7 +9958,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // ALL | <constraint name> [ { <comma> <constraint name> }... ]
+  // ALL | <constraint name> [ { <comma> <constraint name> }"..." ]
   public static boolean constraint_name_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "constraint_name_list")) return false;
     if (!nextTokenIs(b, "<constraint name list>", ALL, _CONSTRAINT_NAME_)) return false;
@@ -12448,7 +9970,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // <constraint name> [ { <comma> <constraint name> }... ]
+  // <constraint name> [ { <comma> <constraint name> }"..." ]
   private static boolean constraint_name_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "constraint_name_list_1")) return false;
     boolean r;
@@ -12459,16 +9981,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <constraint name> }... ]
+  // [ { <comma> <constraint name> }"..." ]
   private static boolean constraint_name_list_1_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "constraint_name_list_1_1")) return false;
     constraint_name_list_1_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <constraint name>
+  // { <comma> <constraint name> }"..."
   private static boolean constraint_name_list_1_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "constraint_name_list_1_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = constraint_name_list_1_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <constraint name>
+  private static boolean constraint_name_list_1_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "constraint_name_list_1_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -12481,7 +10014,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <routine invocation>
   public static boolean constructor_method_selection(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "constructor_method_selection")) return false;
-    if (!nextTokenIs(b, _ROUTINE_INVOCATION_)) return false;
+    if (!nextTokenIs(b, ROUTINE_INVOCATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = routine_invocation(b, l + 1);
@@ -12513,7 +10046,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<contextually typed value specification>
   public static boolean contextually_typed_row_value_constructor_element(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "contextually_typed_row_value_constructor_element")) return false;
-    if (!nextTokenIs(b, "<contextually typed row value constructor element>", _CONTEXTUALLY_TYPED_VALUE_SPECIFICATION_, _VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<contextually typed row value constructor element>", CONTEXTUALLY_TYPED_VALUE_SPECIFICATION, _VALUE_EXPRESSION_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CONTEXTUALLY_TYPED_ROW_VALUE_CONSTRUCTOR_ELEMENT, "<contextually typed row value constructor element>");
     r = value_expression(b, l + 1);
@@ -12524,7 +10057,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // <contextually typed row value constructor element>
-  // 		[ { <comma> <contextually typed row value constructor element> }... ]
+  // 		[ { <comma> <contextually typed row value constructor element> }"..." ]
   public static boolean contextually_typed_row_value_constructor_element_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "contextually_typed_row_value_constructor_element_list")) return false;
     if (!nextTokenIs(b, _CONTEXTUALLY_TYPED_ROW_VALUE_CONSTRUCTOR_ELEMENT_)) return false;
@@ -12536,16 +10069,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <contextually typed row value constructor element> }... ]
+  // [ { <comma> <contextually typed row value constructor element> }"..." ]
   private static boolean contextually_typed_row_value_constructor_element_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "contextually_typed_row_value_constructor_element_list_1")) return false;
     contextually_typed_row_value_constructor_element_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <contextually typed row value constructor element>
+  // { <comma> <contextually typed row value constructor element> }"..."
   private static boolean contextually_typed_row_value_constructor_element_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "contextually_typed_row_value_constructor_element_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = contextually_typed_row_value_constructor_element_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <contextually typed row value constructor element>
+  private static boolean contextually_typed_row_value_constructor_element_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "contextually_typed_row_value_constructor_element_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -12559,7 +10103,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<contextually typed row value constructor>
   public static boolean contextually_typed_row_value_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "contextually_typed_row_value_expression")) return false;
-    if (!nextTokenIs(b, "<contextually typed row value expression>", _CONTEXTUALLY_TYPED_ROW_VALUE_CONSTRUCTOR_, _ROW_VALUE_SPECIAL_CASE_)) return false;
+    if (!nextTokenIs(b, "<contextually typed row value expression>", CONTEXTUALLY_TYPED_ROW_VALUE_CONSTRUCTOR, ROW_VALUE_SPECIAL_CASE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CONTEXTUALLY_TYPED_ROW_VALUE_EXPRESSION, "<contextually typed row value expression>");
     r = row_value_special_case(b, l + 1);
@@ -12569,10 +10113,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <contextually typed row value expression> [ { <comma> <contextually typed row value expression> }... ]
+  // <contextually typed row value expression> [ { <comma> <contextually typed row value expression> }"..." ]
   public static boolean contextually_typed_row_value_expression_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "contextually_typed_row_value_expression_list")) return false;
-    if (!nextTokenIs(b, _CONTEXTUALLY_TYPED_ROW_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, CONTEXTUALLY_TYPED_ROW_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = contextually_typed_row_value_expression(b, l + 1);
@@ -12581,16 +10125,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <contextually typed row value expression> }... ]
+  // [ { <comma> <contextually typed row value expression> }"..." ]
   private static boolean contextually_typed_row_value_expression_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "contextually_typed_row_value_expression_list_1")) return false;
     contextually_typed_row_value_expression_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <contextually typed row value expression>
+  // { <comma> <contextually typed row value expression> }"..."
   private static boolean contextually_typed_row_value_expression_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "contextually_typed_row_value_expression_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = contextually_typed_row_value_expression_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <contextually typed row value expression>
+  private static boolean contextually_typed_row_value_expression_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "contextually_typed_row_value_expression_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -12606,7 +10161,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, VALUES)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, VALUES, _CONTEXTUALLY_TYPED_ROW_VALUE_EXPRESSION_LIST_);
+    r = consumeTokens(b, 0, VALUES, CONTEXTUALLY_TYPED_ROW_VALUE_EXPRESSION_LIST);
     exit_section_(b, m, CONTEXTUALLY_TYPED_TABLE_VALUE_CONSTRUCTOR, r);
     return r;
   }
@@ -12615,7 +10170,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <implicitly typed value specification> | <default specification>
   public static boolean contextually_typed_value_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "contextually_typed_value_specification")) return false;
-    if (!nextTokenIs(b, "<contextually typed value specification>", _DEFAULT_SPECIFICATION_, _IMPLICITLY_TYPED_VALUE_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, "<contextually typed value specification>", DEFAULT_SPECIFICATION, IMPLICITLY_TYPED_VALUE_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CONTEXTUALLY_TYPED_VALUE_SPECIFICATION, "<contextually typed value specification>");
     r = implicitly_typed_value_specification(b, l + 1);
@@ -12628,7 +10183,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean correlation_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "correlation_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -12672,11 +10227,11 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <table reference> CROSS JOIN <table primary>
   public static boolean cross_join(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cross_join")) return false;
-    if (!nextTokenIs(b, _TABLE_REFERENCE_)) return false;
+    if (!nextTokenIs(b, TABLE_REFERENCE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = table_reference(b, l + 1);
-    r = r && consumeTokens(b, 0, CROSS, JOIN, _TABLE_PRIMARY_);
+    r = r && consumeTokens(b, 0, CROSS, JOIN,TABLE_PRIMARY);
     exit_section_(b, m, CROSS_JOIN, r);
     return r;
   }
@@ -12688,7 +10243,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CUBE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CUBE, _LEFT_PAREN_, _ORDINARY_GROUPING_SET_LIST_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, CUBE, _LEFT_PAREN_, ORDINARY_GROUPING_SET_LIST, _RIGHT_PAREN_);
     exit_section_(b, m, CUBE_LIST, r);
     return r;
   }
@@ -12700,7 +10255,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CURRENT_COLLATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CURRENT_COLLATION, _LEFT_PAREN_, _STRING_VALUE_EXPRESSION_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, CURRENT_COLLATION, _LEFT_PAREN_, STRING_VALUE_EXPRESSION, _RIGHT_PAREN_);
     exit_section_(b, m, CURRENT_COLLATION_SPECIFICATION, r);
     return r;
   }
@@ -12815,13 +10370,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <cursor attribute>...
+  // <cursor attribute>"..."
   public static boolean cursor_attributes(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cursor_attributes")) return false;
-    if (!nextTokenIs(b, _CURSOR_ATTRIBUTE____)) return false;
+    if (!nextTokenIs(b, CURSOR_ATTRIBUTE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _CURSOR_ATTRIBUTE____);
+    r = cursor_attribute(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, CURSOR_ATTRIBUTES, r);
     return r;
   }
@@ -12843,7 +10399,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <statement cursor> | <result set cursor>
   public static boolean cursor_intent(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cursor_intent")) return false;
-    if (!nextTokenIs(b, "<cursor intent>", _RESULT_SET_CURSOR_, _STATEMENT_CURSOR_)) return false;
+    if (!nextTokenIs(b, "<cursor intent>", RESULT_SET_CURSOR, STATEMENT_CURSOR)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CURSOR_INTENT, "<cursor intent>");
     r = statement_cursor(b, l + 1);
@@ -12856,7 +10412,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <local qualified name>
   public static boolean cursor_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cursor_name")) return false;
-    if (!nextTokenIs(b, _LOCAL_QUALIFIED_NAME_)) return false;
+    if (!nextTokenIs(b, LOCAL_QUALIFIED_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = local_qualified_name(b, l + 1);
@@ -12907,7 +10463,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <query expression> [ <order by clause> ] [ <updatability clause> ]
   public static boolean cursor_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cursor_specification")) return false;
-    if (!nextTokenIs(b, _QUERY_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, QUERY_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = query_expression(b, l + 1);
@@ -12941,7 +10497,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CYCLE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CYCLE, _CYCLE_COLUMN_LIST_, SET, _CYCLE_MARK_COLUMN_, TO, _CYCLE_MARK_VALUE_, DEFAULT, _NON_CYCLE_MARK_VALUE_, USING, _PATH_COLUMN_);
+    r = consumeTokens(b, 0, CYCLE, CYCLE_COLUMN_LIST, SET, CYCLE_MARK_COLUMN, TO, CYCLE_MARK_VALUE, DEFAULT, NON_CYCLE_MARK_VALUE, USING, PATH_COLUMN);
     exit_section_(b, m, CYCLE_CLAUSE, r);
     return r;
   }
@@ -12959,10 +10515,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <cycle column> [ { <comma> <cycle column> }... ]
+  // <cycle column> [ { <comma> <cycle column> }"..." ]
   public static boolean cycle_column_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cycle_column_list")) return false;
-    if (!nextTokenIs(b, _CYCLE_COLUMN_)) return false;
+    if (!nextTokenIs(b, CYCLE_COLUMN)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = cycle_column(b, l + 1);
@@ -12971,16 +10527,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <cycle column> }... ]
+  // [ { <comma> <cycle column> }"..." ]
   private static boolean cycle_column_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cycle_column_list_1")) return false;
     cycle_column_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <cycle column>
+  // { <comma> <cycle column> }"..."
   private static boolean cycle_column_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "cycle_column_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = cycle_column_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <cycle column>
+  private static boolean cycle_column_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "cycle_column_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -13033,7 +10600,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <left paren> [ <data type> [ { <comma> <data type> }... ] ] <right paren>
+  // <left paren> [ <data type> [ { <comma> <data type> }"..." ] ] <right paren>
   public static boolean data_type_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "data_type_list")) return false;
     if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
@@ -13046,14 +10613,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ <data type> [ { <comma> <data type> }... ] ]
+  // [ <data type> [ { <comma> <data type> }"..." ] ]
   private static boolean data_type_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "data_type_list_1")) return false;
     data_type_list_1_0(b, l + 1);
     return true;
   }
 
-  // <data type> [ { <comma> <data type> }... ]
+  // <data type> [ { <comma> <data type> }"..." ]
   private static boolean data_type_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "data_type_list_1_0")) return false;
     boolean r;
@@ -13064,16 +10631,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <data type> }... ]
+  // [ { <comma> <data type> }"..." ]
   private static boolean data_type_list_1_0_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "data_type_list_1_0_1")) return false;
     data_type_list_1_0_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <data type>
+  // { <comma> <data type> }"..."
   private static boolean data_type_list_1_0_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "data_type_list_1_0_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = data_type_list_1_0_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <data type>
+  private static boolean data_type_list_1_0_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "data_type_list_1_0_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -13089,7 +10667,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DATE, _DATE_STRING_);
+    r = consumeTokens(b, 0, DATE, DATE_STRING);
     exit_section_(b, m, DATE_LITERAL, r);
     return r;
   }
@@ -13128,7 +10706,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <datetime primary> [ <time zone> ]
   public static boolean datetime_factor(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "datetime_factor")) return false;
-    if (!nextTokenIs(b, _DATETIME_PRIMARY_)) return false;
+    if (!nextTokenIs(b, DATETIME_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = datetime_primary(b, l + 1);
@@ -13161,7 +10739,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression primary> | <datetime value function>
   public static boolean datetime_primary(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "datetime_primary")) return false;
-    if (!nextTokenIs(b, "<datetime primary>", _DATETIME_VALUE_FUNCTION_, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, "<datetime primary>", DATETIME_VALUE_FUNCTION, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, DATETIME_PRIMARY, "<datetime primary>");
     r = value_expression_primary(b, l + 1);
@@ -13174,7 +10752,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <datetime factor>
   public static boolean datetime_term(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "datetime_term")) return false;
-    if (!nextTokenIs(b, _DATETIME_FACTOR_)) return false;
+    if (!nextTokenIs(b, DATETIME_FACTOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = datetime_factor(b, l + 1);
@@ -13301,7 +10879,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <days value> [ <space> <hours value> [ <colon> <minutes value> [ <colon> <seconds value> ] ] ]
   public static boolean day_time_interval(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "day_time_interval")) return false;
-    if (!nextTokenIs(b, _DAYS_VALUE_)) return false;
+    if (!nextTokenIs(b, DAYS_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = days_value(b, l + 1);
@@ -13359,7 +10937,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <day-time interval> | <time interval>
   public static boolean day_time_literal(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "day_time_literal")) return false;
-    if (!nextTokenIs(b, "<day time literal>", _DAY_TIME_INTERVAL_, _TIME_INTERVAL_)) return false;
+    if (!nextTokenIs(b, "<day time literal>", DAY_TIME_INTERVAL, TIME_INTERVAL)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, DAY_TIME_LITERAL, "<day time literal>");
     r = day_time_interval(b, l + 1);
@@ -13372,7 +10950,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <datetime value>
   public static boolean days_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "days_value")) return false;
-    if (!nextTokenIs(b, _DATETIME_VALUE_)) return false;
+    if (!nextTokenIs(b, DATETIME_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = datetime_value(b, l + 1);
@@ -13389,7 +10967,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeToken(b, DEALLOCATE);
     r = r && deallocate_descriptor_statement_1(b, l + 1);
-    r = r && consumeTokens(b, 0, DESCRIPTOR, _DESCRIPTOR_NAME_);
+    r = r && consumeTokens(b, 0, DESCRIPTOR, DESCRIPTOR_NAME);
     exit_section_(b, m, DEALLOCATE_DESCRIPTOR_STATEMENT, r);
     return r;
   }
@@ -13408,7 +10986,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DEALLOCATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DEALLOCATE, PREPARE, _SQL_STATEMENT_NAME_);
+    r = consumeTokens(b, 0, DEALLOCATE, PREPARE, SQL_STATEMENT_NAME);
     exit_section_(b, m, DEALLOCATE_PREPARED_STATEMENT, r);
     return r;
   }
@@ -13421,13 +10999,13 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DECLARE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DECLARE, _CURSOR_NAME_);
+    r = consumeTokens(b, 0, DECLARE, CURSOR_NAME);
     r = r && declare_cursor_2(b, l + 1);
     r = r && declare_cursor_3(b, l + 1);
     r = r && consumeToken(b, CURSOR);
     r = r && declare_cursor_5(b, l + 1);
     r = r && declare_cursor_6(b, l + 1);
-    r = r && consumeTokens(b, 0, FOR, _CURSOR_SPECIFICATION_);
+    r = r && consumeTokens(b, 0, FOR, CURSOR_SPECIFICATION);
     exit_section_(b, m, DECLARE_CURSOR, r);
     return r;
   }
@@ -13467,7 +11045,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DEFAULT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DEFAULT, _DEFAULT_OPTION_);
+    r = consumeTokens(b, 0, DEFAULT, DEFAULT_OPTION);
     exit_section_(b, m, DEFAULT_CLAUSE, r);
     return r;
   }
@@ -13518,7 +11096,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ON)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ON, DELETE, _REFERENTIAL_ACTION_);
+    r = consumeTokens(b, 0, ON, DELETE, REFERENTIAL_ACTION);
     exit_section_(b, m, DELETE_RULE, r);
     return r;
   }
@@ -13530,7 +11108,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DELETE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DELETE, FROM, _TARGET_TABLE_, WHERE, CURRENT, OF, _CURSOR_NAME_);
+    r = consumeTokens(b, 0, DELETE, FROM, _TARGET_TABLE_, WHERE, CURRENT, OF, CURSOR_NAME);
     exit_section_(b, m, DELETE_STATEMENT_POSITIONED, r);
     return r;
   }
@@ -13563,20 +11141,21 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b);
     r = double_quote(b, l + 1);
-    r = r && delimited_identifier_body(b, l + 1);
+    r = r && delimitedIDENTIFIERbody(b, l + 1);
     r = r && double_quote(b, l + 1);
     exit_section_(b, m, DELIMITED_IDENTIFIER, r);
     return r;
   }
 
   /* ********************************************************** */
-  // <delimited identifier part>...
-  public static boolean delimited_identifier_body(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "delimited_identifier_body")) return false;
-    if (!nextTokenIs(b, _DELIMITED_IDENTIFIER_PART____)) return false;
+  // <delimited identifier part>"..."
+  public static boolean delimitedIDENTIFIERbody(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "delimitedIDENTIFIERbody")) return false;
+    if (!nextTokenIs(b, DELIMITED_IDENTIFIER_PART)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _DELIMITED_IDENTIFIER_PART____);
+    r = delimitedIDENTIFIERpart(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, DELIMITED_IDENTIFIER_BODY, r);
     return r;
   }
@@ -13585,9 +11164,9 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <nondoublequote character> | <doublequote symbol>
   // 		<ampersand><double quote> <Unicode delimiter body> <double quote>
   // 		<Unicode escape specifier>
-  public static boolean delimited_identifier_part(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "delimited_identifier_part")) return false;
-    if (!nextTokenIs(b, "<delimited identifier part>", _DOUBLEQUOTE_SYMBOL_, _NONDOUBLEQUOTE_CHARACTER_)) return false;
+  public static boolean delimitedIDENTIFIERpart(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "delimitedIDENTIFIERpart")) return false;
+    if (!nextTokenIs(b, "<delimited identifier part>", _DOUBLEQUOTE_SYMBOL_, NONDOUBLEQUOTE_CHARACTER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, DELIMITED_IDENTIFIER_PART, "<delimited identifier part>");
     r = nondoublequote_character(b, l + 1);
@@ -13612,7 +11191,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <reference value expression> <dereference operator> <attribute name>
   public static boolean dereference_operation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "dereference_operation")) return false;
-    if (!nextTokenIs(b, _REFERENCE_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, REFERENCE_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = reference_value_expression(b, l + 1);
@@ -13626,7 +11205,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <right arrow>
   public static boolean dereference_operator(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "dereference_operator")) return false;
-    if (!nextTokenIs(b, _RIGHT_ARROW_)) return false;
+    if (!nextTokenIs(b, RIGHT_ARROW)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = right_arrow(b, l + 1);
@@ -13673,7 +11252,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, REF)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, REF, FROM, _LIST_OF_ATTRIBUTES_);
+    r = consumeTokens(b, 0, REF, FROM, LIST_OF_ATTRIBUTES);
     exit_section_(b, m, DERIVED_REPRESENTATION, r);
     return r;
   }
@@ -13682,7 +11261,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <table subquery>
   public static boolean derived_table(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "derived_table")) return false;
-    if (!nextTokenIs(b, _TABLE_SUBQUERY_)) return false;
+    if (!nextTokenIs(b, TABLE_SUBQUERY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = table_subquery(b, l + 1);
@@ -13697,7 +11276,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DESCRIBE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DESCRIBE, INPUT, _SQL_STATEMENT_NAME_, _USING_DESCRIPTOR_);
+    r = consumeTokens(b, 0, DESCRIBE, INPUT, SQL_STATEMENT_NAME, USING_DESCRIPTOR);
     r = r && describe_input_statement_4(b, l + 1);
     exit_section_(b, m, DESCRIBE_INPUT_STATEMENT, r);
     return r;
@@ -13744,7 +11323,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <describe input statement> | <describe output statement>
   public static boolean describe_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "describe_statement")) return false;
-    if (!nextTokenIs(b, "<describe statement>", _DESCRIBE_INPUT_STATEMENT_, _DESCRIBE_OUTPUT_STATEMENT_)) return false;
+    if (!nextTokenIs(b, "<describe statement>", DESCRIBE_INPUT_STATEMENT, DESCRIBE_OUTPUT_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, DESCRIBE_STATEMENT, "<describe statement>");
     r = describe_input_statement(b, l + 1);
@@ -13758,7 +11337,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	CURSOR <extended cursor name> STRUCTURE
   public static boolean described_object(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "described_object")) return false;
-    if (!nextTokenIs(b, "<described object>", CURSOR, _SQL_STATEMENT_NAME_)) return false;
+    if (!nextTokenIs(b, "<described object>", CURSOR, SQL_STATEMENT_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, DESCRIBED_OBJECT, "<described object>");
     r = SQL_statement_name(b, l + 1);
@@ -13854,7 +11433,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <scope option> ] <simple value specification>
   public static boolean descriptor_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "descriptor_name")) return false;
-    if (!nextTokenIs(b, "<descriptor name>", _SCOPE_OPTION_, _SIMPLE_VALUE_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, "<descriptor name>", SCOPE_OPTION, _SIMPLE_VALUE_SPECIFICATION_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, DESCRIPTOR_NAME, "<descriptor name>");
     r = descriptor_name_0(b, l + 1);
@@ -13890,7 +11469,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DIAGNOSTICS)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DIAGNOSTICS, SIZE, _NUMBER_OF_CONDITIONS_);
+    r = consumeTokens(b, 0, DIAGNOSTICS, SIZE, NUMBER_OF_CONDITIONS);
     exit_section_(b, m, DIAGNOSTICS_SIZE, r);
     return r;
   }
@@ -13940,7 +11519,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <directly executable statement> <semicolon>
   public static boolean direct_SQL_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "direct_SQL_statement")) return false;
-    if (!nextTokenIs(b, _DIRECTLY_EXECUTABLE_STATEMENT_)) return false;
+    if (!nextTokenIs(b, DIRECTLY_EXECUTABLE_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = directly_executable_statement(b, l + 1);
@@ -13950,7 +11529,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // !! See the Syntax Rules.
   public static boolean direct_implementation_defined_statement(PsiBuilder b, int l) {
     Marker m = enter_section_(b);
     exit_section_(b, m, DIRECT_IMPLEMENTATION_DEFINED_STATEMENT, true);
@@ -13961,7 +11539,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression primary> <period> <method name> [ <SQL argument list> ]
   public static boolean direct_invocation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "direct_invocation")) return false;
-    if (!nextTokenIs(b, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = value_expression_primary(b, l + 1);
@@ -13983,7 +11561,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <cursor specification>
   public static boolean direct_select_statement_multiple_rows(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "direct_select_statement_multiple_rows")) return false;
-    if (!nextTokenIs(b, _CURSOR_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, CURSOR_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = cursor_specification(b, l + 1);
@@ -14032,7 +11610,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DISCONNECT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DISCONNECT, _DISCONNECT_OBJECT_);
+    r = consumeTokens(b, 0, DISCONNECT, DISCONNECT_OBJECT);
     exit_section_(b, m, DISCONNECT_STATEMENT, r);
     return r;
   }
@@ -14053,7 +11631,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand 3> <distinct predicate part 2>
   public static boolean distinct_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "distinct_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_3_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND_3)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand_3(b, l + 1);
@@ -14069,7 +11647,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, IS)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, IS, DISTINCT, FROM, _ROW_VALUE_PREDICAND_4_);
+    r = consumeTokens(b, 0, IS, DISTINCT, FROM, ROW_VALUE_PREDICAND_4);
     exit_section_(b, m, DISTINCT_PREDICATE_PART_2, r);
     return r;
   }
@@ -14078,7 +11656,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <constraint name definition> ] <check constraint definition> [ <constraint characteristics> ]
   public static boolean domain_constraint(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "domain_constraint")) return false;
-    if (!nextTokenIs(b, "<domain constraint>", _CHECK_CONSTRAINT_DEFINITION_, _CONSTRAINT_NAME_DEFINITION_)) return false;
+    if (!nextTokenIs(b, "<domain constraint>", CHECK_CONSTRAINT_DEFINITION, CONSTRAINT_NAME_DEFINITION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, DOMAIN_CONSTRAINT, "<domain constraint>");
     r = domain_constraint_0(b, l + 1);
@@ -14104,7 +11682,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // CREATE DOMAIN <domain name> [ AS ] <data type>
-  // 		[ <default clause> ] [ <domain constraint>... ] [ <collate clause> ]
+  // 		[ <default clause> ] [ <domain constraint>"..." ] [ <collate clause> ]
   public static boolean domain_definition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "domain_definition")) return false;
     if (!nextTokenIs(b, CREATE)) return false;
@@ -14134,11 +11712,22 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ <domain constraint>... ]
+  // [ <domain constraint>"..." ]
   private static boolean domain_definition_6(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "domain_definition_6")) return false;
-    consumeToken(b, _DOMAIN_CONSTRAINT____);
+    domain_definition_6_0(b, l + 1);
     return true;
+  }
+
+  // <domain constraint>"..."
+  private static boolean domain_definition_6_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "domain_definition_6_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = domain_constraint(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   // [ <collate clause> ]
@@ -14152,7 +11741,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema qualified name>
   public static boolean domain_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "domain_name")) return false;
-    if (!nextTokenIs(b, _SCHEMA_QUALIFIED_NAME_)) return false;
+    if (!nextTokenIs(b, SCHEMA_QUALIFIED_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = schema_qualified_name(b, l + 1);
@@ -14187,11 +11776,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // "
+  // "\""
   public static boolean double_quote(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, DOUBLE_QUOTE, true);
-    return true;
+    if (!recursion_guard_(b, l, "double_quote")) return false;
+    boolean r;
+    Marker m = enter_section_(b, l, _NONE_, DOUBLE_QUOTE, "<double quote>");
+    r = consumeToken(b, "\"");
+    exit_section_(b, l, m, r, false, null);
+    return r;
   }
 
   /* ********************************************************** */
@@ -14257,7 +11849,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, ATTRIBUTE, _ATTRIBUTE_NAME_, RESTRICT);
+    r = consumeTokens(b, 0, DROP, ATTRIBUTE, ATTRIBUTE_NAME, RESTRICT);
     exit_section_(b, m, DROP_ATTRIBUTE_DEFINITION, r);
     return r;
   }
@@ -14294,7 +11886,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, COLLATION, _COLLATION_NAME_, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, COLLATION, _COLLATION_NAME_, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_COLLATION_STATEMENT, r);
     return r;
   }
@@ -14340,7 +11932,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, SCOPE, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, SCOPE, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_COLUMN_SCOPE_CLAUSE, r);
     return r;
   }
@@ -14352,7 +11944,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, TYPE, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, TYPE, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_DATA_TYPE_STATEMENT, r);
     return r;
   }
@@ -14388,7 +11980,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, DOMAIN, _DOMAIN_NAME_, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, DOMAIN, _DOMAIN_NAME_, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_DOMAIN_STATEMENT, r);
     return r;
   }
@@ -14400,7 +11992,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, _SPECIFIC_METHOD_SPECIFICATION_DESIGNATOR_, RESTRICT);
+    r = consumeTokens(b, 0, DROP, SPECIFIC_METHOD_SPECIFICATION_DESIGNATOR, RESTRICT);
     exit_section_(b, m, DROP_METHOD_SPECIFICATION, r);
     return r;
   }
@@ -14412,7 +12004,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, ROLE, _ROLE_NAME_);
+    r = consumeTokens(b, 0, DROP, ROLE, ROLE_NAME);
     exit_section_(b, m, DROP_ROLE_STATEMENT, r);
     return r;
   }
@@ -14424,7 +12016,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, _SPECIFIC_ROUTINE_DESIGNATOR_, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, SPECIFIC_ROUTINE_DESIGNATOR, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_ROUTINE_STATEMENT, r);
     return r;
   }
@@ -14436,7 +12028,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, SCHEMA, _SCHEMA_NAME_, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, SCHEMA, _SCHEMA_NAME_, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_SCHEMA_STATEMENT, r);
     return r;
   }
@@ -14448,7 +12040,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, SEQUENCE, _SEQUENCE_GENERATOR_NAME_, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, SEQUENCE, _SEQUENCE_GENERATOR_NAME_, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_SEQUENCE_GENERATOR_STATEMENT, r);
     return r;
   }
@@ -14460,7 +12052,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, CONSTRAINT, _CONSTRAINT_NAME_, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, CONSTRAINT, _CONSTRAINT_NAME_, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_TABLE_CONSTRAINT_DEFINITION, r);
     return r;
   }
@@ -14472,7 +12064,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, TABLE, _TABLE_NAME_, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, TABLE, _TABLE_NAME_, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_TABLE_STATEMENT, r);
     return r;
   }
@@ -14509,7 +12101,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     r = consumeToken(b, DROP);
     r = r && drop_transform_statement_1(b, l + 1);
     r = r && transforms_to_be_dropped(b, l + 1);
-    r = r && consumeTokens(b, 0, FOR, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, _DROP_BEHAVIOR_);
+    r = r && consumeTokens(b, 0, FOR, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_TRANSFORM_STATEMENT, r);
     return r;
   }
@@ -14542,7 +12134,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, TRIGGER, _TRIGGER_NAME_);
+    r = consumeTokens(b, 0, DROP, TRIGGER, TRIGGER_NAME);
     exit_section_(b, m, DROP_TRIGGER_STATEMENT, r);
     return r;
   }
@@ -14554,7 +12146,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, CAST, _LEFT_PAREN_, _SOURCE_DATA_TYPE_, AS, _TARGET_DATA_TYPE_, _RIGHT_PAREN_, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, CAST, _LEFT_PAREN_, SOURCE_DATA_TYPE, AS, TARGET_DATA_TYPE, _RIGHT_PAREN_, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_USER_DEFINED_CAST_STATEMENT, r);
     return r;
   }
@@ -14566,7 +12158,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, ORDERING, FOR, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, ORDERING, FOR, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_USER_DEFINED_ORDERING_STATEMENT, r);
     return r;
   }
@@ -14578,7 +12170,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DROP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DROP, VIEW, _TABLE_NAME_, _DROP_BEHAVIOR_);
+    r = consumeTokens(b, 0, DROP, VIEW, _TABLE_NAME_, DROP_BEHAVIOR);
     exit_section_(b, m, DROP_VIEW_STATEMENT, r);
     return r;
   }
@@ -14590,7 +12182,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CLOSE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CLOSE, _DYNAMIC_CURSOR_NAME_);
+    r = consumeTokens(b, 0, CLOSE, DYNAMIC_CURSOR_NAME);
     exit_section_(b, m, DYNAMIC_CLOSE_STATEMENT, r);
     return r;
   }
@@ -14599,7 +12191,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <cursor name> | <extended cursor name>
   public static boolean dynamic_cursor_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "dynamic_cursor_name")) return false;
-    if (!nextTokenIs(b, "<dynamic cursor name>", _CURSOR_NAME_, _EXTENDED_CURSOR_NAME_)) return false;
+    if (!nextTokenIs(b, "<dynamic cursor name>", CURSOR_NAME, _EXTENDED_CURSOR_NAME_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, DYNAMIC_CURSOR_NAME, "<dynamic cursor name>");
     r = cursor_name(b, l + 1);
@@ -14616,13 +12208,13 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DECLARE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DECLARE, _CURSOR_NAME_);
+    r = consumeTokens(b, 0, DECLARE, CURSOR_NAME);
     r = r && dynamic_declare_cursor_2(b, l + 1);
     r = r && dynamic_declare_cursor_3(b, l + 1);
     r = r && consumeToken(b, CURSOR);
     r = r && dynamic_declare_cursor_5(b, l + 1);
     r = r && dynamic_declare_cursor_6(b, l + 1);
-    r = r && consumeTokens(b, 0, FOR, _STATEMENT_NAME_);
+    r = r && consumeTokens(b, 0, FOR, STATEMENT_NAME);
     exit_section_(b, m, DYNAMIC_DECLARE_CURSOR, r);
     return r;
   }
@@ -14662,7 +12254,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DELETE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DELETE, FROM, _TARGET_TABLE_, WHERE, CURRENT, OF, _DYNAMIC_CURSOR_NAME_);
+    r = consumeTokens(b, 0, DELETE, FROM, _TARGET_TABLE_, WHERE, CURRENT, OF, DYNAMIC_CURSOR_NAME);
     exit_section_(b, m, DYNAMIC_DELETE_STATEMENT_POSITIONED, r);
     return r;
   }
@@ -14714,7 +12306,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, OPEN)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, OPEN, _DYNAMIC_CURSOR_NAME_);
+    r = consumeTokens(b, 0, OPEN, DYNAMIC_CURSOR_NAME);
     r = r && dynamic_open_statement_2(b, l + 1);
     exit_section_(b, m, DYNAMIC_OPEN_STATEMENT, r);
     return r;
@@ -14746,7 +12338,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DYNAMIC)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DYNAMIC, RESULT, SETS, _MAXIMUM_DYNAMIC_RESULT_SETS_);
+    r = consumeTokens(b, 0, DYNAMIC, RESULT, SETS, MAXIMUM_DYNAMIC_RESULT_SETS);
     exit_section_(b, m, DYNAMIC_RESULT_SETS_CHARACTERISTIC, r);
     return r;
   }
@@ -14755,7 +12347,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <cursor specification>
   public static boolean dynamic_select_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "dynamic_select_statement")) return false;
-    if (!nextTokenIs(b, _CURSOR_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, CURSOR_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = cursor_specification(b, l + 1);
@@ -14767,7 +12359,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <query specification>
   public static boolean dynamic_single_row_select_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "dynamic_single_row_select_statement")) return false;
-    if (!nextTokenIs(b, _QUERY_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, QUERY_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = query_specification(b, l + 1);
@@ -14782,7 +12374,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, UPDATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, UPDATE, _TARGET_TABLE_, SET, _SET_CLAUSE_LIST_, WHERE, CURRENT, OF, _DYNAMIC_CURSOR_NAME_);
+    r = consumeTokens(b, 0, UPDATE, _TARGET_TABLE_, SET, SET_CLAUSE_LIST, WHERE, CURRENT, OF, DYNAMIC_CURSOR_NAME);
     exit_section_(b, m, DYNAMIC_UPDATE_STATEMENT_POSITIONED, r);
     return r;
   }
@@ -14794,21 +12386,12 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ELSE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ELSE, _RESULT_);
+    r = consumeTokens(b, 0, ELSE, RESULT);
     exit_section_(b, m, ELSE_CLAUSE, r);
     return r;
   }
 
   /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean embedded_SQL_Ada_program(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, EMBEDDED_SQL_ADA_PROGRAM, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
   public static boolean embedded_SQL_C_program(PsiBuilder b, int l) {
     Marker m = enter_section_(b);
     exit_section_(b, m, EMBEDDED_SQL_C_PROGRAM, true);
@@ -14816,81 +12399,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean embedded_SQL_COBOL_program(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, EMBEDDED_SQL_COBOL_PROGRAM, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean embedded_SQL_Fortran_program(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, EMBEDDED_SQL_FORTRAN_PROGRAM, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // <SQL prefix> BEGIN DECLARE SECTION [ <embedded character set declaration> ]
-  // 		[ <host variable definition>... ] END DECLARE SECTION <SQL terminator>
-  public static boolean embedded_SQL_MUMPS_declare(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "embedded_SQL_MUMPS_declare")) return false;
-    if (!nextTokenIs(b, _SQL_PREFIX_)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = SQL_prefix(b, l + 1);
-    r = r && consumeTokens(b, 0, BEGIN, DECLARE, SECTION);
-    r = r && embedded_SQL_MUMPS_declare_4(b, l + 1);
-    r = r && embedded_SQL_MUMPS_declare_5(b, l + 1);
-    r = r && consumeTokens(b, 0, END, DECLARE, SECTION, _SQL_TERMINATOR_);
-    exit_section_(b, m, EMBEDDED_SQL_MUMPS_DECLARE, r);
-    return r;
-  }
-
-  // [ <embedded character set declaration> ]
-  private static boolean embedded_SQL_MUMPS_declare_4(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "embedded_SQL_MUMPS_declare_4")) return false;
-    embedded_character_set_declaration(b, l + 1);
-    return true;
-  }
-
-  // [ <host variable definition>... ]
-  private static boolean embedded_SQL_MUMPS_declare_5(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "embedded_SQL_MUMPS_declare_5")) return false;
-    consumeToken(b, _HOST_VARIABLE_DEFINITION____);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean embedded_SQL_MUMPS_program(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, EMBEDDED_SQL_MUMPS_PROGRAM, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean embedded_SQL_PL_I_program(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, EMBEDDED_SQL_PL_I_PROGRAM, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean embedded_SQL_Pascal_program(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, EMBEDDED_SQL_PASCAL_PROGRAM, true);
-    return true;
-  }
-
-  /* ********************************************************** */
   // <SQL prefix> BEGIN DECLARE SECTION [ <SQL terminator> ]
   public static boolean embedded_SQL_begin_declare(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "embedded_SQL_begin_declare")) return false;
-    if (!nextTokenIs(b, _SQL_PREFIX_)) return false;
+    if (!nextTokenIs(b, SQL_PREFIX)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQL_prefix(b, l + 1);
@@ -14908,51 +12420,50 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <embedded SQL begin declare> [ <embedded character set declaration> ] [ <host variable definition>... ] <embedded SQL end declare>
-  // 	|	<embedded SQL MUMPS declare>
+  // <embedded SQL begin declare> [ <embedded character set declaration> ] [ <host variable definition>"..." ] <embedded SQL end declare>
   public static boolean embedded_SQL_declare_section(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "embedded_SQL_declare_section")) return false;
-    if (!nextTokenIs(b, "<embedded sql declare section>", _EMBEDDED_SQL_BEGIN_DECLARE_, _EMBEDDED_SQL_MUMPS_DECLARE_)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, EMBEDDED_SQL_DECLARE_SECTION, "<embedded sql declare section>");
-    r = embedded_SQL_declare_section_0(b, l + 1);
-    if (!r) r = embedded_SQL_MUMPS_declare(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // <embedded SQL begin declare> [ <embedded character set declaration> ] [ <host variable definition>... ] <embedded SQL end declare>
-  private static boolean embedded_SQL_declare_section_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "embedded_SQL_declare_section_0")) return false;
+    if (!nextTokenIs(b, EMBEDDED_SQL_BEGIN_DECLARE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = embedded_SQL_begin_declare(b, l + 1);
-    r = r && embedded_SQL_declare_section_0_1(b, l + 1);
-    r = r && embedded_SQL_declare_section_0_2(b, l + 1);
+    r = r && embedded_SQL_declare_section_1(b, l + 1);
+    r = r && embedded_SQL_declare_section_2(b, l + 1);
     r = r && embedded_SQL_end_declare(b, l + 1);
-    exit_section_(b, m, null, r);
+    exit_section_(b, m, EMBEDDED_SQL_DECLARE_SECTION, r);
     return r;
   }
 
   // [ <embedded character set declaration> ]
-  private static boolean embedded_SQL_declare_section_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "embedded_SQL_declare_section_0_1")) return false;
+  private static boolean embedded_SQL_declare_section_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "embedded_SQL_declare_section_1")) return false;
     embedded_character_set_declaration(b, l + 1);
     return true;
   }
 
-  // [ <host variable definition>... ]
-  private static boolean embedded_SQL_declare_section_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "embedded_SQL_declare_section_0_2")) return false;
-    consumeToken(b, _HOST_VARIABLE_DEFINITION____);
+  // [ <host variable definition>"..." ]
+  private static boolean embedded_SQL_declare_section_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "embedded_SQL_declare_section_2")) return false;
+    embedded_SQL_declare_section_2_0(b, l + 1);
     return true;
+  }
+
+  // <host variable definition>"..."
+  private static boolean embedded_SQL_declare_section_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "embedded_SQL_declare_section_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = host_variable_definition(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */
   // <SQL prefix> END DECLARE SECTION [ <SQL terminator> ]
   public static boolean embedded_SQL_end_declare(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "embedded_SQL_end_declare")) return false;
-    if (!nextTokenIs(b, _SQL_PREFIX_)) return false;
+    if (!nextTokenIs(b, SQL_PREFIX)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQL_prefix(b, l + 1);
@@ -14970,25 +12481,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <embedded SQL Ada program>
-  // 	|	<embedded SQL C program>
-  // 	|	<embedded SQL COBOL program>
-  // 	|	<embedded SQL Fortran program>
-  // 	|	<embedded SQL MUMPS program>
-  // 	|	<embedded SQL Pascal program>
-  // 	|	<embedded SQL PL/I program>
+  // <embedded SQL C program>
   public static boolean embedded_SQL_host_program(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "embedded_SQL_host_program")) return false;
+    if (!nextTokenIs(b, EMBEDDED_SQL_C_PROGRAM)) return false;
     boolean r;
-    Marker m = enter_section_(b, l, _NONE_, EMBEDDED_SQL_HOST_PROGRAM, "<embedded sql host program>");
-    r = embedded_SQL_Ada_program(b, l + 1);
-    if (!r) r = embedded_SQL_C_program(b, l + 1);
-    if (!r) r = embedded_SQL_COBOL_program(b, l + 1);
-    if (!r) r = embedded_SQL_Fortran_program(b, l + 1);
-    if (!r) r = embedded_SQL_MUMPS_program(b, l + 1);
-    if (!r) r = embedded_SQL_Pascal_program(b, l + 1);
-    if (!r) r = embedded_SQL_PL_I_program(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
+    Marker m = enter_section_(b);
+    r = embedded_SQL_C_program(b, l + 1);
+    exit_section_(b, m, EMBEDDED_SQL_HOST_PROGRAM, r);
     return r;
   }
 
@@ -14996,7 +12496,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <SQL prefix> <statement or declaration> [ <SQL terminator> ]
   public static boolean embedded_SQL_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "embedded_SQL_statement")) return false;
-    if (!nextTokenIs(b, _SQL_PREFIX_)) return false;
+    if (!nextTokenIs(b, SQL_PREFIX)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQL_prefix(b, l + 1);
@@ -15034,7 +12534,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!recursion_guard_(b, l, "embedded_authorization_clause_1")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, AUTHORIZATION, _EMBEDDED_AUTHORIZATION_IDENTIFIER_);
+    r = consumeTokens(b, 0, AUTHORIZATION, EMBEDDED_AUTHORIZATION_IDENTIFIER);
     r = r && embedded_authorization_clause_1_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
@@ -15074,7 +12574,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!recursion_guard_(b, l, "embedded_authorization_clause_2")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SCHEMA, _SCHEMA_NAME_, AUTHORIZATION, _EMBEDDED_AUTHORIZATION_IDENTIFIER_);
+    r = consumeTokens(b, 0, SCHEMA, _SCHEMA_NAME_, AUTHORIZATION, EMBEDDED_AUTHORIZATION_IDENTIFIER);
     r = r && embedded_authorization_clause_2_4(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
@@ -15116,7 +12616,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DECLARE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DECLARE, _EMBEDDED_AUTHORIZATION_CLAUSE_);
+    r = consumeTokens(b, 0, DECLARE, EMBEDDED_AUTHORIZATION_CLAUSE);
     exit_section_(b, m, EMBEDDED_AUTHORIZATION_DECLARATION, r);
     return r;
   }
@@ -15125,7 +12625,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <module authorization identifier>
   public static boolean embedded_authorization_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "embedded_authorization_identifier")) return false;
-    if (!nextTokenIs(b, _MODULE_AUTHORIZATION_IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, MODULE_AUTHORIZATION_IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = module_authorization_identifier(b, l + 1);
@@ -15149,7 +12649,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <module collations>
   public static boolean embedded_collation_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "embedded_collation_specification")) return false;
-    if (!nextTokenIs(b, _MODULE_COLLATIONS_)) return false;
+    if (!nextTokenIs(b, MODULE_COLLATIONS)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = module_collations(b, l + 1);
@@ -15164,7 +12664,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, WHENEVER)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, WHENEVER, _CONDITION_, _CONDITION_ACTION_);
+    r = consumeTokens(b, 0, WHENEVER, CONDITION, CONDITION_ACTION);
     exit_section_(b, m, EMBEDDED_EXCEPTION_DECLARATION, r);
     return r;
   }
@@ -15173,7 +12673,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <path specification>
   public static boolean embedded_path_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "embedded_path_specification")) return false;
-    if (!nextTokenIs(b, _PATH_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, PATH_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = path_specification(b, l + 1);
@@ -15185,7 +12685,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <transform group specification>
   public static boolean embedded_transform_group_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "embedded_transform_group_specification")) return false;
-    if (!nextTokenIs(b, _TRANSFORM_GROUP_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, TRANSFORM_GROUP_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = transform_group_specification(b, l + 1);
@@ -15210,7 +12710,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <embedded variable name> [ <indicator variable> ]
   public static boolean embedded_variable_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "embedded_variable_specification")) return false;
-    if (!nextTokenIs(b, _EMBEDDED_VARIABLE_NAME_)) return false;
+    if (!nextTokenIs(b, EMBEDDED_VARIABLE_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = embedded_variable_name(b, l + 1);
@@ -15258,7 +12758,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	SECOND [ <left paren> <interval fractional seconds precision> <right paren> ]
   public static boolean end_field(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "end_field")) return false;
-    if (!nextTokenIs(b, "<end field>", SECOND, _NON_SECOND_PRIMARY_DATETIME_FIELD_)) return false;
+    if (!nextTokenIs(b, "<end field>", SECOND, NON_SECOND_PRIMARY_DATETIME_FIELD)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, END_FIELD, "<end field>");
     r = non_second_primary_datetime_field(b, l + 1);
@@ -15300,7 +12800,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, EQUALS)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, EQUALS, ONLY, BY, _ORDERING_CATEGORY_);
+    r = consumeTokens(b, 0, EQUALS, ONLY, BY, ORDERING_CATEGORY);
     exit_section_(b, m, EQUALS_ORDERING_FORM, r);
     return r;
   }
@@ -15309,7 +12809,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character value expression>
   public static boolean escape_character(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "escape_character")) return false;
-    if (!nextTokenIs(b, _CHARACTER_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, CHARACTER_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = character_value_expression(b, l + 1);
@@ -15321,7 +12821,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <blob value expression>
   public static boolean escape_octet(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "escape_octet")) return false;
-    if (!nextTokenIs(b, _BLOB_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, BLOB_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = blob_value_expression(b, l + 1);
@@ -15330,7 +12830,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // !! See the Syntax Rules.
   public static boolean escaped_character(PsiBuilder b, int l) {
     Marker m = enter_section_(b);
     exit_section_(b, m, ESCAPED_CHARACTER, true);
@@ -15543,7 +13042,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, EXECUTE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, EXECUTE, IMMEDIATE, _SQL_STATEMENT_VARIABLE_);
+    r = consumeTokens(b, 0, EXECUTE, IMMEDIATE, SQL_STATEMENT_VARIABLE);
     exit_section_(b, m, EXECUTE_IMMEDIATE_STATEMENT, r);
     return r;
   }
@@ -15555,7 +13054,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, EXECUTE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, EXECUTE, _SQL_STATEMENT_NAME_);
+    r = consumeTokens(b, 0, EXECUTE, SQL_STATEMENT_NAME);
     r = r && execute_statement_2(b, l + 1);
     r = r && execute_statement_3(b, l + 1);
     exit_section_(b, m, EXECUTE_STATEMENT, r);
@@ -15604,7 +13103,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <window name>
   public static boolean existing_window_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "existing_window_name")) return false;
-    if (!nextTokenIs(b, _WINDOW_NAME_)) return false;
+    if (!nextTokenIs(b, WINDOW_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = window_name(b, l + 1);
@@ -15619,7 +13118,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, EXISTS)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, EXISTS, _TABLE_SUBQUERY_);
+    r = consumeTokens(b, 0, EXISTS, TABLE_SUBQUERY);
     exit_section_(b, m, EXISTS_PREDICATE, r);
     return r;
   }
@@ -15646,7 +13145,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TABLE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TABLE, _TABLE_OR_QUERY_NAME_);
+    r = consumeTokens(b, 0, TABLE, TABLE_OR_QUERY_NAME);
     exit_section_(b, m, EXPLICIT_TABLE, r);
     return r;
   }
@@ -15655,7 +13154,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <signed integer>
   public static boolean exponent(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "exponent")) return false;
-    if (!nextTokenIs(b, _SIGNED_INTEGER_)) return false;
+    if (!nextTokenIs(b, SIGNED_INTEGER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = signed_integer(b, l + 1);
@@ -15679,7 +13178,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <scope option> ] <simple value specification>
   public static boolean extended_cursor_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "extended_cursor_name")) return false;
-    if (!nextTokenIs(b, "<extended cursor name>", _SCOPE_OPTION_, _SIMPLE_VALUE_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, "<extended cursor name>", SCOPE_OPTION, _SIMPLE_VALUE_SPECIFICATION_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, EXTENDED_CURSOR_NAME, "<extended cursor name>");
     r = extended_cursor_name_0(b, l + 1);
@@ -15699,18 +13198,18 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <scope option> ] <simple value specification>
   public static boolean extended_statement_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "extended_statement_name")) return false;
-    if (!nextTokenIs(b, "<extended statement name>", _SCOPE_OPTION_, _SIMPLE_VALUE_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, "<extended statement name>", SCOPE_OPTION, _SIMPLE_VALUE_SPECIFICATION_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, EXTENDED_STATEMENT_NAME, "<extended statement name>");
-    r = extended_statement_name_0(b, l + 1);
+    r = extendedSTATEMENT_NAME0(b, l + 1);
     r = r && simple_value_specification(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
   // [ <scope option> ]
-  private static boolean extended_statement_name_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "extended_statement_name_0")) return false;
+  private static boolean extendedSTATEMENT_NAME0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "extendedSTATEMENT_NAME0")) return false;
     scope_option(b, l + 1);
     return true;
   }
@@ -15764,7 +13263,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier> | <character string literal>
   public static boolean external_routine_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "external_routine_name")) return false;
-    if (!nextTokenIs(b, "<external routine name>", _CHARACTER_STRING_LITERAL_, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, "<external routine name>", _CHARACTER_STRING_LITERAL_, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, EXTERNAL_ROUTINE_NAME, "<external routine name>");
     r = identifier(b, l + 1);
@@ -15797,7 +13296,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, PROCEDURE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, PROCEDURE, _PROCEDURE_NAME_, _HOST_PARAMETER_DECLARATION_LIST_, _SEMICOLON_, _SQL_PROCEDURE_STATEMENT_, _SEMICOLON_);
+    r = consumeTokens(b, 0, PROCEDURE, PROCEDURE_NAME, HOST_PARAMETER_DECLARATION_LIST, SEMICOLON, SQL_PROCEDURE_STATEMENT, SEMICOLON);
     exit_section_(b, m, EXTERNALLY_INVOKED_PROCEDURE, r);
     return r;
   }
@@ -15809,7 +13308,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, EXTRACT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, EXTRACT, _LEFT_PAREN_, _EXTRACT_FIELD_, FROM, _EXTRACT_SOURCE_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, EXTRACT, _LEFT_PAREN_, EXTRACT_FIELD, FROM, EXTRACT_SOURCE, _RIGHT_PAREN_);
     exit_section_(b, m, EXTRACT_EXPRESSION, r);
     return r;
   }
@@ -15818,7 +13317,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <primary datetime field> | <time zone field>
   public static boolean extract_field(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "extract_field")) return false;
-    if (!nextTokenIs(b, "<extract field>", _PRIMARY_DATETIME_FIELD_, _TIME_ZONE_FIELD_)) return false;
+    if (!nextTokenIs(b, "<extract field>", PRIMARY_DATETIME_FIELD, TIME_ZONE_FIELD)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, EXTRACT_FIELD, "<extract field>");
     r = primary_datetime_field(b, l + 1);
@@ -15844,7 +13343,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <sign> ] <numeric primary>
   public static boolean factor(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "factor")) return false;
-    if (!nextTokenIs(b, "<factor>", _NUMERIC_PRIMARY_, _SIGN_)) return false;
+    if (!nextTokenIs(b, "<factor>", NUMERIC_PRIMARY, SIGN)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, FACTOR, "<factor>");
     r = factor_0(b, l + 1);
@@ -15909,7 +13408,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     r = consumeToken(b, FETCH);
     r = r && fetch_statement_1(b, l + 1);
     r = r && cursor_name(b, l + 1);
-    r = r && consumeTokens(b, 0, INTO, _FETCH_TARGET_LIST_);
+    r = r && consumeTokens(b, 0, INTO, FETCH_TARGET_LIST);
     exit_section_(b, m, FETCH_STATEMENT, r);
     return r;
   }
@@ -15940,10 +13439,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <target specification> [ { <comma> <target specification> }... ]
+  // <target specification> [ { <comma> <target specification> }"..." ]
   public static boolean fetch_target_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "fetch_target_list")) return false;
-    if (!nextTokenIs(b, _TARGET_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, TARGET_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = target_specification(b, l + 1);
@@ -15952,16 +13451,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <target specification> }... ]
+  // [ { <comma> <target specification> }"..." ]
   private static boolean fetch_target_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "fetch_target_list_1")) return false;
     fetch_target_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <target specification>
+  // { <comma> <target specification> }"..."
   private static boolean fetch_target_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "fetch_target_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = fetch_target_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <target specification>
+  private static boolean fetch_target_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "fetch_target_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -15974,7 +13484,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <field name> <data type> [ <reference scope check> ]
   public static boolean field_definition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "field_definition")) return false;
-    if (!nextTokenIs(b, _FIELD_NAME_)) return false;
+    if (!nextTokenIs(b, FIELD_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = field_name(b, l + 1);
@@ -15995,7 +13505,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean field_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "field_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -16007,7 +13517,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression primary> <period> <field name>
   public static boolean field_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "field_reference")) return false;
-    if (!nextTokenIs(b, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = value_expression_primary(b, l + 1);
@@ -16079,28 +13589,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // FREE LOCATOR <locator reference> [ { <comma> <locator reference> }... ]
+  // FREE LOCATOR <locator reference> [ { <comma> <locator reference> }"..." ]
   public static boolean free_locator_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "free_locator_statement")) return false;
     if (!nextTokenIs(b, FREE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, FREE, LOCATOR, _LOCATOR_REFERENCE_);
+    r = consumeTokens(b, 0, FREE, LOCATOR, LOCATOR_REFERENCE);
     r = r && free_locator_statement_3(b, l + 1);
     exit_section_(b, m, FREE_LOCATOR_STATEMENT, r);
     return r;
   }
 
-  // [ { <comma> <locator reference> }... ]
+  // [ { <comma> <locator reference> }"..." ]
   private static boolean free_locator_statement_3(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "free_locator_statement_3")) return false;
     free_locator_statement_3_0(b, l + 1);
     return true;
   }
 
-  // <comma> <locator reference>
+  // { <comma> <locator reference> }"..."
   private static boolean free_locator_statement_3_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "free_locator_statement_3_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = free_locator_statement_3_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <locator reference>
+  private static boolean free_locator_statement_3_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "free_locator_statement_3_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -16116,7 +13637,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, FROM)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, FROM, _TABLE_REFERENCE_LIST_);
+    r = consumeTokens(b, 0, FROM, TABLE_REFERENCE_LIST);
     exit_section_(b, m, FROM_CLAUSE, r);
     return r;
   }
@@ -16167,7 +13688,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, FROM)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, FROM, SQL, WITH, _FROM_SQL_FUNCTION_);
+    r = consumeTokens(b, 0, FROM, SQL, WITH, FROM_SQL_FUNCTION);
     exit_section_(b, m, FROM_SQL, r);
     return r;
   }
@@ -16176,7 +13697,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <specific routine designator>
   public static boolean from_sql_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "from_sql_function")) return false;
-    if (!nextTokenIs(b, _SPECIFIC_ROUTINE_DESIGNATOR_)) return false;
+    if (!nextTokenIs(b, SPECIFIC_ROUTINE_DESIGNATOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = specific_routine_designator(b, l + 1);
@@ -16218,7 +13739,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ORDER)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ORDER, FULL, BY, _ORDERING_CATEGORY_);
+    r = consumeTokens(b, 0, ORDER, FULL, BY, ORDERING_CATEGORY);
     exit_section_(b, m, FULL_ORDERING_FORM, r);
     return r;
   }
@@ -16231,7 +13752,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, FUNCTION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, FUNCTION, _SCHEMA_QUALIFIED_ROUTINE_NAME_, _SQL_PARAMETER_DECLARATION_LIST_, _RETURNS_CLAUSE_, _ROUTINE_CHARACTERISTICS_);
+    r = consumeTokens(b, 0, FUNCTION, SCHEMA_QUALIFIED_ROUTINE_NAME, SQL_PARAMETER_DECLARATION_LIST, RETURNS_CLAUSE, ROUTINE_CHARACTERISTICS);
     r = r && function_specification_5(b, l + 1);
     exit_section_(b, m, FUNCTION_SPECIFICATION, r);
     return r;
@@ -16271,7 +13792,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <set function type> <left paren> [ <set quantifier> ] <value expression> <right paren>
   public static boolean general_set_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "general_set_function")) return false;
-    if (!nextTokenIs(b, _SET_FUNCTION_TYPE_)) return false;
+    if (!nextTokenIs(b, SET_FUNCTION_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = set_function_type(b, l + 1);
@@ -16350,7 +13871,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = left_paren(b, l + 1);
     r = r && value_expression_primary(b, l + 1);
-    r = r && consumeTokens(b, 0, AS, _DATA_TYPE_, _RIGHT_PAREN_, _PERIOD_, _METHOD_NAME_);
+    r = r && consumeTokens(b, 0, AS, DATA_TYPE, _RIGHT_PAREN_, _PERIOD_, METHOD_NAME);
     r = r && generalized_invocation_7(b, l + 1);
     exit_section_(b, m, GENERALIZED_INVOCATION, r);
     return r;
@@ -16367,11 +13888,11 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <generation rule> AS <generation expression>
   public static boolean generation_clause(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "generation_clause")) return false;
-    if (!nextTokenIs(b, _GENERATION_RULE_)) return false;
+    if (!nextTokenIs(b, GENERATION_RULE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = generation_rule(b, l + 1);
-    r = r && consumeTokens(b, 0, AS, _GENERATION_EXPRESSION_);
+    r = r && consumeTokens(b, 0, AS, GENERATION_EXPRESSION);
     exit_section_(b, m, GENERATION_CLAUSE, r);
     return r;
   }
@@ -16403,11 +13924,11 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <get header information> [ { <comma> <get header information> }... ]
-  // 	|	VALUE <item number> <get item information> [ { <comma> <get item information> }... ]
+  // <get header information> [ { <comma> <get header information> }"..." ]
+  // 	|	VALUE <item number> <get item information> [ { <comma> <get item information> }"..." ]
   public static boolean get_descriptor_information(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "get_descriptor_information")) return false;
-    if (!nextTokenIs(b, "<get descriptor information>", VALUE, _GET_HEADER_INFORMATION_)) return false;
+    if (!nextTokenIs(b, "<get descriptor information>", VALUE, GET_HEADER_INFORMATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, GET_DESCRIPTOR_INFORMATION, "<get descriptor information>");
     r = get_descriptor_information_0(b, l + 1);
@@ -16416,7 +13937,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // <get header information> [ { <comma> <get header information> }... ]
+  // <get header information> [ { <comma> <get header information> }"..." ]
   private static boolean get_descriptor_information_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "get_descriptor_information_0")) return false;
     boolean r;
@@ -16427,16 +13948,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <get header information> }... ]
+  // [ { <comma> <get header information> }"..." ]
   private static boolean get_descriptor_information_0_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "get_descriptor_information_0_1")) return false;
     get_descriptor_information_0_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <get header information>
+  // { <comma> <get header information> }"..."
   private static boolean get_descriptor_information_0_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "get_descriptor_information_0_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = get_descriptor_information_0_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <get header information>
+  private static boolean get_descriptor_information_0_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "get_descriptor_information_0_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -16445,27 +13977,38 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // VALUE <item number> <get item information> [ { <comma> <get item information> }... ]
+  // VALUE <item number> <get item information> [ { <comma> <get item information> }"..." ]
   private static boolean get_descriptor_information_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "get_descriptor_information_1")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, VALUE, _ITEM_NUMBER_, _GET_ITEM_INFORMATION_);
+    r = consumeTokens(b, 0, VALUE, ITEM_NUMBER, GET_ITEM_INFORMATION);
     r = r && get_descriptor_information_1_3(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // [ { <comma> <get item information> }... ]
+  // [ { <comma> <get item information> }"..." ]
   private static boolean get_descriptor_information_1_3(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "get_descriptor_information_1_3")) return false;
     get_descriptor_information_1_3_0(b, l + 1);
     return true;
   }
 
-  // <comma> <get item information>
+  // { <comma> <get item information> }"..."
   private static boolean get_descriptor_information_1_3_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "get_descriptor_information_1_3_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = get_descriptor_information_1_3_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <get item information>
+  private static boolean get_descriptor_information_1_3_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "get_descriptor_information_1_3_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -16481,7 +14024,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, GET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, GET, DIAGNOSTICS, _SQL_DIAGNOSTICS_INFORMATION_);
+    r = consumeTokens(b, 0, GET, DIAGNOSTICS, SQL_DIAGNOSTICS_INFORMATION);
     exit_section_(b, m, GET_DIAGNOSTICS_STATEMENT, r);
     return r;
   }
@@ -16490,7 +14033,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <simple target specification 1> <equals operator> <header item name>
   public static boolean get_header_information(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "get_header_information")) return false;
-    if (!nextTokenIs(b, _SIMPLE_TARGET_SPECIFICATION_1_)) return false;
+    if (!nextTokenIs(b, SIMPLE_TARGET_SPECIFICATION_1)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = simple_target_specification_1(b, l + 1);
@@ -16504,7 +14047,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <simple target specification 2> <equals operator> <descriptor item name>
   public static boolean get_item_information(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "get_item_information")) return false;
-    if (!nextTokenIs(b, _SIMPLE_TARGET_SPECIFICATION_2_)) return false;
+    if (!nextTokenIs(b, SIMPLE_TARGET_SPECIFICATION_2)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = simple_target_specification_2(b, l + 1);
@@ -16554,27 +14097,26 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   /* ********************************************************** */
   // <host label identifier>
   // 	|	<unsigned integer>
-  // 	|	<host PL/I label variable>
   public static boolean goto_target(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "goto_target")) return false;
+    if (!nextTokenIs(b, "<goto target>", _HOST_LABEL_IDENTIFIER_, _UNSIGNED_INTEGER_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, GOTO_TARGET, "<goto target>");
-    r = host_label_identifier(b, l + 1);
+    r = consumeToken(b, _HOST_LABEL_IDENTIFIER_);
     if (!r) r = unsigned_integer(b, l + 1);
-    if (!r) r = host_PL_I_label_variable(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
   /* ********************************************************** */
-  // GRANT <privileges> TO <grantee> [ { <comma> <grantee> }... ]
+  // GRANT <privileges> TO <grantee> [ { <comma> <grantee> }"..." ]
   // 		[ WITH HIERARCHY OPTION ] [ WITH GRANT OPTION ] [ GRANTED BY <grantor> ]
   public static boolean grant_privilege_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grant_privilege_statement")) return false;
     if (!nextTokenIs(b, GRANT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, GRANT, _PRIVILEGES_, TO, _GRANTEE_);
+    r = consumeTokens(b, 0, GRANT, PRIVILEGES, TO, GRANTEE);
     r = r && grant_privilege_statement_4(b, l + 1);
     r = r && grant_privilege_statement_5(b, l + 1);
     r = r && grant_privilege_statement_6(b, l + 1);
@@ -16583,16 +14125,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <grantee> }... ]
+  // [ { <comma> <grantee> }"..." ]
   private static boolean grant_privilege_statement_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grant_privilege_statement_4")) return false;
     grant_privilege_statement_4_0(b, l + 1);
     return true;
   }
 
-  // <comma> <grantee>
+  // { <comma> <grantee> }"..."
   private static boolean grant_privilege_statement_4_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grant_privilege_statement_4_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = grant_privilege_statement_4_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <grantee>
+  private static boolean grant_privilege_statement_4_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "grant_privilege_statement_4_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -16623,16 +14176,16 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // GRANT <role granted> [ { <comma> <role granted> }... ]
-  // 		TO <grantee> [ { <comma> <grantee> }... ] [ WITH ADMIN OPTION ] [ GRANTED BY <grantor> ]
+  // GRANT <role granted> [ { <comma> <role granted> }"..." ]
+  // 		TO <grantee> [ { <comma> <grantee> }"..." ] [ WITH ADMIN OPTION ] [ GRANTED BY <grantor> ]
   public static boolean grant_role_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grant_role_statement")) return false;
     if (!nextTokenIs(b, GRANT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, GRANT, _ROLE_GRANTED_);
+    r = consumeTokens(b, 0, GRANT, ROLE_GRANTED);
     r = r && grant_role_statement_2(b, l + 1);
-    r = r && consumeTokens(b, 0, TO, _GRANTEE_);
+    r = r && consumeTokens(b, 0, TO, GRANTEE);
     r = r && grant_role_statement_5(b, l + 1);
     r = r && grant_role_statement_6(b, l + 1);
     r = r && grant_role_statement_7(b, l + 1);
@@ -16640,16 +14193,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <role granted> }... ]
+  // [ { <comma> <role granted> }"..." ]
   private static boolean grant_role_statement_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grant_role_statement_2")) return false;
     grant_role_statement_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <role granted>
+  // { <comma> <role granted> }"..."
   private static boolean grant_role_statement_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grant_role_statement_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = grant_role_statement_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <role granted>
+  private static boolean grant_role_statement_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "grant_role_statement_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -16658,16 +14222,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <grantee> }... ]
+  // [ { <comma> <grantee> }"..." ]
   private static boolean grant_role_statement_5(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grant_role_statement_5")) return false;
     grant_role_statement_5_0(b, l + 1);
     return true;
   }
 
-  // <comma> <grantee>
+  // { <comma> <grantee> }"..."
   private static boolean grant_role_statement_5_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grant_role_statement_5_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = grant_role_statement_5_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <grantee>
+  private static boolean grant_role_statement_5_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "grant_role_statement_5_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -16694,7 +14269,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <grant privilege statement> | <grant role statement>
   public static boolean grant_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grant_statement")) return false;
-    if (!nextTokenIs(b, "<grant statement>", _GRANT_PRIVILEGE_STATEMENT_, _GRANT_ROLE_STATEMENT_)) return false;
+    if (!nextTokenIs(b, "<grant statement>", GRANT_PRIVILEGE_STATEMENT, GRANT_ROLE_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, GRANT_STATEMENT, "<grant statement>");
     r = grant_privilege_statement(b, l + 1);
@@ -16707,7 +14282,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // PUBLIC | <authorization identifier>
   public static boolean grantee(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grantee")) return false;
-    if (!nextTokenIs(b, "<grantee>", PUBLIC, _AUTHORIZATION_IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, "<grantee>", PUBLIC, AUTHORIZATION_IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, GRANTEE, "<grantee>");
     r = consumeToken(b, PUBLIC);
@@ -16741,7 +14316,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <greater than operator> <equals operator>
   public static boolean greater_than_or_equals_operator(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "greater_than_or_equals_operator")) return false;
-    if (!nextTokenIs(b, _GREATER_THAN_OPERATOR_)) return false;
+    if (!nextTokenIs(b, GREATER_THAN_OPERATOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = greater_than_operator(b, l + 1);
@@ -16775,7 +14350,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean group_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "group_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -16787,7 +14362,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <group name> FOR TYPE <path-resolved user-defined type name>
   public static boolean group_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "group_specification")) return false;
-    if (!nextTokenIs(b, _GROUP_NAME_)) return false;
+    if (!nextTokenIs(b, GROUP_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = group_name(b, l + 1);
@@ -16800,7 +14375,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <column reference> [ <collate clause> ]
   public static boolean grouping_column_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_column_reference")) return false;
-    if (!nextTokenIs(b, _COLUMN_REFERENCE_)) return false;
+    if (!nextTokenIs(b, COLUMN_REFERENCE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = column_reference(b, l + 1);
@@ -16817,10 +14392,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <grouping column reference> [ { <comma> <grouping column reference> }... ]
+  // <grouping column reference> [ { <comma> <grouping column reference> }"..." ]
   public static boolean grouping_column_reference_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_column_reference_list")) return false;
-    if (!nextTokenIs(b, _GROUPING_COLUMN_REFERENCE_)) return false;
+    if (!nextTokenIs(b, GROUPING_COLUMN_REFERENCE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = grouping_column_reference(b, l + 1);
@@ -16829,16 +14404,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <grouping column reference> }... ]
+  // [ { <comma> <grouping column reference> }"..." ]
   private static boolean grouping_column_reference_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_column_reference_list_1")) return false;
     grouping_column_reference_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <grouping column reference>
+  // { <comma> <grouping column reference> }"..."
   private static boolean grouping_column_reference_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_column_reference_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = grouping_column_reference_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <grouping column reference>
+  private static boolean grouping_column_reference_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "grouping_column_reference_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -16867,10 +14453,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <grouping element> [ { <comma> <grouping element> }... ]
+  // <grouping element> [ { <comma> <grouping element> }"..." ]
   public static boolean grouping_element_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_element_list")) return false;
-    if (!nextTokenIs(b, _GROUPING_ELEMENT_)) return false;
+    if (!nextTokenIs(b, GROUPING_ELEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = grouping_element(b, l + 1);
@@ -16879,16 +14465,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <grouping element> }... ]
+  // [ { <comma> <grouping element> }"..." ]
   private static boolean grouping_element_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_element_list_1")) return false;
     grouping_element_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <grouping element>
+  // { <comma> <grouping element> }"..."
   private static boolean grouping_element_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_element_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = grouping_element_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <grouping element>
+  private static boolean grouping_element_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "grouping_element_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -16898,29 +14495,40 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // GROUPING <left paren> <column reference> [ { <comma> <column reference> }... ] <right paren>
+  // GROUPING <left paren> <column reference> [ { <comma> <column reference> }"..." ] <right paren>
   public static boolean grouping_operation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_operation")) return false;
     if (!nextTokenIs(b, GROUPING)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, GROUPING, _LEFT_PAREN_, _COLUMN_REFERENCE_);
+    r = consumeTokens(b, 0, GROUPING, _LEFT_PAREN_, COLUMN_REFERENCE);
     r = r && grouping_operation_3(b, l + 1);
     r = r && right_paren(b, l + 1);
     exit_section_(b, m, GROUPING_OPERATION, r);
     return r;
   }
 
-  // [ { <comma> <column reference> }... ]
+  // [ { <comma> <column reference> }"..." ]
   private static boolean grouping_operation_3(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_operation_3")) return false;
     grouping_operation_3_0(b, l + 1);
     return true;
   }
 
-  // <comma> <column reference>
+  // { <comma> <column reference> }"..."
   private static boolean grouping_operation_3_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_operation_3_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = grouping_operation_3_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <column reference>
+  private static boolean grouping_operation_3_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "grouping_operation_3_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -16949,10 +14557,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <grouping set> [ { <comma> <grouping set> }... ]
+  // <grouping set> [ { <comma> <grouping set> }"..." ]
   public static boolean grouping_set_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_set_list")) return false;
-    if (!nextTokenIs(b, _GROUPING_SET_)) return false;
+    if (!nextTokenIs(b, GROUPING_SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = grouping_set(b, l + 1);
@@ -16961,16 +14569,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <grouping set> }... ]
+  // [ { <comma> <grouping set> }"..." ]
   private static boolean grouping_set_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_set_list_1")) return false;
     grouping_set_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <grouping set>
+  // { <comma> <grouping set> }"..."
   private static boolean grouping_set_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "grouping_set_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = grouping_set_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <grouping set>
+  private static boolean grouping_set_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "grouping_set_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -16986,7 +14605,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, GROUPING)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, GROUPING, SETS, _LEFT_PAREN_, _GROUPING_SET_LIST_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, GROUPING, SETS, _LEFT_PAREN_, GROUPING_SET_LIST, _RIGHT_PAREN_);
     exit_section_(b, m, GROUPING_SETS_SPECIFICATION, r);
     return r;
   }
@@ -17054,28 +14673,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // HOLD LOCATOR <locator reference> [ { <comma> <locator reference> }... ]
+  // HOLD LOCATOR <locator reference> [ { <comma> <locator reference> }"..." ]
   public static boolean hold_locator_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "hold_locator_statement")) return false;
     if (!nextTokenIs(b, HOLD)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, HOLD, LOCATOR, _LOCATOR_REFERENCE_);
+    r = consumeTokens(b, 0, HOLD, LOCATOR, LOCATOR_REFERENCE);
     r = r && hold_locator_statement_3(b, l + 1);
     exit_section_(b, m, HOLD_LOCATOR_STATEMENT, r);
     return r;
   }
 
-  // [ { <comma> <locator reference> }... ]
+  // [ { <comma> <locator reference> }"..." ]
   private static boolean hold_locator_statement_3(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "hold_locator_statement_3")) return false;
     hold_locator_statement_3_0(b, l + 1);
     return true;
   }
 
-  // <comma> <locator reference>
+  // { <comma> <locator reference> }"..."
   private static boolean hold_locator_statement_3_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "hold_locator_statement_3_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = hold_locator_statement_3_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <locator reference>
+  private static boolean hold_locator_statement_3_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "hold_locator_statement_3_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -17085,49 +14715,22 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean host_PL_I_label_variable(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, HOST_PL_I_LABEL_VARIABLE, true);
-    return true;
-  }
-
-  /* ********************************************************** */
-  // <Ada host identifier>
-  // 	|	<C host identifier>
-  // 	|	<COBOL host identifier>
-  // 	|	<Fortran host identifier>
-  // 	|	<MUMPS host identifier>
-  // 	|	<Pascal host identifier>
-  // 	|	<PL/I host identifier>
+  // <C host identifier>
   public static boolean host_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "host_identifier")) return false;
+    if (!nextTokenIs(b, C_HOST_IDENTIFIER)) return false;
     boolean r;
-    Marker m = enter_section_(b, l, _NONE_, HOST_IDENTIFIER, "<host identifier>");
-    r = Ada_host_identifier(b, l + 1);
-    if (!r) r = C_host_identifier(b, l + 1);
-    if (!r) r = COBOL_host_identifier(b, l + 1);
-    if (!r) r = Fortran_host_identifier(b, l + 1);
-    if (!r) r = MUMPS_host_identifier(b, l + 1);
-    if (!r) r = Pascal_host_identifier(b, l + 1);
-    if (!r) r = PL_I_host_identifier(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // !! See the Syntax Rules.
-  public static boolean host_label_identifier(PsiBuilder b, int l) {
     Marker m = enter_section_(b);
-    exit_section_(b, m, HOST_LABEL_IDENTIFIER, true);
-    return true;
+    r = C_host_identifier(b, l + 1);
+    exit_section_(b, m, HOST_IDENTIFIER, r);
+    return r;
   }
 
   /* ********************************************************** */
   // <data type> [ <locator indication> ]
   public static boolean host_parameter_data_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "host_parameter_data_type")) return false;
-    if (!nextTokenIs(b, _DATA_TYPE_)) return false;
+    if (!nextTokenIs(b, DATA_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = data_type(b, l + 1);
@@ -17148,7 +14751,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<status parameter>
   public static boolean host_parameter_declaration(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "host_parameter_declaration")) return false;
-    if (!nextTokenIs(b, "<host parameter declaration>", _HOST_PARAMETER_NAME_, _STATUS_PARAMETER_)) return false;
+    if (!nextTokenIs(b, "<host parameter declaration>", _HOST_PARAMETER_NAME_, STATUS_PARAMETER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, HOST_PARAMETER_DECLARATION, "<host parameter declaration>");
     r = host_parameter_name(b, l + 1);
@@ -17158,7 +14761,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <left paren> <host parameter declaration> [ { <comma> <host parameter declaration> }... ] <right paren>
+  // <left paren> <host parameter declaration> [ { <comma> <host parameter declaration> }"..." ] <right paren>
   public static boolean host_parameter_declaration_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "host_parameter_declaration_list")) return false;
     if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
@@ -17172,16 +14775,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <host parameter declaration> }... ]
+  // [ { <comma> <host parameter declaration> }"..." ]
   private static boolean host_parameter_declaration_list_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "host_parameter_declaration_list_2")) return false;
     host_parameter_declaration_list_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <host parameter declaration>
+  // { <comma> <host parameter declaration> }"..."
   private static boolean host_parameter_declaration_list_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "host_parameter_declaration_list_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = host_parameter_declaration_list_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <host parameter declaration>
+  private static boolean host_parameter_declaration_list_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "host_parameter_declaration_list_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -17224,25 +14838,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <Ada variable definition>
-  // 	|	<C variable definition>
-  // 	|	<COBOL variable definition>
-  // 	|	<Fortran variable definition>
-  // 	|	<MUMPS variable definition>
-  // 	|	<Pascal variable definition>
-  // 	|	<PL/I variable definition>
+  // <C variable definition>
   public static boolean host_variable_definition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "host_variable_definition")) return false;
+    if (!nextTokenIs(b, C_VARIABLE_DEFINITION)) return false;
     boolean r;
-    Marker m = enter_section_(b, l, _NONE_, HOST_VARIABLE_DEFINITION, "<host variable definition>");
-    r = Ada_variable_definition(b, l + 1);
-    if (!r) r = C_variable_definition(b, l + 1);
-    if (!r) r = COBOL_variable_definition(b, l + 1);
-    if (!r) r = Fortran_variable_definition(b, l + 1);
-    if (!r) r = MUMPS_variable_definition(b, l + 1);
-    if (!r) r = Pascal_variable_definition(b, l + 1);
-    if (!r) r = PL_I_variable_definition(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
+    Marker m = enter_section_(b);
+    r = C_variable_definition(b, l + 1);
+    exit_section_(b, m, HOST_VARIABLE_DEFINITION, r);
     return r;
   }
 
@@ -17250,7 +14853,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <datetime value>
   public static boolean hours_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "hours_value")) return false;
-    if (!nextTokenIs(b, _DATETIME_VALUE_)) return false;
+    if (!nextTokenIs(b, DATETIME_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = datetime_value(b, l + 1);
@@ -17275,7 +14878,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <value expression> [ { <comma> <value expression> }... ]
+  // <value expression> [ { <comma> <value expression> }"..." ]
   public static boolean hypothetical_set_function_value_expression_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "hypothetical_set_function_value_expression_list")) return false;
     if (!nextTokenIs(b, _VALUE_EXPRESSION_)) return false;
@@ -17287,16 +14890,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <value expression> }... ]
+  // [ { <comma> <value expression> }"..." ]
   private static boolean hypothetical_set_function_value_expression_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "hypothetical_set_function_value_expression_list_1")) return false;
     hypothetical_set_function_value_expression_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <value expression>
+  // { <comma> <value expression> }"..."
   private static boolean hypothetical_set_function_value_expression_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "hypothetical_set_function_value_expression_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = hypothetical_set_function_value_expression_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <value expression>
+  private static boolean hypothetical_set_function_value_expression_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "hypothetical_set_function_value_expression_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -17309,7 +14923,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <actual identifier>
   public static boolean identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "identifier")) return false;
-    if (!nextTokenIs(b, _ACTUAL_IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, ACTUAL_IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = actual_identifier(b, l + 1);
@@ -17318,10 +14932,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <identifier start> [ <identifier part>... ]
+  // <identifier start> [ <identifier part> "..." ]
   public static boolean identifier_body(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "identifier_body")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_START_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER_START)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier_start(b, l + 1);
@@ -17330,18 +14944,29 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ <identifier part>... ]
+  // [ <identifier part> "..." ]
   private static boolean identifier_body_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "identifier_body_1")) return false;
-    consumeToken(b, _IDENTIFIER_PART____);
+    identifier_body_1_0(b, l + 1);
     return true;
   }
 
+  // <identifier part> "..."
+  private static boolean identifier_body_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "identifier_body_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = identifier_part(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
   /* ********************************************************** */
-  // <identifier> [ { <period> <identifier> }... ]
+  // <identifier> [ { <period> <identifier> }"..." ]
   public static boolean identifier_chain(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "identifier_chain")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -17350,16 +14975,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <period> <identifier> }... ]
+  // [ { <period> <identifier> }"..." ]
   private static boolean identifier_chain_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "identifier_chain_1")) return false;
     identifier_chain_1_0(b, l + 1);
     return true;
   }
 
-  // <period> <identifier>
+  // { <period> <identifier> }"..."
   private static boolean identifier_chain_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "identifier_chain_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = identifier_chain_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <period> <identifier>
+  private static boolean identifier_chain_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "identifier_chain_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = period(b, l + 1);
@@ -17372,7 +15008,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier start> | <identifier extend>
   public static boolean identifier_part(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "identifier_part")) return false;
-    if (!nextTokenIs(b, "<identifier part>", _IDENTIFIER_EXTEND_, _IDENTIFIER_START_)) return false;
+    if (!nextTokenIs(b, "<identifier part>", _IDENTIFIER_EXTEND_, IDENTIFIER_START)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, IDENTIFIER_PART, "<identifier part>");
     r = identifier_start(b, l + 1);
@@ -17457,7 +15093,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <null specification> | <empty specification>
   public static boolean implicitly_typed_value_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "implicitly_typed_value_specification")) return false;
-    if (!nextTokenIs(b, "<implicitly typed value specification>", _EMPTY_SPECIFICATION_, _NULL_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, "<implicitly typed value specification>", EMPTY_SPECIFICATION, NULL_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, IMPLICITLY_TYPED_VALUE_SPECIFICATION, "<implicitly typed value specification>");
     r = null_specification(b, l + 1);
@@ -17470,7 +15106,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <in predicate part 2>
   public static boolean in_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "in_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -17487,7 +15123,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, IN_PREDICATE_PART_2, "<in predicate part 2>");
     r = in_predicate_part_2_0(b, l + 1);
-    r = r && consumeTokens(b, 0, IN, _IN_PREDICATE_VALUE_);
+    r = r && consumeTokens(b, 0, IN, IN_PREDICATE_VALUE);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
@@ -17504,7 +15140,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<left paren> <in value list> <right paren>
   public static boolean in_predicate_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "in_predicate_value")) return false;
-    if (!nextTokenIs(b, "<in predicate value>", _LEFT_PAREN_, _TABLE_SUBQUERY_)) return false;
+    if (!nextTokenIs(b, "<in predicate value>", _LEFT_PAREN_, TABLE_SUBQUERY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, IN_PREDICATE_VALUE, "<in predicate value>");
     r = table_subquery(b, l + 1);
@@ -17514,10 +15150,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <row value expression> [ { <comma> <row value expression> }... ]
+  // <row value expression> [ { <comma> <row value expression> }"..." ]
   public static boolean in_value_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "in_value_list")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_expression(b, l + 1);
@@ -17526,16 +15162,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <row value expression> }... ]
+  // [ { <comma> <row value expression> }"..." ]
   private static boolean in_value_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "in_value_list_1")) return false;
     in_value_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <row value expression>
+  // { <comma> <row value expression> }"..."
   private static boolean in_value_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "in_value_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = in_value_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <row value expression>
+  private static boolean in_value_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "in_value_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -17548,7 +15195,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <window specification>
   public static boolean in_line_window_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "in_line_window_specification")) return false;
-    if (!nextTokenIs(b, _WINDOW_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, WINDOW_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = window_specification(b, l + 1);
@@ -17604,7 +15251,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ INDICATOR ] <embedded variable name>
   public static boolean indicator_variable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "indicator_variable")) return false;
-    if (!nextTokenIs(b, "<indicator variable>", INDICATOR, _EMBEDDED_VARIABLE_NAME_)) return false;
+    if (!nextTokenIs(b, "<indicator variable>", INDICATOR, EMBEDDED_VARIABLE_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, INDICATOR_VARIABLE, "<indicator variable>");
     r = indicator_variable_0(b, l + 1);
@@ -17624,7 +15271,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <using arguments> | <using input descriptor>
   public static boolean input_using_clause(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "input_using_clause")) return false;
-    if (!nextTokenIs(b, "<input using clause>", _USING_ARGUMENTS_, _USING_INPUT_DESCRIPTOR_)) return false;
+    if (!nextTokenIs(b, "<input using clause>", USING_ARGUMENTS, USING_INPUT_DESCRIPTOR)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, INPUT_USING_CLAUSE, "<input using clause>");
     r = using_arguments(b, l + 1);
@@ -17667,7 +15314,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, INSERT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, INSERT, INTO, _INSERTION_TARGET_, _INSERT_COLUMNS_AND_SOURCE_);
+    r = consumeTokens(b, 0, INSERT, INTO, INSERTION_TARGET, INSERT_COLUMNS_AND_SOURCE);
     exit_section_(b, m, INSERT_STATEMENT, r);
     return r;
   }
@@ -17713,7 +15360,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <sign> ] <interval primary>
   public static boolean interval_factor(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "interval_factor")) return false;
-    if (!nextTokenIs(b, "<interval factor>", _INTERVAL_PRIMARY_, _SIGN_)) return false;
+    if (!nextTokenIs(b, "<interval factor>", _INTERVAL_PRIMARY_, SIGN)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, INTERVAL_FACTOR, "<interval factor>");
     r = interval_factor_0(b, l + 1);
@@ -17780,7 +15427,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<interval value function>
   public static boolean interval_primary(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "interval_primary")) return false;
-    if (!nextTokenIs(b, "<interval primary>", _INTERVAL_VALUE_FUNCTION_, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, "<interval primary>", INTERVAL_VALUE_FUNCTION, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, INTERVAL_PRIMARY, "<interval primary>");
     r = interval_primary_0(b, l + 1);
@@ -17812,7 +15459,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<single datetime field>
   public static boolean interval_qualifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "interval_qualifier")) return false;
-    if (!nextTokenIs(b, "<interval qualifier>", _SINGLE_DATETIME_FIELD_, _START_FIELD_)) return false;
+    if (!nextTokenIs(b, "<interval qualifier>", SINGLE_DATETIME_FIELD, _START_FIELD_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, INTERVAL_QUALIFIER, "<interval qualifier>");
     r = start_field(b, l + 1);
@@ -17921,7 +15568,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <interval absolute value function>
   public static boolean interval_value_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "interval_value_function")) return false;
-    if (!nextTokenIs(b, _INTERVAL_ABSOLUTE_VALUE_FUNCTION_)) return false;
+    if (!nextTokenIs(b, INTERVAL_ABSOLUTE_VALUE_FUNCTION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = interval_absolute_value_function(b, l + 1);
@@ -17933,7 +15580,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <target specification>
   public static boolean into_argument(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "into_argument")) return false;
-    if (!nextTokenIs(b, _TARGET_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, TARGET_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = target_specification(b, l + 1);
@@ -17942,28 +15589,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // INTO <into argument> [ { <comma> <into argument> }... ]
+  // INTO <into argument> [ { <comma> <into argument> }"..." ]
   public static boolean into_arguments(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "into_arguments")) return false;
     if (!nextTokenIs(b, INTO)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, INTO, _INTO_ARGUMENT_);
+    r = consumeTokens(b, 0, INTO, INTO_ARGUMENT);
     r = r && into_arguments_2(b, l + 1);
     exit_section_(b, m, INTO_ARGUMENTS, r);
     return r;
   }
 
-  // [ { <comma> <into argument> }... ]
+  // [ { <comma> <into argument> }"..." ]
   private static boolean into_arguments_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "into_arguments_2")) return false;
     into_arguments_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <into argument>
+  // { <comma> <into argument> }"..."
   private static boolean into_arguments_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "into_arguments_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = into_arguments_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <into argument>
+  private static boolean into_arguments_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "into_arguments_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -17981,7 +15639,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeToken(b, INTO);
     r = r && into_descriptor_1(b, l + 1);
-    r = r && consumeTokens(b, 0, DESCRIPTOR, _DESCRIPTOR_NAME_);
+    r = r && consumeTokens(b, 0, DESCRIPTOR, DESCRIPTOR_NAME);
     exit_section_(b, m, INTO_DESCRIPTOR, r);
     return r;
   }
@@ -17997,7 +15655,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <underscore>
   public static boolean introducer(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "introducer")) return false;
-    if (!nextTokenIs(b, _UNDERSCORE_)) return false;
+    if (!nextTokenIs(b, UNDERSCORE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = underscore(b, l + 1);
@@ -18009,7 +15667,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <inverse distribution function type> <left paren> <inverse distribution function argument> <right paren> <within group specification>
   public static boolean inverse_distribution_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "inverse_distribution_function")) return false;
-    if (!nextTokenIs(b, _INVERSE_DISTRIBUTION_FUNCTION_TYPE_)) return false;
+    if (!nextTokenIs(b, INVERSE_DISTRIBUTION_FUNCTION_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = inverse_distribution_function_type(b, l + 1);
@@ -18053,7 +15711,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ISOLATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ISOLATION, LEVEL, _LEVEL_OF_ISOLATION_);
+    r = consumeTokens(b, 0, ISOLATION, LEVEL, LEVEL_OF_ISOLATION);
     exit_section_(b, m, ISOLATION_LEVEL, r);
     return r;
   }
@@ -18098,7 +15756,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <join condition> | <named columns join>
   public static boolean join_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "join_specification")) return false;
-    if (!nextTokenIs(b, "<join specification>", _JOIN_CONDITION_, _NAMED_COLUMNS_JOIN_)) return false;
+    if (!nextTokenIs(b, "<join specification>", JOIN_CONDITION, NAMED_COLUMNS_JOIN)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, JOIN_SPECIFICATION, "<join specification>");
     r = join_condition(b, l + 1);
@@ -18111,7 +15769,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // INNER | <outer join type> [ OUTER ]
   public static boolean join_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "join_type")) return false;
-    if (!nextTokenIs(b, "<join type>", INNER, _OUTER_JOIN_TYPE_)) return false;
+    if (!nextTokenIs(b, "<join type>", INNER, OUTER_JOIN_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, JOIN_TYPE, "<join type>");
     r = consumeToken(b, INNER);
@@ -18156,10 +15814,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <reserved word> | <non-reserved word>
+  // <reserved word> | <non-reserved word
   public static boolean key_word(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "key_word")) return false;
-    if (!nextTokenIs(b, "<key word>", _NON_RESERVED_WORD_, _RESERVED_WORD_)) return false;
+    if (!nextTokenIs(b, "<key word>", NON_RESERVED_WORD, RESERVED_WORD)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, KEY_WORD, "<key word>");
     r = reserved_word(b, l + 1);
@@ -18175,24 +15833,19 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, LANGUAGE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, LANGUAGE, _LANGUAGE_NAME_);
+    r = consumeTokens(b, 0, LANGUAGE, LANGUAGE_NAME);
     exit_section_(b, m, LANGUAGE_CLAUSE, r);
     return r;
   }
 
   /* ********************************************************** */
-  // ADA | C | COBOL | FORTRAN | MUMPS | PASCAL | PLI | SQL
+  // C | SQL
   public static boolean language_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "language_name")) return false;
+    if (!nextTokenIs(b, "<language name>", C, SQL)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, LANGUAGE_NAME, "<language name>");
-    r = consumeToken(b, ADA);
-    if (!r) r = consumeToken(b, C);
-    if (!r) r = consumeToken(b, COBOL);
-    if (!r) r = consumeToken(b, FORTRAN);
-    if (!r) r = consumeToken(b, MUMPS);
-    if (!r) r = consumeToken(b, PASCAL);
-    if (!r) r = consumeToken(b, PLI);
+    r = consumeToken(b, C);
     if (!r) r = consumeToken(b, SQL);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -18203,7 +15856,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<large object length token> [ <char length units> ]
   public static boolean large_object_length(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "large_object_length")) return false;
-    if (!nextTokenIs(b, "<large object length>", _LARGE_OBJECT_LENGTH_TOKEN_, _UNSIGNED_INTEGER_)) return false;
+    if (!nextTokenIs(b, "<large object length>", LARGE_OBJECT_LENGTH_TOKEN, _UNSIGNED_INTEGER_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, LARGE_OBJECT_LENGTH, "<large object length>");
     r = large_object_length_0(b, l + 1);
@@ -18257,13 +15910,15 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <digit>... <multiplier>
+  // <digit>"..." <multiplier>
   public static boolean large_object_length_token(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "large_object_length_token")) return false;
-    if (!nextTokenIs(b, _DIGIT______MULTIPLIER_)) return false;
+    if (!nextTokenIs(b,DIGIT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _DIGIT______MULTIPLIER_);
+    r = digit(b, l + 1);
+    r = r && consumeToken(b, "...");
+    r = r && multiplier(b, l + 1);
     exit_section_(b, m, LARGE_OBJECT_LENGTH_TOKEN, r);
     return r;
   }
@@ -18275,7 +15930,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, LATERAL)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, LATERAL, _TABLE_SUBQUERY_);
+    r = consumeTokens(b, 0, LATERAL, TABLE_SUBQUERY);
     exit_section_(b, m, LATERAL_DERIVED_TABLE, r);
     return r;
   }
@@ -18300,7 +15955,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <left bracket> | <left bracket trigraph>
   public static boolean left_bracket_or_trigraph(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "left_bracket_or_trigraph")) return false;
-    if (!nextTokenIs(b, "<left bracket or trigraph>", _LEFT_BRACKET_, _LEFT_BRACKET_TRIGRAPH_)) return false;
+    if (!nextTokenIs(b, "<left bracket or trigraph>", _LEFT_BRACKET_, LEFT_BRACKET_TRIGRAPH)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, LEFT_BRACKET_OR_TRIGRAPH, "<left bracket or trigraph>");
     r = left_bracket(b, l + 1);
@@ -18344,7 +15999,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<octet length expression>
   public static boolean length_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "length_expression")) return false;
-    if (!nextTokenIs(b, "<length expression>", _CHAR_LENGTH_EXPRESSION_, _OCTET_LENGTH_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<length expression>", CHAR_LENGTH_EXPRESSION, OCTET_LENGTH_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, LENGTH_EXPRESSION, "<length expression>");
     r = char_length_expression(b, l + 1);
@@ -18365,7 +16020,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <less than operator> <equals operator>
   public static boolean less_than_or_equals_operator(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "less_than_or_equals_operator")) return false;
-    if (!nextTokenIs(b, _LESS_THAN_OPERATOR_)) return false;
+    if (!nextTokenIs(b, LESS_THAN_OPERATOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = less_than_operator(b, l + 1);
@@ -18425,7 +16080,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identity option> | <column default option>
   public static boolean like_options(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "like_options")) return false;
-    if (!nextTokenIs(b, "<like options>", _COLUMN_DEFAULT_OPTION_, _IDENTITY_OPTION_)) return false;
+    if (!nextTokenIs(b, "<like options>", COLUMN_DEFAULT_OPTION, IDENTITY_OPTION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, LIKE_OPTIONS, "<like options>");
     r = identity_option(b, l + 1);
@@ -18438,7 +16093,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character like predicate> | <octet like predicate>
   public static boolean like_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "like_predicate")) return false;
-    if (!nextTokenIs(b, "<like predicate>", _CHARACTER_LIKE_PREDICATE_, _OCTET_LIKE_PREDICATE_)) return false;
+    if (!nextTokenIs(b, "<like predicate>", CHARACTER_LIKE_PREDICATE, OCTET_LIKE_PREDICATE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, LIKE_PREDICATE, "<like predicate>");
     r = character_like_predicate(b, l + 1);
@@ -18448,7 +16103,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <left paren> <attribute name> [ { <comma> <attribute name> }...] <right paren>
+  // <left paren> <attribute name> [ { <comma> <attribute name> }"..."] <right paren>
   public static boolean list_of_attributes(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "list_of_attributes")) return false;
     if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
@@ -18462,16 +16117,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <attribute name> }...]
+  // [ { <comma> <attribute name> }"..."]
   private static boolean list_of_attributes_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "list_of_attributes_2")) return false;
     list_of_attributes_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <attribute name>
+  // { <comma> <attribute name> }"..."
   private static boolean list_of_attributes_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "list_of_attributes_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = list_of_attributes_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <attribute name>
+  private static boolean list_of_attributes_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "list_of_attributes_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -18484,7 +16150,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <signed numeric literal> | <general literal>
   public static boolean literal(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "literal")) return false;
-    if (!nextTokenIs(b, "<literal>", _GENERAL_LITERAL_, _SIGNED_NUMERIC_LITERAL_)) return false;
+    if (!nextTokenIs(b, "<literal>", GENERAL_LITERAL, SIGNED_NUMERIC_LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, LITERAL, "<literal>");
     r = signed_numeric_literal(b, l + 1);
@@ -18497,7 +16163,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <local or schema qualifier> <period> ] <qualified identifier>
   public static boolean local_or_schema_qualified_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "local_or_schema_qualified_name")) return false;
-    if (!nextTokenIs(b, "<local or schema qualified name>", _LOCAL_OR_SCHEMA_QUALIFIER_, _QUALIFIED_IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, "<local or schema qualified name>", _LOCAL_OR_SCHEMA_QUALIFIER_, QUALIFIED_IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, LOCAL_OR_SCHEMA_QUALIFIED_NAME, "<local or schema qualified name>");
     r = local_or_schema_qualified_name_0(b, l + 1);
@@ -18530,7 +16196,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <local qualifier> <period> ] <qualified identifier>
   public static boolean local_qualified_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "local_qualified_name")) return false;
-    if (!nextTokenIs(b, "<local qualified name>", _LOCAL_QUALIFIER_, _QUALIFIED_IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, "<local qualified name>", _LOCAL_QUALIFIER_, QUALIFIED_IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, LOCAL_QUALIFIED_NAME, "<local qualified name>");
     r = local_qualified_name_0(b, l + 1);
@@ -18574,7 +16240,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <host parameter name> | <embedded variable name>
   public static boolean locator_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "locator_reference")) return false;
-    if (!nextTokenIs(b, "<locator reference>", _EMBEDDED_VARIABLE_NAME_, _HOST_PARAMETER_NAME_)) return false;
+    if (!nextTokenIs(b, "<locator reference>", EMBEDDED_VARIABLE_NAME, _HOST_PARAMETER_NAME_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, LOCATOR_REFERENCE, "<locator reference>");
     r = host_parameter_name(b, l + 1);
@@ -18612,7 +16278,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <exact numeric literal>
   public static boolean mantissa(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "mantissa")) return false;
-    if (!nextTokenIs(b, _EXACT_NUMERIC_LITERAL_)) return false;
+    if (!nextTokenIs(b, EXACT_NUMERIC_LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = exact_numeric_literal(b, l + 1);
@@ -18627,7 +16293,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, MAP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, MAP, WITH, _MAP_FUNCTION_SPECIFICATION_);
+    r = consumeTokens(b, 0, MAP, WITH, MAP_FUNCTION_SPECIFICATION);
     exit_section_(b, m, MAP_CATEGORY, r);
     return r;
   }
@@ -18636,7 +16302,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <specific routine designator>
   public static boolean map_function_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "map_function_specification")) return false;
-    if (!nextTokenIs(b, _SPECIFIC_ROUTINE_DESIGNATOR_)) return false;
+    if (!nextTokenIs(b, SPECIFIC_ROUTINE_DESIGNATOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = specific_routine_designator(b, l + 1);
@@ -18648,7 +16314,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <match predicate part 2>
   public static boolean match_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "match_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -18725,7 +16391,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <attribute definition>
   public static boolean member(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "member")) return false;
-    if (!nextTokenIs(b, _ATTRIBUTE_DEFINITION_)) return false;
+    if (!nextTokenIs(b, ATTRIBUTE_DEFINITION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = attribute_definition(b, l + 1);
@@ -18734,7 +16400,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <left paren> <member> [ { <comma> <member> }... ] <right paren>
+  // <left paren> <member> [ { <comma> <member> }"..." ] <right paren>
   public static boolean member_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "member_list")) return false;
     if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
@@ -18748,16 +16414,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <member> }... ]
+  // [ { <comma> <member> }"..." ]
   private static boolean member_list_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "member_list_2")) return false;
     member_list_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <member>
+  // { <comma> <member> }"..."
   private static boolean member_list_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "member_list_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = member_list_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <member>
+  private static boolean member_list_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "member_list_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -18770,7 +16447,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <member name alternatives> [ <data type list> ]
   public static boolean member_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "member_name")) return false;
-    if (!nextTokenIs(b, _MEMBER_NAME_ALTERNATIVES_)) return false;
+    if (!nextTokenIs(b, MEMBER_NAME_ALTERNATIVES)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = member_name_alternatives(b, l + 1);
@@ -18790,7 +16467,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema qualified routine name> | <method name>
   public static boolean member_name_alternatives(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "member_name_alternatives")) return false;
-    if (!nextTokenIs(b, "<member name alternatives>", _METHOD_NAME_, _SCHEMA_QUALIFIED_ROUTINE_NAME_)) return false;
+    if (!nextTokenIs(b, "<member name alternatives>", METHOD_NAME, SCHEMA_QUALIFIED_ROUTINE_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, MEMBER_NAME_ALTERNATIVES, "<member name alternatives>");
     r = schema_qualified_routine_name(b, l + 1);
@@ -18803,7 +16480,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <member predicate part 2>
   public static boolean member_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "member_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -18845,7 +16522,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <correlation name>
   public static boolean merge_correlation_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "merge_correlation_name")) return false;
-    if (!nextTokenIs(b, _CORRELATION_NAME_)) return false;
+    if (!nextTokenIs(b, CORRELATION_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = correlation_name(b, l + 1);
@@ -18864,7 +16541,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     r = consumeToken(b, INSERT);
     r = r && merge_insert_specification_1(b, l + 1);
     r = r && merge_insert_specification_2(b, l + 1);
-    r = r && consumeTokens(b, 0, VALUES, _MERGE_INSERT_VALUE_LIST_);
+    r = r && consumeTokens(b, 0, VALUES, MERGE_INSERT_VALUE_LIST);
     exit_section_(b, m, MERGE_INSERT_SPECIFICATION, r);
     return r;
   }
@@ -18887,7 +16564,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression> | <contextually typed value specification>
   public static boolean merge_insert_value_element(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "merge_insert_value_element")) return false;
-    if (!nextTokenIs(b, "<merge insert value element>", _CONTEXTUALLY_TYPED_VALUE_SPECIFICATION_, _VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<merge insert value element>", CONTEXTUALLY_TYPED_VALUE_SPECIFICATION, _VALUE_EXPRESSION_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, MERGE_INSERT_VALUE_ELEMENT, "<merge insert value element>");
     r = value_expression(b, l + 1);
@@ -18897,7 +16574,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <left paren> <merge insert value element> [ { <comma> <merge insert value element> }... ] <right paren>
+  // <left paren> <merge insert value element> [ { <comma> <merge insert value element> }"..." ] <right paren>
   public static boolean merge_insert_value_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "merge_insert_value_list")) return false;
     if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
@@ -18911,16 +16588,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <merge insert value element> }... ]
+  // [ { <comma> <merge insert value element> }"..." ]
   private static boolean merge_insert_value_list_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "merge_insert_value_list_2")) return false;
     merge_insert_value_list_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <merge insert value element>
+  // { <comma> <merge insert value element> }"..."
   private static boolean merge_insert_value_list_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "merge_insert_value_list_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = merge_insert_value_list_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <merge insert value element>
+  private static boolean merge_insert_value_list_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "merge_insert_value_list_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -18930,13 +16618,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <merge when clause>...
+  // <merge when clause>"..."
   public static boolean merge_operation_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "merge_operation_specification")) return false;
-    if (!nextTokenIs(b, _MERGE_WHEN_CLAUSE____)) return false;
+    if (!nextTokenIs(b, MERGE_WHEN_CLAUSE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _MERGE_WHEN_CLAUSE____);
+    r = merge_when_clause(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, MERGE_OPERATION_SPECIFICATION, r);
     return r;
   }
@@ -18951,7 +16640,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, MERGE, INTO, _TARGET_TABLE_);
     r = r && merge_statement_3(b, l + 1);
-    r = r && consumeTokens(b, 0, USING, _TABLE_REFERENCE_, ON, _SEARCH_CONDITION_, _MERGE_OPERATION_SPECIFICATION_);
+    r = r && consumeTokens(b, 0, USING, TABLE_REFERENCE, ON, _SEARCH_CONDITION_, MERGE_OPERATION_SPECIFICATION);
     exit_section_(b, m, MERGE_STATEMENT, r);
     return r;
   }
@@ -18988,7 +16677,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, UPDATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, UPDATE, SET, _SET_CLAUSE_LIST_);
+    r = consumeTokens(b, 0, UPDATE, SET, SET_CLAUSE_LIST);
     exit_section_(b, m, MERGE_UPDATE_SPECIFICATION, r);
     return r;
   }
@@ -18997,7 +16686,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <merge when matched clause> | <merge when not matched clause>
   public static boolean merge_when_clause(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "merge_when_clause")) return false;
-    if (!nextTokenIs(b, "<merge when clause>", _MERGE_WHEN_MATCHED_CLAUSE_, _MERGE_WHEN_NOT_MATCHED_CLAUSE_)) return false;
+    if (!nextTokenIs(b, "<merge when clause>", MERGE_WHEN_MATCHED_CLAUSE, MERGE_WHEN_NOT_MATCHED_CLAUSE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, MERGE_WHEN_CLAUSE, "<merge when clause>");
     r = merge_when_matched_clause(b, l + 1);
@@ -19013,7 +16702,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, WHEN)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, WHEN, MATCHED, THEN, _MERGE_UPDATE_SPECIFICATION_);
+    r = consumeTokens(b, 0, WHEN, MATCHED, THEN, MERGE_UPDATE_SPECIFICATION);
     exit_section_(b, m, MERGE_WHEN_MATCHED_CLAUSE, r);
     return r;
   }
@@ -19025,7 +16714,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, WHEN)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, WHEN, NOT, MATCHED, THEN, _MERGE_INSERT_SPECIFICATION_);
+    r = consumeTokens(b, 0, WHEN, NOT, MATCHED, THEN, MERGE_INSERT_SPECIFICATION);
     exit_section_(b, m, MERGE_WHEN_NOT_MATCHED_CLAUSE, r);
     return r;
   }
@@ -19050,13 +16739,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <method characteristic>...
+  // <method characteristic>"..."
   public static boolean method_characteristics(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "method_characteristics")) return false;
-    if (!nextTokenIs(b, _METHOD_CHARACTERISTIC____)) return false;
+    if (!nextTokenIs(b, METHOD_CHARACTERISTIC)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _METHOD_CHARACTERISTIC____);
+    r = method_characteristic(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, METHOD_CHARACTERISTICS, r);
     return r;
   }
@@ -19065,7 +16755,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <direct invocation> | <generalized invocation>
   public static boolean method_invocation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "method_invocation")) return false;
-    if (!nextTokenIs(b, "<method invocation>", _DIRECT_INVOCATION_, _GENERALIZED_INVOCATION_)) return false;
+    if (!nextTokenIs(b, "<method invocation>", DIRECT_INVOCATION, GENERALIZED_INVOCATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, METHOD_INVOCATION, "<method invocation>");
     r = direct_invocation(b, l + 1);
@@ -19078,7 +16768,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean method_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "method_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -19090,7 +16780,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression primary> <dereference operator> <method name> <SQL argument list>
   public static boolean method_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "method_reference")) return false;
-    if (!nextTokenIs(b, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = value_expression_primary(b, l + 1);
@@ -19105,7 +16795,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <routine invocation>
   public static boolean method_selection(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "method_selection")) return false;
-    if (!nextTokenIs(b, _ROUTINE_INVOCATION_)) return false;
+    if (!nextTokenIs(b, ROUTINE_INVOCATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = routine_invocation(b, l + 1);
@@ -19117,7 +16807,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <original method specification> | <overriding method specification>
   public static boolean method_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "method_specification")) return false;
-    if (!nextTokenIs(b, "<method specification>", _ORIGINAL_METHOD_SPECIFICATION_, _OVERRIDING_METHOD_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, "<method specification>", ORIGINAL_METHOD_SPECIFICATION, OVERRIDING_METHOD_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, METHOD_SPECIFICATION, "<method specification>");
     r = original_method_specification(b, l + 1);
@@ -19147,7 +16837,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b);
     r = method_specification_designator_1_0(b, l + 1);
-    r = r && consumeTokens(b, 0, METHOD, _METHOD_NAME_, _SQL_PARAMETER_DECLARATION_LIST_);
+    r = r && consumeTokens(b, 0, METHOD, METHOD_NAME, SQL_PARAMETER_DECLARATION_LIST);
     r = r && method_specification_designator_1_4(b, l + 1);
     r = r && consumeTokens(b, 0, FOR, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_);
     exit_section_(b, m, null, r);
@@ -19179,10 +16869,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <method specification> [ { <comma> <method specification> }... ]
+  // <method specification> [ { <comma> <method specification> }"..." ]
   public static boolean method_specification_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "method_specification_list")) return false;
-    if (!nextTokenIs(b, _METHOD_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, METHOD_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = method_specification(b, l + 1);
@@ -19191,16 +16881,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <method specification> }... ]
+  // [ { <comma> <method specification> }"..." ]
   private static boolean method_specification_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "method_specification_list_1")) return false;
     method_specification_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <method specification>
+  // { <comma> <method specification> }"..."
   private static boolean method_specification_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "method_specification_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = method_specification_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <method specification>
+  private static boolean method_specification_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "method_specification_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -19221,7 +16922,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <datetime value>
   public static boolean minutes_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "minutes_value")) return false;
-    if (!nextTokenIs(b, _DATETIME_VALUE_)) return false;
+    if (!nextTokenIs(b, DATETIME_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = datetime_value(b, l + 1);
@@ -19250,7 +16951,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!recursion_guard_(b, l, "module_authorization_clause_1")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, AUTHORIZATION, _MODULE_AUTHORIZATION_IDENTIFIER_);
+    r = consumeTokens(b, 0, AUTHORIZATION, MODULE_AUTHORIZATION_IDENTIFIER);
     r = r && module_authorization_clause_1_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
@@ -19290,7 +16991,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!recursion_guard_(b, l, "module_authorization_clause_2")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SCHEMA, _SCHEMA_NAME_, AUTHORIZATION, _MODULE_AUTHORIZATION_IDENTIFIER_);
+    r = consumeTokens(b, 0, SCHEMA, _SCHEMA_NAME_, AUTHORIZATION, MODULE_AUTHORIZATION_IDENTIFIER);
     r = r && module_authorization_clause_2_4(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
@@ -19329,7 +17030,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <authorization identifier>
   public static boolean module_authorization_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "module_authorization_identifier")) return false;
-    if (!nextTokenIs(b, _AUTHORIZATION_IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, AUTHORIZATION_IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = authorization_identifier(b, l + 1);
@@ -19370,13 +17071,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <module collation specification>...
+  // <module collation specification>"..."
   public static boolean module_collations(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "module_collations")) return false;
-    if (!nextTokenIs(b, _MODULE_COLLATION_SPECIFICATION____)) return false;
+    if (!nextTokenIs(b, MODULE_COLLATION_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _MODULE_COLLATION_SPECIFICATION____);
+    r = module_collation_specification(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, MODULE_COLLATIONS, r);
     return r;
   }
@@ -19428,7 +17130,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <path specification>
   public static boolean module_path_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "module_path_specification")) return false;
-    if (!nextTokenIs(b, _PATH_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, PATH_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = path_specification(b, l + 1);
@@ -19440,7 +17142,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <transform group specification>
   public static boolean module_transform_group_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "module_transform_group_specification")) return false;
-    if (!nextTokenIs(b, _TRANSFORM_GROUP_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, TRANSFORM_GROUP_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = transform_group_specification(b, l + 1);
@@ -19464,7 +17166,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <datetime value>
   public static boolean months_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "months_value")) return false;
-    if (!nextTokenIs(b, _DATETIME_VALUE_)) return false;
+    if (!nextTokenIs(b, DATETIME_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = datetime_value(b, l + 1);
@@ -19476,7 +17178,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <set target list> <equals operator> <assigned row>
   public static boolean multiple_column_assignment(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "multiple_column_assignment")) return false;
-    if (!nextTokenIs(b, _SET_TARGET_LIST_)) return false;
+    if (!nextTokenIs(b, SET_TARGET_LIST)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = set_target_list(b, l + 1);
@@ -19487,10 +17189,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <group specification> [ { <comma> <group specification> }... ]
+  // <group specification> [ { <comma> <group specification> }"..." ]
   public static boolean multiple_group_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "multiple_group_specification")) return false;
-    if (!nextTokenIs(b, _GROUP_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, GROUP_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = group_specification(b, l + 1);
@@ -19499,16 +17201,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <group specification> }... ]
+  // [ { <comma> <group specification> }"..." ]
   private static boolean multiple_group_specification_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "multiple_group_specification_1")) return false;
     multiple_group_specification_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <group specification>
+  // { <comma> <group specification> }"..."
   private static boolean multiple_group_specification_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "multiple_group_specification_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = multiple_group_specification_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <group specification>
+  private static boolean multiple_group_specification_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "multiple_group_specification_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -19546,7 +17259,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <multiset element> [ { <comma> <multiset element> } ]
   public static boolean multiset_element_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "multiset_element_list")) return false;
-    if (!nextTokenIs(b, _MULTISET_ELEMENT_)) return false;
+    if (!nextTokenIs(b, MULTISET_ELEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = multiset_element(b, l + 1);
@@ -19589,7 +17302,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <multiset value function> | <value expression primary>
   public static boolean multiset_primary(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "multiset_primary")) return false;
-    if (!nextTokenIs(b, "<multiset primary>", _MULTISET_VALUE_FUNCTION_, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, "<multiset primary>", MULTISET_VALUE_FUNCTION, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, MULTISET_PRIMARY, "<multiset primary>");
     r = multiset_value_function(b, l + 1);
@@ -19605,7 +17318,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, _LEFT_PAREN_, _MULTISET_VALUE_EXPRESSION_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, SET, _LEFT_PAREN_, MULTISET_VALUE_EXPRESSION, _RIGHT_PAREN_);
     exit_section_(b, m, MULTISET_SET_FUNCTION, r);
     return r;
   }
@@ -19615,7 +17328,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<multiset term> MULTISET INTERSECT [ ALL | DISTINCT ] <multiset primary>
   public static boolean multiset_term(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "multiset_term")) return false;
-    if (!nextTokenIs(b, "<multiset term>", _MULTISET_PRIMARY_, _MULTISET_TERM_)) return false;
+    if (!nextTokenIs(b, "<multiset term>", MULTISET_PRIMARY, MULTISET_TERM)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, MULTISET_TERM, "<multiset term>");
     r = multiset_primary(b, l + 1);
@@ -19657,7 +17370,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <data type> MULTISET
   public static boolean multiset_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "multiset_type")) return false;
-    if (!nextTokenIs(b, _DATA_TYPE_)) return false;
+    if (!nextTokenIs(b, DATA_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = data_type(b, l + 1);
@@ -19688,7 +17401,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, MULTISET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, MULTISET, _LEFT_BRACKET_OR_TRIGRAPH_, _MULTISET_ELEMENT_LIST_, _RIGHT_BRACKET_OR_TRIGRAPH_);
+    r = consumeTokens(b, 0, MULTISET, _LEFT_BRACKET_OR_TRIGRAPH_, MULTISET_ELEMENT_LIST, _RIGHT_BRACKET_OR_TRIGRAPH_);
     exit_section_(b, m, MULTISET_VALUE_CONSTRUCTOR_BY_ENUMERATION, r);
     return r;
   }
@@ -19700,7 +17413,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, MULTISET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, MULTISET, _LEFT_PAREN_, _QUERY_EXPRESSION_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, MULTISET, _LEFT_PAREN_, QUERY_EXPRESSION, _RIGHT_PAREN_);
     exit_section_(b, m, MULTISET_VALUE_CONSTRUCTOR_BY_QUERY, r);
     return r;
   }
@@ -19711,7 +17424,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<multiset value expression> MULTISET EXCEPT [ ALL | DISTINCT ] <multiset term>
   public static boolean multiset_value_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "multiset_value_expression")) return false;
-    if (!nextTokenIs(b, "<multiset value expression>", _MULTISET_TERM_, _MULTISET_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<multiset value expression>", MULTISET_TERM, MULTISET_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, MULTISET_VALUE_EXPRESSION, "<multiset value expression>");
     r = multiset_term(b, l + 1);
@@ -19783,7 +17496,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <multiset set function>
   public static boolean multiset_value_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "multiset_value_function")) return false;
-    if (!nextTokenIs(b, _MULTISET_SET_FUNCTION_)) return false;
+    if (!nextTokenIs(b, MULTISET_SET_FUNCTION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = multiset_set_function(b, l + 1);
@@ -19795,7 +17508,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <mutated target> <period> <method name>
   public static boolean mutated_set_clause(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "mutated_set_clause")) return false;
-    if (!nextTokenIs(b, _MUTATED_TARGET_)) return false;
+    if (!nextTokenIs(b, MUTATED_TARGET)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = mutated_target(b, l + 1);
@@ -19809,7 +17522,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <object column> | <mutated set clause>
   public static boolean mutated_target(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "mutated_target")) return false;
-    if (!nextTokenIs(b, "<mutated target>", _MUTATED_SET_CLAUSE_, _OBJECT_COLUMN_)) return false;
+    if (!nextTokenIs(b, "<mutated target>", MUTATED_SET_CLAUSE, _OBJECT_COLUMN_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, MUTATED_TARGET, "<mutated target>");
     r = object_column(b, l + 1);
@@ -19825,14 +17538,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, USING)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, USING, _LEFT_PAREN_, _JOIN_COLUMN_LIST_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, USING, _LEFT_PAREN_, JOIN_COLUMN_LIST, _RIGHT_PAREN_);
     exit_section_(b, m, NAMED_COLUMNS_JOIN, r);
     return r;
   }
 
   /* ********************************************************** */
-  // N <quote> [ <character representation>... ] <quote>
-  // 		[ { <separator> <quote> [ <character representation>... ] <quote> }... ]
+  // N <quote> [ <character representation>"..." ] <quote>
+  // 		[ { <separator> <quote> [ <character representation>"..." ] <quote> }"..." ]
   public static boolean national_character_string_literal(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "national_character_string_literal")) return false;
     if (!nextTokenIs(b, N)) return false;
@@ -19846,38 +17559,71 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ <character representation>... ]
+  // [ <character representation>"..." ]
   private static boolean national_character_string_literal_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "national_character_string_literal_2")) return false;
-    consumeToken(b, _CHARACTER_REPRESENTATION____);
+    national_character_string_literal_2_0(b, l + 1);
     return true;
   }
 
-  // [ { <separator> <quote> [ <character representation>... ] <quote> }... ]
+  // <character representation>"..."
+  private static boolean national_character_string_literal_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "national_character_string_literal_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = character_representation(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // [ { <separator> <quote> [ <character representation>"..." ] <quote> }"..." ]
   private static boolean national_character_string_literal_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "national_character_string_literal_4")) return false;
     national_character_string_literal_4_0(b, l + 1);
     return true;
   }
 
-  // <separator> <quote> [ <character representation>... ] <quote>
+  // { <separator> <quote> [ <character representation>"..." ] <quote> }"..."
   private static boolean national_character_string_literal_4_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "national_character_string_literal_4_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
+    r = national_character_string_literal_4_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <separator> <quote> [ <character representation>"..." ] <quote>
+  private static boolean national_character_string_literal_4_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "national_character_string_literal_4_0_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = separator(b, l + 1);
     r = r && quote(b, l + 1);
-    r = r && national_character_string_literal_4_0_2(b, l + 1);
+    r = r && national_character_string_literal_4_0_0_2(b, l + 1);
     r = r && quote(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // [ <character representation>... ]
-  private static boolean national_character_string_literal_4_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "national_character_string_literal_4_0_2")) return false;
-    consumeToken(b, _CHARACTER_REPRESENTATION____);
+  // [ <character representation>"..." ]
+  private static boolean national_character_string_literal_4_0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "national_character_string_literal_4_0_0_2")) return false;
+    national_character_string_literal_4_0_0_2_0(b, l + 1);
     return true;
+  }
+
+  // <character representation>"..."
+  private static boolean national_character_string_literal_4_0_0_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "national_character_string_literal_4_0_0_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = character_representation(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */
@@ -20019,13 +17765,13 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <table reference> NATURAL [ <join type> ] JOIN <table primary>
   public static boolean natural_join(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "natural_join")) return false;
-    if (!nextTokenIs(b, _TABLE_REFERENCE_)) return false;
+    if (!nextTokenIs(b, TABLE_REFERENCE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = table_reference(b, l + 1);
     r = r && consumeToken(b, NATURAL);
     r = r && natural_join_2(b, l + 1);
-    r = r && consumeTokens(b, 0, JOIN, _TABLE_PRIMARY_);
+    r = r && consumeTokens(b, 0, JOIN, TABLE_PRIMARY);
     exit_section_(b, m, NATURAL_JOIN, r);
     return r;
   }
@@ -20066,7 +17812,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <method invocation> | <routine invocation>
   public static boolean new_invocation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "new_invocation")) return false;
-    if (!nextTokenIs(b, "<new invocation>", _METHOD_INVOCATION_, _ROUTINE_INVOCATION_)) return false;
+    if (!nextTokenIs(b, "<new invocation>", METHOD_INVOCATION, ROUTINE_INVOCATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, NEW_INVOCATION, "<new invocation>");
     r = method_invocation(b, l + 1);
@@ -20082,7 +17828,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, NEW)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, NEW, _ROUTINE_INVOCATION_);
+    r = consumeTokens(b, 0, NEW, ROUTINE_INVOCATION);
     exit_section_(b, m, NEW_SPECIFICATION, r);
     return r;
   }
@@ -20091,7 +17837,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <correlation name>
   public static boolean new_values_correlation_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "new_values_correlation_name")) return false;
-    if (!nextTokenIs(b, _CORRELATION_NAME_)) return false;
+    if (!nextTokenIs(b, CORRELATION_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = correlation_name(b, l + 1);
@@ -20103,7 +17849,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean new_values_table_alias(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "new_values_table_alias")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -20115,7 +17861,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <window name>
   public static boolean new_window_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "new_window_name")) return false;
-    if (!nextTokenIs(b, _WINDOW_NAME_)) return false;
+    if (!nextTokenIs(b, WINDOW_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = window_name(b, l + 1);
@@ -20148,7 +17894,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // !! See the Syntax Rules.
   public static boolean non_escaped_character(PsiBuilder b, int l) {
     Marker m = enter_section_(b);
     exit_section_(b, m, NON_ESCAPED_CHARACTER, true);
@@ -20161,40 +17906,40 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<query expression body> EXCEPT [ ALL | DISTINCT ] [ <corresponding spec> ] <query term>
   public static boolean non_join_query_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "non_join_query_expression")) return false;
-    if (!nextTokenIs(b, "<non join query expression>", _NON_JOIN_QUERY_TERM_, _QUERY_EXPRESSION_BODY_)) return false;
+    if (!nextTokenIs(b, "<non join query expression>", NON_JOIN_QUERY_TERM, QUERY_EXPRESSION_BODY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, NON_JOIN_QUERY_EXPRESSION, "<non join query expression>");
     r = non_join_query_term(b, l + 1);
-    if (!r) r = non_join_query_expression_1(b, l + 1);
-    if (!r) r = non_join_query_expression_2(b, l + 1);
+    if (!r) r = non_joinQUERY_EXPRESSION1(b, l + 1);
+    if (!r) r = non_joinQUERY_EXPRESSION2(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
   // <query expression body> UNION [ ALL | DISTINCT ] [ <corresponding spec> ] <query term>
-  private static boolean non_join_query_expression_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "non_join_query_expression_1")) return false;
+  private static boolean non_joinQUERY_EXPRESSION1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "non_joinQUERY_EXPRESSION1")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = query_expression_body(b, l + 1);
     r = r && consumeToken(b, UNION);
-    r = r && non_join_query_expression_1_2(b, l + 1);
-    r = r && non_join_query_expression_1_3(b, l + 1);
+    r = r && non_joinQUERY_EXPRESSION1_2(b, l + 1);
+    r = r && non_joinQUERY_EXPRESSION1_3(b, l + 1);
     r = r && query_term(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ ALL | DISTINCT ]
-  private static boolean non_join_query_expression_1_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "non_join_query_expression_1_2")) return false;
-    non_join_query_expression_1_2_0(b, l + 1);
+  private static boolean non_joinQUERY_EXPRESSION1_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "non_joinQUERY_EXPRESSION1_2")) return false;
+    non_joinQUERY_EXPRESSION1_2_0(b, l + 1);
     return true;
   }
 
   // ALL | DISTINCT
-  private static boolean non_join_query_expression_1_2_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "non_join_query_expression_1_2_0")) return false;
+  private static boolean non_joinQUERY_EXPRESSION1_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "non_joinQUERY_EXPRESSION1_2_0")) return false;
     boolean r;
     r = consumeToken(b, ALL);
     if (!r) r = consumeToken(b, DISTINCT);
@@ -20202,36 +17947,36 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   // [ <corresponding spec> ]
-  private static boolean non_join_query_expression_1_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "non_join_query_expression_1_3")) return false;
+  private static boolean non_joinQUERY_EXPRESSION1_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "non_joinQUERY_EXPRESSION1_3")) return false;
     corresponding_spec(b, l + 1);
     return true;
   }
 
   // <query expression body> EXCEPT [ ALL | DISTINCT ] [ <corresponding spec> ] <query term>
-  private static boolean non_join_query_expression_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "non_join_query_expression_2")) return false;
+  private static boolean non_joinQUERY_EXPRESSION2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "non_joinQUERY_EXPRESSION2")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = query_expression_body(b, l + 1);
     r = r && consumeToken(b, EXCEPT);
-    r = r && non_join_query_expression_2_2(b, l + 1);
-    r = r && non_join_query_expression_2_3(b, l + 1);
+    r = r && non_joinQUERY_EXPRESSION2_2(b, l + 1);
+    r = r && non_joinQUERY_EXPRESSION2_3(b, l + 1);
     r = r && query_term(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ ALL | DISTINCT ]
-  private static boolean non_join_query_expression_2_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "non_join_query_expression_2_2")) return false;
-    non_join_query_expression_2_2_0(b, l + 1);
+  private static boolean non_joinQUERY_EXPRESSION2_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "non_joinQUERY_EXPRESSION2_2")) return false;
+    non_joinQUERY_EXPRESSION2_2_0(b, l + 1);
     return true;
   }
 
   // ALL | DISTINCT
-  private static boolean non_join_query_expression_2_2_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "non_join_query_expression_2_2_0")) return false;
+  private static boolean non_joinQUERY_EXPRESSION2_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "non_joinQUERY_EXPRESSION2_2_0")) return false;
     boolean r;
     r = consumeToken(b, ALL);
     if (!r) r = consumeToken(b, DISTINCT);
@@ -20239,8 +17984,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   // [ <corresponding spec> ]
-  private static boolean non_join_query_expression_2_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "non_join_query_expression_2_3")) return false;
+  private static boolean non_joinQUERY_EXPRESSION2_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "non_joinQUERY_EXPRESSION2_3")) return false;
     corresponding_spec(b, l + 1);
     return true;
   }
@@ -20249,7 +17994,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <simple table> | <left paren> <non-join query expression> <right paren>
   public static boolean non_join_query_primary(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "non_join_query_primary")) return false;
-    if (!nextTokenIs(b, "<non join query primary>", _LEFT_PAREN_, _SIMPLE_TABLE_)) return false;
+    if (!nextTokenIs(b, "<non join query primary>", _LEFT_PAREN_, SIMPLE_TABLE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, NON_JOIN_QUERY_PRIMARY, "<non join query primary>");
     r = simple_table(b, l + 1);
@@ -20263,7 +18008,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<query term> INTERSECT [ ALL | DISTINCT ] [ <corresponding spec> ] <query primary>
   public static boolean non_join_query_term(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "non_join_query_term")) return false;
-    if (!nextTokenIs(b, "<non join query term>", _NON_JOIN_QUERY_PRIMARY_, _QUERY_TERM_)) return false;
+    if (!nextTokenIs(b, "<non join query term>", NON_JOIN_QUERY_PRIMARY, QUERY_TERM)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, NON_JOIN_QUERY_TERM, "<non join query term>");
     r = non_join_query_primary(b, l + 1);
@@ -20314,7 +18059,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	ABS
   // 	|	ABSOLUTE
   // 	|	ACTION
-  // 	|	ADA
   // 	|	ADMIN
   // 	|	AFTER
   // 	|	ALWAYS
@@ -20345,7 +18089,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	CHECKED
   // 	|	CLASS_ORIGIN
   // 	|	COALESCE
-  // 	|	COBOL
   // 	|	CODE_UNITS
   // 	|	COLLATION
   // 	|	COLLATION_CATALOG
@@ -20569,7 +18312,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!r) r = consumeToken(b, ABS);
     if (!r) r = consumeToken(b, ABSOLUTE);
     if (!r) r = consumeToken(b, ACTION);
-    if (!r) r = consumeToken(b, ADA);
     if (!r) r = consumeToken(b, ADMIN);
     if (!r) r = consumeToken(b, AFTER);
     if (!r) r = consumeToken(b, ALWAYS);
@@ -20600,7 +18342,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!r) r = consumeToken(b, CHECKED);
     if (!r) r = consumeToken(b, CLASS_ORIGIN);
     if (!r) r = consumeToken(b, COALESCE);
-    if (!r) r = consumeToken(b, COBOL);
     if (!r) r = consumeToken(b, CODE_UNITS);
     if (!r) r = consumeToken(b, COLLATION);
     if (!r) r = consumeToken(b, COLLATION_CATALOG);
@@ -20916,7 +18657,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // !! See the Syntax Rules.
   public static boolean nonquote_character(PsiBuilder b, int l) {
     Marker m = enter_section_(b);
     exit_section_(b, m, NONQUOTE_CHARACTER, true);
@@ -20930,7 +18670,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, NORMALIZE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, NORMALIZE, _LEFT_PAREN_, _CHARACTER_VALUE_EXPRESSION_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, NORMALIZE, _LEFT_PAREN_, CHARACTER_VALUE_EXPRESSION, _RIGHT_PAREN_);
     exit_section_(b, m, NORMALIZE_FUNCTION, r);
     return r;
   }
@@ -20939,7 +18679,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <string value expression> IS [ NOT ] NORMALIZED
   public static boolean normalized_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "normalized_predicate")) return false;
-    if (!nextTokenIs(b, _STRING_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, STRING_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = string_value_expression(b, l + 1);
@@ -20961,7 +18701,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <less than operator> <greater than operator>
   public static boolean not_equals_operator(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "not_equals_operator")) return false;
-    if (!nextTokenIs(b, _LESS_THAN_OPERATOR_)) return false;
+    if (!nextTokenIs(b, LESS_THAN_OPERATOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = less_than_operator(b, l + 1);
@@ -20987,7 +18727,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <null predicate part 2>
   public static boolean null_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "null_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -21060,7 +18800,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<numeric value function>
   public static boolean numeric_primary(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "numeric_primary")) return false;
-    if (!nextTokenIs(b, "<numeric primary>", _NUMERIC_VALUE_FUNCTION_, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, "<numeric primary>", NUMERIC_VALUE_FUNCTION, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, NUMERIC_PRIMARY, "<numeric primary>");
     r = value_expression_primary(b, l + 1);
@@ -21073,7 +18813,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <exact numeric type> | <approximate numeric type>
   public static boolean numeric_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "numeric_type")) return false;
-    if (!nextTokenIs(b, "<numeric type>", _APPROXIMATE_NUMERIC_TYPE_, _EXACT_NUMERIC_TYPE_)) return false;
+    if (!nextTokenIs(b, "<numeric type>", APPROXIMATE_NUMERIC_TYPE, EXACT_NUMERIC_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, NUMERIC_TYPE, "<numeric type>");
     r = exact_numeric_type(b, l + 1);
@@ -21214,10 +18954,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // ALL PRIVILEGES
-  // 	|	<action> [ { <comma> <action> }... ]
+  // 	|	<action> [ { <comma> <action> }"..." ]
   public static boolean object_privileges(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "object_privileges")) return false;
-    if (!nextTokenIs(b, "<object privileges>", ALL, _ACTION_)) return false;
+    if (!nextTokenIs(b, "<object privileges>", ALL, ACTION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, OBJECT_PRIVILEGES, "<object privileges>");
     r = parseTokens(b, 0, ALL, PRIVILEGES);
@@ -21226,7 +18966,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // <action> [ { <comma> <action> }... ]
+  // <action> [ { <comma> <action> }"..." ]
   private static boolean object_privileges_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "object_privileges_1")) return false;
     boolean r;
@@ -21237,16 +18977,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <action> }... ]
+  // [ { <comma> <action> }"..." ]
   private static boolean object_privileges_1_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "object_privileges_1_1")) return false;
     object_privileges_1_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <action>
+  // { <comma> <action> }"..."
   private static boolean object_privileges_1_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "object_privileges_1_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = object_privileges_1_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <action>
+  private static boolean object_privileges_1_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "object_privileges_1_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -21274,7 +19025,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, OCTET_LENGTH)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, OCTET_LENGTH, _LEFT_PAREN_, _STRING_VALUE_EXPRESSION_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, OCTET_LENGTH, _LEFT_PAREN_, STRING_VALUE_EXPRESSION, _RIGHT_PAREN_);
     exit_section_(b, m, OCTET_LENGTH_EXPRESSION, r);
     return r;
   }
@@ -21283,7 +19034,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <octet like predicate part 2>
   public static boolean octet_like_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "octet_like_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -21300,7 +19051,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, OCTET_LIKE_PREDICATE_PART_2, "<octet like predicate part 2>");
     r = octet_like_predicate_part_2_0(b, l + 1);
-    r = r && consumeTokens(b, 0, LIKE, _OCTET_PATTERN_);
+    r = r && consumeTokens(b, 0, LIKE, OCTET_PATTERN);
     r = r && octet_like_predicate_part_2_3(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -21324,7 +19075,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <blob value expression>
   public static boolean octet_pattern(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "octet_pattern")) return false;
-    if (!nextTokenIs(b, _BLOB_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, BLOB_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = blob_value_expression(b, l + 1);
@@ -21443,13 +19194,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <old or new values alias>...
+  // <old or new values alias>"..."
   public static boolean old_or_new_values_alias_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "old_or_new_values_alias_list")) return false;
-    if (!nextTokenIs(b, _OLD_OR_NEW_VALUES_ALIAS____)) return false;
+    if (!nextTokenIs(b, OLD_OR_NEW_VALUES_ALIAS)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _OLD_OR_NEW_VALUES_ALIAS____);
+    r = old_or_new_values_alias(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, OLD_OR_NEW_VALUES_ALIAS_LIST, r);
     return r;
   }
@@ -21458,7 +19210,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <correlation name>
   public static boolean old_values_correlation_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "old_values_correlation_name")) return false;
-    if (!nextTokenIs(b, _CORRELATION_NAME_)) return false;
+    if (!nextTokenIs(b, CORRELATION_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = correlation_name(b, l + 1);
@@ -21470,7 +19222,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean old_values_table_alias(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "old_values_table_alias")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -21485,7 +19237,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ONLY)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ONLY, _LEFT_PAREN_, _TABLE_OR_QUERY_NAME_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, ONLY, _LEFT_PAREN_, TABLE_OR_QUERY_NAME, _RIGHT_PAREN_);
     exit_section_(b, m, ONLY_SPEC, r);
     return r;
   }
@@ -21497,7 +19249,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, OPEN)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, OPEN, _CURSOR_NAME_);
+    r = consumeTokens(b, 0, OPEN, CURSOR_NAME);
     exit_section_(b, m, OPEN_STATEMENT, r);
     return r;
   }
@@ -21518,7 +19270,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <hypothetical set function> | <inverse distribution function>
   public static boolean ordered_set_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ordered_set_function")) return false;
-    if (!nextTokenIs(b, "<ordered set function>", _HYPOTHETICAL_SET_FUNCTION_, _INVERSE_DISTRIBUTION_FUNCTION_)) return false;
+    if (!nextTokenIs(b, "<ordered set function>", HYPOTHETICAL_SET_FUNCTION, INVERSE_DISTRIBUTION_FUNCTION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ORDERED_SET_FUNCTION, "<ordered set function>");
     r = hypothetical_set_function(b, l + 1);
@@ -21544,7 +19296,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <equals ordering form> | <full ordering form>
   public static boolean ordering_form(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ordering_form")) return false;
-    if (!nextTokenIs(b, "<ordering form>", _EQUALS_ORDERING_FORM_, _FULL_ORDERING_FORM_)) return false;
+    if (!nextTokenIs(b, "<ordering form>", EQUALS_ORDERING_FORM, FULL_ORDERING_FORM)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ORDERING_FORM, "<ordering form>");
     r = equals_ordering_form(b, l + 1);
@@ -21571,7 +19323,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<left paren> <grouping column reference list> <right paren>
   public static boolean ordinary_grouping_set(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ordinary_grouping_set")) return false;
-    if (!nextTokenIs(b, "<ordinary grouping set>", _GROUPING_COLUMN_REFERENCE_, _LEFT_PAREN_)) return false;
+    if (!nextTokenIs(b, "<ordinary grouping set>", GROUPING_COLUMN_REFERENCE, _LEFT_PAREN_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ORDINARY_GROUPING_SET, "<ordinary grouping set>");
     r = grouping_column_reference(b, l + 1);
@@ -21581,10 +19333,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <ordinary grouping set> [ { <comma> <ordinary grouping set> }... ]
+  // <ordinary grouping set> [ { <comma> <ordinary grouping set> }"..." ]
   public static boolean ordinary_grouping_set_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ordinary_grouping_set_list")) return false;
-    if (!nextTokenIs(b, _ORDINARY_GROUPING_SET_)) return false;
+    if (!nextTokenIs(b, ORDINARY_GROUPING_SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = ordinary_grouping_set(b, l + 1);
@@ -21593,16 +19345,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <ordinary grouping set> }... ]
+  // [ { <comma> <ordinary grouping set> }"..." ]
   private static boolean ordinary_grouping_set_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ordinary_grouping_set_list_1")) return false;
     ordinary_grouping_set_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <ordinary grouping set>
+  // { <comma> <ordinary grouping set> }"..."
   private static boolean ordinary_grouping_set_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ordinary_grouping_set_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = ordinary_grouping_set_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <ordinary grouping set>
+  private static boolean ordinary_grouping_set_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "ordinary_grouping_set_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -21615,7 +19378,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <partial method specification> [ SELF AS RESULT ] [ SELF AS LOCATOR ] [ <method characteristics> ]
   public static boolean original_method_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "original_method_specification")) return false;
-    if (!nextTokenIs(b, _PARTIAL_METHOD_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, PARTIAL_METHOD_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = partial_method_specification(b, l + 1);
@@ -21664,7 +19427,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <into arguments> | <into descriptor>
   public static boolean output_using_clause(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "output_using_clause")) return false;
-    if (!nextTokenIs(b, "<output using clause>", _INTO_ARGUMENTS_, _INTO_DESCRIPTOR_)) return false;
+    if (!nextTokenIs(b, "<output using clause>", INTO_ARGUMENTS, INTO_DESCRIPTOR)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, OUTPUT_USING_CLAUSE, "<output using clause>");
     r = into_arguments(b, l + 1);
@@ -21677,7 +19440,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <overlaps predicate part 1> <overlaps predicate part 2>
   public static boolean overlaps_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "overlaps_predicate")) return false;
-    if (!nextTokenIs(b, _OVERLAPS_PREDICATE_PART_1_)) return false;
+    if (!nextTokenIs(b, OVERLAPS_PREDICATE_PART_1)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = overlaps_predicate_part_1(b, l + 1);
@@ -21690,7 +19453,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand 1>
   public static boolean overlaps_predicate_part_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "overlaps_predicate_part_1")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_1_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND_1)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand_1(b, l + 1);
@@ -21705,7 +19468,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, OVERLAPS)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, OVERLAPS, _ROW_VALUE_PREDICAND_2_);
+    r = consumeTokens(b, 0, OVERLAPS, ROW_VALUE_PREDICAND_2);
     exit_section_(b, m, OVERLAPS_PREDICATE_PART_2, r);
     return r;
   }
@@ -21730,7 +19493,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, OVERRIDING)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, OVERRIDING, _PARTIAL_METHOD_SPECIFICATION_);
+    r = consumeTokens(b, 0, OVERRIDING, PARTIAL_METHOD_SPECIFICATION);
     exit_section_(b, m, OVERRIDING_METHOD_SPECIFICATION, r);
     return r;
   }
@@ -21781,7 +19544,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, PARAMETER)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, PARAMETER, STYLE, _PARAMETER_STYLE_);
+    r = consumeTokens(b, 0, PARAMETER, STYLE, PARAMETER_STYLE);
     exit_section_(b, m, PARAMETER_STYLE_CLAUSE, r);
     return r;
   }
@@ -21790,7 +19553,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <data type> [ <locator indication> ]
   public static boolean parameter_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "parameter_type")) return false;
-    if (!nextTokenIs(b, _DATA_TYPE_)) return false;
+    if (!nextTokenIs(b, DATA_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = data_type(b, l + 1);
@@ -21810,7 +19573,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <input using clause>
   public static boolean parameter_using_clause(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "parameter_using_clause")) return false;
-    if (!nextTokenIs(b, _INPUT_USING_CLAUSE_)) return false;
+    if (!nextTokenIs(b, INPUT_USING_CLAUSE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = input_using_clause(b, l + 1);
@@ -21854,7 +19617,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, PARTIAL_METHOD_SPECIFICATION, "<partial method specification>");
     r = partial_method_specification_0(b, l + 1);
-    r = r && consumeTokens(b, 0, METHOD, _METHOD_NAME_, _SQL_PARAMETER_DECLARATION_LIST_, _RETURNS_CLAUSE_);
+    r = r && consumeTokens(b, 0, METHOD, METHOD_NAME, SQL_PARAMETER_DECLARATION_LIST, RETURNS_CLAUSE);
     r = r && partial_method_specification_5(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -21903,7 +19666,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, PATH)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, PATH, _SCHEMA_NAME_LIST_);
+    r = consumeTokens(b, 0, PATH, SCHEMA_NAME_LIST);
     exit_section_(b, m, PATH_SPECIFICATION, r);
     return r;
   }
@@ -21912,7 +19675,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <user-defined type name>
   public static boolean path_resolved_user_defined_type_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "path_resolved_user_defined_type_name")) return false;
-    if (!nextTokenIs(b, _USER_DEFINED_TYPE_NAME_)) return false;
+    if (!nextTokenIs(b, USER_DEFINED_TYPE_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = user_defined_type_name(b, l + 1);
@@ -21921,11 +19684,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // %
+  // "%"
   public static boolean percent(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, PERCENT, true);
-    return true;
+    if (!recursion_guard_(b, l, "percent")) return false;
+    boolean r;
+    Marker m = enter_section_(b, l, _NONE_, PERCENT, "<percent>");
+    r = consumeToken(b, "%");
+    exit_section_(b, l, m, r, false, null);
+    return r;
   }
 
   /* ********************************************************** */
@@ -21949,7 +19715,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<blob position expression>
   public static boolean position_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "position_expression")) return false;
-    if (!nextTokenIs(b, "<position expression>", _BLOB_POSITION_EXPRESSION_, _STRING_POSITION_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<position expression>", BLOB_POSITION_EXPRESSION, STRING_POSITION_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, POSITION_EXPRESSION, "<position expression>");
     r = string_position_expression(b, l + 1);
@@ -21965,7 +19731,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, POWER)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, POWER, _LEFT_PAREN_, _NUMERIC_VALUE_EXPRESSION_BASE_, _COMMA_, _NUMERIC_VALUE_EXPRESSION_EXPONENT_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, POWER, _LEFT_PAREN_, NUMERIC_VALUE_EXPRESSION_BASE, _COMMA_, NUMERIC_VALUE_EXPRESSION_EXPONENT, _RIGHT_PAREN_);
     exit_section_(b, m, POWER_FUNCTION, r);
     return r;
   }
@@ -22096,7 +19862,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <SQL control statement>
   public static boolean preparable_SQL_control_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "preparable_SQL_control_statement")) return false;
-    if (!nextTokenIs(b, _SQL_CONTROL_STATEMENT_)) return false;
+    if (!nextTokenIs(b, SQL_CONTROL_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQL_control_statement(b, l + 1);
@@ -22133,7 +19899,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <SQL schema statement>
   public static boolean preparable_SQL_schema_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "preparable_SQL_schema_statement")) return false;
-    if (!nextTokenIs(b, _SQL_SCHEMA_STATEMENT_)) return false;
+    if (!nextTokenIs(b, SQL_SCHEMA_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQL_schema_statement(b, l + 1);
@@ -22145,7 +19911,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <SQL session statement>
   public static boolean preparable_SQL_session_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "preparable_SQL_session_statement")) return false;
-    if (!nextTokenIs(b, _SQL_SESSION_STATEMENT_)) return false;
+    if (!nextTokenIs(b, SQL_SESSION_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQL_session_statement(b, l + 1);
@@ -22157,7 +19923,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <SQL transaction statement>
   public static boolean preparable_SQL_transaction_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "preparable_SQL_transaction_statement")) return false;
-    if (!nextTokenIs(b, _SQL_TRANSACTION_STATEMENT_)) return false;
+    if (!nextTokenIs(b, SQL_TRANSACTION_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = SQL_transaction_statement(b, l + 1);
@@ -22204,7 +19970,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeToken(b, UPDATE);
     r = r && preparable_dynamic_update_statement_positioned_1(b, l + 1);
-    r = r && consumeTokens(b, 0, SET, _SET_CLAUSE_LIST_, WHERE, CURRENT, OF);
+    r = r && consumeTokens(b, 0, SET, SET_CLAUSE_LIST, WHERE, CURRENT, OF);
     r = r && preparable_dynamic_update_statement_positioned_7(b, l + 1);
     r = r && cursor_name(b, l + 1);
     exit_section_(b, m, PREPARABLE_DYNAMIC_UPDATE_STATEMENT_POSITIONED, r);
@@ -22226,7 +19992,6 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // !! See the Syntax Rules.
   public static boolean preparable_implementation_defined_statement(PsiBuilder b, int l) {
     Marker m = enter_section_(b);
     exit_section_(b, m, PREPARABLE_IMPLEMENTATION_DEFINED_STATEMENT, true);
@@ -22261,9 +20026,9 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, PREPARE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, PREPARE, _SQL_STATEMENT_NAME_);
+    r = consumeTokens(b, 0, PREPARE, SQL_STATEMENT_NAME);
     r = r && prepare_statement_2(b, l + 1);
-    r = r && consumeTokens(b, 0, FROM, _SQL_STATEMENT_VARIABLE_);
+    r = r && consumeTokens(b, 0, FROM, SQL_STATEMENT_VARIABLE);
     exit_section_(b, m, PREPARE_STATEMENT, r);
     return r;
   }
@@ -22280,7 +20045,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	SECOND
   public static boolean primary_datetime_field(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "primary_datetime_field")) return false;
-    if (!nextTokenIs(b, "<primary datetime field>", SECOND, _NON_SECOND_PRIMARY_DATETIME_FIELD_)) return false;
+    if (!nextTokenIs(b, "<primary datetime field>", SECOND, NON_SECOND_PRIMARY_DATETIME_FIELD)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, PRIMARY_DATETIME_FIELD, "<primary datetime field>");
     r = non_second_primary_datetime_field(b, l + 1);
@@ -22302,10 +20067,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <specific routine designator> [ { <comma> <specific routine designator> }... ]
+  // <specific routine designator> [ { <comma> <specific routine designator> }"..." ]
   public static boolean privilege_method_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "privilege_method_list")) return false;
-    if (!nextTokenIs(b, _SPECIFIC_ROUTINE_DESIGNATOR_)) return false;
+    if (!nextTokenIs(b, SPECIFIC_ROUTINE_DESIGNATOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = specific_routine_designator(b, l + 1);
@@ -22314,16 +20079,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <specific routine designator> }... ]
+  // [ { <comma> <specific routine designator> }"..." ]
   private static boolean privilege_method_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "privilege_method_list_1")) return false;
     privilege_method_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <specific routine designator>
+  // { <comma> <specific routine designator> }"..."
   private static boolean privilege_method_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "privilege_method_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = privilege_method_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <specific routine designator>
+  private static boolean privilege_method_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "privilege_method_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -22336,11 +20112,11 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <object privileges> ON <object name>
   public static boolean privileges(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "privileges")) return false;
-    if (!nextTokenIs(b, _OBJECT_PRIVILEGES_)) return false;
+    if (!nextTokenIs(b, OBJECT_PRIVILEGES)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = object_privileges(b, l + 1);
-    r = r && consumeTokens(b, 0, ON, _OBJECT_NAME_);
+    r = r && consumeTokens(b, 0, ON, OBJECT_NAME);
     exit_section_(b, m, PRIVILEGES, r);
     return r;
   }
@@ -22349,7 +20125,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean procedure_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "procedure_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -22362,10 +20138,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<all fields reference>
   public static boolean qualified_asterisk(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "qualified_asterisk")) return false;
-    if (!nextTokenIs(b, "<qualified asterisk>", _ALL_FIELDS_REFERENCE_, _ASTERISKED_IDENTIFIER_CHAIN_)) return false;
+    if (!nextTokenIs(b, "<qualified asterisk>", ALL_FIELDS_REFERENCE, ASTERISKED_IDENTIFIER_CHAIN)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, QUALIFIED_ASTERISK, "<qualified asterisk>");
-    r = asterisked_identifier_chain(b, l + 1);
+    r = asteriskedIDENTIFIERchain(b, l + 1);
     if (!r) r = all_fields_reference(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -22375,7 +20151,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean qualified_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "qualified_identifier")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -22387,12 +20163,12 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <table reference> [ <join type> ] JOIN <table reference> <join specification>
   public static boolean qualified_join(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "qualified_join")) return false;
-    if (!nextTokenIs(b, _TABLE_REFERENCE_)) return false;
+    if (!nextTokenIs(b, TABLE_REFERENCE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = table_reference(b, l + 1);
     r = r && qualified_join_1(b, l + 1);
-    r = r && consumeTokens(b, 0, JOIN, _TABLE_REFERENCE_, _JOIN_SPECIFICATION_);
+    r = r && consumeTokens(b, 0, JOIN, TABLE_REFERENCE, JOIN_SPECIFICATION);
     exit_section_(b, m, QUALIFIED_JOIN, r);
     return r;
   }
@@ -22408,7 +20184,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <quantified comparison predicate part 2>
   public static boolean quantified_comparison_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "quantified_comparison_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -22421,7 +20197,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <comp op> <quantifier> <table subquery>
   public static boolean quantified_comparison_predicate_part_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "quantified_comparison_predicate_part_2")) return false;
-    if (!nextTokenIs(b, _COMP_OP_)) return false;
+    if (!nextTokenIs(b, COMP_OP)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comp_op(b, l + 1);
@@ -22435,7 +20211,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <all> | <some>
   public static boolean quantifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "quantifier")) return false;
-    if (!nextTokenIs(b, "<quantifier>", _ALL_, _SOME_)) return false;
+    if (!nextTokenIs(b, "<quantifier>", ALL, SOME)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, QUANTIFIER, "<quantifier>");
     r = all(b, l + 1);
@@ -22448,7 +20224,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <with clause> ] <query expression body>
   public static boolean query_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "query_expression")) return false;
-    if (!nextTokenIs(b, "<query expression>", _QUERY_EXPRESSION_BODY_, _WITH_CLAUSE_)) return false;
+    if (!nextTokenIs(b, "<query expression>", QUERY_EXPRESSION_BODY, WITH_CLAUSE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, QUERY_EXPRESSION, "<query expression>");
     r = query_expression_0(b, l + 1);
@@ -22468,7 +20244,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <non-join query expression> | <joined table>
   public static boolean query_expression_body(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "query_expression_body")) return false;
-    if (!nextTokenIs(b, "<query expression body>", _JOINED_TABLE_, _NON_JOIN_QUERY_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<query expression body>", _JOINED_TABLE_, NON_JOIN_QUERY_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, QUERY_EXPRESSION_BODY, "<query expression body>");
     r = non_join_query_expression(b, l + 1);
@@ -22481,7 +20257,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean query_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "query_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -22493,7 +20269,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <non-join query primary> | <joined table>
   public static boolean query_primary(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "query_primary")) return false;
-    if (!nextTokenIs(b, "<query primary>", _JOINED_TABLE_, _NON_JOIN_QUERY_PRIMARY_)) return false;
+    if (!nextTokenIs(b, "<query primary>", _JOINED_TABLE_, NON_JOIN_QUERY_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, QUERY_PRIMARY, "<query primary>");
     r = non_join_query_primary(b, l + 1);
@@ -22528,7 +20304,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <non-join query term> | <joined table>
   public static boolean query_term(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "query_term")) return false;
-    if (!nextTokenIs(b, "<query term>", _JOINED_TABLE_, _NON_JOIN_QUERY_TERM_)) return false;
+    if (!nextTokenIs(b, "<query term>", _JOINED_TABLE_, NON_JOIN_QUERY_TERM)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, QUERY_TERM, "<query term>");
     r = non_join_query_term(b, l + 1);
@@ -22652,7 +20428,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DEREF)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DEREF, _LEFT_PAREN_, _REFERENCE_VALUE_EXPRESSION_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, DEREF, _LEFT_PAREN_, REFERENCE_VALUE_EXPRESSION, _RIGHT_PAREN_);
     exit_section_(b, m, REFERENCE_RESOLUTION, r);
     return r;
   }
@@ -22682,7 +20458,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ ON DELETE <reference scope check action> ]
   private static boolean reference_scope_check_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "reference_scope_check_4")) return false;
-    parseTokens(b, 0, ON, DELETE, _REFERENCE_SCOPE_CHECK_ACTION_);
+    parseTokens(b, 0, ON, DELETE, REFERENCE_SCOPE_CHECK_ACTION);
     return true;
   }
 
@@ -22690,7 +20466,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <referential action>
   public static boolean reference_scope_check_action(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "reference_scope_check_action")) return false;
-    if (!nextTokenIs(b, _REFERENTIAL_ACTION_)) return false;
+    if (!nextTokenIs(b, REFERENTIAL_ACTION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = referential_action(b, l + 1);
@@ -22705,7 +20481,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, REF)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, REF, _LEFT_PAREN_, _REFERENCED_TYPE_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, REF, _LEFT_PAREN_, REFERENCED_TYPE, _RIGHT_PAREN_);
     r = r && reference_type_4(b, l + 1);
     exit_section_(b, m, REFERENCE_TYPE, r);
     return r;
@@ -22737,7 +20513,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression primary>
   public static boolean reference_value_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "reference_value_expression")) return false;
-    if (!nextTokenIs(b, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = value_expression_primary(b, l + 1);
@@ -22753,22 +20529,22 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, OF, _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_);
-    r = r && referenceable_view_specification_2(b, l + 1);
-    r = r && referenceable_view_specification_3(b, l + 1);
+    r = r && referenceableVIEW_SPECIFICATION2(b, l + 1);
+    r = r && referenceableVIEW_SPECIFICATION3(b, l + 1);
     exit_section_(b, m, REFERENCEABLE_VIEW_SPECIFICATION, r);
     return r;
   }
 
   // [ <subview clause> ]
-  private static boolean referenceable_view_specification_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "referenceable_view_specification_2")) return false;
+  private static boolean referenceableVIEW_SPECIFICATION2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "referenceableVIEW_SPECIFICATION2")) return false;
     subview_clause(b, l + 1);
     return true;
   }
 
   // [ <view element list> ]
-  private static boolean referenceable_view_specification_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "referenceable_view_specification_3")) return false;
+  private static boolean referenceableVIEW_SPECIFICATION3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "referenceableVIEW_SPECIFICATION3")) return false;
     view_element_list(b, l + 1);
     return true;
   }
@@ -22812,7 +20588,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, REFERENCES)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, REFERENCES, _REFERENCED_TABLE_AND_COLUMNS_);
+    r = consumeTokens(b, 0, REFERENCES, REFERENCED_TABLE_AND_COLUMNS);
     r = r && references_specification_2(b, l + 1);
     r = r && references_specification_3(b, l + 1);
     exit_section_(b, m, REFERENCES_SPECIFICATION, r);
@@ -22867,7 +20643,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, FOREIGN)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, FOREIGN, KEY, _LEFT_PAREN_, _REFERENCING_COLUMNS_, _RIGHT_PAREN_, _REFERENCES_SPECIFICATION_);
+    r = consumeTokens(b, 0, FOREIGN, KEY, _LEFT_PAREN_, REFERENCING_COLUMNS, _RIGHT_PAREN_, REFERENCES_SPECIFICATION);
     exit_section_(b, m, REFERENTIAL_CONSTRAINT_DEFINITION, r);
     return r;
   }
@@ -22876,66 +20652,109 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <update rule> [ <delete rule> ] | <delete rule> [ <update rule> ]
   public static boolean referential_triggered_action(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "referential_triggered_action")) return false;
-    if (!nextTokenIs(b, "<referential triggered action>", _DELETE_RULE_, _UPDATE_RULE_)) return false;
+    if (!nextTokenIs(b, "<referential triggered action>", DELETE_RULE, UPDATE_RULE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, REFERENTIAL_TRIGGERED_ACTION, "<referential triggered action>");
-    r = referential_triggered_action_0(b, l + 1);
-    if (!r) r = referential_triggered_action_1(b, l + 1);
+    r = referential_triggeredACTION0(b, l + 1);
+    if (!r) r = referential_triggeredACTION1(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
   // <update rule> [ <delete rule> ]
-  private static boolean referential_triggered_action_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "referential_triggered_action_0")) return false;
+  private static boolean referential_triggeredACTION0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "referential_triggeredACTION0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = update_rule(b, l + 1);
-    r = r && referential_triggered_action_0_1(b, l + 1);
+    r = r && referential_triggeredACTION0_1(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <delete rule> ]
-  private static boolean referential_triggered_action_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "referential_triggered_action_0_1")) return false;
+  private static boolean referential_triggeredACTION0_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "referential_triggeredACTION0_1")) return false;
     delete_rule(b, l + 1);
     return true;
   }
 
   // <delete rule> [ <update rule> ]
-  private static boolean referential_triggered_action_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "referential_triggered_action_1")) return false;
+  private static boolean referential_triggeredACTION1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "referential_triggeredACTION1")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = delete_rule(b, l + 1);
-    r = r && referential_triggered_action_1_1(b, l + 1);
+    r = r && referential_triggeredACTION1_1(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // [ <update rule> ]
-  private static boolean referential_triggered_action_1_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "referential_triggered_action_1_1")) return false;
+  private static boolean referential_triggeredACTION1_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "referential_triggeredACTION1_1")) return false;
     update_rule(b, l + 1);
     return true;
   }
 
   /* ********************************************************** */
   // <underscore>
-  // 	|	<left bracket> <character enumeration>... <right bracket>
-  // 	|	<left bracket> <circumflex> <character enumeration>... <right bracket>
-  // 	|	<left bracket> <character enumeration include>...  <circumflex> <character enumeration exclude>... <right bracket>
+  // 	|	<left bracket> <character enumeration>"..." <right bracket>
+  // 	|	<left bracket> <circumflex> <character enumeration>"..." <right bracket>
+  // 	|	<left bracket> <character enumeration include>"..."  <circumflex> <character enumeration exclude>"..." <right bracket>
   public static boolean regular_character_set(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "regular_character_set")) return false;
-    if (!nextTokenIs(b, "<regular character set>", _LEFT_BRACKET_, _UNDERSCORE_)) return false;
+    if (!nextTokenIs(b, "<regular character set>", _LEFT_BRACKET_, UNDERSCORE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, REGULAR_CHARACTER_SET, "<regular character set>");
     r = underscore(b, l + 1);
-    if (!r) r = left_bracket(b, l + 1);
-    if (!r) r = left_bracket(b, l + 1);
-    if (!r) r = left_bracket(b, l + 1);
+    if (!r) r = regular_character_set_1(b, l + 1);
+    if (!r) r = regular_character_set_2(b, l + 1);
+    if (!r) r = regular_character_set_3(b, l + 1);
     exit_section_(b, l, m, r, false, null);
+    return r;
+  }
+
+  // <left bracket> <character enumeration>"..." <right bracket>
+  private static boolean regular_character_set_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "regular_character_set_1")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = left_bracket(b, l + 1);
+    r = r && character_enumeration(b, l + 1);
+    r = r && consumeToken(b, "...");
+    r = r && consumeToken(b, _RIGHT_BRACKET_);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <left bracket> <circumflex> <character enumeration>"..." <right bracket>
+  private static boolean regular_character_set_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "regular_character_set_2")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = left_bracket(b, l + 1);
+    r = r && circumflex(b, l + 1);
+    r = r && character_enumeration(b, l + 1);
+    r = r && consumeToken(b, "...");
+    r = r && consumeToken(b, _RIGHT_BRACKET_);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <left bracket> <character enumeration include>"..."  <circumflex> <character enumeration exclude>"..." <right bracket>
+  private static boolean regular_character_set_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "regular_character_set_3")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = left_bracket(b, l + 1);
+    r = r && character_enumeration_include(b, l + 1);
+    r = r && consumeToken(b, "...");
+    r = r && circumflex(b, l + 1);
+    r = r && character_enumeration_exclude(b, l + 1);
+    r = r && consumeToken(b, "...");
+    r = r && consumeToken(b, _RIGHT_BRACKET_);
+    exit_section_(b, m, null, r);
     return r;
   }
 
@@ -22943,7 +20762,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean regular_character_set_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "regular_character_set_identifier")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -22973,7 +20792,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SUBSTRING)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SUBSTRING, _LEFT_PAREN_, _CHARACTER_VALUE_EXPRESSION_, SIMILAR, _CHARACTER_VALUE_EXPRESSION_, ESCAPE, _ESCAPE_CHARACTER_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, SUBSTRING, _LEFT_PAREN_, CHARACTER_VALUE_EXPRESSION, SIMILAR, CHARACTER_VALUE_EXPRESSION, ESCAPE, _ESCAPE_CHARACTER_, _RIGHT_PAREN_);
     exit_section_(b, m, REGULAR_EXPRESSION_SUBSTRING_FUNCTION, r);
     return r;
   }
@@ -23002,7 +20821,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier body>
   public static boolean regular_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "regular_identifier")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_BODY_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER_BODY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier_body(b, l + 1);
@@ -23058,7 +20877,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, RELATIVE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, RELATIVE, WITH, _RELATIVE_FUNCTION_SPECIFICATION_);
+    r = consumeTokens(b, 0, RELATIVE, WITH, RELATIVE_FUNCTION_SPECIFICATION);
     exit_section_(b, m, RELATIVE_CATEGORY, r);
     return r;
   }
@@ -23067,7 +20886,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <specific routine designator>
   public static boolean relative_function_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "relative_function_specification")) return false;
-    if (!nextTokenIs(b, _SPECIFIC_ROUTINE_DESIGNATOR_)) return false;
+    if (!nextTokenIs(b, SPECIFIC_ROUTINE_DESIGNATOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = specific_routine_designator(b, l + 1);
@@ -23082,7 +20901,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, RELEASE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, RELEASE, SAVEPOINT, _SAVEPOINT_SPECIFIER_);
+    r = consumeTokens(b, 0, RELEASE, SAVEPOINT, SAVEPOINT_SPECIFIER);
     exit_section_(b, m, RELEASE_SAVEPOINT_STATEMENT, r);
     return r;
   }
@@ -23103,7 +20922,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <left brace> <low value> [ <upper limit> ] <right brace>
   public static boolean repeat_factor(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "repeat_factor")) return false;
-    if (!nextTokenIs(b, _LEFT_BRACE_)) return false;
+    if (!nextTokenIs(b, LEFT_BRACE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = left_brace(b, l + 1);
@@ -23128,7 +20947,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, REPEATABLE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, REPEATABLE, _LEFT_PAREN_, _REPEAT_ARGUMENT_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, REPEATABLE, _LEFT_PAREN_, REPEAT_ARGUMENT, _RIGHT_PAREN_);
     exit_section_(b, m, REPEATABLE_CLAUSE, r);
     return r;
   }
@@ -23137,7 +20956,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <predefined type> | <member list>
   public static boolean representation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "representation")) return false;
-    if (!nextTokenIs(b, "<representation>", _MEMBER_LIST_, _PREDEFINED_TYPE_)) return false;
+    if (!nextTokenIs(b, "<representation>", MEMBER_LIST, PREDEFINED_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, REPRESENTATION, "<representation>");
     r = predefined_type(b, l + 1);
@@ -23651,7 +21470,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <result expression> | NULL
   public static boolean result(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "result")) return false;
-    if (!nextTokenIs(b, "<result>", NULL, _RESULT_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<result>", NULL, RESULT_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, RESULT, "<result>");
     r = result_expression(b, l + 1);
@@ -23667,7 +21486,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CAST)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CAST, FROM, _RESULT_CAST_FROM_TYPE_);
+    r = consumeTokens(b, 0, CAST, FROM, RESULT_CAST_FROM_TYPE);
     exit_section_(b, m, RESULT_CAST, r);
     return r;
   }
@@ -23676,7 +21495,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <data type> [ <locator indication> ]
   public static boolean result_cast_from_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "result_cast_from_type")) return false;
-    if (!nextTokenIs(b, _DATA_TYPE_)) return false;
+    if (!nextTokenIs(b, DATA_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = data_type(b, l + 1);
@@ -23711,7 +21530,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, FOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, FOR, PROCEDURE, _SPECIFIC_ROUTINE_DESIGNATOR_);
+    r = consumeTokens(b, 0, FOR, PROCEDURE, SPECIFIC_ROUTINE_DESIGNATOR);
     exit_section_(b, m, RESULT_SET_CURSOR, r);
     return r;
   }
@@ -23720,7 +21539,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <output using clause>
   public static boolean result_using_clause(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "result_using_clause")) return false;
-    if (!nextTokenIs(b, _OUTPUT_USING_CLAUSE_)) return false;
+    if (!nextTokenIs(b, OUTPUT_USING_CLAUSE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = output_using_clause(b, l + 1);
@@ -23735,7 +21554,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, RETURN)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, RETURN, _RETURN_VALUE_);
+    r = consumeTokens(b, 0, RETURN, RETURN_VALUE);
     exit_section_(b, m, RETURN_STATEMENT, r);
     return r;
   }
@@ -23760,7 +21579,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, RETURNS)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, RETURNS, _RETURNS_TYPE_);
+    r = consumeTokens(b, 0, RETURNS, RETURNS_TYPE);
     exit_section_(b, m, RETURNS_CLAUSE, r);
     return r;
   }
@@ -23769,7 +21588,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <data type> [ <locator indication> ]
   public static boolean returns_data_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "returns_data_type")) return false;
-    if (!nextTokenIs(b, _DATA_TYPE_)) return false;
+    if (!nextTokenIs(b, DATA_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = data_type(b, l + 1);
@@ -23792,7 +21611,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TABLE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TABLE, _TABLE_FUNCTION_COLUMN_LIST_);
+    r = consumeTokens(b, 0, TABLE, TABLE_FUNCTION_COLUMN_LIST);
     exit_section_(b, m, RETURNS_TABLE_TYPE, r);
     return r;
   }
@@ -23802,7 +21621,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<returns table type>
   public static boolean returns_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "returns_type")) return false;
-    if (!nextTokenIs(b, "<returns type>", _RETURNS_DATA_TYPE_, _RETURNS_TABLE_TYPE_)) return false;
+    if (!nextTokenIs(b, "<returns type>", RETURNS_DATA_TYPE, RETURNS_TABLE_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, RETURNS_TYPE, "<returns type>");
     r = returns_type_0(b, l + 1);
@@ -23843,7 +21662,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // REVOKE [ <revoke option extension> ] <privileges> FROM <grantee> [ { <comma> <grantee> }... ]
+  // REVOKE [ <revoke option extension> ] <privileges> FROM <grantee> [ { <comma> <grantee> }"..." ]
   // 		[ GRANTED BY <grantor> ] <drop behavior>
   public static boolean revoke_privilege_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "revoke_privilege_statement")) return false;
@@ -23853,7 +21672,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     r = consumeToken(b, REVOKE);
     r = r && revoke_privilege_statement_1(b, l + 1);
     r = r && privileges(b, l + 1);
-    r = r && consumeTokens(b, 0, FROM, _GRANTEE_);
+    r = r && consumeTokens(b, 0, FROM, GRANTEE);
     r = r && revoke_privilege_statement_5(b, l + 1);
     r = r && revoke_privilege_statement_6(b, l + 1);
     r = r && drop_behavior(b, l + 1);
@@ -23868,16 +21687,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <grantee> }... ]
+  // [ { <comma> <grantee> }"..." ]
   private static boolean revoke_privilege_statement_5(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "revoke_privilege_statement_5")) return false;
     revoke_privilege_statement_5_0(b, l + 1);
     return true;
   }
 
-  // <comma> <grantee>
+  // { <comma> <grantee> }"..."
   private static boolean revoke_privilege_statement_5_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "revoke_privilege_statement_5_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = revoke_privilege_statement_5_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <grantee>
+  private static boolean revoke_privilege_statement_5_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "revoke_privilege_statement_5_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -23894,8 +21724,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // REVOKE [ ADMIN OPTION FOR ] <role revoked> [ { <comma> <role revoked> }... ]
-  // 		FROM <grantee> [ { <comma> <grantee> }... ] [ GRANTED BY <grantor> ] <drop behavior>
+  // REVOKE [ ADMIN OPTION FOR ] <role revoked> [ { <comma> <role revoked> }"..." ]
+  // 		FROM <grantee> [ { <comma> <grantee> }"..." ] [ GRANTED BY <grantor> ] <drop behavior>
   public static boolean revoke_role_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "revoke_role_statement")) return false;
     if (!nextTokenIs(b, REVOKE)) return false;
@@ -23905,7 +21735,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     r = r && revoke_role_statement_1(b, l + 1);
     r = r && role_revoked(b, l + 1);
     r = r && revoke_role_statement_3(b, l + 1);
-    r = r && consumeTokens(b, 0, FROM, _GRANTEE_);
+    r = r && consumeTokens(b, 0, FROM, GRANTEE);
     r = r && revoke_role_statement_6(b, l + 1);
     r = r && revoke_role_statement_7(b, l + 1);
     r = r && drop_behavior(b, l + 1);
@@ -23920,16 +21750,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ { <comma> <role revoked> }... ]
+  // [ { <comma> <role revoked> }"..." ]
   private static boolean revoke_role_statement_3(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "revoke_role_statement_3")) return false;
     revoke_role_statement_3_0(b, l + 1);
     return true;
   }
 
-  // <comma> <role revoked>
+  // { <comma> <role revoked> }"..."
   private static boolean revoke_role_statement_3_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "revoke_role_statement_3_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = revoke_role_statement_3_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <role revoked>
+  private static boolean revoke_role_statement_3_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "revoke_role_statement_3_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -23938,16 +21779,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <grantee> }... ]
+  // [ { <comma> <grantee> }"..." ]
   private static boolean revoke_role_statement_6(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "revoke_role_statement_6")) return false;
     revoke_role_statement_6_0(b, l + 1);
     return true;
   }
 
-  // <comma> <grantee>
+  // { <comma> <grantee> }"..."
   private static boolean revoke_role_statement_6_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "revoke_role_statement_6_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = revoke_role_statement_6_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <grantee>
+  private static boolean revoke_role_statement_6_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "revoke_role_statement_6_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -23968,7 +21820,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<revoke role statement>
   public static boolean revoke_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "revoke_statement")) return false;
-    if (!nextTokenIs(b, "<revoke statement>", _REVOKE_PRIVILEGE_STATEMENT_, _REVOKE_ROLE_STATEMENT_)) return false;
+    if (!nextTokenIs(b, "<revoke statement>", REVOKE_PRIVILEGE_STATEMENT, REVOKE_ROLE_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, REVOKE_STATEMENT, "<revoke statement>");
     r = revoke_privilege_statement(b, l + 1);
@@ -24037,7 +21889,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CREATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CREATE, ROLE, _ROLE_NAME_);
+    r = consumeTokens(b, 0, CREATE, ROLE, ROLE_NAME);
     r = r && role_definition_3(b, l + 1);
     exit_section_(b, m, ROLE_DEFINITION, r);
     return r;
@@ -24054,7 +21906,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <role name>
   public static boolean role_granted(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "role_granted")) return false;
-    if (!nextTokenIs(b, _ROLE_NAME_)) return false;
+    if (!nextTokenIs(b, ROLE_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = role_name(b, l + 1);
@@ -24066,7 +21918,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean role_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "role_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -24078,7 +21930,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <role name>
   public static boolean role_revoked(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "role_revoked")) return false;
-    if (!nextTokenIs(b, _ROLE_NAME_)) return false;
+    if (!nextTokenIs(b, ROLE_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = role_name(b, l + 1);
@@ -24161,7 +22013,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ROLLUP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ROLLUP, _LEFT_PAREN_, _ORDINARY_GROUPING_SET_LIST_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, ROLLUP, _LEFT_PAREN_, ORDINARY_GROUPING_SET_LIST, _RIGHT_PAREN_);
     exit_section_(b, m, ROLLUP_LIST, r);
     return r;
   }
@@ -24171,7 +22023,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<external body reference>
   public static boolean routine_body(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "routine_body")) return false;
-    if (!nextTokenIs(b, "<routine body>", _EXTERNAL_BODY_REFERENCE_, _SQL_ROUTINE_SPEC_)) return false;
+    if (!nextTokenIs(b, "<routine body>", EXTERNAL_BODY_REFERENCE, SQL_ROUTINE_SPEC)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ROUTINE_BODY, "<routine body>");
     r = SQL_routine_spec(b, l + 1);
@@ -24206,20 +22058,31 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // [ <routine characteristic>... ]
+  // [ <routine characteristic>"..." ]
   public static boolean routine_characteristics(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "routine_characteristics")) return false;
     Marker m = enter_section_(b, l, _NONE_, ROUTINE_CHARACTERISTICS, "<routine characteristics>");
-    consumeToken(b, _ROUTINE_CHARACTERISTIC____);
+    routine_characteristics_0(b, l + 1);
     exit_section_(b, l, m, true, false, null);
     return true;
+  }
+
+  // <routine characteristic>"..."
+  private static boolean routine_characteristics_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "routine_characteristics_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = routine_characteristic(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */
   // <routine name> <SQL argument list>
   public static boolean routine_invocation(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "routine_invocation")) return false;
-    if (!nextTokenIs(b, _ROUTINE_NAME_)) return false;
+    if (!nextTokenIs(b, ROUTINE_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = routine_name(b, l + 1);
@@ -24232,7 +22095,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <schema name> <period> ] <qualified identifier>
   public static boolean routine_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "routine_name")) return false;
-    if (!nextTokenIs(b, "<routine name>", _QUALIFIED_IDENTIFIER_, _SCHEMA_NAME_)) return false;
+    if (!nextTokenIs(b, "<routine name>", QUALIFIED_IDENTIFIER, _SCHEMA_NAME_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ROUTINE_NAME, "<routine name>");
     r = routine_name_0(b, l + 1);
@@ -24297,7 +22160,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <subquery>
   public static boolean row_subquery(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_subquery")) return false;
-    if (!nextTokenIs(b, _SUBQUERY_)) return false;
+    if (!nextTokenIs(b, SUBQUERY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = subquery(b, l + 1);
@@ -24312,13 +22175,13 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ROW)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ROW, _ROW_TYPE_BODY_);
+    r = consumeTokens(b, 0, ROW, ROW_TYPE_BODY);
     exit_section_(b, m, ROW_TYPE, r);
     return r;
   }
 
   /* ********************************************************** */
-  // <left paren> <field definition> [ { <comma> <field definition> }... ] <right paren>
+  // <left paren> <field definition> [ { <comma> <field definition> }"..." ] <right paren>
   public static boolean row_type_body(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_type_body")) return false;
     if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
@@ -24332,16 +22195,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <field definition> }... ]
+  // [ { <comma> <field definition> }"..." ]
   private static boolean row_type_body_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_type_body_2")) return false;
     row_type_body_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <field definition>
+  // { <comma> <field definition> }"..."
   private static boolean row_type_body_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_type_body_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = row_type_body_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <field definition>
+  private static boolean row_type_body_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "row_type_body_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -24378,7 +22252,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <row value constructor element> [ { <comma> <row value constructor element> }... ]
+  // <row value constructor element> [ { <comma> <row value constructor element> }"..." ]
   public static boolean row_value_constructor_element_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_constructor_element_list")) return false;
     if (!nextTokenIs(b, _ROW_VALUE_CONSTRUCTOR_ELEMENT_)) return false;
@@ -24390,16 +22264,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <row value constructor element> }... ]
+  // [ { <comma> <row value constructor element> }"..." ]
   private static boolean row_value_constructor_element_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_constructor_element_list_1")) return false;
     row_value_constructor_element_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <row value constructor element>
+  // { <comma> <row value constructor element> }"..."
   private static boolean row_value_constructor_element_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_constructor_element_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = row_value_constructor_element_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <row value constructor element>
+  private static boolean row_value_constructor_element_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "row_value_constructor_element_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -24428,7 +22313,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<explicit row value constructor>
   public static boolean row_value_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_expression")) return false;
-    if (!nextTokenIs(b, "<row value expression>", _EXPLICIT_ROW_VALUE_CONSTRUCTOR_, _ROW_VALUE_SPECIAL_CASE_)) return false;
+    if (!nextTokenIs(b, "<row value expression>", EXPLICIT_ROW_VALUE_CONSTRUCTOR, ROW_VALUE_SPECIAL_CASE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ROW_VALUE_EXPRESSION, "<row value expression>");
     r = row_value_special_case(b, l + 1);
@@ -24438,10 +22323,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <table row value expression> [ { <comma> <table row value expression> }... ]
+  // <table row value expression> [ { <comma> <table row value expression> }"..." ]
   public static boolean row_value_expression_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_expression_list")) return false;
-    if (!nextTokenIs(b, _TABLE_ROW_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, TABLE_ROW_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = table_row_value_expression(b, l + 1);
@@ -24450,16 +22335,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <table row value expression> }... ]
+  // [ { <comma> <table row value expression> }"..." ]
   private static boolean row_value_expression_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_expression_list_1")) return false;
     row_value_expression_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <table row value expression>
+  // { <comma> <table row value expression> }"..."
   private static boolean row_value_expression_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_expression_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = row_value_expression_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <table row value expression>
+  private static boolean row_value_expression_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "row_value_expression_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -24473,7 +22369,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<row value constructor predicand>
   public static boolean row_value_predicand(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_predicand")) return false;
-    if (!nextTokenIs(b, "<row value predicand>", _ROW_VALUE_CONSTRUCTOR_PREDICAND_, _ROW_VALUE_SPECIAL_CASE_)) return false;
+    if (!nextTokenIs(b, "<row value predicand>", ROW_VALUE_CONSTRUCTOR_PREDICAND, ROW_VALUE_SPECIAL_CASE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, ROW_VALUE_PREDICAND, "<row value predicand>");
     r = row_value_special_case(b, l + 1);
@@ -24486,7 +22382,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand>
   public static boolean row_value_predicand_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_predicand_1")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -24498,7 +22394,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand>
   public static boolean row_value_predicand_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_predicand_2")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -24510,7 +22406,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand>
   public static boolean row_value_predicand_3(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_predicand_3")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -24522,7 +22418,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand>
   public static boolean row_value_predicand_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_predicand_4")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -24534,7 +22430,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <nonparenthesized value expression primary>
   public static boolean row_value_special_case(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "row_value_special_case")) return false;
-    if (!nextTokenIs(b, _NONPARENTHESIZED_VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, NONPARENTHESIZED_VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = nonparenthesized_value_expression_primary(b, l + 1);
@@ -24549,7 +22445,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TABLESAMPLE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TABLESAMPLE, _SAMPLE_METHOD_, _LEFT_PAREN_, _SAMPLE_PERCENTAGE_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, TABLESAMPLE, SAMPLE_METHOD, _LEFT_PAREN_, SAMPLE_PERCENTAGE, _RIGHT_PAREN_);
     r = r && sample_clause_5(b, l + 1);
     exit_section_(b, m, SAMPLE_CLAUSE, r);
     return r;
@@ -24594,7 +22490,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TO)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TO, SAVEPOINT, _SAVEPOINT_SPECIFIER_);
+    r = consumeTokens(b, 0, TO, SAVEPOINT, SAVEPOINT_SPECIFIER);
     exit_section_(b, m, SAVEPOINT_CLAUSE, r);
     return r;
   }
@@ -24616,7 +22512,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean savepoint_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "savepoint_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -24628,7 +22524,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <savepoint name>
   public static boolean savepoint_specifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "savepoint_specifier")) return false;
-    if (!nextTokenIs(b, _SAVEPOINT_NAME_)) return false;
+    if (!nextTokenIs(b, SAVEPOINT_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = savepoint_name(b, l + 1);
@@ -24643,7 +22539,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SAVEPOINT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SAVEPOINT, _SAVEPOINT_SPECIFIER_);
+    r = consumeTokens(b, 0, SAVEPOINT, SAVEPOINT_SPECIFIER);
     exit_section_(b, m, SAVEPOINT_STATEMENT, r);
     return r;
   }
@@ -24652,7 +22548,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <subquery>
   public static boolean scalar_subquery(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "scalar_subquery")) return false;
-    if (!nextTokenIs(b, _SUBQUERY_)) return false;
+    if (!nextTokenIs(b, SUBQUERY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = subquery(b, l + 1);
@@ -24676,7 +22572,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <authorization identifier>
   public static boolean schema_authorization_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_authorization_identifier")) return false;
-    if (!nextTokenIs(b, _AUTHORIZATION_IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, AUTHORIZATION_IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = authorization_identifier(b, l + 1);
@@ -24715,13 +22611,13 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // CREATE SCHEMA <schema name clause> [ <schema character set or path> ] [ <schema element>... ]
+  // CREATE SCHEMA <schema name clause> [ <schema character set or path> ] [ <schema element>"..." ]
   public static boolean schema_definition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_definition")) return false;
     if (!nextTokenIs(b, CREATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CREATE, SCHEMA, _SCHEMA_NAME_CLAUSE_);
+    r = consumeTokens(b, 0, CREATE, SCHEMA, SCHEMA_NAME_CLAUSE);
     r = r && schema_definition_3(b, l + 1);
     r = r && schema_definition_4(b, l + 1);
     exit_section_(b, m, SCHEMA_DEFINITION, r);
@@ -24735,11 +22631,22 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // [ <schema element>... ]
+  // [ <schema element>"..." ]
   private static boolean schema_definition_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_definition_4")) return false;
-    consumeToken(b, _SCHEMA_ELEMENT____);
+    schema_definition_4_0(b, l + 1);
     return true;
+  }
+
+  // <schema element>"..."
+  private static boolean schema_definition_4_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "schema_definition_4_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = schema_element(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */
@@ -24790,7 +22697,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CREATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CREATE, _SQL_INVOKED_FUNCTION_);
+    r = consumeTokens(b, 0, CREATE, SQL_INVOKED_FUNCTION);
     exit_section_(b, m, SCHEMA_FUNCTION, r);
     return r;
   }
@@ -24837,14 +22744,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SCHEMA_NAME_CLAUSE, "<schema name clause>");
     r = schema_name(b, l + 1);
-    if (!r) r = parseTokens(b, 0, AUTHORIZATION, _SCHEMA_AUTHORIZATION_IDENTIFIER_);
+    if (!r) r = parseTokens(b, 0, AUTHORIZATION, SCHEMA_AUTHORIZATION_IDENTIFIER);
     if (!r) r = schema_name(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
   /* ********************************************************** */
-  // <schema name> [ { <comma> <schema name> }... ]
+  // <schema name> [ { <comma> <schema name> }"..." ]
   public static boolean schema_name_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_name_list")) return false;
     if (!nextTokenIs(b, _SCHEMA_NAME_)) return false;
@@ -24856,16 +22763,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <schema name> }... ]
+  // [ { <comma> <schema name> }"..." ]
   private static boolean schema_name_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_name_list_1")) return false;
     schema_name_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <schema name>
+  // { <comma> <schema name> }"..."
   private static boolean schema_name_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_name_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = schema_name_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <schema name>
+  private static boolean schema_name_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "schema_name_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -24878,7 +22796,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <path specification>
   public static boolean schema_path_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_path_specification")) return false;
-    if (!nextTokenIs(b, _PATH_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, PATH_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = path_specification(b, l + 1);
@@ -24893,7 +22811,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CREATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CREATE, _SQL_INVOKED_PROCEDURE_);
+    r = consumeTokens(b, 0, CREATE, SQL_INVOKED_PROCEDURE);
     exit_section_(b, m, SCHEMA_PROCEDURE, r);
     return r;
   }
@@ -24902,7 +22820,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <schema name> <period> ] <qualified identifier>
   public static boolean schema_qualified_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_qualified_name")) return false;
-    if (!nextTokenIs(b, "<schema qualified name>", _QUALIFIED_IDENTIFIER_, _SCHEMA_NAME_)) return false;
+    if (!nextTokenIs(b, "<schema qualified name>", QUALIFIED_IDENTIFIER, _SCHEMA_NAME_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SCHEMA_QUALIFIED_NAME, "<schema qualified name>");
     r = schema_qualified_name_0(b, l + 1);
@@ -24922,7 +22840,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema qualified name>
   public static boolean schema_qualified_routine_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_qualified_routine_name")) return false;
-    if (!nextTokenIs(b, _SCHEMA_QUALIFIED_NAME_)) return false;
+    if (!nextTokenIs(b, SCHEMA_QUALIFIED_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = schema_qualified_name(b, l + 1);
@@ -24934,7 +22852,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <schema name> <period> ] <qualified identifier>
   public static boolean schema_qualified_type_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_qualified_type_name")) return false;
-    if (!nextTokenIs(b, "<schema qualified type name>", _QUALIFIED_IDENTIFIER_, _SCHEMA_NAME_)) return false;
+    if (!nextTokenIs(b, "<schema qualified type name>", QUALIFIED_IDENTIFIER, _SCHEMA_NAME_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SCHEMA_QUALIFIED_TYPE_NAME, "<schema qualified type name>");
     r = schema_qualified_type_name_0(b, l + 1);
@@ -24954,7 +22872,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema procedure> | <schema function>
   public static boolean schema_routine(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_routine")) return false;
-    if (!nextTokenIs(b, "<schema routine>", _SCHEMA_FUNCTION_, _SCHEMA_PROCEDURE_)) return false;
+    if (!nextTokenIs(b, "<schema routine>", SCHEMA_FUNCTION, SCHEMA_PROCEDURE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SCHEMA_ROUTINE, "<schema routine>");
     r = schema_procedure(b, l + 1);
@@ -24967,7 +22885,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <user-defined type name>
   public static boolean schema_resolved_user_defined_type_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "schema_resolved_user_defined_type_name")) return false;
-    if (!nextTokenIs(b, _USER_DEFINED_TYPE_NAME_)) return false;
+    if (!nextTokenIs(b, USER_DEFINED_TYPE_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = user_defined_type_name(b, l + 1);
@@ -25007,7 +22925,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SEARCH)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SEARCH, _RECURSIVE_SEARCH_ORDER_, SET, _SEQUENCE_COLUMN_);
+    r = consumeTokens(b, 0, SEARCH, RECURSIVE_SEARCH_ORDER, SET, SEQUENCE_COLUMN);
     exit_section_(b, m, SEARCH_CLAUSE, r);
     return r;
   }
@@ -25041,15 +22959,25 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // CASE <searched when clause>...
+  // CASE <searched when clause>"..." [ <else clause> ] END
   public static boolean searched_case(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "searched_case")) return false;
     if (!nextTokenIs(b, CASE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CASE, _SEARCHED_WHEN_CLAUSE_);
+    r = consumeTokens(b, 0, CASE, SEARCHED_WHEN_CLAUSE);
+    r = r && consumeToken(b, "...");
+    r = r && searched_case_3(b, l + 1);
+    r = r && consumeToken(b, END);
     exit_section_(b, m, SEARCHED_CASE, r);
     return r;
+  }
+
+  // [ <else clause> ]
+  private static boolean searched_case_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "searched_case_3")) return false;
+    else_clause(b, l + 1);
+    return true;
   }
 
   /* ********************************************************** */
@@ -25059,7 +22987,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, WHEN)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, WHEN, _SEARCH_CONDITION_, THEN, _RESULT_);
+    r = consumeTokens(b, 0, WHEN, _SEARCH_CONDITION_, THEN, RESULT);
     exit_section_(b, m, SEARCHED_WHEN_CLAUSE, r);
     return r;
   }
@@ -25092,7 +23020,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <seconds integer value> [ <period> [ <seconds fraction> ] ]
   public static boolean seconds_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "seconds_value")) return false;
-    if (!nextTokenIs(b, _SECONDS_INTEGER_VALUE_)) return false;
+    if (!nextTokenIs(b, SECONDS_INTEGER_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = seconds_integer_value(b, l + 1);
@@ -25127,10 +23055,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <asterisk> | <select sublist> [ { <comma> <select sublist> }... ]
+  // <asterisk> | <select sublist> [ { <comma> <select sublist> }"..." ]
   public static boolean select_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "select_list")) return false;
-    if (!nextTokenIs(b, "<select list>", _ASTERISK_, _SELECT_SUBLIST_)) return false;
+    if (!nextTokenIs(b, "<select list>", _ASTERISK_, SELECT_SUBLIST)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SELECT_LIST, "<select list>");
     r = asterisk(b, l + 1);
@@ -25139,7 +23067,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // <select sublist> [ { <comma> <select sublist> }... ]
+  // <select sublist> [ { <comma> <select sublist> }"..." ]
   private static boolean select_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "select_list_1")) return false;
     boolean r;
@@ -25150,16 +23078,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <select sublist> }... ]
+  // [ { <comma> <select sublist> }"..." ]
   private static boolean select_list_1_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "select_list_1_1")) return false;
     select_list_1_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <select sublist>
+  // { <comma> <select sublist> }"..."
   private static boolean select_list_1_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "select_list_1_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = select_list_1_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <select sublist>
+  private static boolean select_list_1_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "select_list_1_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -25178,7 +23117,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     r = consumeToken(b, SELECT);
     r = r && select_statement_single_row_1(b, l + 1);
     r = r && select_list(b, l + 1);
-    r = r && consumeTokens(b, 0, INTO, _SELECT_TARGET_LIST_, _TABLE_EXPRESSION_);
+    r = r && consumeTokens(b, 0, INTO, SELECT_TARGET_LIST, TABLE_EXPRESSION);
     exit_section_(b, m, SELECT_STATEMENT_SINGLE_ROW, r);
     return r;
   }
@@ -25194,7 +23133,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <derived column> | <qualified asterisk>
   public static boolean select_sublist(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "select_sublist")) return false;
-    if (!nextTokenIs(b, "<select sublist>", _DERIVED_COLUMN_, _QUALIFIED_ASTERISK_)) return false;
+    if (!nextTokenIs(b, "<select sublist>",DERIVED_COLUMN, QUALIFIED_ASTERISK)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SELECT_SUBLIST, "<select sublist>");
     r = derived_column(b, l + 1);
@@ -25204,10 +23143,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <target specification> [ { <comma> <target specification> }... ]
+  // <target specification> [ { <comma> <target specification> }"..." ]
   public static boolean select_target_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "select_target_list")) return false;
-    if (!nextTokenIs(b, _TARGET_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, TARGET_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = target_specification(b, l + 1);
@@ -25216,16 +23155,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <target specification> }... ]
+  // [ { <comma> <target specification> }"..." ]
   private static boolean select_target_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "select_target_list_1")) return false;
     select_target_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <target specification>
+  // { <comma> <target specification> }"..."
   private static boolean select_target_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "select_target_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = select_target_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <target specification>
+  private static boolean select_target_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "select_target_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -25253,7 +23203,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, REF)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, REF, IS, _SELF_REFERENCING_COLUMN_NAME_, _REFERENCE_GENERATION_);
+    r = consumeTokens(b, 0, REF, IS, SELF_REFERENCING_COLUMN_NAME, REFERENCE_GENERATION);
     exit_section_(b, m, SELF_REFERENCING_COLUMN_SPECIFICATION, r);
     return r;
   }
@@ -25266,15 +23216,24 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <comment> | <white space>
+  // { <comment> | <white space> }"..."
   public static boolean separator(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "separator")) return false;
-    if (!nextTokenIs(b, "<separator>", _COMMENT_, _WHITE_SPACE_)) return false;
+    if (!nextTokenIs(b, "<separator>", COMMENT, _WHITE_SPACE_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SEPARATOR, "<separator>");
+    r = separator_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, l, m, r, false, null);
+    return r;
+  }
+
+  // <comment> | <white space>
+  private static boolean separator_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "separator_0")) return false;
+    boolean r;
     r = comment(b, l + 1);
     if (!r) r = consumeToken(b, _WHITE_SPACE_);
-    exit_section_(b, l, m, r, false, null);
     return r;
   }
 
@@ -25310,7 +23269,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, AS)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, AS, _DATA_TYPE_);
+    r = consumeTokens(b, 0, AS, DATA_TYPE);
     exit_section_(b, m, SEQUENCE_GENERATOR_DATA_TYPE_OPTION, r);
     return r;
   }
@@ -25339,7 +23298,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <signed numeric literal>
   public static boolean sequence_generator_increment(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sequence_generator_increment")) return false;
-    if (!nextTokenIs(b, _SIGNED_NUMERIC_LITERAL_)) return false;
+    if (!nextTokenIs(b, SIGNED_NUMERIC_LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = signed_numeric_literal(b, l + 1);
@@ -25354,7 +23313,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, INCREMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, INCREMENT, BY, _SEQUENCE_GENERATOR_INCREMENT_);
+    r = consumeTokens(b, 0, INCREMENT, BY, SEQUENCE_GENERATOR_INCREMENT);
     exit_section_(b, m, SEQUENCE_GENERATOR_INCREMENT_BY_OPTION, r);
     return r;
   }
@@ -25363,7 +23322,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <signed numeric literal>
   public static boolean sequence_generator_max_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sequence_generator_max_value")) return false;
-    if (!nextTokenIs(b, _SIGNED_NUMERIC_LITERAL_)) return false;
+    if (!nextTokenIs(b, SIGNED_NUMERIC_LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = signed_numeric_literal(b, l + 1);
@@ -25389,7 +23348,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <signed numeric literal>
   public static boolean sequence_generator_min_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sequence_generator_min_value")) return false;
-    if (!nextTokenIs(b, _SIGNED_NUMERIC_LITERAL_)) return false;
+    if (!nextTokenIs(b, SIGNED_NUMERIC_LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = signed_numeric_literal(b, l + 1);
@@ -25414,7 +23373,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema qualified name>
   public static boolean sequence_generator_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sequence_generator_name")) return false;
-    if (!nextTokenIs(b, _SCHEMA_QUALIFIED_NAME_)) return false;
+    if (!nextTokenIs(b, SCHEMA_QUALIFIED_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = schema_qualified_name(b, l + 1);
@@ -25426,7 +23385,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <sequence generator data type option> | <common sequence generator options>
   public static boolean sequence_generator_option(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sequence_generator_option")) return false;
-    if (!nextTokenIs(b, "<sequence generator option>", _COMMON_SEQUENCE_GENERATOR_OPTIONS_, _SEQUENCE_GENERATOR_DATA_TYPE_OPTION_)) return false;
+    if (!nextTokenIs(b, "<sequence generator option>", _COMMON_SEQUENCE_GENERATOR_OPTIONS_, SEQUENCE_GENERATOR_DATA_TYPE_OPTION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SEQUENCE_GENERATOR_OPTION, "<sequence generator option>");
     r = sequence_generator_data_type_option(b, l + 1);
@@ -25436,13 +23395,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <sequence generator option> ...
+  // <sequence generator option> "..."
   public static boolean sequence_generator_options(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sequence_generator_options")) return false;
-    if (!nextTokenIs(b, _SEQUENCE_GENERATOR_OPTION_____)) return false;
+    if (!nextTokenIs(b, SEQUENCE_GENERATOR_OPTION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _SEQUENCE_GENERATOR_OPTION_____);
+    r = sequence_generator_option(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, SEQUENCE_GENERATOR_OPTIONS, r);
     return r;
   }
@@ -25451,7 +23411,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <signed numeric literal>
   public static boolean sequence_generator_restart_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sequence_generator_restart_value")) return false;
-    if (!nextTokenIs(b, _SIGNED_NUMERIC_LITERAL_)) return false;
+    if (!nextTokenIs(b, SIGNED_NUMERIC_LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = signed_numeric_literal(b, l + 1);
@@ -25463,7 +23423,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <signed numeric literal>
   public static boolean sequence_generator_start_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sequence_generator_start_value")) return false;
-    if (!nextTokenIs(b, _SIGNED_NUMERIC_LITERAL_)) return false;
+    if (!nextTokenIs(b, SIGNED_NUMERIC_LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = signed_numeric_literal(b, l + 1);
@@ -25478,7 +23438,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, START)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, START, WITH, _SEQUENCE_GENERATOR_START_VALUE_);
+    r = consumeTokens(b, 0, START, WITH, SEQUENCE_GENERATOR_START_VALUE);
     exit_section_(b, m, SEQUENCE_GENERATOR_START_WITH_OPTION, r);
     return r;
   }
@@ -25487,7 +23447,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <transaction characteristics>
   public static boolean session_characteristic(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "session_characteristic")) return false;
-    if (!nextTokenIs(b, _TRANSACTION_CHARACTERISTICS_)) return false;
+    if (!nextTokenIs(b, TRANSACTION_CHARACTERISTICS)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = transaction_characteristics(b, l + 1);
@@ -25496,10 +23456,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <session characteristic> [ { <comma> <session characteristic> }... ]
+  // <session characteristic> [ { <comma> <session characteristic> }"..." ]
   public static boolean session_characteristic_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "session_characteristic_list")) return false;
-    if (!nextTokenIs(b, _SESSION_CHARACTERISTIC_)) return false;
+    if (!nextTokenIs(b, SESSION_CHARACTERISTIC)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = session_characteristic(b, l + 1);
@@ -25508,16 +23468,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <session characteristic> }... ]
+  // [ { <comma> <session characteristic> }"..." ]
   private static boolean session_characteristic_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "session_characteristic_list_1")) return false;
     session_characteristic_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <session characteristic>
+  // { <comma> <session characteristic> }"..."
   private static boolean session_characteristic_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "session_characteristic_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = session_characteristic_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <session characteristic>
+  private static boolean session_characteristic_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "session_characteristic_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -25533,7 +23504,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, _CATALOG_NAME_CHARACTERISTIC_);
+    r = consumeTokens(b, 0, SET, CATALOG_NAME_CHARACTERISTIC);
     exit_section_(b, m, SET_CATALOG_STATEMENT, r);
     return r;
   }
@@ -25543,7 +23514,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<set target> <equals operator> <update source>
   public static boolean set_clause(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_clause")) return false;
-    if (!nextTokenIs(b, "<set clause>", _MULTIPLE_COLUMN_ASSIGNMENT_, _SET_TARGET_)) return false;
+    if (!nextTokenIs(b, "<set clause>", MULTIPLE_COLUMN_ASSIGNMENT, _SET_TARGET_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SET_CLAUSE, "<set clause>");
     r = multiple_column_assignment(b, l + 1);
@@ -25553,10 +23524,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <set clause> [ { <comma> <set clause> }... ]
+  // <set clause> [ { <comma> <set clause> }"..." ]
   public static boolean set_clause_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_clause_list")) return false;
-    if (!nextTokenIs(b, _SET_CLAUSE_)) return false;
+    if (!nextTokenIs(b, SET_CLAUSE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = set_clause(b, l + 1);
@@ -25565,16 +23536,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <set clause> }... ]
+  // [ { <comma> <set clause> }"..." ]
   private static boolean set_clause_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_clause_list_1")) return false;
     set_clause_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <set clause>
+  // { <comma> <set clause> }"..."
   private static boolean set_clause_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_clause_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = set_clause_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <set clause>
+  private static boolean set_clause_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "set_clause_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -25590,7 +23572,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, _DEFAULT_CLAUSE_);
+    r = consumeTokens(b, 0, SET, DEFAULT_CLAUSE);
     exit_section_(b, m, SET_COLUMN_DEFAULT_CLAUSE, r);
     return r;
   }
@@ -25602,7 +23584,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, CONNECTION, _CONNECTION_OBJECT_);
+    r = consumeTokens(b, 0, SET, CONNECTION, CONNECTION_OBJECT);
     exit_section_(b, m, SET_CONNECTION_STATEMENT, r);
     return r;
   }
@@ -25614,7 +23596,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, CONSTRAINTS, _CONSTRAINT_NAME_LIST_);
+    r = consumeTokens(b, 0, SET, CONSTRAINTS, CONSTRAINT_NAME_LIST);
     r = r && set_constraints_mode_statement_3(b, l + 1);
     exit_section_(b, m, SET_CONSTRAINTS_MODE_STATEMENT, r);
     return r;
@@ -25630,11 +23612,11 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <set header information> [ { <comma> <set header information> }... ]
-  // 	|	VALUE <item number> <set item information> [ { <comma> <set item information> }... ]
+  // <set header information> [ { <comma> <set header information> }"..." ]
+  // 	|	VALUE <item number> <set item information> [ { <comma> <set item information> }"..." ]
   public static boolean set_descriptor_information(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_descriptor_information")) return false;
-    if (!nextTokenIs(b, "<set descriptor information>", VALUE, _SET_HEADER_INFORMATION_)) return false;
+    if (!nextTokenIs(b, "<set descriptor information>", VALUE, SET_HEADER_INFORMATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SET_DESCRIPTOR_INFORMATION, "<set descriptor information>");
     r = set_descriptor_information_0(b, l + 1);
@@ -25643,7 +23625,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // <set header information> [ { <comma> <set header information> }... ]
+  // <set header information> [ { <comma> <set header information> }"..." ]
   private static boolean set_descriptor_information_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_descriptor_information_0")) return false;
     boolean r;
@@ -25654,16 +23636,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <set header information> }... ]
+  // [ { <comma> <set header information> }"..." ]
   private static boolean set_descriptor_information_0_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_descriptor_information_0_1")) return false;
     set_descriptor_information_0_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <set header information>
+  // { <comma> <set header information> }"..."
   private static boolean set_descriptor_information_0_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_descriptor_information_0_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = set_descriptor_information_0_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <set header information>
+  private static boolean set_descriptor_information_0_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "set_descriptor_information_0_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -25672,27 +23665,38 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // VALUE <item number> <set item information> [ { <comma> <set item information> }... ]
+  // VALUE <item number> <set item information> [ { <comma> <set item information> }"..." ]
   private static boolean set_descriptor_information_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_descriptor_information_1")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, VALUE, _ITEM_NUMBER_, _SET_ITEM_INFORMATION_);
+    r = consumeTokens(b, 0, VALUE, ITEM_NUMBER, SET_ITEM_INFORMATION);
     r = r && set_descriptor_information_1_3(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
-  // [ { <comma> <set item information> }... ]
+  // [ { <comma> <set item information> }"..." ]
   private static boolean set_descriptor_information_1_3(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_descriptor_information_1_3")) return false;
     set_descriptor_information_1_3_0(b, l + 1);
     return true;
   }
 
-  // <comma> <set item information>
+  // { <comma> <set item information> }"..."
   private static boolean set_descriptor_information_1_3_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_descriptor_information_1_3_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = set_descriptor_information_1_3_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <set item information>
+  private static boolean set_descriptor_information_1_3_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "set_descriptor_information_1_3_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -25708,7 +23712,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, _DEFAULT_CLAUSE_);
+    r = consumeTokens(b, 0, SET, DEFAULT_CLAUSE);
     exit_section_(b, m, SET_DOMAIN_DEFAULT_CLAUSE, r);
     return r;
   }
@@ -25717,9 +23721,9 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <aggregate function> | <grouping operation>
   public static boolean set_function_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_function_specification")) return false;
-    if (!nextTokenIs(b, "<set function specification>", _AGGREGATE_FUNCTION_, _GROUPING_OPERATION_)) return false;
+    if (!nextTokenIs(b, "<set function specification>", AGGREGATE_FUNCTION,GROUPING_OPERATION)) return false;
     boolean r;
-    Marker m = enter_section_(b, l, _NONE_, SET_FUNCTION_SPECIFICATION, "<set function specification>");
+    Marker m = enter_section_(b, l,_NONE_, SET_FUNCTION_SPECIFICATION, "<set function specification>");
     r = aggregate_function(b, l + 1);
     if (!r) r = grouping_operation(b, l + 1);
     exit_section_(b, l, m, r, false, null);
@@ -25730,7 +23734,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <computational operation>
   public static boolean set_function_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_function_type")) return false;
-    if (!nextTokenIs(b, _COMPUTATIONAL_OPERATION_)) return false;
+    if (!nextTokenIs(b,COMPUTATIONAL_OPERATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = computational_operation(b, l + 1);
@@ -25742,7 +23746,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <header item name> <equals operator> <simple value specification 1>
   public static boolean set_header_information(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_header_information")) return false;
-    if (!nextTokenIs(b, _HEADER_ITEM_NAME_)) return false;
+    if (!nextTokenIs(b,HEADER_ITEM_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = header_item_name(b, l + 1);
@@ -25756,7 +23760,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <descriptor item name> <equals operator> <simple value specification 2>
   public static boolean set_item_information(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_item_information")) return false;
-    if (!nextTokenIs(b, _DESCRIPTOR_ITEM_NAME_)) return false;
+    if (!nextTokenIs(b,DESCRIPTOR_ITEM_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = descriptor_item_name(b, l + 1);
@@ -25773,7 +23777,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, TIME, ZONE, _SET_TIME_ZONE_VALUE_);
+    r = consumeTokens(b, 0, SET, TIME, ZONE,SET_TIME_ZONE_VALUE);
     exit_section_(b, m, SET_LOCAL_TIME_ZONE_STATEMENT, r);
     return r;
   }
@@ -25785,7 +23789,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, _CHARACTER_SET_NAME_CHARACTERISTIC_);
+    r = consumeTokens(b, 0, SET,CHARACTER_SET_NAME_CHARACTERISTIC);
     exit_section_(b, m, SET_NAMES_STATEMENT, r);
     return r;
   }
@@ -25797,7 +23801,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, _SQL_PATH_CHARACTERISTIC_);
+    r = consumeTokens(b, 0, SET,SQL_PATH_CHARACTERISTIC);
     exit_section_(b, m, SET_PATH_STATEMENT, r);
     return r;
   }
@@ -25806,7 +23810,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <set predicate part 2>
   public static boolean set_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -25842,7 +23846,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!recursion_guard_(b, l, "set_quantifier")) return false;
     if (!nextTokenIs(b, "<set quantifier>", ALL, DISTINCT)) return false;
     boolean r;
-    Marker m = enter_section_(b, l, _NONE_, SET_QUANTIFIER, "<set quantifier>");
+    Marker m = enter_section_(b, l,_NONE_, SET_QUANTIFIER, "<set quantifier>");
     r = consumeToken(b, DISTINCT);
     if (!r) r = consumeToken(b, ALL);
     exit_section_(b, l, m, r, false, null);
@@ -25856,7 +23860,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, ROLE, _ROLE_SPECIFICATION_);
+    r = consumeTokens(b, 0, SET, ROLE,ROLE_SPECIFICATION);
     exit_section_(b, m, SET_ROLE_STATEMENT, r);
     return r;
   }
@@ -25868,7 +23872,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, _SCHEMA_NAME_CHARACTERISTIC_);
+    r = consumeTokens(b, 0, SET,SCHEMA_NAME_CHARACTERISTIC);
     exit_section_(b, m, SET_SCHEMA_STATEMENT, r);
     return r;
   }
@@ -25880,7 +23884,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, SESSION, CHARACTERISTICS, AS, _SESSION_CHARACTERISTIC_LIST_);
+    r = consumeTokens(b, 0, SET, SESSION, CHARACTERISTICS, AS,SESSION_CHARACTERISTIC_LIST);
     exit_section_(b, m, SET_SESSION_CHARACTERISTICS_STATEMENT, r);
     return r;
   }
@@ -25904,7 +23908,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!recursion_guard_(b, l, "set_session_collation_statement_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, COLLATION, _COLLATION_SPECIFICATION_);
+    r = consumeTokens(b, 0, SET, COLLATION,COLLATION_SPECIFICATION);
     r = r && set_session_collation_statement_0_3(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
@@ -25937,8 +23941,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // SET SESSION AUTHORIZATION <value specification>
-  public static boolean set_session_user_identifier_statement(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "set_session_user_identifier_statement")) return false;
+  public static boolean set_session_userIDENTIFIERstatement(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "set_session_userIDENTIFIERstatement")) return false;
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
@@ -25951,7 +23955,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <update target> | <mutated set clause>
   public static boolean set_target(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_target")) return false;
-    if (!nextTokenIs(b, "<set target>", _MUTATED_SET_CLAUSE_, _UPDATE_TARGET_)) return false;
+    if (!nextTokenIs(b, "<set target>",MUTATED_SET_CLAUSE,UPDATE_TARGET)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SET_TARGET, "<set target>");
     r = update_target(b, l + 1);
@@ -25961,7 +23965,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <left paren> <set target> [ { <comma> <set target> }... ] <right paren>
+  // <left paren> <set target> [ { <comma> <set target> }"..." ] <right paren>
   public static boolean set_target_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_target_list")) return false;
     if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
@@ -25975,16 +23979,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <set target> }... ]
+  // [ { <comma> <set target> }"..." ]
   private static boolean set_target_list_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_target_list_2")) return false;
     set_target_list_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <set target>
+  // { <comma> <set target> }"..."
   private static boolean set_target_list_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "set_target_list_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = set_target_list_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <set target>
+  private static boolean set_target_list_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "set_target_list_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -26034,7 +24049,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, SET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, SET, _TRANSFORM_GROUP_CHARACTERISTIC_);
+    r = consumeTokens(b, 0, SET, TRANSFORM_GROUP_CHARACTERISTIC);
     exit_section_(b, m, SET_TRANSFORM_GROUP_STATEMENT, r);
     return r;
   }
@@ -26056,7 +24071,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <sign> ] <unsigned integer>
   public static boolean signed_integer(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "signed_integer")) return false;
-    if (!nextTokenIs(b, "<signed integer>", _SIGN_, _UNSIGNED_INTEGER_)) return false;
+    if (!nextTokenIs(b, "<signed integer>", SIGN, _UNSIGNED_INTEGER_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SIGNED_INTEGER, "<signed integer>");
     r = signed_integer_0(b, l + 1);
@@ -26076,7 +24091,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <sign> ] <unsigned numeric literal>
   public static boolean signed_numeric_literal(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "signed_numeric_literal")) return false;
-    if (!nextTokenIs(b, "<signed numeric literal>", _SIGN_, _UNSIGNED_NUMERIC_LITERAL_)) return false;
+    if (!nextTokenIs(b, "<signed numeric literal>", SIGN, UNSIGNED_NUMERIC_LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SIGNED_NUMERIC_LITERAL, "<signed numeric literal>");
     r = signed_numeric_literal_0(b, l + 1);
@@ -26096,7 +24111,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character value expression>
   public static boolean similar_pattern(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "similar_pattern")) return false;
-    if (!nextTokenIs(b, _CHARACTER_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, CHARACTER_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = character_value_expression(b, l + 1);
@@ -26108,7 +24123,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <similar predicate part 2>
   public static boolean similar_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "similar_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -26125,7 +24140,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SIMILAR_PREDICATE_PART_2, "<similar predicate part 2>");
     r = similar_predicate_part_2_0(b, l + 1);
-    r = r && consumeTokens(b, 0, SIMILAR, TO, _SIMILAR_PATTERN_);
+    r = r && consumeTokens(b, 0, SIMILAR, TO, SIMILAR_PATTERN);
     r = r && similar_predicate_part_2_4(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -26149,7 +24164,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <simple Latin upper case letter> | <simple Latin lower case letter>
   public static boolean simple_Latin_letter(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "simple_Latin_letter")) return false;
-    if (!nextTokenIs(b, "<simple latin letter>", _SIMPLE_LATIN_LOWER_CASE_LETTER_, _SIMPLE_LATIN_UPPER_CASE_LETTER_)) return false;
+    if (!nextTokenIs(b, "<simple latin letter>", SIMPLE_LATIN_LOWER_CASE_LETTER, SIMPLE_LATIN_UPPER_CASE_LETTER)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SIMPLE_LATIN_LETTER, "<simple latin letter>");
     r = simple_Latin_upper_case_letter(b, l + 1);
@@ -26231,22 +24246,32 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // CASE <case operand> <simple when clause>...
+  // CASE <case operand> <simple when clause>"..." [ <else clause> ] END
   public static boolean simple_case(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "simple_case")) return false;
     if (!nextTokenIs(b, CASE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CASE, _CASE_OPERAND_, _SIMPLE_WHEN_CLAUSE_);
+    r = consumeTokens(b, 0, CASE, CASE_OPERAND, SIMPLE_WHEN_CLAUSE);
+    r = r && consumeToken(b, "...");
+    r = r && simple_case_4(b, l + 1);
+    r = r && consumeToken(b, END);
     exit_section_(b, m, SIMPLE_CASE, r);
     return r;
   }
 
+  // [ <else clause> ]
+  private static boolean simple_case_4(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "simple_case_4")) return false;
+    else_clause(b, l + 1);
+    return true;
+  }
+
   /* ********************************************************** */
-  // <simple comment introducer> [ <comment character>... ] <newline>
+  // <simple comment introducer> [ <comment character>"..." ] <newline>
   public static boolean simple_comment(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "simple_comment")) return false;
-    if (!nextTokenIs(b, _SIMPLE_COMMENT_INTRODUCER_)) return false;
+    if (!nextTokenIs(b, SIMPLE_COMMENT_INTRODUCER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = simple_comment_introducer(b, l + 1);
@@ -26256,15 +24281,26 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ <comment character>... ]
+  // [ <comment character>"..." ]
   private static boolean simple_comment_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "simple_comment_1")) return false;
-    consumeToken(b, _COMMENT_CHARACTER____);
+    simple_comment_1_0(b, l + 1);
     return true;
   }
 
+  // <comment character>"..."
+  private static boolean simple_comment_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "simple_comment_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = comment_character(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
   /* ********************************************************** */
-  // <minus sign><minus sign> [ <minus sign>... ]
+  // <minus sign><minus sign> [ <minus sign>"..." ]
   public static boolean simple_comment_introducer(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "simple_comment_introducer")) return false;
     if (!nextTokenIs(b, _MINUS_SIGN_)) return false;
@@ -26277,11 +24313,22 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ <minus sign>... ]
+  // [ <minus sign>"..." ]
   private static boolean simple_comment_introducer_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "simple_comment_introducer_2")) return false;
-    consumeToken(b, _MINUS_SIGN____);
+    simple_comment_introducer_2_0(b, l + 1);
     return true;
+  }
+
+  // <minus sign>"..."
+  private static boolean simple_comment_introducer_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "simple_comment_introducer_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = minus_sign(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */
@@ -26320,7 +24367,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <simple target specification>
   public static boolean simple_target_specification_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "simple_target_specification_1")) return false;
-    if (!nextTokenIs(b, _SIMPLE_TARGET_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, SIMPLE_TARGET_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = simple_target_specification(b, l + 1);
@@ -26332,7 +24379,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <simple target specification>
   public static boolean simple_target_specification_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "simple_target_specification_2")) return false;
-    if (!nextTokenIs(b, _SIMPLE_TARGET_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, SIMPLE_TARGET_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = simple_target_specification(b, l + 1);
@@ -26388,7 +24435,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, WHEN)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, WHEN, _WHEN_OPERAND_, THEN, _RESULT_);
+    r = consumeTokens(b, 0, WHEN, WHEN_OPERAND, THEN, RESULT);
     exit_section_(b, m, SIMPLE_WHEN_CLAUSE, r);
     return r;
   }
@@ -26398,7 +24445,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	SECOND [ <left paren> <interval leading field precision> [ <comma> <interval fractional seconds precision> ] <right paren> ]
   public static boolean single_datetime_field(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "single_datetime_field")) return false;
-    if (!nextTokenIs(b, "<single datetime field>", SECOND, _NON_SECOND_PRIMARY_DATETIME_FIELD_)) return false;
+    if (!nextTokenIs(b, "<single datetime field>", SECOND, NON_SECOND_PRIMARY_DATETIME_FIELD)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SINGLE_DATETIME_FIELD, "<single datetime field>");
     r = single_datetime_field_0(b, l + 1);
@@ -26467,12 +24514,20 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <group name>
   public static boolean single_group_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "single_group_specification")) return false;
-    if (!nextTokenIs(b, _GROUP_NAME_)) return false;
+    if (!nextTokenIs(b, GROUP_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = group_name(b, l + 1);
     exit_section_(b, m, SINGLE_GROUP_SPECIFICATION, r);
     return r;
+  }
+
+  /* ********************************************************** */
+  // \
+  public static boolean slash(PsiBuilder b, int l) {
+    Marker m = enter_section_(b);
+    exit_section_(b, m, SLASH, true);
+    return true;
   }
 
   /* ********************************************************** */
@@ -26512,7 +24567,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <sort key> [ <ordering specification> ] [ <null ordering> ]
   public static boolean sort_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sort_specification")) return false;
-    if (!nextTokenIs(b, _SORT_KEY_)) return false;
+    if (!nextTokenIs(b, SORT_KEY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = sort_key(b, l + 1);
@@ -26537,10 +24592,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <sort specification> [ { <comma> <sort specification> }... ]
+  // <sort specification> [ { <comma> <sort specification> }"..." ]
   public static boolean sort_specification_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sort_specification_list")) return false;
-    if (!nextTokenIs(b, _SORT_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, SORT_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = sort_specification(b, l + 1);
@@ -26549,16 +24604,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <sort specification> }... ]
+  // [ { <comma> <sort specification> }"..." ]
   private static boolean sort_specification_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sort_specification_list_1")) return false;
     sort_specification_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <sort specification>
+  // { <comma> <sort specification> }"..."
   private static boolean sort_specification_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sort_specification_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = sort_specification_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <sort specification>
+  private static boolean sort_specification_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "sort_specification_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -26583,7 +24649,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <data type>
   public static boolean source_data_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "source_data_type")) return false;
-    if (!nextTokenIs(b, _DATA_TYPE_)) return false;
+    if (!nextTokenIs(b, DATA_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = data_type(b, l + 1);
@@ -26592,18 +24658,21 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // !! See the Syntax Rules.
+  // " "
   public static boolean space(PsiBuilder b, int l) {
-    Marker m = enter_section_(b);
-    exit_section_(b, m, SPACE, true);
-    return true;
+    if (!recursion_guard_(b, l, "space")) return false;
+    boolean r;
+    Marker m = enter_section_(b, l, _NONE_, SPACE, "<space>");
+    r = consumeToken(b, " ");
+    exit_section_(b, l, m, r, false, null);
+    return r;
   }
 
   /* ********************************************************** */
   // [ <schema name> <period> ]<qualified identifier>
   public static boolean specific_method_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "specific_method_name")) return false;
-    if (!nextTokenIs(b, "<specific method name>", _QUALIFIED_IDENTIFIER_, _SCHEMA_NAME_)) return false;
+    if (!nextTokenIs(b, "<specific method name>", QUALIFIED_IDENTIFIER, _SCHEMA_NAME_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SPECIFIC_METHOD_NAME, "<specific method name>");
     r = specific_method_name_0(b, l + 1);
@@ -26626,7 +24695,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, SPECIFIC_METHOD_SPECIFICATION_DESIGNATOR, "<specific method specification designator>");
     r = specific_method_specification_designator_0(b, l + 1);
-    r = r && consumeTokens(b, 0, METHOD, _METHOD_NAME_, _DATA_TYPE_LIST_);
+    r = r && consumeTokens(b, 0, METHOD, METHOD_NAME, DATA_TYPE_LIST);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
@@ -26652,7 +24721,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema qualified name>
   public static boolean specific_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "specific_name")) return false;
-    if (!nextTokenIs(b, _SCHEMA_QUALIFIED_NAME_)) return false;
+    if (!nextTokenIs(b, SCHEMA_QUALIFIED_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = schema_qualified_name(b, l + 1);
@@ -26699,7 +24768,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <user-defined type value expression> <period> SPECIFICTYPE
   public static boolean specific_type_method(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "specific_type_method")) return false;
-    if (!nextTokenIs(b, _USER_DEFINED_TYPE_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, USER_DEFINED_TYPE_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = user_defined_type_value_expression(b, l + 1);
@@ -26737,7 +24806,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <non-second primary datetime field> [ <left paren> <interval leading field precision> <right paren> ]
   public static boolean start_field(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "start_field")) return false;
-    if (!nextTokenIs(b, _NON_SECOND_PRIMARY_DATETIME_FIELD_)) return false;
+    if (!nextTokenIs(b, NON_SECOND_PRIMARY_DATETIME_FIELD)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = non_second_primary_datetime_field(b, l + 1);
@@ -26766,7 +24835,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // START TRANSACTION [ <transaction mode> [ { <comma> <transaction mode> }...] ]
+  // START TRANSACTION [ <transaction mode> [ { <comma> <transaction mode> }"..."] ]
   public static boolean start_transaction_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "start_transaction_statement")) return false;
     if (!nextTokenIs(b, START)) return false;
@@ -26778,14 +24847,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ <transaction mode> [ { <comma> <transaction mode> }...] ]
+  // [ <transaction mode> [ { <comma> <transaction mode> }"..."] ]
   private static boolean start_transaction_statement_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "start_transaction_statement_2")) return false;
     start_transaction_statement_2_0(b, l + 1);
     return true;
   }
 
-  // <transaction mode> [ { <comma> <transaction mode> }...]
+  // <transaction mode> [ { <comma> <transaction mode> }"..."]
   private static boolean start_transaction_statement_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "start_transaction_statement_2_0")) return false;
     boolean r;
@@ -26796,16 +24865,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <transaction mode> }...]
+  // [ { <comma> <transaction mode> }"..."]
   private static boolean start_transaction_statement_2_0_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "start_transaction_statement_2_0_1")) return false;
     start_transaction_statement_2_0_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <transaction mode>
+  // { <comma> <transaction mode> }"..."
   private static boolean start_transaction_statement_2_0_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "start_transaction_statement_2_0_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = start_transaction_statement_2_0_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <transaction mode>
+  private static boolean start_transaction_statement_2_0_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "start_transaction_statement_2_0_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -26846,7 +24926,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     r = r && consumeToken(b, CURSOR);
     r = r && statement_cursor_3(b, l + 1);
     r = r && statement_cursor_4(b, l + 1);
-    r = r && consumeTokens(b, 0, FOR, _EXTENDED_STATEMENT_NAME_);
+    r = r && consumeTokens(b, 0, FOR, EXTENDED_STATEMENT_NAME);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
@@ -26880,10 +24960,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <statement information item> [ { <comma> <statement information item> }... ]
+  // <statement information item> [ { <comma> <statement information item> }"..." ]
   public static boolean statement_information(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "statement_information")) return false;
-    if (!nextTokenIs(b, _STATEMENT_INFORMATION_ITEM_)) return false;
+    if (!nextTokenIs(b, STATEMENT_INFORMATION_ITEM)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = statement_information_item(b, l + 1);
@@ -26892,16 +24972,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <statement information item> }... ]
+  // [ { <comma> <statement information item> }"..." ]
   private static boolean statement_information_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "statement_information_1")) return false;
     statement_information_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <statement information item>
+  // { <comma> <statement information item> }"..."
   private static boolean statement_information_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "statement_information_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = statement_information_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <statement information item>
+  private static boolean statement_information_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "statement_information_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -26914,7 +25005,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <simple target specification> <equals operator> <statement information item name>
   public static boolean statement_information_item(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "statement_information_item")) return false;
-    if (!nextTokenIs(b, _SIMPLE_TARGET_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, SIMPLE_TARGET_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = simple_target_specification(b, l + 1);
@@ -26957,7 +25048,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean statement_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "statement_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -27020,7 +25111,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <routine invocation>
   public static boolean static_method_selection(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "static_method_selection")) return false;
-    if (!nextTokenIs(b, _ROUTINE_INVOCATION_)) return false;
+    if (!nextTokenIs(b, ROUTINE_INVOCATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = routine_invocation(b, l + 1);
@@ -27059,7 +25150,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, POSITION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, POSITION, _LEFT_PAREN_, _STRING_VALUE_EXPRESSION_, IN, _STRING_VALUE_EXPRESSION_);
+    r = consumeTokens(b, 0, POSITION, _LEFT_PAREN_, STRING_VALUE_EXPRESSION, IN, STRING_VALUE_EXPRESSION);
     r = r && string_position_expression_5(b, l + 1);
     r = r && right_paren(b, l + 1);
     exit_section_(b, m, STRING_POSITION_EXPRESSION, r);
@@ -27077,7 +25168,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character value expression> | <blob value expression>
   public static boolean string_value_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "string_value_expression")) return false;
-    if (!nextTokenIs(b, "<string value expression>", _BLOB_VALUE_EXPRESSION_, _CHARACTER_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<string value expression>", BLOB_VALUE_EXPRESSION, CHARACTER_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, STRING_VALUE_EXPRESSION, "<string value expression>");
     r = character_value_expression(b, l + 1);
@@ -27090,7 +25181,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character value function> | <blob value function>
   public static boolean string_value_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "string_value_function")) return false;
-    if (!nextTokenIs(b, "<string value function>", _BLOB_VALUE_FUNCTION_, _CHARACTER_VALUE_FUNCTION_)) return false;
+    if (!nextTokenIs(b, "<string value function>", BLOB_VALUE_FUNCTION, CHARACTER_VALUE_FUNCTION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, STRING_VALUE_FUNCTION, "<string value function>");
     r = character_value_function(b, l + 1);
@@ -27103,7 +25194,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <submultiset predicate part 2>
   public static boolean submultiset_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "submultiset_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -27162,7 +25253,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, UNDER)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, UNDER, _SUPERTABLE_CLAUSE_);
+    r = consumeTokens(b, 0, UNDER, SUPERTABLE_CLAUSE);
     exit_section_(b, m, SUBTABLE_CLAUSE, r);
     return r;
   }
@@ -27174,7 +25265,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, UNDER)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, UNDER, _SUPERTYPE_NAME_);
+    r = consumeTokens(b, 0, UNDER, SUPERTYPE_NAME);
     exit_section_(b, m, SUBTYPE_CLAUSE, r);
     return r;
   }
@@ -27198,7 +25289,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TREAT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TREAT, _LEFT_PAREN_, _SUBTYPE_OPERAND_, AS, _TARGET_SUBTYPE_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, TREAT, _LEFT_PAREN_, SUBTYPE_OPERAND, AS, TARGET_SUBTYPE, _RIGHT_PAREN_);
     exit_section_(b, m, SUBTYPE_TREATMENT, r);
     return r;
   }
@@ -27219,7 +25310,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <supertable name>
   public static boolean supertable_clause(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "supertable_clause")) return false;
-    if (!nextTokenIs(b, _SUPERTABLE_NAME_)) return false;
+    if (!nextTokenIs(b, SUPERTABLE_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = supertable_name(b, l + 1);
@@ -27312,7 +25403,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ <constraint name definition> ] <table constraint> [ <constraint characteristics> ]
   public static boolean table_constraint_definition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_constraint_definition")) return false;
-    if (!nextTokenIs(b, "<table constraint definition>", _CONSTRAINT_NAME_DEFINITION_, _TABLE_CONSTRAINT_)) return false;
+    if (!nextTokenIs(b, "<table constraint definition>", CONSTRAINT_NAME_DEFINITION, TABLE_CONSTRAINT)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TABLE_CONSTRAINT_DEFINITION, "<table constraint definition>");
     r = table_constraint_definition_0(b, l + 1);
@@ -27387,7 +25478,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeToken(b, CREATE);
     r = r && table_definition_1(b, l + 1);
-    r = r && consumeTokens(b, 0, TABLE, _TABLE_NAME_, _TABLE_CONTENTS_SOURCE_);
+    r = r && consumeTokens(b, 0, TABLE, _TABLE_NAME_, TABLE_CONTENTS_SOURCE);
     r = r && table_definition_5(b, l + 1);
     exit_section_(b, m, TABLE_DEFINITION, r);
     return r;
@@ -27403,7 +25494,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ ON COMMIT <table commit action> ROWS ]
   private static boolean table_definition_5(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_definition_5")) return false;
-    parseTokens(b, 0, ON, COMMIT, _TABLE_COMMIT_ACTION_, ROWS);
+    parseTokens(b, 0, ON, COMMIT, TABLE_COMMIT_ACTION, ROWS);
     return true;
   }
 
@@ -27427,7 +25518,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <left paren> <table element> [ { <comma> <table element> }... ] <right paren>
+  // <left paren> <table element> [ { <comma> <table element> }"..." ] <right paren>
   public static boolean table_element_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_element_list")) return false;
     if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
@@ -27441,16 +25532,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <table element> }... ]
+  // [ { <comma> <table element> }"..." ]
   private static boolean table_element_list_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_element_list_2")) return false;
     table_element_list_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <table element>
+  // { <comma> <table element> }"..."
   private static boolean table_element_list_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_element_list_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = table_element_list_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <table element>
+  private static boolean table_element_list_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "table_element_list_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -27467,7 +25569,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 		[ <window clause> ]
   public static boolean table_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_expression")) return false;
-    if (!nextTokenIs(b, _FROM_CLAUSE_)) return false;
+    if (!nextTokenIs(b, FROM_CLAUSE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = from_clause(b, l + 1);
@@ -27509,7 +25611,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // <left paren>
-  // 		<table function column list element> [ { <comma> <table function column list element> }... ]
+  // 		<table function column list element> [ { <comma> <table function column list element> }"..." ]
   // 		<right paren>
   public static boolean table_function_column_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_function_column_list")) return false;
@@ -27524,16 +25626,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <table function column list element> }... ]
+  // [ { <comma> <table function column list element> }"..." ]
   private static boolean table_function_column_list_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_function_column_list_2")) return false;
     table_function_column_list_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <table function column list element>
+  // { <comma> <table function column list element> }"..."
   private static boolean table_function_column_list_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_function_column_list_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = table_function_column_list_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <table function column list element>
+  private static boolean table_function_column_list_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "table_function_column_list_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -27562,7 +25675,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TABLE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TABLE, _LEFT_PAREN_, _COLLECTION_VALUE_EXPRESSION_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, TABLE, _LEFT_PAREN_, COLLECTION_VALUE_EXPRESSION, _RIGHT_PAREN_);
     exit_section_(b, m, TABLE_FUNCTION_DERIVED_TABLE, r);
     return r;
   }
@@ -27571,7 +25684,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <local or schema qualified name>
   public static boolean table_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_name")) return false;
-    if (!nextTokenIs(b, _LOCAL_OR_SCHEMA_QUALIFIED_NAME_)) return false;
+    if (!nextTokenIs(b, LOCAL_OR_SCHEMA_QUALIFIED_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = local_or_schema_qualified_name(b, l + 1);
@@ -27583,7 +25696,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <table name> | <query name>
   public static boolean table_or_query_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_or_query_name")) return false;
-    if (!nextTokenIs(b, "<table or query name>", _QUERY_NAME_, _TABLE_NAME_)) return false;
+    if (!nextTokenIs(b, "<table or query name>", QUERY_NAME, _TABLE_NAME_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TABLE_OR_QUERY_NAME, "<table or query name>");
     r = table_name(b, l + 1);
@@ -27815,7 +25928,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <table primary> | <joined table>
   public static boolean table_primary_or_joined_table(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_primary_or_joined_table")) return false;
-    if (!nextTokenIs(b, "<table primary or joined table>", _JOINED_TABLE_, _TABLE_PRIMARY_)) return false;
+    if (!nextTokenIs(b, "<table primary or joined table>", _JOINED_TABLE_, TABLE_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TABLE_PRIMARY_OR_JOINED_TABLE, "<table primary or joined table>");
     r = table_primary(b, l + 1);
@@ -27828,7 +25941,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <table primary or joined table> [ <sample clause> ]
   public static boolean table_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_reference")) return false;
-    if (!nextTokenIs(b, _TABLE_PRIMARY_OR_JOINED_TABLE_)) return false;
+    if (!nextTokenIs(b, TABLE_PRIMARY_OR_JOINED_TABLE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = table_primary_or_joined_table(b, l + 1);
@@ -27845,10 +25958,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <table reference> [ { <comma> <table reference> }... ]
+  // <table reference> [ { <comma> <table reference> }"..." ]
   public static boolean table_reference_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_reference_list")) return false;
-    if (!nextTokenIs(b, _TABLE_REFERENCE_)) return false;
+    if (!nextTokenIs(b, TABLE_REFERENCE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = table_reference(b, l + 1);
@@ -27857,16 +25970,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <table reference> }... ]
+  // [ { <comma> <table reference> }"..." ]
   private static boolean table_reference_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_reference_list_1")) return false;
     table_reference_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <table reference>
+  // { <comma> <table reference> }"..."
   private static boolean table_reference_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_reference_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = table_reference_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <table reference>
+  private static boolean table_reference_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "table_reference_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -27880,7 +26004,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<row value constructor>
   public static boolean table_row_value_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_row_value_expression")) return false;
-    if (!nextTokenIs(b, "<table row value expression>", _ROW_VALUE_CONSTRUCTOR_, _ROW_VALUE_SPECIAL_CASE_)) return false;
+    if (!nextTokenIs(b, "<table row value expression>", ROW_VALUE_CONSTRUCTOR, ROW_VALUE_SPECIAL_CASE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TABLE_ROW_VALUE_EXPRESSION, "<table row value expression>");
     r = row_value_special_case(b, l + 1);
@@ -27893,7 +26017,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <global or local> TEMPORARY
   public static boolean table_scope(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_scope")) return false;
-    if (!nextTokenIs(b, _GLOBAL_OR_LOCAL_)) return false;
+    if (!nextTokenIs(b, GLOBAL_OR_LOCAL)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = global_or_local(b, l + 1);
@@ -27906,7 +26030,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <subquery>
   public static boolean table_subquery(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "table_subquery")) return false;
-    if (!nextTokenIs(b, _SUBQUERY_)) return false;
+    if (!nextTokenIs(b, SUBQUERY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = subquery(b, l + 1);
@@ -27921,7 +26045,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, VALUES)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, VALUES, _ROW_VALUE_EXPRESSION_LIST_);
+    r = consumeTokens(b, 0, VALUES,ROW_VALUE_EXPRESSION_LIST);
     exit_section_(b, m, TABLE_VALUE_CONSTRUCTOR, r);
     return r;
   }
@@ -27933,7 +26057,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TABLE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TABLE, _LEFT_PAREN_, _QUERY_EXPRESSION_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, TABLE, _LEFT_PAREN_, QUERY_EXPRESSION, _RIGHT_PAREN_);
     exit_section_(b, m, TABLE_VALUE_CONSTRUCTOR_BY_QUERY, r);
     return r;
   }
@@ -27942,7 +26066,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <target array reference> <left bracket or trigraph> <simple value specification> <right bracket or trigraph>
   public static boolean target_array_element_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "target_array_element_specification")) return false;
-    if (!nextTokenIs(b, _TARGET_ARRAY_REFERENCE_)) return false;
+    if (!nextTokenIs(b, TARGET_ARRAY_REFERENCE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = target_array_reference(b, l + 1);
@@ -27957,7 +26081,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <SQL parameter reference> | <column reference>
   public static boolean target_array_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "target_array_reference")) return false;
-    if (!nextTokenIs(b, "<target array reference>", _COLUMN_REFERENCE_, _SQL_PARAMETER_REFERENCE_)) return false;
+    if (!nextTokenIs(b, "<target array reference>", COLUMN_REFERENCE, SQL_PARAMETER_REFERENCE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TARGET_ARRAY_REFERENCE, "<target array reference>");
     r = SQL_parameter_reference(b, l + 1);
@@ -27982,7 +26106,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <data type>
   public static boolean target_data_type(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "target_data_type")) return false;
-    if (!nextTokenIs(b, _DATA_TYPE_)) return false;
+    if (!nextTokenIs(b, DATA_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = data_type(b, l + 1);
@@ -28016,7 +26140,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<reference type>
   public static boolean target_subtype(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "target_subtype")) return false;
-    if (!nextTokenIs(b, "<target subtype>", _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, _REFERENCE_TYPE_)) return false;
+    if (!nextTokenIs(b, "<target subtype>", _PATH_RESOLVED_USER_DEFINED_TYPE_NAME_, REFERENCE_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TARGET_SUBTYPE, "<target subtype>");
     r = path_resolved_user_defined_type_name(b, l + 1);
@@ -28047,7 +26171,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, DECLARE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, DECLARE, LOCAL, TEMPORARY, TABLE, _TABLE_NAME_, _TABLE_ELEMENT_LIST_);
+    r = consumeTokens(b, 0, DECLARE, LOCAL, TEMPORARY, TABLE, _TABLE_NAME_, TABLE_ELEMENT_LIST);
     r = r && temporary_table_declaration_6(b, l + 1);
     exit_section_(b, m, TEMPORARY_TABLE_DECLARATION, r);
     return r;
@@ -28056,7 +26180,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ ON COMMIT <table commit action> ROWS ]
   private static boolean temporary_table_declaration_6(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "temporary_table_declaration_6")) return false;
-    parseTokens(b, 0, ON, COMMIT, _TABLE_COMMIT_ACTION_, ROWS);
+    parseTokens(b, 0, ON, COMMIT, TABLE_COMMIT_ACTION, ROWS);
     return true;
   }
 
@@ -28165,7 +26289,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TIME)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TIME, _TIME_STRING_);
+    r = consumeTokens(b, 0, TIME, TIME_STRING);
     exit_section_(b, m, TIME_LITERAL, r);
     return r;
   }
@@ -28174,7 +26298,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <time fractional seconds precision>
   public static boolean time_precision(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "time_precision")) return false;
-    if (!nextTokenIs(b, _TIME_FRACTIONAL_SECONDS_PRECISION_)) return false;
+    if (!nextTokenIs(b, TIME_FRACTIONAL_SECONDS_PRECISION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = time_fractional_seconds_precision(b, l + 1);
@@ -28200,7 +26324,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <hours value> <colon> <minutes value> <colon> <seconds value>
   public static boolean time_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "time_value")) return false;
-    if (!nextTokenIs(b, _HOURS_VALUE_)) return false;
+    if (!nextTokenIs(b, HOURS_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = hours_value(b, l + 1);
@@ -28219,7 +26343,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, AT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, AT, _TIME_ZONE_SPECIFIER_);
+    r = consumeTokens(b, 0, AT, TIME_ZONE_SPECIFIER);
     exit_section_(b, m, TIME_ZONE, r);
     return r;
   }
@@ -28241,7 +26365,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <sign> <hours value> <colon> <minutes value>
   public static boolean time_zone_interval(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "time_zone_interval")) return false;
-    if (!nextTokenIs(b, _SIGN_)) return false;
+    if (!nextTokenIs(b, SIGN)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = sign(b, l + 1);
@@ -28272,7 +26396,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TIMESTAMP)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TIMESTAMP, _TIMESTAMP_STRING_);
+    r = consumeTokens(b, 0, TIMESTAMP, TIMESTAMP_STRING);
     exit_section_(b, m, TIMESTAMP_LITERAL, r);
     return r;
   }
@@ -28281,7 +26405,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <time fractional seconds precision>
   public static boolean timestamp_precision(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "timestamp_precision")) return false;
-    if (!nextTokenIs(b, _TIME_FRACTIONAL_SECONDS_PRECISION_)) return false;
+    if (!nextTokenIs(b, TIME_FRACTIONAL_SECONDS_PRECISION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = time_fractional_seconds_precision(b, l + 1);
@@ -28310,7 +26434,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TO)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TO, SQL, WITH, _TO_SQL_FUNCTION_);
+    r = consumeTokens(b, 0, TO, SQL, WITH, TO_SQL_FUNCTION);
     exit_section_(b, m, TO_SQL, r);
     return r;
   }
@@ -28319,7 +26443,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <specific routine designator>
   public static boolean to_sql_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "to_sql_function")) return false;
-    if (!nextTokenIs(b, _SPECIFIC_ROUTINE_DESIGNATOR_)) return false;
+    if (!nextTokenIs(b, SPECIFIC_ROUTINE_DESIGNATOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = specific_routine_designator(b, l + 1);
@@ -28331,7 +26455,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <nondelimiter token> | <delimiter token>
   public static boolean token(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "token")) return false;
-    if (!nextTokenIs(b, "<token>", _DELIMITER_TOKEN_, _NONDELIMITER_TOKEN_)) return false;
+    if (!nextTokenIs(b, "<token>", _DELIMITER_TOKEN_, NONDELIMITER_TOKEN)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TOKEN, "<token>");
     r = nondelimiter_token(b, l + 1);
@@ -28354,28 +26478,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // TRANSACTION <transaction mode> [ { <comma> <transaction mode> }... ]
+  // TRANSACTION <transaction mode> [ { <comma> <transaction mode> }"..." ]
   public static boolean transaction_characteristics(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transaction_characteristics")) return false;
     if (!nextTokenIs(b, TRANSACTION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TRANSACTION, _TRANSACTION_MODE_);
+    r = consumeTokens(b, 0, TRANSACTION, TRANSACTION_MODE);
     r = r && transaction_characteristics_2(b, l + 1);
     exit_section_(b, m, TRANSACTION_CHARACTERISTICS, r);
     return r;
   }
 
-  // [ { <comma> <transaction mode> }... ]
+  // [ { <comma> <transaction mode> }"..." ]
   private static boolean transaction_characteristics_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transaction_characteristics_2")) return false;
     transaction_characteristics_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <transaction mode>
+  // { <comma> <transaction mode> }"..."
   private static boolean transaction_characteristics_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transaction_characteristics_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = transaction_characteristics_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <transaction mode>
+  private static boolean transaction_characteristics_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "transaction_characteristics_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -28404,7 +26539,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CONVERT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CONVERT, _LEFT_PAREN_, _CHARACTER_VALUE_EXPRESSION_, USING, _TRANSCODING_NAME_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, CONVERT, _LEFT_PAREN_, CHARACTER_VALUE_EXPRESSION, USING, TRANSCODING_NAME, _RIGHT_PAREN_);
     exit_section_(b, m, TRANSCODING, r);
     return r;
   }
@@ -28413,7 +26548,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema qualified name>
   public static boolean transcoding_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transcoding_name")) return false;
-    if (!nextTokenIs(b, _SCHEMA_QUALIFIED_NAME_)) return false;
+    if (!nextTokenIs(b, SCHEMA_QUALIFIED_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = schema_qualified_name(b, l + 1);
@@ -28422,7 +26557,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // CREATE { TRANSFORM | TRANSFORMS } FOR <schema-resolved user-defined type name> <transform group>...
+  // CREATE { TRANSFORM | TRANSFORMS } FOR <schema-resolved user-defined type name> <transform group>"..."
   public static boolean transform_definition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transform_definition")) return false;
     if (!nextTokenIs(b, CREATE)) return false;
@@ -28430,7 +26565,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeToken(b, CREATE);
     r = r && transform_definition_1(b, l + 1);
-    r = r && consumeTokens(b, 0, FOR, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, _TRANSFORM_GROUP_);
+    r = r && consumeTokens(b, 0, FOR, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, TRANSFORM_GROUP);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, TRANSFORM_DEFINITION, r);
     return r;
   }
@@ -28448,7 +26584,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <to sql> | <from sql>
   public static boolean transform_element(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transform_element")) return false;
-    if (!nextTokenIs(b, "<transform element>", _FROM_SQL_, _TO_SQL_)) return false;
+    if (!nextTokenIs(b, "<transform element>", FROM_SQL, TO_SQL)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TRANSFORM_ELEMENT, "<transform element>");
     r = to_sql(b, l + 1);
@@ -28481,7 +26617,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <group name> <left paren> <transform element list> <right paren>
   public static boolean transform_group(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transform_group")) return false;
-    if (!nextTokenIs(b, _GROUP_NAME_)) return false;
+    if (!nextTokenIs(b, GROUP_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = group_name(b, l + 1);
@@ -28510,7 +26646,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <group name>
   public static boolean transform_group_element(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transform_group_element")) return false;
-    if (!nextTokenIs(b, _GROUP_NAME_)) return false;
+    if (!nextTokenIs(b, GROUP_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = group_name(b, l + 1);
@@ -28557,7 +26693,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // ALL | <transform group element>
   public static boolean transforms_to_be_dropped(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transforms_to_be_dropped")) return false;
-    if (!nextTokenIs(b, "<transforms to be dropped>", ALL, _TRANSFORM_GROUP_ELEMENT_)) return false;
+    if (!nextTokenIs(b, "<transforms to be dropped>", ALL, TRANSFORM_GROUP_ELEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TRANSFORMS_TO_BE_DROPPED, "<transforms to be dropped>");
     r = consumeToken(b, ALL);
@@ -28574,7 +26710,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CREATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CREATE, TRANSLATION, _TRANSLITERATION_NAME_, FOR, _SOURCE_CHARACTER_SET_SPECIFICATION_, TO, _TARGET_CHARACTER_SET_SPECIFICATION_, FROM, _TRANSLITERATION_SOURCE_);
+    r = consumeTokens(b, 0, CREATE, TRANSLATION, _TRANSLITERATION_NAME_, FOR, SOURCE_CHARACTER_SET_SPECIFICATION, TO, TARGET_CHARACTER_SET_SPECIFICATION, FROM, TRANSLITERATION_SOURCE);
     exit_section_(b, m, TRANSLITERATION_DEFINITION, r);
     return r;
   }
@@ -28583,7 +26719,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema qualified name>
   public static boolean transliteration_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transliteration_name")) return false;
-    if (!nextTokenIs(b, _SCHEMA_QUALIFIED_NAME_)) return false;
+    if (!nextTokenIs(b, SCHEMA_QUALIFIED_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = schema_qualified_name(b, l + 1);
@@ -28595,7 +26731,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <specific routine designator>
   public static boolean transliteration_routine(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transliteration_routine")) return false;
-    if (!nextTokenIs(b, _SPECIFIC_ROUTINE_DESIGNATOR_)) return false;
+    if (!nextTokenIs(b, SPECIFIC_ROUTINE_DESIGNATOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = specific_routine_designator(b, l + 1);
@@ -28607,7 +26743,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <existing transliteration name> | <transliteration routine>
   public static boolean transliteration_source(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "transliteration_source")) return false;
-    if (!nextTokenIs(b, "<transliteration source>", _EXISTING_TRANSLITERATION_NAME_, _TRANSLITERATION_ROUTINE_)) return false;
+    if (!nextTokenIs(b, "<transliteration source>", EXISTING_TRANSLITERATION_NAME, TRANSLITERATION_ROUTINE)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TRANSLITERATION_SOURCE, "<transliteration source>");
     r = existing_transliteration_name(b, l + 1);
@@ -28618,11 +26754,11 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // BEFORE | AFTER
-  public static boolean trigger_action_time(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "trigger_action_time")) return false;
+  public static boolean triggerACTIONtime(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "triggerACTIONtime")) return false;
     if (!nextTokenIs(b, "<trigger action time>", AFTER, BEFORE)) return false;
     boolean r;
-    Marker m = enter_section_(b, l, _NONE_, TRIGGER_ACTION_TIME, "<trigger action time>");
+    Marker m = enter_section_(b, l, _NONE_, TRIGGERACTIONTIME, "<trigger action time>");
     r = consumeToken(b, BEFORE);
     if (!r) r = consumeToken(b, AFTER);
     exit_section_(b, l, m, r, false, null);
@@ -28650,7 +26786,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CREATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CREATE, TRIGGER, _TRIGGER_NAME_, _TRIGGER_ACTION_TIME_, _TRIGGER_EVENT_, ON, _TABLE_NAME_);
+    r = consumeTokens(b, 0, CREATE, TRIGGER, TRIGGER_NAME, TRIGGERACTIONTIME, TRIGGER_EVENT, ON, _TABLE_NAME_);
     r = r && trigger_definition_7(b, l + 1);
     r = r && triggered_action(b, l + 1);
     exit_section_(b, m, TRIGGER_DEFINITION, r);
@@ -28660,7 +26796,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // [ REFERENCING <old or new values alias list> ]
   private static boolean trigger_definition_7(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "trigger_definition_7")) return false;
-    parseTokens(b, 0, REFERENCING, _OLD_OR_NEW_VALUES_ALIAS_LIST_);
+    parseTokens(b, 0, REFERENCING, OLD_OR_NEW_VALUES_ALIAS_LIST);
     return true;
   }
 
@@ -28699,7 +26835,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema qualified name>
   public static boolean trigger_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "trigger_name")) return false;
-    if (!nextTokenIs(b, _SCHEMA_QUALIFIED_NAME_)) return false;
+    if (!nextTokenIs(b, SCHEMA_QUALIFIED_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = schema_qualified_name(b, l + 1);
@@ -28709,10 +26845,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // <SQL procedure statement>
-  // 	|	BEGIN ATOMIC { <SQL procedure statement> <semicolon> }...  END
+  // 	|	BEGIN ATOMIC { <SQL procedure statement> <semicolon> }"..."  END
   public static boolean triggered_SQL_statement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "triggered_SQL_statement")) return false;
-    if (!nextTokenIs(b, "<triggered sql statement>", BEGIN, _SQL_PROCEDURE_STATEMENT_)) return false;
+    if (!nextTokenIs(b, "<triggered sql statement>", BEGIN, SQL_PROCEDURE_STATEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TRIGGERED_SQL_STATEMENT, "<triggered sql statement>");
     r = SQL_procedure_statement(b, l + 1);
@@ -28721,13 +26857,15 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // BEGIN ATOMIC { <SQL procedure statement> <semicolon> }...  END
+  // BEGIN ATOMIC { <SQL procedure statement> <semicolon> }"..."  END
   private static boolean triggered_SQL_statement_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "triggered_SQL_statement_1")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, BEGIN, ATOMIC);
     r = r && triggered_SQL_statement_1_2(b, l + 1);
+    r = r && consumeToken(b, "...");
+    r = r && consumeToken(b, END);
     exit_section_(b, m, null, r);
     return r;
   }
@@ -28751,34 +26889,34 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!recursion_guard_(b, l, "triggered_action")) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, TRIGGERED_ACTION, "<triggered action>");
-    r = triggered_action_0(b, l + 1);
-    r = r && triggered_action_1(b, l + 1);
+    r = triggeredACTION0(b, l + 1);
+    r = r && triggeredACTION1(b, l + 1);
     r = r && triggered_SQL_statement(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
   // [ FOR EACH { ROW | STATEMENT } ]
-  private static boolean triggered_action_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "triggered_action_0")) return false;
-    triggered_action_0_0(b, l + 1);
+  private static boolean triggeredACTION0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "triggeredACTION0")) return false;
+    triggeredACTION0_0(b, l + 1);
     return true;
   }
 
   // FOR EACH { ROW | STATEMENT }
-  private static boolean triggered_action_0_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "triggered_action_0_0")) return false;
+  private static boolean triggeredACTION0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "triggeredACTION0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, FOR, EACH);
-    r = r && triggered_action_0_0_2(b, l + 1);
+    r = r && triggeredACTION0_0_2(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // ROW | STATEMENT
-  private static boolean triggered_action_0_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "triggered_action_0_0_2")) return false;
+  private static boolean triggeredACTION0_0_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "triggeredACTION0_0_2")) return false;
     boolean r;
     r = consumeToken(b, ROW);
     if (!r) r = consumeToken(b, STATEMENT);
@@ -28786,8 +26924,8 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   // [ WHEN <left paren> <search condition> <right paren> ]
-  private static boolean triggered_action_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "triggered_action_1")) return false;
+  private static boolean triggeredACTION1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "triggeredACTION1")) return false;
     parseTokens(b, 0, WHEN, _LEFT_PAREN_, _SEARCH_CONDITION_, _RIGHT_PAREN_);
     return true;
   }
@@ -28796,7 +26934,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character value expression>
   public static boolean trim_character(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "trim_character")) return false;
-    if (!nextTokenIs(b, _CHARACTER_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, CHARACTER_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = character_value_expression(b, l + 1);
@@ -28811,7 +26949,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, TRIM)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, TRIM, _LEFT_PAREN_, _TRIM_OPERANDS_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, TRIM, _LEFT_PAREN_, TRIM_OPERANDS, _RIGHT_PAREN_);
     exit_section_(b, m, TRIM_FUNCTION, r);
     return r;
   }
@@ -28820,7 +26958,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <blob value expression>
   public static boolean trim_octet(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "trim_octet")) return false;
-    if (!nextTokenIs(b, _BLOB_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, BLOB_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = blob_value_expression(b, l + 1);
@@ -28877,7 +27015,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <character value expression>
   public static boolean trim_source(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "trim_source")) return false;
-    if (!nextTokenIs(b, _CHARACTER_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, CHARACTER_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = character_value_expression(b, l + 1);
@@ -28912,10 +27050,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <user-defined type specification> [ { <comma> <user-defined type specification> }... ]
+  // <user-defined type specification> [ { <comma> <user-defined type specification> }"..." ]
   public static boolean type_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "type_list")) return false;
-    if (!nextTokenIs(b, _USER_DEFINED_TYPE_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, USER_DEFINED_TYPE_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = user_defined_type_specification(b, l + 1);
@@ -28924,16 +27062,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <user-defined type specification> }... ]
+  // [ { <comma> <user-defined type specification> }"..." ]
   private static boolean type_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "type_list_1")) return false;
     type_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <user-defined type specification>
+  // { <comma> <user-defined type specification> }"..."
   private static boolean type_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "type_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = type_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <user-defined type specification>
+  private static boolean type_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "type_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -28946,7 +27095,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <row value predicand> <type predicate part 2>
   public static boolean type_predicate(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "type_predicate")) return false;
-    if (!nextTokenIs(b, _ROW_VALUE_PREDICAND_)) return false;
+    if (!nextTokenIs(b, ROW_VALUE_PREDICAND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = row_value_predicand(b, l + 1);
@@ -28964,7 +27113,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeToken(b, IS);
     r = r && type_predicate_part_2_1(b, l + 1);
-    r = r && consumeTokens(b, 0, OF, _LEFT_PAREN_, _TYPE_LIST_, _RIGHT_PAREN_);
+    r = r && consumeTokens(b, 0, OF, _LEFT_PAREN_, TYPE_LIST, _RIGHT_PAREN_);
     exit_section_(b, m, TYPE_PREDICATE_PART_2, r);
     return r;
   }
@@ -28988,11 +27137,11 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <table reference> UNION JOIN <table primary>
   public static boolean union_join(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "union_join")) return false;
-    if (!nextTokenIs(b, _TABLE_REFERENCE_)) return false;
+    if (!nextTokenIs(b, TABLE_REFERENCE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = table_reference(b, l + 1);
-    r = r && consumeTokens(b, 0, UNION, JOIN, _TABLE_PRIMARY_);
+    r = r && consumeTokens(b, 0, UNION, JOIN, TABLE_PRIMARY);
     exit_section_(b, m, UNION_JOIN, r);
     return r;
   }
@@ -29041,7 +27190,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, UNIQUE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, UNIQUE, _TABLE_SUBQUERY_);
+    r = consumeTokens(b, 0, UNIQUE, TABLE_SUBQUERY);
     exit_section_(b, m, UNIQUE_PREDICATE, r);
     return r;
   }
@@ -29063,7 +27212,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <date value>
   public static boolean unquoted_date_string(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "unquoted_date_string")) return false;
-    if (!nextTokenIs(b, _DATE_VALUE_)) return false;
+    if (!nextTokenIs(b, DATE_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = date_value(b, l + 1);
@@ -29103,7 +27252,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <time value> [ <time zone interval> ]
   public static boolean unquoted_time_string(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "unquoted_time_string")) return false;
-    if (!nextTokenIs(b, _TIME_VALUE_)) return false;
+    if (!nextTokenIs(b, TIME_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = time_value(b, l + 1);
@@ -29123,7 +27272,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <unquoted date string> <space> <unquoted time string>
   public static boolean unquoted_timestamp_string(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "unquoted_timestamp_string")) return false;
-    if (!nextTokenIs(b, _UNQUOTED_DATE_STRING_)) return false;
+    if (!nextTokenIs(b, UNQUOTED_DATE_STRING)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = unquoted_date_string(b, l + 1);
@@ -29134,13 +27283,14 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <digit>...
+  // <digit>"..."
   public static boolean unsigned_integer(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "unsigned_integer")) return false;
-    if (!nextTokenIs(b, _DIGIT____)) return false;
+    if (!nextTokenIs(b,DIGIT)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, _DIGIT____);
+    r = digit(b, l + 1);
+    r = r && consumeToken(b, "...");
     exit_section_(b, m, UNSIGNED_INTEGER, r);
     return r;
   }
@@ -29149,7 +27299,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <unsigned numeric literal> | <general literal>
   public static boolean unsigned_literal(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "unsigned_literal")) return false;
-    if (!nextTokenIs(b, "<unsigned literal>", _GENERAL_LITERAL_, _UNSIGNED_NUMERIC_LITERAL_)) return false;
+    if (!nextTokenIs(b, "<unsigned literal>", GENERAL_LITERAL, UNSIGNED_NUMERIC_LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, UNSIGNED_LITERAL, "<unsigned literal>");
     r = unsigned_numeric_literal(b, l + 1);
@@ -29162,7 +27312,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <exact numeric literal> | <approximate numeric literal>
   public static boolean unsigned_numeric_literal(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "unsigned_numeric_literal")) return false;
-    if (!nextTokenIs(b, "<unsigned numeric literal>", _APPROXIMATE_NUMERIC_LITERAL_, _EXACT_NUMERIC_LITERAL_)) return false;
+    if (!nextTokenIs(b, "<unsigned numeric literal>", APPROXIMATE_NUMERIC_LITERAL, EXACT_NUMERIC_LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, UNSIGNED_NUMERIC_LITERAL, "<unsigned numeric literal>");
     r = exact_numeric_literal(b, l + 1);
@@ -29175,7 +27325,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <unsigned literal> | <general value specification>
   public static boolean unsigned_value_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "unsigned_value_specification")) return false;
-    if (!nextTokenIs(b, "<unsigned value specification>", _GENERAL_VALUE_SPECIFICATION_, _UNSIGNED_LITERAL_)) return false;
+    if (!nextTokenIs(b, "<unsigned value specification>", GENERAL_VALUE_SPECIFICATION, UNSIGNED_LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, UNSIGNED_VALUE_SPECIFICATION, "<unsigned value specification>");
     r = unsigned_literal(b, l + 1);
@@ -29233,7 +27383,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, ON)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, ON, UPDATE, _REFERENTIAL_ACTION_);
+    r = consumeTokens(b, 0, ON, UPDATE, REFERENTIAL_ACTION);
     exit_section_(b, m, UPDATE_RULE, r);
     return r;
   }
@@ -29242,7 +27392,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression> | <contextually typed value specification>
   public static boolean update_source(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "update_source")) return false;
-    if (!nextTokenIs(b, "<update source>", _CONTEXTUALLY_TYPED_VALUE_SPECIFICATION_, _VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<update source>", CONTEXTUALLY_TYPED_VALUE_SPECIFICATION, _VALUE_EXPRESSION_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, UPDATE_SOURCE, "<update source>");
     r = value_expression(b, l + 1);
@@ -29258,7 +27408,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, UPDATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, UPDATE, _TARGET_TABLE_, SET, _SET_CLAUSE_LIST_, WHERE, CURRENT, OF, _CURSOR_NAME_);
+    r = consumeTokens(b, 0, UPDATE, _TARGET_TABLE_, SET, SET_CLAUSE_LIST, WHERE, CURRENT, OF, CURSOR_NAME);
     exit_section_(b, m, UPDATE_STATEMENT_POSITIONED, r);
     return r;
   }
@@ -29270,7 +27420,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, UPDATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, UPDATE, _TARGET_TABLE_, SET, _SET_CLAUSE_LIST_);
+    r = consumeTokens(b, 0, UPDATE, _TARGET_TABLE_, SET, SET_CLAUSE_LIST);
     r = r && update_statement_searched_4(b, l + 1);
     exit_section_(b, m, UPDATE_STATEMENT_SEARCHED, r);
     return r;
@@ -29321,7 +27471,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean user_identifier(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "user_identifier")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -29337,7 +27487,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CREATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CREATE, CAST, _LEFT_PAREN_, _SOURCE_DATA_TYPE_, AS, _TARGET_DATA_TYPE_, _RIGHT_PAREN_, WITH, _CAST_FUNCTION_);
+    r = consumeTokens(b, 0, CREATE, CAST, _LEFT_PAREN_, SOURCE_DATA_TYPE, AS, TARGET_DATA_TYPE, _RIGHT_PAREN_, WITH, CAST_FUNCTION);
     r = r && user_defined_cast_definition_9(b, l + 1);
     exit_section_(b, m, USER_DEFINED_CAST_DEFINITION, r);
     return r;
@@ -29369,7 +27519,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CREATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CREATE, ORDERING, FOR, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, _ORDERING_FORM_);
+    r = consumeTokens(b, 0, CREATE, ORDERING, FOR, _SCHEMA_RESOLVED_USER_DEFINED_TYPE_NAME_, ORDERING_FORM);
     exit_section_(b, m, USER_DEFINED_ORDERING_DEFINITION, r);
     return r;
   }
@@ -29381,7 +27531,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, REF)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, REF, USING, _PREDEFINED_TYPE_);
+    r = consumeTokens(b, 0, REF, USING, PREDEFINED_TYPE);
     exit_section_(b, m, USER_DEFINED_REPRESENTATION, r);
     return r;
   }
@@ -29438,7 +27588,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, CREATE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, CREATE, TYPE, _USER_DEFINED_TYPE_BODY_);
+    r = consumeTokens(b, 0, CREATE, TYPE, USER_DEFINED_TYPE_BODY);
     exit_section_(b, m, USER_DEFINED_TYPE_DEFINITION, r);
     return r;
   }
@@ -29447,7 +27597,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <schema qualified type name>
   public static boolean user_defined_type_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "user_defined_type_name")) return false;
-    if (!nextTokenIs(b, _SCHEMA_QUALIFIED_TYPE_NAME_)) return false;
+    if (!nextTokenIs(b, SCHEMA_QUALIFIED_TYPE_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = schema_qualified_type_name(b, l + 1);
@@ -29475,10 +27625,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <user-defined type option> [ <user-defined type option>... ]
+  // <user-defined type option> [ <user-defined type option>"..." ]
   public static boolean user_defined_type_option_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "user_defined_type_option_list")) return false;
-    if (!nextTokenIs(b, _USER_DEFINED_TYPE_OPTION_)) return false;
+    if (!nextTokenIs(b, USER_DEFINED_TYPE_OPTION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = user_defined_type_option(b, l + 1);
@@ -29487,11 +27637,22 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ <user-defined type option>... ]
+  // [ <user-defined type option>"..." ]
   private static boolean user_defined_type_option_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "user_defined_type_option_list_1")) return false;
-    consumeToken(b, _USER_DEFINED_TYPE_OPTION____);
+    user_defined_type_option_list_1_0(b, l + 1);
     return true;
+  }
+
+  // <user-defined type option>"..."
+  private static boolean user_defined_type_option_list_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "user_defined_type_option_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = user_defined_type_option(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */
@@ -29499,7 +27660,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<exclusive user-defined type specification>
   public static boolean user_defined_type_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "user_defined_type_specification")) return false;
-    if (!nextTokenIs(b, "<user defined type specification>", _EXCLUSIVE_USER_DEFINED_TYPE_SPECIFICATION_, _INCLUSIVE_USER_DEFINED_TYPE_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, "<user defined type specification>", EXCLUSIVE_USER_DEFINED_TYPE_SPECIFICATION, INCLUSIVE_USER_DEFINED_TYPE_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, USER_DEFINED_TYPE_SPECIFICATION, "<user defined type specification>");
     r = inclusive_user_defined_type_specification(b, l + 1);
@@ -29512,7 +27673,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <value expression primary>
   public static boolean user_defined_type_value_expression(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "user_defined_type_value_expression")) return false;
-    if (!nextTokenIs(b, _VALUE_EXPRESSION_PRIMARY_)) return false;
+    if (!nextTokenIs(b, VALUE_EXPRESSION_PRIMARY)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = value_expression_primary(b, l + 1);
@@ -29524,7 +27685,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <general value specification>
   public static boolean using_argument(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "using_argument")) return false;
-    if (!nextTokenIs(b, _GENERAL_VALUE_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, GENERAL_VALUE_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = general_value_specification(b, l + 1);
@@ -29533,28 +27694,39 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // USING <using argument> [ { <comma> <using argument> }... ]
+  // USING <using argument> [ { <comma> <using argument> }"..." ]
   public static boolean using_arguments(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "using_arguments")) return false;
     if (!nextTokenIs(b, USING)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, USING, _USING_ARGUMENT_);
+    r = consumeTokens(b, 0, USING, USING_ARGUMENT);
     r = r && using_arguments_2(b, l + 1);
     exit_section_(b, m, USING_ARGUMENTS, r);
     return r;
   }
 
-  // [ { <comma> <using argument> }... ]
+  // [ { <comma> <using argument> }"..." ]
   private static boolean using_arguments_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "using_arguments_2")) return false;
     using_arguments_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <using argument>
+  // { <comma> <using argument> }"..."
   private static boolean using_arguments_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "using_arguments_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = using_arguments_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <using argument>
+  private static boolean using_arguments_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "using_arguments_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -29572,7 +27744,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeToken(b, USING);
     r = r && using_descriptor_1(b, l + 1);
-    r = r && consumeTokens(b, 0, DESCRIPTOR, _DESCRIPTOR_NAME_);
+    r = r && consumeTokens(b, 0, DESCRIPTOR, DESCRIPTOR_NAME);
     exit_section_(b, m, USING_DESCRIPTOR, r);
     return r;
   }
@@ -29588,7 +27760,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <using descriptor>
   public static boolean using_input_descriptor(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "using_input_descriptor")) return false;
-    if (!nextTokenIs(b, _USING_DESCRIPTOR_)) return false;
+    if (!nextTokenIs(b, USING_DESCRIPTOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = using_descriptor(b, l + 1);
@@ -29616,7 +27788,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 	|	<nonparenthesized value expression primary>
   public static boolean value_expression_primary(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "value_expression_primary")) return false;
-    if (!nextTokenIs(b, "<value expression primary>", _NONPARENTHESIZED_VALUE_EXPRESSION_PRIMARY_, _PARENTHESIZED_VALUE_EXPRESSION_)) return false;
+    if (!nextTokenIs(b, "<value expression primary>", NONPARENTHESIZED_VALUE_EXPRESSION_PRIMARY, PARENTHESIZED_VALUE_EXPRESSION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, VALUE_EXPRESSION_PRIMARY, "<value expression primary>");
     r = parenthesized_value_expression(b, l + 1);
@@ -29629,7 +27801,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <literal> | <general value specification>
   public static boolean value_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "value_specification")) return false;
-    if (!nextTokenIs(b, "<value specification>", _GENERAL_VALUE_SPECIFICATION_, _LITERAL_)) return false;
+    if (!nextTokenIs(b, "<value specification>", GENERAL_VALUE_SPECIFICATION, LITERAL)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, VALUE_SPECIFICATION, "<value specification>");
     r = literal(b, l + 1);
@@ -29670,7 +27842,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b);
     r = column_name(b, l + 1);
-    r = r && consumeTokens(b, 0, WITH, OPTIONS, _SCOPE_CLAUSE_);
+    r = r && consumeTokens(b, 0, WITH, OPTIONS, SCOPE_CLAUSE);
     exit_section_(b, m, VIEW_COLUMN_OPTION, r);
     return r;
   }
@@ -29685,7 +27857,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeToken(b, CREATE);
     r = r && view_definition_1(b, l + 1);
-    r = r && consumeTokens(b, 0, VIEW, _TABLE_NAME_, _VIEW_SPECIFICATION_, AS, _QUERY_EXPRESSION_);
+    r = r && consumeTokens(b, 0, VIEW, _TABLE_NAME_, VIEW_SPECIFICATION, AS, QUERY_EXPRESSION);
     r = r && view_definition_7(b, l + 1);
     exit_section_(b, m, VIEW_DEFINITION, r);
     return r;
@@ -29728,7 +27900,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <self-referencing column specification> | <view column option>
   public static boolean view_element(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "view_element")) return false;
-    if (!nextTokenIs(b, "<view element>", _SELF_REFERENCING_COLUMN_SPECIFICATION_, _VIEW_COLUMN_OPTION_)) return false;
+    if (!nextTokenIs(b, "<view element>", SELF_REFERENCING_COLUMN_SPECIFICATION, VIEW_COLUMN_OPTION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, VIEW_ELEMENT, "<view element>");
     r = self_referencing_column_specification(b, l + 1);
@@ -29738,7 +27910,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <left paren> <view element> [ { <comma> <view element> }... ] <right paren>
+  // <left paren> <view element> [ { <comma> <view element> }"..." ] <right paren>
   public static boolean view_element_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "view_element_list")) return false;
     if (!nextTokenIs(b, _LEFT_PAREN_)) return false;
@@ -29752,16 +27924,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <view element> }... ]
+  // [ { <comma> <view element> }"..." ]
   private static boolean view_element_list_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "view_element_list_2")) return false;
     view_element_list_2_0(b, l + 1);
     return true;
   }
 
-  // <comma> <view element>
+  // { <comma> <view element> }"..."
   private static boolean view_element_list_2_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "view_element_list_2_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = view_element_list_2_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <view element>
+  private static boolean view_element_list_2_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "view_element_list_2_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -29774,7 +27957,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <regular view specification> | <referenceable view specification>
   public static boolean view_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "view_specification")) return false;
-    if (!nextTokenIs(b, "<view specification>", _REFERENCEABLE_VIEW_SPECIFICATION_, _REGULAR_VIEW_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, "<view specification>", REFERENCEABLE_VIEW_SPECIFICATION, REGULAR_VIEW_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, VIEW_SPECIFICATION, "<view specification>");
     r = regular_view_specification(b, l + 1);
@@ -29879,7 +28062,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, WIDTH_BUCKET)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, WIDTH_BUCKET, _LEFT_PAREN_, _WIDTH_BUCKET_OPERAND_, _COMMA_, _WIDTH_BUCKET_BOUND_1_, _COMMA_, _WIDTH_BUCKET_BOUND_2_, _COMMA_, _WIDTH_BUCKET_COUNT_, _RIGHT_PAREN_);
+    r = consumeTokens(b, 0, WIDTH_BUCKET, _LEFT_PAREN_, WIDTH_BUCKET_OPERAND, _COMMA_, WIDTH_BUCKET_BOUND_1, _COMMA_, WIDTH_BUCKET_BOUND_2, _COMMA_, WIDTH_BUCKET_COUNT, _RIGHT_PAREN_);
     exit_section_(b, m, WIDTH_BUCKET_FUNCTION, r);
     return r;
   }
@@ -29903,7 +28086,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, WINDOW)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, WINDOW, _WINDOW_DEFINITION_LIST_);
+    r = consumeTokens(b, 0, WINDOW, WINDOW_DEFINITION_LIST);
     exit_section_(b, m, WINDOW_CLAUSE, r);
     return r;
   }
@@ -29912,20 +28095,20 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <new window name> AS <window specification>
   public static boolean window_definition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_definition")) return false;
-    if (!nextTokenIs(b, _NEW_WINDOW_NAME_)) return false;
+    if (!nextTokenIs(b, NEW_WINDOW_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = new_window_name(b, l + 1);
-    r = r && consumeTokens(b, 0, AS, _WINDOW_SPECIFICATION_);
+    r = r && consumeTokens(b, 0, AS, WINDOW_SPECIFICATION);
     exit_section_(b, m, WINDOW_DEFINITION, r);
     return r;
   }
 
   /* ********************************************************** */
-  // <window definition> [ { <comma> <window definition> }... ]
+  // <window definition> [ { <comma> <window definition> }"..." ]
   public static boolean window_definition_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_definition_list")) return false;
-    if (!nextTokenIs(b, _WINDOW_DEFINITION_)) return false;
+    if (!nextTokenIs(b, WINDOW_DEFINITION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = window_definition(b, l + 1);
@@ -29934,16 +28117,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <window definition> }... ]
+  // [ { <comma> <window definition> }"..." ]
   private static boolean window_definition_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_definition_list_1")) return false;
     window_definition_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <window definition>
+  // { <comma> <window definition> }"..."
   private static boolean window_definition_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_definition_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = window_definition_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <window definition>
+  private static boolean window_definition_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "window_definition_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -29959,7 +28153,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, BETWEEN)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, BETWEEN, _WINDOW_FRAME_BOUND_1_, AND, _WINDOW_FRAME_BOUND_2_);
+    r = consumeTokens(b, 0, BETWEEN, WINDOW_FRAME_BOUND_1, AND, WINDOW_FRAME_BOUND_2);
     exit_section_(b, m, WINDOW_FRAME_BETWEEN, r);
     return r;
   }
@@ -29983,7 +28177,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <window frame bound>
   public static boolean window_frame_bound_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_frame_bound_1")) return false;
-    if (!nextTokenIs(b, _WINDOW_FRAME_BOUND_)) return false;
+    if (!nextTokenIs(b, WINDOW_FRAME_BOUND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = window_frame_bound(b, l + 1);
@@ -29995,7 +28189,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <window frame bound>
   public static boolean window_frame_bound_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_frame_bound_2")) return false;
-    if (!nextTokenIs(b, _WINDOW_FRAME_BOUND_)) return false;
+    if (!nextTokenIs(b, WINDOW_FRAME_BOUND)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = window_frame_bound(b, l + 1);
@@ -30007,7 +28201,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <window frame units> <window frame extent> [ <window frame exclusion> ]
   public static boolean window_frame_clause(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_frame_clause")) return false;
-    if (!nextTokenIs(b, _WINDOW_FRAME_UNITS_)) return false;
+    if (!nextTokenIs(b, WINDOW_FRAME_UNITS)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = window_frame_units(b, l + 1);
@@ -30046,7 +28240,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <window frame start> | <window frame between>
   public static boolean window_frame_extent(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_frame_extent")) return false;
-    if (!nextTokenIs(b, "<window frame extent>", _WINDOW_FRAME_BETWEEN_, _WINDOW_FRAME_START_)) return false;
+    if (!nextTokenIs(b, "<window frame extent>", WINDOW_FRAME_BETWEEN, WINDOW_FRAME_START)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, WINDOW_FRAME_EXTENT, "<window frame extent>");
     r = window_frame_start(b, l + 1);
@@ -30059,7 +28253,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <unsigned value specification> FOLLOWING
   public static boolean window_frame_following(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_frame_following")) return false;
-    if (!nextTokenIs(b, _UNSIGNED_VALUE_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, UNSIGNED_VALUE_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = unsigned_value_specification(b, l + 1);
@@ -30072,7 +28266,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <unsigned value specification> PRECEDING
   public static boolean window_frame_preceding(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_frame_preceding")) return false;
-    if (!nextTokenIs(b, _UNSIGNED_VALUE_SPECIFICATION_)) return false;
+    if (!nextTokenIs(b, UNSIGNED_VALUE_SPECIFICATION)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = unsigned_value_specification(b, l + 1);
@@ -30111,11 +28305,11 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <window function type> OVER <window name or specification>
   public static boolean window_function(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_function")) return false;
-    if (!nextTokenIs(b, _WINDOW_FUNCTION_TYPE_)) return false;
+    if (!nextTokenIs(b, WINDOW_FUNCTION_TYPE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = window_function_type(b, l + 1);
-    r = r && consumeTokens(b, 0, OVER, _WINDOW_NAME_OR_SPECIFICATION_);
+    r = r && consumeTokens(b, 0, OVER, WINDOW_NAME_OR_SPECIFICATION);
     exit_section_(b, m, WINDOW_FUNCTION, r);
     return r;
   }
@@ -30139,7 +28333,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <identifier>
   public static boolean window_name(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_name")) return false;
-    if (!nextTokenIs(b, _IDENTIFIER_)) return false;
+    if (!nextTokenIs(b, IDENTIFIER)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = identifier(b, l + 1);
@@ -30151,7 +28345,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <window name> | <in-line window specification>
   public static boolean window_name_or_specification(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_name_or_specification")) return false;
-    if (!nextTokenIs(b, "<window name or specification>", _IN_LINE_WINDOW_SPECIFICATION_, _WINDOW_NAME_)) return false;
+    if (!nextTokenIs(b, "<window name or specification>", IN_LINE_WINDOW_SPECIFICATION, WINDOW_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, WINDOW_NAME_OR_SPECIFICATION, "<window name or specification>");
     r = window_name(b, l + 1);
@@ -30179,7 +28373,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     if (!nextTokenIs(b, PARTITION)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, PARTITION, BY, _WINDOW_PARTITION_COLUMN_REFERENCE_LIST_);
+    r = consumeTokens(b, 0, PARTITION, BY, WINDOW_PARTITION_COLUMN_REFERENCE_LIST);
     exit_section_(b, m, WINDOW_PARTITION_CLAUSE, r);
     return r;
   }
@@ -30188,7 +28382,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <column reference> [ <collate clause> ]
   public static boolean window_partition_column_reference(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_partition_column_reference")) return false;
-    if (!nextTokenIs(b, _COLUMN_REFERENCE_)) return false;
+    if (!nextTokenIs(b, COLUMN_REFERENCE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = column_reference(b, l + 1);
@@ -30205,10 +28399,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <window partition column reference> [ { <comma> <window partition column reference> }... ]
+  // <window partition column reference> [ { <comma> <window partition column reference> }"..." ]
   public static boolean window_partition_column_reference_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_partition_column_reference_list")) return false;
-    if (!nextTokenIs(b, _WINDOW_PARTITION_COLUMN_REFERENCE_)) return false;
+    if (!nextTokenIs(b, WINDOW_PARTITION_COLUMN_REFERENCE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = window_partition_column_reference(b, l + 1);
@@ -30217,16 +28411,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <window partition column reference> }... ]
+  // [ { <comma> <window partition column reference> }"..." ]
   private static boolean window_partition_column_reference_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_partition_column_reference_list_1")) return false;
     window_partition_column_reference_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <window partition column reference>
+  // { <comma> <window partition column reference> }"..."
   private static boolean window_partition_column_reference_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "window_partition_column_reference_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = window_partition_column_reference_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <window partition column reference>
+  private static boolean window_partition_column_reference_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "window_partition_column_reference_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -30325,10 +28530,10 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // <with list element> [ { <comma> <with list element> }... ]
+  // <with list element> [ { <comma> <with list element> }"..." ]
   public static boolean with_list(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "with_list")) return false;
-    if (!nextTokenIs(b, _WITH_LIST_ELEMENT_)) return false;
+    if (!nextTokenIs(b, WITH_LIST_ELEMENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = with_list_element(b, l + 1);
@@ -30337,16 +28542,27 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // [ { <comma> <with list element> }... ]
+  // [ { <comma> <with list element> }"..." ]
   private static boolean with_list_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "with_list_1")) return false;
     with_list_1_0(b, l + 1);
     return true;
   }
 
-  // <comma> <with list element>
+  // { <comma> <with list element> }"..."
   private static boolean with_list_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "with_list_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = with_list_1_0_0(b, l + 1);
+    r = r && consumeToken(b, "...");
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // <comma> <with list element>
+  private static boolean with_list_1_0_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "with_list_1_0_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = comma(b, l + 1);
@@ -30360,12 +28576,12 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // 		AS <left paren> <query expression> <right paren> [ <search or cycle clause> ]
   public static boolean with_list_element(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "with_list_element")) return false;
-    if (!nextTokenIs(b, _QUERY_NAME_)) return false;
+    if (!nextTokenIs(b, QUERY_NAME)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = query_name(b, l + 1);
     r = r && with_list_element_1(b, l + 1);
-    r = r && consumeTokens(b, 0, AS, _LEFT_PAREN_, _QUERY_EXPRESSION_, _RIGHT_PAREN_);
+    r = r && consumeTokens(b, 0, AS, _LEFT_PAREN_, QUERY_EXPRESSION, _RIGHT_PAREN_);
     r = r && with_list_element_6(b, l + 1);
     exit_section_(b, m, WITH_LIST_ELEMENT, r);
     return r;
@@ -30427,7 +28643,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <years value> | [ <years value> <minus sign> ] <months value>
   public static boolean year_month_literal(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "year_month_literal")) return false;
-    if (!nextTokenIs(b, "<year month literal>", _MONTHS_VALUE_, _YEARS_VALUE_)) return false;
+    if (!nextTokenIs(b, "<year month literal>", MONTHS_VALUE, _YEARS_VALUE_)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, YEAR_MONTH_LITERAL, "<year month literal>");
     r = years_value(b, l + 1);
@@ -30458,7 +28674,7 @@ public class Sql20032Parser implements PsiParser, LightPsiParser {
   // <datetime value>
   public static boolean years_value(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "years_value")) return false;
-    if (!nextTokenIs(b, _DATETIME_VALUE_)) return false;
+    if (!nextTokenIs(b, DATETIME_VALUE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = datetime_value(b, l + 1);
